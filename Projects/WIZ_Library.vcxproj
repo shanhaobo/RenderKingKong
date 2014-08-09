@@ -13,28 +13,35 @@
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizCustomConfig.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPP.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPBitOp.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPBool.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPCombine.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPDec.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPIf.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPInc.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPLoop.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPRepeatFile.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPStringize.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPTupleElem.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseType.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeBool.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeChar.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeDeclareHelper.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeDeclareUtils.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeInt.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeReal.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeVoid.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\02_MacroUtils\WizBaseMacroAssert.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\02_MacroUtils\WizBaseMacroUtils.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\03_TemplateUtils\WizBaseTemplateUtils.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPP.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPBitOp.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPBool.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPCombine.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPDec.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPIf.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPInc.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPLoop.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPRepeatFile.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPStringize.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPTupleElem.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicType.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeBool.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeChar.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeDeclareHelper.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeDeclareUtils.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeInt.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeReal.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeVoid.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MacroUtils\WizBasicMacroAssert.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MacroUtils\WizBasicMacroUtils.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TemplateUtils\WizBasicTemplateUtils.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Advanced\01_Type\WizAdvancedTypeSize.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Base.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Method.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Method.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D97800BC-87E5-42CD-A999-B99A4E5B1244}</ProjectGuid>
