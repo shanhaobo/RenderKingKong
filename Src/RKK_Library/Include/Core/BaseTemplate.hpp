@@ -1,8 +1,7 @@
 #ifndef __RENDERKINGKONG_BASETEMPLATE_HPP__
 #define __RENDERKINGKONG_BASETEMPLATE_HPP__
 
-#include "BaseType.hpp"
-#include "BaseMacro.hpp"
+#include "../../../WIZ_Library/Include/01_Base/03_TemplateUtils/WizBaseTemplateUtils.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -11,7 +10,7 @@ namespace rkk
     template<class T>
     inline Bool::type IsValidPtr(T const * const ptr)
     {
-        return (ptr == RKK_NULLPTR);
+        return ::Wiz::IsValidPtr(ptr);
     }
 
 } /// end of namespace rkk
