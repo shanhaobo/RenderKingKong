@@ -7,5 +7,97 @@
     <Filter Include="Private">
       <UniqueIdentifier>{ffbf1aca-9972-405b-a7f5-4e8933951cdf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\00_Config">
+      <UniqueIdentifier>{958f0c01-3cab-43ae-b1a8-64849d9e1e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\01_Base">
+      <UniqueIdentifier>{c8c269c0-7f24-4012-89bf-bc1376f5c3e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\01_Base\01_Type">
+      <UniqueIdentifier>{d8c500a2-7704-441d-90e7-0d9925591b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\01_Base\02_MacroUtils">
+      <UniqueIdentifier>{eb9191b3-210b-4d1e-bf7e-cfb0692bf768}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\01_Base\00_MPP%28MacroPreprocesssor%29">
+      <UniqueIdentifier>{815d4eab-ef16-4457-9b11-83547072b547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\01_Base\03_TemplateUtils">
+      <UniqueIdentifier>{e5e5a4cb-d5c0-4167-b8ac-4e8a60a1f9cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
+      <Filter>Include\00_Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizCustomConfig.hpp">
+      <Filter>Include\00_Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeBool.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeChar.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeDeclareUtils.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeInt.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeReal.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeVoid.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPBitOp.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPBool.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPCombine.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPDec.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPIf.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPInc.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPLoop.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPRepeatFile.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPStringize.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPPTupleElem.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\00_MPP\WizBaseMPP.hpp">
+      <Filter>Include\01_Base\00_MPP%28MacroPreprocesssor%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\02_MacroUtils\WizBaseMacroAssert.hpp">
+      <Filter>Include\01_Base\02_MacroUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\02_MacroUtils\WizBaseMacroUtils.hpp">
+      <Filter>Include\01_Base\02_MacroUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseType.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\03_TemplateUtils\WizBaseTemplateUtils.hpp">
+      <Filter>Include\01_Base\03_TemplateUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Base\01_Type\WizBaseTypeDeclareHelper.hpp">
+      <Filter>Include\01_Base\01_Type</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
