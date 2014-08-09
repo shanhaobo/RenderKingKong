@@ -33,24 +33,10 @@ namespace Wiz
             template <> struct Failure<::Wiz::Bool::True> { enum{ eValue = 1 }; };
             template<int x> struct Tester{};
         } /// end of namespace CompileTimeAssert
-
-        namespace RunTimeAssert
-        {
-            WIZ_INLINE::Wiz::Void::Type Assert
-                (
-                ::Wiz::String::In strFlie,
-                int   nLine,
-                ::Wiz::String::In strFunc,
-                ::Wiz::String::In strCond,
-                ::Wiz::String::In strMsg
-                )
-            {
-                ::Wiz::Exception::Throw(::Wiz::Exception::RunTimeError(strCond));
-            }
-
-        } /// end of namespace RunTimeAssert
     } /// end of namespace Base
 } /// end of namespace Wiz
+
+
 #define WIZ_COMPILE_TIME_ASSERT_0(x)                                           \
     typedef ::Wiz::Base::CompileTimeAssert::Tester<sizeof(::Wiz::Base::CompileTimeAssert::Failure<(::Wiz::Bool::Type)(x)>)> WIZ_MPP_COMBINE(CompileTimeAssertFailureType, WIZ_COUNTER);
 
@@ -64,7 +50,7 @@ namespace Wiz
     1 / (((::Wiz::Bool::Type)(x)) ? 1 : 0);                           \
     WIZ_SAFE_MACRO_END
 
-/// Jon Jagger 1999 MSVC error : "case 0"已被使用
+/// Jon Jagger 1999 MSVC error : "case 0"已被使用  必须在函数中使用,所以不建议使用
 #define WIZ_COMPILE_TIME_ASSERT_3(x)    switch(0){case 0: case x:;}
 
 #define WIZ_COMPILE_TIME_ASSERT(x)      WIZ_COMPILE_TIME_ASSERT_1(x)
