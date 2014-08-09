@@ -49,6 +49,9 @@
     <Filter Include="Include\04_Math\00_Base\Matrix">
       <UniqueIdentifier>{a2edd288-8cef-42b7-b08f-7060b535a5ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\02_Advanced\02_MacroUtils">
+      <UniqueIdentifier>{2f0aed9f-5f40-4a4c-8fab-46c9e1fef3a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -132,8 +135,8 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Advanced\01_Type\WizAdvancedTypeSize.hpp">
       <Filter>Include\02_Advanced\01_Type</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MacroUtils\WizBasicMacroAssert.hpp">
-      <Filter>Include\01_Basic\02_MacroUtils</Filter>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Advanced\02_MacroUtils\WizAdvancedMacroAssert.hpp">
+      <Filter>Include\02_Advanced\02_MacroUtils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -32,10 +32,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeInt.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeReal.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeVoid.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MacroUtils\WizBasicMacroAssert.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MacroUtils\WizBasicMacroUtils.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TemplateUtils\WizBasicTemplateUtils.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Advanced\01_Type\WizAdvancedTypeSize.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Advanced\02_MacroUtils\WizAdvancedMacroAssert.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Base.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Method.hpp" />
