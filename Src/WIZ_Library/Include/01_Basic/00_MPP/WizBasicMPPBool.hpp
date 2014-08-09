@@ -1,7 +1,7 @@
 #ifndef __WIZ_BASE_MPP_BOOL_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_MPP_BOOL_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseMPPCombine.hpp"
+#include "./WizBasicMPPCombine.hpp"
 
 #define WIZ_MPP_BOOL(n)         WIZ_MPP_COMBINE(WIZ_MPP_PREDEF_BOOL_, n)
 

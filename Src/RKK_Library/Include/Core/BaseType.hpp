@@ -9,7 +9,7 @@
 #define WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE         RKK_DECLARE_SIMPLE
 #undef  WIZ_DECLARE_HELPER_CUSTOM_DEFINE_PTR
 #define WIZ_DECLARE_HELPER_CUSTOM_DEFINE_PTR            RKK_DECLARE_PTR
-#include "../../../WIZ_Library/Include/01_Base/01_Type/WizBaseTypeDeclareHelper.hpp"
+#include "../../../WIZ_Library/Include/01_Basic/01_Type/WizBasicTypeDeclareHelper.hpp"
 
 namespace rkk
 {

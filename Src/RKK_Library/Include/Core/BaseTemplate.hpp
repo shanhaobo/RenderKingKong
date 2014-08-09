@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_BASETEMPLATE_HPP__
 #define __RENDERKINGKONG_BASETEMPLATE_HPP__
 
-#include "../../../WIZ_Library/Include/01_Base/03_TemplateUtils/WizBaseTemplateUtils.hpp"
+#include "../../../WIZ_Library/Include/01_Basic/03_TemplateUtils/WizBasicTemplateUtils.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 

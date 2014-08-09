@@ -3,7 +3,7 @@
 
 #include <float.h>
 
-#include "./WizBaseTypeDeclareUtils.hpp"
+#include "./WizBasicTypeDeclareUtils.hpp"
 
 namespace Wiz
 {
@@ -50,6 +50,8 @@ namespace Wiz
         } /// end of namespace Template
         namespace Tmplt = Template;
     }; /// end of namespace R64
+
+
 } /// end of namespace Wiz
 
 #endif /*__WIZ_BASE_TYPE_REAL_HPP__SHANHAOBO_19800429__*/

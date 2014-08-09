@@ -1,7 +1,7 @@
 #ifndef __WIZ_BASE_MPP_LOOP_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_MPP_LOOP_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseMPPCombine.hpp"
+#include "./WizBasicMPPCombine.hpp"
 
 /// 所以相对于M来说(Sum, Curr, P) /// 第一个是总循环次数，第二个是当前循环次数，第三个是参数
 

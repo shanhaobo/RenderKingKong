@@ -1,7 +1,7 @@
 #ifndef __WIZ_BASE_MPP_DEC_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_MPP_DEC_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseMPPCombine.hpp"
+#include "./WizBasicMPPCombine.hpp"
 
 # define WIZ_MPP_DEC(x) WIZ_MPP_COMBINE(WIZ_MPP_PREDEF_DEC_, x)
 

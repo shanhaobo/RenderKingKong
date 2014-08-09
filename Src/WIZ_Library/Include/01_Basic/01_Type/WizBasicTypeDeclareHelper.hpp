@@ -1,7 +1,7 @@
 #ifndef __WIZ_BASE_TYPE_DECLARE_HELPER_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_TYPE_DECLARE_HELPER_HPP__SHANHAOBO_19800429__
 
-#include "../01_Type/WizBaseType.hpp"
+#include "../01_Type/WizBasicType.hpp"
 
 /// Ê¾Àý
 /// #undef  WIZ_DECLARE_HELPER_CUSTOM_DEFINE

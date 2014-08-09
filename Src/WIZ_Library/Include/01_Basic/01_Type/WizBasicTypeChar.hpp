@@ -1,7 +1,7 @@
 #ifndef __WIZ_BASE_TYPE_CHAR_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_TYPE_CHAR_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseTypeDeclareUtils.hpp"
+#include "./WizBasicTypeDeclareUtils.hpp"
 
 namespace Wiz
 {

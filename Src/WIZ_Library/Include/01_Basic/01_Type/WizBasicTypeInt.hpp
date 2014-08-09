@@ -3,10 +3,22 @@
 
 ////////////////////////////////////////////////////////////////////////////
 
-#include "./WizBaseTypeDeclareUtils.hpp"
+#include "./WizBasicTypeDeclareUtils.hpp"
 
 namespace Wiz
 {
+    ///====================================///
+
+    namespace I
+    {
+        WIZ_DECLARE_SIMPLE(int);
+    }
+
+    namespace U
+    {
+        WIZ_DECLARE_SIMPLE(unsigned int);
+    }
+
     ///====================================///
 #   if (WIZ_CFG_COMPILER == WIZ_CFG_COMPILER_MSVC)
     namespace I8
@@ -92,6 +104,22 @@ namespace Wiz
 #   else
 #       error Illegal compiler
 #   endif /*#if (WIZ_COMPILER == WIZ_COMPILER_MSVC)*/
+    ///====================================///
+
+    //////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
+
+    namespace I
+    {
+        WIZ_MINMAX_INT(Type);
+    } /// end of namespace I
+
+    namespace U
+    {
+        WIZ_MINMAX_UINT(Type);
+    } /// end of namespace U
 
 #   define WIZ_MIN_INT(t) ((t)(((t)1) << ((sizeof(t) << 3) - 1)))
 #   define WIZ_MAX_INT(t) ((t)(~(WIZ_MIN_INT(t))))
@@ -106,6 +134,7 @@ namespace Wiz
     static const t Min = WIZ_MIN_UINT(t);       \
     static const t Max = WIZ_MAX_UINT(t);
 
+    ///====================================///
     namespace I8
     {
         WIZ_MINMAX_INT(Type);
@@ -141,6 +170,7 @@ namespace Wiz
     {
         WIZ_MINMAX_UINT(Type);
     } /// end of namespace U64
+    ///====================================///
 
 #   undef WIZ_MINMAX_INT
 #   undef WIZ_MINMAX_UINT

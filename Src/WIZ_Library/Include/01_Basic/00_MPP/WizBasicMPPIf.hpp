@@ -1,8 +1,8 @@
 #ifndef __WIZ_BASE_MPP_IF_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_MPP_IF_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseMPPCombine.hpp"
-#include "./WizBaseMPPBool.hpp"
+#include "./WizBasicMPPCombine.hpp"
+#include "./WizBasicMPPBool.hpp"
 
 /// C Conditions
 /// T True

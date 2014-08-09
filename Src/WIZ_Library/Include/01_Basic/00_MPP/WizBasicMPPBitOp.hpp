@@ -2,7 +2,7 @@
 #define __WIZ_BASE_MPP_BIT_OP_HPP__SHANHAOBO_19800429__
 
 
-#include "./WizBaseMPPBool.hpp"
+#include "./WizBasicMPPBool.hpp"
 
 /////////////////////////////////////////
 

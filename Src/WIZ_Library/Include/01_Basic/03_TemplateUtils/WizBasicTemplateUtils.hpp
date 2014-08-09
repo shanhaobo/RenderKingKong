@@ -1,8 +1,8 @@
 #ifndef __WIZ_BASE_TEMPLATE_UTILS_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_TEMPLATE_UTILS_HPP__SHANHAOBO_19800429__
 
-#include "../01_Type/WizBaseType.hpp"
-#include "../02_MacroUtils/WizBaseMacroUtils.hpp"
+#include "../01_Type/WizBasicType.hpp"
+#include "../02_MacroUtils/WizBasicMacroUtils.hpp"
 
 namespace Wiz
 {

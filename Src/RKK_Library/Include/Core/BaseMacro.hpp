@@ -1,8 +1,8 @@
 #ifndef __RENDERKINGKONG_BASEMACRO_HPP__
 #define __RENDERKINGKONG_BASEMACRO_HPP__
 
-#include "../../../WIZ_Library/Include/01_Base/00_MPP/WizBaseMPP.hpp"
-#include "../../../WIZ_Library/Include/01_Base/02_MacroUtils/WizBaseMacroUtils.hpp"
+#include "../../../WIZ_Library/Include/01_Basic/00_MPP/WizBasicMPP.hpp"
+#include "../../../WIZ_Library/Include/01_Basic/02_MacroUtils/WizBasicMacroUtils.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 
