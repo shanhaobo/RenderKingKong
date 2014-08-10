@@ -2,7 +2,7 @@
 #define __RENDERKINGKONG_BASEMACRO_HPP__
 
 #include "../../../WIZ_Library/Include/01_Basic/00_MPP/WizBasicMPP.hpp"
-#include "../../../WIZ_Library/Include/01_Basic/02_MacroUtils/WizBasicMacroUtils.hpp"
+#include "../../../WIZ_Library/Include/01_Basic/02_MU/WizBasicMU.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 
