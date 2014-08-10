@@ -1,7 +1,7 @@
 #ifndef __WIZ_BASE_TYPE_DECLARE_HELPER_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_TYPE_DECLARE_HELPER_HPP__SHANHAOBO_19800429__
 
-#include "../01_Type/WizBasicType.hpp"
+#include "./WizBasicType.hpp"
 
 /// Ê¾Àý
 /// #undef  WIZ_DECLARE_HELPER_CUSTOM_DEFINE
@@ -148,6 +148,36 @@
 
 #define WIZ_DECLARE_HELPER_VOID()                                   \
     WIZ_DECLARE_HELPER_CUSTOM_DEFINE_PTR(::Wiz::Void::Type)
+
+/////////////////////////////////////////////////////////
+
+#define WIZ_DECLARE_HELPER_SIZE()                                   \
+    WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::Size::Type)
+
+#define WIZ_DECLARE_HELPER_SIZE8()                                  \
+    WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::Size8::Type)     \
+    static ::Wiz::Size8::TypeC Invalid  = ::Wiz::U8::Max;           \
+    static ::Wiz::Size8::TypeC Min      = 0;                        \
+    static ::Wiz::Size8::TypeC Max      = ::Wiz::U8::Max - 1;
+
+
+#define WIZ_DECLARE_HELPER_SIZE16()                                 \
+    WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::Size16::Type)    \
+    static ::Wiz::Size16::TypeC Invalid = ::Wiz::U16::Max;          \
+    static ::Wiz::Size16::TypeC Min     = 0;                        \
+    static ::Wiz::Size16::TypeC Max     = ::Wiz::U16::Max - 1;
+
+#define WIZ_DECLARE_HELPER_SIZE32()                                 \
+    WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::Size32::Type)    \
+    static ::Wiz::Size16::TypeC Invalid = ::Wiz::U32::Max;          \
+    static ::Wiz::Size16::TypeC Min     = 0;                        \
+    static ::Wiz::Size16::TypeC Max     = ::Wiz::U32::Max - 1;
+
+#define WIZ_DECLARE_HELPER_SIZE64()                                 \
+    WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::Size64::Type)    \
+    static ::Wiz::Size16::TypeC Invalid = ::Wiz::U64::Max;          \
+    static ::Wiz::Size16::TypeC Min     = 0;                        \
+    static ::Wiz::Size16::TypeC Max     = ::Wiz::U64::Max - 1;
 
 /////////////////////////////////////////////////////////
 
