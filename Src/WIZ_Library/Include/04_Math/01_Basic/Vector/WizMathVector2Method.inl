@@ -190,9 +190,8 @@ namespace Wiz
             typename VectorT::tElement Type<VectorT>::Normalize(tVector& InOutVec)
             {
                 const tElement Len = Length(InOutVec);
-
                 // Will also work for zero-sized Vectors, but will change nothing
-                if (::Wiz::Nearly::GreaterZero(Len))
+                if (Len > 0)
                 {
                     const tElement RecipLen = 1 / Len;
 
@@ -209,7 +208,7 @@ namespace Wiz
                 const tElement Len = Length(InVec);
 
                 // Will also work for zero-sized Vectors, but will change nothing
-                if (::Wiz::Nearly::GreaterZero(Len))
+                if (Len > 0)
                 {
                     const tElement RecipLen = 1 / Len;
 
@@ -271,19 +270,19 @@ namespace Wiz
             template<class VectorT>
             ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteEqual(const tVector& InVec1, const tVector& InVec2)
             {
-                return ::Wiz::Absolute::IsEqual(InVec1.e0, InVec2.e0) && ::Wiz::Absolute::IsEqual(InVec1.e1, InVec2.e1);
+                return (InVec1.e0 == InVec2.e0) && (InVec1.e1 == InVec2.e1);
             }
 
             template<class VectorT>
             ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteZero(const tVector& InVec)
             {
-                return ::Wiz::Absolute::IsZero(InVec.e0) && ::Wiz::Absolute::IsZero(InVec.e1);
+                return (InVec.e0 == 0) && (InVec.e1 == 0);
             }
 
             template<class VectorT>
             ::Wiz::Bool::Type Type<VectorT>::IsNearlyZero(const tVector& InVec, const tElement& InTolerance)
             {
-                WIZ_ASSERT(::Wiz::Absolute::GreaterZero(InTolerance));
+                WIZ_ASSERT(InTolerance > 0);
                 return ::Wiz::Absolute::InRange(InVec.e0, -InTolerance, InTolerance) && ::Wiz::Absolute::InRange(InVec.e1, -InTolerance, InTolerance);
             }
             ////////////////////////////////////////////////////////////////

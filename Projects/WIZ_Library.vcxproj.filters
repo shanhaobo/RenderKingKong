@@ -58,6 +58,9 @@
     <Filter Include="Include\04_Math\01_Basic\Matrix">
       <UniqueIdentifier>{a2edd288-8cef-42b7-b08f-7060b535a5ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\04_Math\00_Utils">
+      <UniqueIdentifier>{b0e3b74b-5d02-4000-85a0-16ddb3a3a803}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -144,5 +147,40 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIsSame.hpp">
       <Filter>Include\01_Basic\04_TT%28TypeTraits%29</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Base.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsInterpolator.hpp">
+      <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtils.hpp">
+      <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsCompare.hpp">
+      <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsMinMax.hpp">
+      <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsOne.hpp">
+      <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsZero.hpp">
+      <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsMisc.hpp">
+      <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </None>
   </ItemGroup>
 </Project>

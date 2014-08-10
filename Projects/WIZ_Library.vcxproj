@@ -39,6 +39,19 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTBool.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIF.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIsSame.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtils.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsCompare.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsInterpolator.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsMinMax.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsMisc.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsOne.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsZero.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Base.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D97800BC-87E5-42CD-A999-B99A4E5B1244}</ProjectGuid>
