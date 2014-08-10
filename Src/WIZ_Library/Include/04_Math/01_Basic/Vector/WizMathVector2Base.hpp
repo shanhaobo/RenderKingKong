@@ -79,29 +79,6 @@ namespace Wiz
                     return this->e;
                 }
                 ////////////////////////////////////////////////////////////////
-
-                ////////////////////////////////////////////////////////////////
-                template<class SrcT, class DestT>
-                WIZ_INLINE ::Wiz::SZ::Type Transmit(DestT* Dest, const SrcT* Src)
-                {
-                    WIZ_STATIC_ASSERT(sizeof(this->e) == eSize);
-                    return ::Wiz::Memory::Transmit(Dest, Src, eSize);
-                }
-                template<class OutT>
-                WIZ_INLINE ::Wiz::SZ::Type CopyTo(OutT* DestPtr) const
-                {
-                    WIZ_STATIC_ASSERT(sizeof(this->e) == eSize);
-
-                    return ::Wiz::Memory::CopySrcStd(DestPtr, this->e, eCount);
-                }
-                template<class InT>
-                WIZ_INLINE ::Wiz::SZ::Type CopyFrom(const InT* SrcPtr)
-                {
-                    WIZ_STATIC_ASSERT(sizeof(this->e) == eSize);
-
-                    return ::Wiz::Memory::CopyDestStd(this->e, SrcPtr, eCount);
-                }
-                ////////////////////////////////////////////////////////////////
             };
 #       pragma pack(pop)
         } /// end of namespace Base
