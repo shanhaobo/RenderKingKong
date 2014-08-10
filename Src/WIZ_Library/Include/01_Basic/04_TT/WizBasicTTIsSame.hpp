@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_TYPETRAITS_IS_SAME_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TYPETRAITS_IS_SAME_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_TT_IS_SAME_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_TT_IS_SAME_HPP__SHANHAOBO_19800429__
 
 #include "./WizBaseTTBool.hpp"
 
@@ -37,4 +37,4 @@ namespace Wiz
     } /// end of namespace TypeTraits
 } /// end of namespace Wiz
 
-#endif /*__WIZ_BASE_TYPETRAITS_IS_SAME_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_TT_IS_SAME_HPP__SHANHAOBO_19800429__*/

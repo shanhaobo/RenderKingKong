@@ -1,9 +1,9 @@
-#ifndef __WIZ_BASE_TT_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TT_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_TT_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_TT_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseTTIf.hpp"
+#include "./WizBasicTTIF.hpp"
 
-#include "./WizBaseTTBool.hpp"
-#include "./WizBaseTTIsSame.hpp"
+#include "./WizBasicTTBool.hpp"
+#include "./WizBasicTTIsSame.hpp"
 
-#endif /*__WIZ_BASE_TT_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_TT_HPP__SHANHAOBO_19800429__*/
