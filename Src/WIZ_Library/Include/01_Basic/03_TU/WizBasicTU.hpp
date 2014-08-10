@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_TEMPLATE_UTILS_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TEMPLATE_UTILS_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASE_TU_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASE_TU_HPP__SHANHAOBO_19800429__
 
 #include "../01_Type/WizBasicType.hpp"
 #include "../02_MacroUtils/WizBasicMacroUtils.hpp"
@@ -121,4 +121,4 @@ namespace Wiz
     //////////////////////////////////////////////////////////////////////////
 } /// end of namespace Wiz
 
-#endif /*__WIZ_BASE_TEMPLATE_UTILS_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASE_TU_HPP__SHANHAOBO_19800429__*/
