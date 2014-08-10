@@ -34,15 +34,6 @@
     <Filter Include="Include\04_Math">
       <UniqueIdentifier>{fae47f77-7c90-415e-9472-23e7c98a53f3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\04_Math\00_Base">
-      <UniqueIdentifier>{48cdda63-c83a-47b5-8a58-d950fa8c3290}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Include\04_Math\00_Base\Vector">
-      <UniqueIdentifier>{5cecc1d0-09c8-4f50-8fcc-ca4d766ed8ba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Include\04_Math\00_Base\Matrix">
-      <UniqueIdentifier>{a2edd288-8cef-42b7-b08f-7060b535a5ca}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Include\03_Utils\TimerUtils">
       <UniqueIdentifier>{800051ff-86ba-4d87-baac-1bce8586223f}</UniqueIdentifier>
     </Filter>
@@ -57,6 +48,15 @@
     </Filter>
     <Filter Include="Include\01_Basic\03_TU%28TemplateUtils%29">
       <UniqueIdentifier>{e5e5a4cb-d5c0-4167-b8ac-4e8a60a1f9cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\04_Math\01_Basic">
+      <UniqueIdentifier>{48cdda63-c83a-47b5-8a58-d950fa8c3290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\04_Math\01_Basic\Vector">
+      <UniqueIdentifier>{5cecc1d0-09c8-4f50-8fcc-ca4d766ed8ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\04_Math\01_Basic\Matrix">
+      <UniqueIdentifier>{a2edd288-8cef-42b7-b08f-7060b535a5ca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -123,15 +123,6 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeDeclareHelper.hpp">
       <Filter>Include\01_Basic\01_Type</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2.hpp">
-      <Filter>Include\04_Math\00_Base\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Base.hpp">
-      <Filter>Include\04_Math\00_Base\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Method.hpp">
-      <Filter>Include\04_Math\00_Base\Vector</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeSize.hpp">
       <Filter>Include\01_Basic\01_Type</Filter>
     </ClInclude>
@@ -144,19 +135,14 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTU.hpp">
       <Filter>Include\01_Basic\03_TU%28TemplateUtils%29</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBaseTTIf.hpp">
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTBool.hpp">
       <Filter>Include\01_Basic\04_TT%28TypeTraits%29</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBaseTTIsSame.hpp">
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIF.hpp">
       <Filter>Include\01_Basic\04_TT%28TypeTraits%29</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBaseTTBool.hpp">
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIsSame.hpp">
       <Filter>Include\01_Basic\04_TT%28TypeTraits%29</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Method.inl">
-      <Filter>Include\04_Math\00_Base\Vector</Filter>
-    </None>
   </ItemGroup>
 </Project>

@@ -35,16 +35,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeVoid.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMU.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTU.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBaseTTBool.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBaseTTIf.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBaseTTIsSame.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTT.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Base.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Method.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Src\WIZ_Library\Include\04_Math\00_Base\Vector\WizMathVector2Method.inl" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTBool.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIF.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIsSame.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D97800BC-87E5-42CD-A999-B99A4E5B1244}</ProjectGuid>
