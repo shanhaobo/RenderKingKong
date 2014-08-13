@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__
 
 #include "./WizBaseTemplateZero.hpp"
 
@@ -107,13 +107,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsEqual(::Wiz::Real32::In v1, ::Wiz::Real32::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type IsEqual(::Wiz::R32::In v1, ::Wiz::R32::In v2)
         {
             return ::Wiz::Nearly::IsZero(v1 - v2);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsEqual(::Wiz::Real64::In v1, ::Wiz::Real64::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type IsEqual(::Wiz::R64::In v1, ::Wiz::R64::In v2)
         {
             return ::Wiz::Nearly::IsZero(v1 - v2);
         }
@@ -126,13 +126,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotEqual(::Wiz::Real32::In v1, ::Wiz::Real32::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type NotEqual(::Wiz::R32::In v1, ::Wiz::R32::In v2)
         {
             return ::Wiz::Nearly::NotZero(v1 - v2);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotEqual(::Wiz::Real64::In v1, ::Wiz::Real64::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type NotEqual(::Wiz::R64::In v1, ::Wiz::R64::In v2)
         {
             return ::Wiz::Nearly::NotZero(v1 - v2);
         }
@@ -145,13 +145,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type Less(::Wiz::Real32::In v1, ::Wiz::Real32::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type Less(::Wiz::R32::In v1, ::Wiz::R32::In v2)
         {
             return ::Wiz::Nearly::LessZero(v1 - v2);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type Less(::Wiz::Real64::In v1, ::Wiz::Real64::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type Less(::Wiz::R64::In v1, ::Wiz::R64::In v2)
         {
             return ::Wiz::Nearly::LessZero(v1 - v2);
         }
@@ -164,13 +164,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type Greater(::Wiz::Real32::In v1, ::Wiz::Real32::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type Greater(::Wiz::R32::In v1, ::Wiz::R32::In v2)
         {
             return ::Wiz::Nearly::GreaterZero(v1 - v2);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type Greater(::Wiz::Real64::In v1, ::Wiz::Real64::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type Greater(::Wiz::R64::In v1, ::Wiz::R64::In v2)
         {
             return ::Wiz::Nearly::GreaterZero(v1 - v2);
         }
@@ -183,13 +183,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqual(::Wiz::Real32::In v1, ::Wiz::Real32::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqual(::Wiz::R32::In v1, ::Wiz::R32::In v2)
         {
             return ::Wiz::Nearly::LessEqualZero(v1 - v2);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqual(::Wiz::Real64::In v1, ::Wiz::Real64::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqual(::Wiz::R64::In v1, ::Wiz::R64::In v2)
         {
             return ::Wiz::Nearly::LessEqualZero(v1 - v2);
         }
@@ -202,13 +202,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqual(::Wiz::Real32::In v1, ::Wiz::Real32::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqual(::Wiz::R32::In v1, ::Wiz::R32::In v2)
         {
             return ::Wiz::Nearly::GreaterEqualZero(v1 - v2);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqual(::Wiz::Real64::In v1, ::Wiz::Real64::In v2)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqual(::Wiz::R64::In v1, ::Wiz::R64::In v2)
         {
             return ::Wiz::Nearly::GreaterEqualZero(v1 - v2);
         }
@@ -221,15 +221,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type InRange(::Wiz::Real32::In v, ::Wiz::Real32::In Min, ::Wiz::Real32::In Max)
+        WIZ_INLINE ::Wiz::Bool::Type InRange(::Wiz::R32::In v, ::Wiz::R32::In Min, ::Wiz::R32::In Max)
         {
-            return (v >= (Min - ::Wiz::Real32::Epsilon)) && (v <= (Max + ::Wiz::Real32::Epsilon));
+            return (v >= (Min - ::Wiz::R32::Epsilon)) && (v <= (Max + ::Wiz::R32::Epsilon));
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type InRange(::Wiz::Real64::In v, ::Wiz::Real64::In Min, ::Wiz::Real64::In Max)
+        WIZ_INLINE ::Wiz::Bool::Type InRange(::Wiz::R64::In v, ::Wiz::R64::In Min, ::Wiz::R64::In Max)
         {
-            return (v >= (Min - ::Wiz::Real64::Epsilon)) && (v <= (Max + ::Wiz::Real64::Epsilon));
+            return (v >= (Min - ::Wiz::R64::Epsilon)) && (v <= (Max + ::Wiz::R64::Epsilon));
         }
 
         /// OutRange
@@ -240,19 +240,19 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type OutRange(::Wiz::Real32::In v, ::Wiz::Real32::In Min, ::Wiz::Real32::In Max)
+        WIZ_INLINE ::Wiz::Bool::Type OutRange(::Wiz::R32::In v, ::Wiz::R32::In Min, ::Wiz::R32::In Max)
         {
-            return (v < (Min - ::Wiz::Real32::Epsilon)) || (v > (Max + ::Wiz::Real32::Epsilon));
+            return (v < (Min - ::Wiz::R32::Epsilon)) || (v > (Max + ::Wiz::R32::Epsilon));
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type OutRange(::Wiz::Real64::In v, ::Wiz::Real64::In Min, ::Wiz::Real64::In Max)
+        WIZ_INLINE ::Wiz::Bool::Type OutRange(::Wiz::R64::In v, ::Wiz::R64::In Min, ::Wiz::R64::In Max)
         {
-            return (v < (Min - ::Wiz::Real64::Epsilon)) || (v > (Max + ::Wiz::Real64::Epsilon));
+            return (v < (Min - ::Wiz::R64::Epsilon)) || (v > (Max + ::Wiz::R64::Epsilon));
         }
 
     } /// end of namespace Nearly
     /////////////////////////
 } /// end of namespace Wiz
 
-#endif /*__WIZ_BASE_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__*/

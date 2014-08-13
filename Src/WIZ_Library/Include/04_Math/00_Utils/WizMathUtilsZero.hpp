@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__
 
 #include "../../Config/WizConfig.hpp"
 #include "../Core/WizBaseCoreTypeBool.hpp"
@@ -110,15 +110,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsZero(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type IsZero(::Wiz::R32::In InVal)
         {
-            return (InVal >= ::Wiz::Real32::MinZeroEp) && (InVal <= ::Wiz::Real32::MaxZeroEp);
+            return (InVal >= ::Wiz::R32::MinZeroEp) && (InVal <= ::Wiz::R32::MaxZeroEp);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsZero(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type IsZero(::Wiz::R64::In InVal)
         {
-            return (InVal >= ::Wiz::Real64::MinZeroEp) && (InVal <= ::Wiz::Real64::MaxZeroEp);
+            return (InVal >= ::Wiz::R64::MinZeroEp) && (InVal <= ::Wiz::R64::MaxZeroEp);
         }
 
         /// NotZero
@@ -129,15 +129,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotZero(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type NotZero(::Wiz::R32::In InVal)
         {
-            return (InVal < ::Wiz::Real32::MinZeroEp) || (InVal > ::Wiz::Real32::MaxZeroEp);
+            return (InVal < ::Wiz::R32::MinZeroEp) || (InVal > ::Wiz::R32::MaxZeroEp);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotZero(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type NotZero(::Wiz::R64::In InVal)
         {
-            return (InVal < ::Wiz::Real64::MinZeroEp) || (InVal > ::Wiz::Real64::MaxZeroEp);
+            return (InVal < ::Wiz::R64::MinZeroEp) || (InVal > ::Wiz::R64::MaxZeroEp);
         }
 
         /// LessZero
@@ -148,15 +148,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessZero(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessZero(::Wiz::R32::In InVal)
         {
-            return InVal < ::Wiz::Real32::MinZeroEp;
+            return InVal < ::Wiz::R32::MinZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessZero(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessZero(::Wiz::R64::In InVal)
         {
-            return InVal < ::Wiz::Real64::MinZeroEp;
+            return InVal < ::Wiz::R64::MinZeroEp;
         }
 
         /// GreaterZero
@@ -167,15 +167,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterZero(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterZero(::Wiz::R32::In InVal)
         {
-            return InVal > ::Wiz::Real32::MaxZeroEp;
+            return InVal > ::Wiz::R32::MaxZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterZero(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterZero(::Wiz::R64::In InVal)
         {
-            return InVal > ::Wiz::Real64::MaxZeroEp;
+            return InVal > ::Wiz::R64::MaxZeroEp;
         }
 
         /// LessEqualZero
@@ -186,15 +186,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualZero(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqualZero(::Wiz::R32::In InVal)
         {
-            return InVal <= ::Wiz::Real32::MaxZeroEp;
+            return InVal <= ::Wiz::R32::MaxZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualZero(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqualZero(::Wiz::R64::In InVal)
         {
-            return InVal <= ::Wiz::Real64::MaxZeroEp;
+            return InVal <= ::Wiz::R64::MaxZeroEp;
         }
 
         /// GreaterEqualZero
@@ -205,18 +205,18 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualZero(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualZero(::Wiz::R32::In InVal)
         {
-            return InVal >= ::Wiz::Real32::MinZeroEp;
+            return InVal >= ::Wiz::R32::MinZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualZero(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualZero(::Wiz::R64::In InVal)
         {
-            return InVal >= ::Wiz::Real64::MinZeroEp;
+            return InVal >= ::Wiz::R64::MinZeroEp;
         }
     } /// end of namespace Nearly
     /////////////////////////
 } /// end of namespace Wiz
 
-#endif /*__WIZ_BASE_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__*/

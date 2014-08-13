@@ -1,9 +1,6 @@
 #ifndef __WIZ_MATH_UTILS_INTERPOLATE_HPP__SHANHAOBO_19800429__
 #define __WIZ_MATH_UTILS_INTERPOLATE_HPP__SHANHAOBO_19800429__
 
-#include "../../Base/Type/WizBaseType.hpp"
-#include "../../DataType/WizDataTypeScalar.hpp"
-
 namespace Wiz
 {
     //////////////////////////////////////////////////////////////////////////

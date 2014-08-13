@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_TEMPLATE_ONE_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TEMPLATE_ONE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_TEMPLATE_ONE_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_TEMPLATE_ONE_HPP__SHANHAOBO_19800429__
 
 #include "../../Config/WizConfig.hpp"
 #include "../Core/WizBaseCoreTypeBool.hpp"
@@ -108,15 +108,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsOne(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type IsOne(::Wiz::R32::In InVal)
         {
-            return (InVal >= ::Wiz::Real32::MinOneEp) && (InVal <= ::Wiz::Real32::MaxOneEp);
+            return (InVal >= ::Wiz::R32::MinOneEp) && (InVal <= ::Wiz::R32::MaxOneEp);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsOne(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type IsOne(::Wiz::R64::In InVal)
         {
-            return (InVal >= ::Wiz::Real64::MinOneEp) && (InVal <= ::Wiz::Real64::MaxOneEp);
+            return (InVal >= ::Wiz::R64::MinOneEp) && (InVal <= ::Wiz::R64::MaxOneEp);
         }
 
         /// NotOne
@@ -127,15 +127,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotOne(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type NotOne(::Wiz::R32::In InVal)
         {
-            return (InVal < ::Wiz::Real32::MinOneEp) || (InVal > ::Wiz::Real32::MaxOneEp);
+            return (InVal < ::Wiz::R32::MinOneEp) || (InVal > ::Wiz::R32::MaxOneEp);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotOne(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type NotOne(::Wiz::R64::In InVal)
         {
-            return (InVal < ::Wiz::Real64::MinOneEp) || (InVal > ::Wiz::Real64::MaxOneEp);
+            return (InVal < ::Wiz::R64::MinOneEp) || (InVal > ::Wiz::R64::MaxOneEp);
         }
 
         /// LessOne
@@ -146,15 +146,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessOne(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessOne(::Wiz::R32::In InVal)
         {
-            return InVal < ::Wiz::Real32::MinOneEp;
+            return InVal < ::Wiz::R32::MinOneEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessOne(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessOne(::Wiz::R64::In InVal)
         {
-            return InVal < ::Wiz::Real64::MinOneEp;
+            return InVal < ::Wiz::R64::MinOneEp;
         }
 
         /// GreaterOne
@@ -165,15 +165,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(::Wiz::R32::In InVal)
         {
-            return InVal > ::Wiz::Real32::MaxOneEp;
+            return InVal > ::Wiz::R32::MaxOneEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(::Wiz::R64::In InVal)
         {
-            return InVal > ::Wiz::Real64::MaxOneEp;
+            return InVal > ::Wiz::R64::MaxOneEp;
         }
 
         /// LessEqualOne
@@ -184,15 +184,15 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(::Wiz::R32::In InVal)
         {
-            return InVal <= ::Wiz::Real32::MaxOneEp;
+            return InVal <= ::Wiz::R32::MaxOneEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(::Wiz::R64::In InVal)
         {
-            return InVal <= ::Wiz::Real64::MaxOneEp;
+            return InVal <= ::Wiz::R64::MaxOneEp;
         }
 
         /// GreaterEqualOne
@@ -203,18 +203,18 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(::Wiz::Real32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(::Wiz::R32::In InVal)
         {
-            return InVal >= ::Wiz::Real32::MinOneEp;
+            return InVal >= ::Wiz::R32::MinOneEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(::Wiz::Real64::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(::Wiz::R64::In InVal)
         {
-            return InVal >= ::Wiz::Real64::MinOneEp;
+            return InVal >= ::Wiz::R64::MinOneEp;
         }
     } /// end of namespace Nearly
 
 } /// end of namespace Wiz
 
-#endif /*__WIZ_BASE_TEMPLATE_ONE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_TEMPLATE_ONE_HPP__SHANHAOBO_19800429__*/
