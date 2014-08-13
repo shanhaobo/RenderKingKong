@@ -61,6 +61,9 @@
     <Filter Include="Include\04_Math\00_Utils">
       <UniqueIdentifier>{b0e3b74b-5d02-4000-85a0-16ddb3a3a803}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\01_Basic\03_TU%28TemplateUtils%29\Cast">
+      <UniqueIdentifier>{ede04999-5cb0-4452-b36c-e2465e60b9c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -176,6 +179,18 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsMisc.hpp">
       <Filter>Include\04_Math\00_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCast.hpp">
+      <Filter>Include\01_Basic\03_TU%28TemplateUtils%29\Cast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCastForce.hpp">
+      <Filter>Include\01_Basic\03_TU%28TemplateUtils%29\Cast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCastLexical.hpp">
+      <Filter>Include\01_Basic\03_TU%28TemplateUtils%29\Cast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCastStatic.hpp">
+      <Filter>Include\01_Basic\03_TU%28TemplateUtils%29\Cast</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -35,6 +35,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeVoid.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMU.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTU.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCast.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCastForce.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCastLexical.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TU\WizBasicTUCastStatic.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTT.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTBool.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TT\WizBasicTTIF.hpp" />
