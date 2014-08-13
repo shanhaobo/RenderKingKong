@@ -1,6 +1,4 @@
-RKK_RDL_METHOD(
-    CreateRenderTarget,
-    ::rkk::RenderTarget::ptr,
-    ()
-    );
+
+
+RKK_RDL_METHOD(::rkk::RenderTarget::ptr, CreateRenderTarget, ());
 

@@ -19,7 +19,7 @@ namespace rkk
 
         public:
 #           undef RKK_RDL_METHOD
-#           define RKK_RDL_METHOD(MPName, MPRet, MPParam)     virtual MPRet MPName MPParam = 0
+#           define RKK_RDL_METHOD(MPRet, MPName, MPParam)     virtual MPRet MPName MPParam = 0
 #               include "RenderDeviceLayerMethod.hpp"
 #           undef RKK_RDL_METHOD
         };
