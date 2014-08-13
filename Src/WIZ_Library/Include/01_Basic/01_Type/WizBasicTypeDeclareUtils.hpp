@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_CORE_DECLARE_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_CORE_DECLARE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_CORE_DECLARE_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_CORE_DECLARE_HPP__SHANHAOBO_19800429__
 
 #include "../../00_Config/WizConfig.hpp"
 
@@ -46,4 +46,4 @@
 
 ////////////////////////////////////////////////////////////////////////////
 
-#endif /*__WIZ_BASE_CORE_DECLARE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_CORE_DECLARE_HPP__SHANHAOBO_19800429__*/

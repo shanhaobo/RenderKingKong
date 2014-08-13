@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_TYPE_VOID_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TYPE_VOID_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_TYPE_VOID_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_TYPE_VOID_HPP__SHANHAOBO_19800429__
 
 #include "./WizBasicTypeDeclareUtils.hpp"
 
@@ -12,4 +12,4 @@ namespace Wiz
     } /// end of namespace Void
 } /// end of namespace Wiz
 
-#endif /*__WIZ_BASE_TYPE_VOID_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_TYPE_VOID_HPP__SHANHAOBO_19800429__*/

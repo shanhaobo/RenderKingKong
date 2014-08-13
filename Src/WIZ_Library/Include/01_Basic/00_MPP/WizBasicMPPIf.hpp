@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_MPP_IF_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_MPP_IF_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_MPP_IF_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_MPP_IF_HPP__SHANHAOBO_19800429__
 
 #include "./WizBasicMPPCombine.hpp"
 #include "./WizBasicMPPBool.hpp"
@@ -13,4 +13,4 @@
 #define WIZ_MPP_PREDEF_IF_0(T, F) F
 #define WIZ_MPP_PREDEF_IF_1(T, F) T
 
-#endif /*__WIZ_BASE_MPP_IF_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_MPP_IF_HPP__SHANHAOBO_19800429__*/

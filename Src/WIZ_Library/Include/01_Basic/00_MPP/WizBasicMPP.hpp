@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_MPP_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_MPP_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_MPP_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_MPP_HPP__SHANHAOBO_19800429__
 
 #include "./WizBasicMPPCombine.hpp"
 
@@ -19,4 +19,4 @@
 
 #include "./WizBasicMPPTupleElem.hpp"
 
-#endif /*__WIZ_BASE_MPP_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_MPP_HPP__SHANHAOBO_19800429__*/

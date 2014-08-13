@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_MPP_TUPLE_ELEM_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_MPP_TUPLE_ELEM_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_MPP_TUPLE_ELEM_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_MPP_TUPLE_ELEM_HPP__SHANHAOBO_19800429__
 
 /// 这个是获取tuple元素的
 /// WIZ_MPP_TUPLE_ELEM(3, 1, (X, Y, Z)) => Y
@@ -360,4 +360,4 @@
 #define WIZ_MPP_PREDEF_TUPLE_ELEM_25_23(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y) x
 #define WIZ_MPP_PREDEF_TUPLE_ELEM_25_24(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y) y
 
-#endif /*__WIZ_BASE_MPP_TUPLE_ELEM_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_MPP_TUPLE_ELEM_HPP__SHANHAOBO_19800429__*/

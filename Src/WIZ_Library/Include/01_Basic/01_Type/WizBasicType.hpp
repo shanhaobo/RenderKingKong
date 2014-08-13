@@ -1,5 +1,5 @@
-#ifndef __WIZ_BASE_TYPE_HPP__SHANHAOBO_19800429__
-#define __WIZ_BASE_TYPE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_TYPE_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_TYPE_HPP__SHANHAOBO_19800429__
 
 #include "./WizBasicTypeInt.hpp"
 #include "./WizBasicTypeReal.hpp"
@@ -8,4 +8,4 @@
 #include "./WizBasicTypeVoid.hpp"
 #include "./WizBasicTypeSize.hpp"
 
-#endif /*__WIZ_BASE_TYPE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_TYPE_HPP__SHANHAOBO_19800429__*/
