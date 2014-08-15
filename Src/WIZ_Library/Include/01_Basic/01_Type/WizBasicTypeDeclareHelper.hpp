@@ -25,6 +25,16 @@
 
 /////////////////////////////////////////////////////////
 
+#define WIZ_DECLARE_HELPER_I()                                      \
+    WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::I::Type)         \
+    static ::Wiz::I::TypeC Min = ::Wiz::I::Min;                     \
+    static ::Wiz::I::TypeC Max = ::Wiz::I::Max;
+
+#define WIZ_DECLARE_HELPER_U()                                      \
+    WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::U::Type)         \
+    static ::Wiz::U::TypeC Min = ::Wiz::U::Min;                     \
+    static ::Wiz::U::TypeC Max = ::Wiz::U::Max;
+
 #define WIZ_DECLARE_HELPER_I8()                                     \
     WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE(::Wiz::I8::Type)        \
     static ::Wiz::I8::TypeC Min = ::Wiz::I8::Min;                   \

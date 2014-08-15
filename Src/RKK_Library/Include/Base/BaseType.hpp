@@ -13,6 +13,16 @@
 
 namespace rkk
 {
+    namespace I
+    {
+        WIZ_DECLARE_HELPER_I();
+    }
+
+    namespace U
+    {
+        WIZ_DECLARE_HELPER_U();
+    }
+
     namespace I8
     {
         WIZ_DECLARE_HELPER_I8();
