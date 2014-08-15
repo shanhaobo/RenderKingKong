@@ -78,11 +78,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\BaseMacro.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\BaseTemplate.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\BaseType.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\Base.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseMacro.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseTemplate.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseType.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\TypeDeclareUtils.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Core.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\TypeDeclareUtils.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderCore.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_PixelShader.hpp" />

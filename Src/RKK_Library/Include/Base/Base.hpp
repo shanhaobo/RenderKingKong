@@ -1,8 +1,8 @@
-#ifndef __RENDERKINGKONG_CORE_HPP__
-#define __RENDERKINGKONG_CORE_HPP__
+#ifndef __RENDERKINGKONG_BASE_HPP__
+#define __RENDERKINGKONG_BASE_HPP__
 
 #include "./BaseMacro.hpp"
 #include "./BaseType.hpp"
 #include "./BaseTemplate.hpp"
 
-#endif /// __RENDERKINGKONG_CORE_HPP__
+#endif /// __RENDERKINGKONG_BASE_HPP__

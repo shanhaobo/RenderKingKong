@@ -36,19 +36,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\BaseMacro.hpp">
-      <Filter>Include\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\BaseTemplate.hpp">
-      <Filter>Include\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\BaseType.hpp">
-      <Filter>Include\Core</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Core.hpp">
-      <Filter>Include\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\TypeDeclareUtils.hpp">
       <Filter>Include\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderTarget.hpp">
@@ -89,6 +77,21 @@
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer_D3D11.hpp">
       <Filter>Private\RenderDeviceLayer\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\Base.hpp">
+      <Filter>Include\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseMacro.hpp">
+      <Filter>Include\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseTemplate.hpp">
+      <Filter>Include\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseType.hpp">
+      <Filter>Include\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\TypeDeclareUtils.hpp">
+      <Filter>Include\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
