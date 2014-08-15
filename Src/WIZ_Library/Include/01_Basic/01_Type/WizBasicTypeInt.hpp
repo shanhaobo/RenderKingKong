@@ -111,16 +111,6 @@ namespace Wiz
     //////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////
 
-    namespace I
-    {
-        WIZ_MINMAX_INT(Type);
-    } /// end of namespace I
-
-    namespace U
-    {
-        WIZ_MINMAX_UINT(Type);
-    } /// end of namespace U
-
 #   define WIZ_MIN_INT(t) ((t)(((t)1) << ((sizeof(t) << 3) - 1)))
 #   define WIZ_MAX_INT(t) ((t)(~(WIZ_MIN_INT(t))))
 #   define WIZ_MIN_UINT(t) ((t)0)
@@ -134,7 +124,18 @@ namespace Wiz
     static const t Min = WIZ_MIN_UINT(t);       \
     static const t Max = WIZ_MAX_UINT(t);
 
-    ///====================================///
+///====================================///
+
+    namespace I
+    {
+        WIZ_MINMAX_INT(Type);
+    } /// end of namespace I
+
+    namespace U
+    {
+        WIZ_MINMAX_UINT(Type);
+    } /// end of namespace U
+
     namespace I8
     {
         WIZ_MINMAX_INT(Type);

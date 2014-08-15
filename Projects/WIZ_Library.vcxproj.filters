@@ -16,18 +16,6 @@
     <Filter Include="Include\01_Basic\00_MPP%28MacroPreprocesssor%29">
       <UniqueIdentifier>{815d4eab-ef16-4457-9b11-83547072b547}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\02_Advanced">
-      <UniqueIdentifier>{901430da-89cc-47b9-9ff3-d8fbdb210674}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Include\02_Advanced\01_Type">
-      <UniqueIdentifier>{d4c19272-d869-4567-9fec-e88acfafffb1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Include\02_Advanced\01_Type\SmartPtr">
-      <UniqueIdentifier>{bf6a3078-b2b6-4f76-b4a0-84e1e1e865e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Include\02_Advanced\01_Type\Container">
-      <UniqueIdentifier>{0f06ca53-e474-4d09-8851-6160c42a4284}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Include\03_Utils">
       <UniqueIdentifier>{54af974b-3083-4f3f-a2f8-add195150289}</UniqueIdentifier>
     </Filter>
@@ -63,6 +51,18 @@
     </Filter>
     <Filter Include="Include\01_Basic\03_TT%28TypeTraits%29">
       <UniqueIdentifier>{07d5db69-e505-47e3-b243-fb6fd72f99e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29">
+      <UniqueIdentifier>{901430da-89cc-47b9-9ff3-d8fbdb210674}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29\01_Type">
+      <UniqueIdentifier>{d4c19272-d869-4567-9fec-e88acfafffb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29\01_Type\SmartPtr">
+      <UniqueIdentifier>{bf6a3078-b2b6-4f76-b4a0-84e1e1e865e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29\01_Type\Container">
+      <UniqueIdentifier>{0f06ca53-e474-4d09-8851-6160c42a4284}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -192,10 +192,27 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTU.hpp">
       <Filter>Include\01_Basic\04_TU%28TemplateUtils%29</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvTypeEnum.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp">
+      <Filter>Include\03_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
       <Filter>Include\04_Math\01_Basic\Vector</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\DevTips_Container.txt">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </Text>
+    <Text Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\SmartPtr\DevTips_SmartPtr.txt">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\SmartPtr</Filter>
+    </Text>
   </ItemGroup>
 </Project>

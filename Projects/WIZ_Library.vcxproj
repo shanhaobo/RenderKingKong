@@ -43,6 +43,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastForce.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastLexical.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastStatic.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvTypeEnum.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtils.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsCompare.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsInterpolator.hpp" />
@@ -56,6 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\DevTips_Container.txt" />
+    <Text Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\SmartPtr\DevTips_SmartPtr.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D97800BC-87E5-42CD-A999-B99A4E5B1244}</ProjectGuid>
