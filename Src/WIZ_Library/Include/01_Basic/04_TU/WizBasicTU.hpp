@@ -2,7 +2,7 @@
 #define __WIZ_BASIC_TU_HPP__SHANHAOBO_19800429__
 
 #include "../01_Type/WizBasicType.hpp"
-#include "../02_MacroUtils/WizBasicMacroUtils.hpp"
+#include "../02_MU/WizBasicMU.hpp"
 
 namespace Wiz
 {

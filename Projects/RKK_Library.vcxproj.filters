@@ -93,8 +93,20 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Base\TypeDeclareUtils.hpp">
       <Filter>Include\Base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\CorePixelFormat.hpp">
-      <Filter>Include\Core</Filter>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumPixelFormat.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescRenderTarget.hpp">
+      <Filter>Include\Core\Desc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumBlend.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumComparison.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumStencil.hpp">
+      <Filter>Include\Core\Enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +142,12 @@
     </Filter>
     <Filter Include="Include\Base">
       <UniqueIdentifier>{e00b57bf-8ae1-4459-b6f7-858b9034307a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Core\Enum">
+      <UniqueIdentifier>{4b973158-4e4d-4e65-ba10-9236a6b0e7b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Core\Desc">
+      <UniqueIdentifier>{43a56ce0-9858-4cc2-a1c4-0e12623a1926}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
