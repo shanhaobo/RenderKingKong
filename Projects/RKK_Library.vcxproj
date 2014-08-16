@@ -86,9 +86,12 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseType.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\TypeDeclareUtils.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Core.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescClear.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescMultiSample.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescRenderTarget.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumBlend.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumComparison.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumMultiSample.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumPixelFormat.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumStencil.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderCore.hpp" />
