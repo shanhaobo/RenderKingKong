@@ -1,5 +1,5 @@
-#ifndef __CORE_PIXELFORMAT_HPP__SHANHAOBO_19800429__
-#define __CORE_PIXELFORMAT_HPP__SHANHAOBO_19800429__
+#ifndef __CORE_ENUM_PIXELFORMAT_HPP__SHANHAOBO_19800429__
+#define __CORE_ENUM_PIXELFORMAT_HPP__SHANHAOBO_19800429__
 
 #include "../Base/Base.hpp"
 
@@ -153,6 +153,7 @@ namespace rkk
                 eB8G8R8A8_UNORM,
                 eB8G8R8X8_UNORM,
                 /// ========================== ///
+                eMax
             }; /// end of enum Type
             typedef ::Wiz::Enum::Type<::rkk::Enum::PixelFormat::Type, ::rkk::U::Type> type;
             RKK_DECLARE(::rkk::Enum::PixelFormat::type);
@@ -160,5 +161,5 @@ namespace rkk
     } /// end of namespace Enum
 } /// end of namespace rkk
 
-#endif /*__CORE_PIXELFORMAT_HPP__SHANHAOBO_19800429__*/
+#endif /*__CORE_ENUM_PIXELFORMAT_HPP__SHANHAOBO_19800429__*/
 
