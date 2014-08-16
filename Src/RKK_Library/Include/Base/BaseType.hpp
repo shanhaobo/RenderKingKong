@@ -100,6 +100,32 @@ namespace rkk
     {
         WIZ_DECLARE_HELPER_BOOL();
     }
+
+
+    namespace Size
+    {
+        WIZ_DECLARE_HELPER_SIZE();
+    }
+
+    namespace Size8
+    {
+        WIZ_DECLARE_HELPER_SIZE8();
+    }
+
+    namespace Size16
+    {
+        WIZ_DECLARE_HELPER_SIZE16();
+    }
+
+    namespace Size32
+    {
+        WIZ_DECLARE_HELPER_SIZE32();
+    }
+
+    namespace Size64
+    {
+        WIZ_DECLARE_HELPER_SIZE64();
+    }
 } /// namespace rkk
 
 #endif /// __RENDERKINGKONG_BASETYPE_HPP__

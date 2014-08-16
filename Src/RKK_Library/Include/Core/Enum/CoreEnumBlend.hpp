@@ -1,7 +1,7 @@
 #ifndef __CORE_ENUM_BLEND_HPP__SHANHAOBO_19800429__
 #define __CORE_ENUM_BLEND_HPP__SHANHAOBO_19800429__
 
-#include "../rkkDataTypeBase.hpp"
+#include "../../Base/Base.hpp"
 
 namespace rkk
 {
@@ -22,7 +22,7 @@ namespace rkk
                     eTranslucency       = 5,
                     eTranslucencyColor  = 6,
                 }; /// end of enum ____
-                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Usage::____, ::rkk::U8::Type> Type;
+                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Usage::____, ::rkk::U8::type> Type;
                 RKK_DECLARE(::rkk::Enum::Blend::Usage::Type);
             } /// end of namespace Usage
 
@@ -41,7 +41,7 @@ namespace rkk
                     eDestAlpha          = 8,        /// (Ad, Ad, Ad, Ad)
                     eDestAlphaInv       = 9,        /// (1 - Ad, 1 - Ad, 1 - Ad, 1 - Ad)
                 }; /// end of enum ____
-                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Factor::____, ::rkk::U8::Type> Type;
+                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Factor::____, ::rkk::U8::type> Type;
                 RKK_DECLARE(::rkk::Enum::Blend::Factor::Type);
             } /// end of namespace Factor
 
@@ -56,7 +56,7 @@ namespace rkk
                     eMin                = 3,        /// Result = MIN(Source, Destination)
                     eMax                = 4,        /// Result = MAX(Source, Destination)
                 }; /// end of enum ____
-                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Op::____, ::rkk::U8::Type> Type;
+                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Op::____, ::rkk::U8::type> Type;
                 RKK_DECLARE(::rkk::Enum::Blend::Op::Type);
             } /// end of namespace Op
 
@@ -73,7 +73,7 @@ namespace rkk
                     eGreater	        = 6,
                     eGreaterEqual       = 7,
                 }; /// end of enum ____
-                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Test::____, ::rkk::U8::Type> Type;
+                typedef ::Wiz::Enum::Type<::rkk::Enum::Blend::Test::____, ::rkk::U8::type> Type;
                 RKK_DECLARE(::rkk::Enum::Blend::Test::Type);
             } /// end of namespace Test
         } /// end of namespace Blend

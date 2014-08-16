@@ -6,7 +6,17 @@ namespace rkk
     {
         namespace D3D11
         {
-            ::rkk::RenderTarget::ptr type::CreateRenderTarget()
+            type::type()
+            {
+
+            }
+
+            type::~type()
+            {
+
+            }
+
+            ::rkk::RenderTarget::ptr type::CreateRenderTarget(::rkk::Desc::RenderTarget::in)
             {
                 return RKK_NULLPTR;
             }

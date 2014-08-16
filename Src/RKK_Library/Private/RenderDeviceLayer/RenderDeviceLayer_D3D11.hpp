@@ -11,8 +11,7 @@ namespace rkk
         {
             ///////////////////////////
             ///////////////////////////
-
-            class type : public RenderDeviceLayer::type
+            RKK_CLASS : public RenderDeviceLayer::type
             {
             public:
                 type();
@@ -24,8 +23,6 @@ namespace rkk
 #                   include "../../Include/RenderDeviceLayer/RenderDeviceLayerMethod.hpp"
 #               undef RKK_RDL_METHOD
             };
-            RKK_DECLARE(type);
-
             ///////////////////////////
             ///////////////////////////
         } /// end of namespace D3D11

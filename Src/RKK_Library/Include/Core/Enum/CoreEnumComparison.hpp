@@ -1,7 +1,7 @@
 #ifndef __CORE_ENUM_COMPARISON_HPP__SHANHAOBO_19800429__
 #define __CORE_ENUM_COMPARISON_HPP__SHANHAOBO_19800429__
 
-#include "../rkkDataTypeBase.hpp"
+#include "../../Base/Base.hpp"
 
 namespace rkk
 {
@@ -20,7 +20,7 @@ namespace rkk
                 eGreater	        = 6,
                 eGreaterEqual       = 7,
             }; /// end of enum ____
-            typedef ::Wiz::Enum::Type<::rkk::Enum::Comparison::____, ::rkk::U8::Type> Type;
+            typedef ::Wiz::Enum::Type<::rkk::Enum::Comparison::____, ::rkk::U8::type> Type;
             RKK_DECLARE(::rkk::Enum::Comparison::Type);
         } /// end of namespace Comparison
     } /// end of namespace Enum
