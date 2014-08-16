@@ -7,21 +7,12 @@ namespace rkk
 {
     namespace RenderTarget
     {
-        namespace Desc
-        {
-            class type
-            {
-
-            };
-        } /// end of namespace Desc
-
-        class type
+        RKK_CLASS
         {
         public:
             type();
             ~type();
         };
-        RKK_DECLARE(type);
     } /// namespace RenderTarget
 } /// namespace rkk
 

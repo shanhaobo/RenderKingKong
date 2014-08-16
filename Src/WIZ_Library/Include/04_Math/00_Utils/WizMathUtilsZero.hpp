@@ -1,9 +1,7 @@
 #ifndef __WIZ_BASIC_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASIC_TEMPLATE_ZERO_HPP__SHANHAOBO_19800429__
 
-#include "../../Config/WizConfig.hpp"
-#include "../Core/WizBaseCoreTypeBool.hpp"
-#include "../Core/WizBaseCoreTypeReal.hpp"
+#include "../../01_Basic/01_Type/WizBasicType.hpp"
 
 namespace Wiz
 {
@@ -104,19 +102,19 @@ namespace Wiz
     {
         /// IsZero
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type IsZero(const T& InVal)
+        WIZ_INLINE::Wiz::Bool::Type IsZero(T const & InVal)
         {
             return ::Wiz::Absolute::IsZero(InVal);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsZero(::Wiz::R32::In InVal)
+        WIZ_INLINE ::Wiz::Bool::Type IsZero(::Wiz::R32::Type const & InVal)
         {
             return (InVal >= ::Wiz::R32::MinZeroEp) && (InVal <= ::Wiz::R32::MaxZeroEp);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type IsZero(::Wiz::R64::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type IsZero(::Wiz::R64::Type const & InVal)
         {
             return (InVal >= ::Wiz::R64::MinZeroEp) && (InVal <= ::Wiz::R64::MaxZeroEp);
         }
@@ -129,13 +127,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotZero(::Wiz::R32::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type NotZero(::Wiz::R32::Type const & InVal)
         {
             return (InVal < ::Wiz::R32::MinZeroEp) || (InVal > ::Wiz::R32::MaxZeroEp);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type NotZero(::Wiz::R64::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type NotZero(::Wiz::R64::Type const & InVal)
         {
             return (InVal < ::Wiz::R64::MinZeroEp) || (InVal > ::Wiz::R64::MaxZeroEp);
         }
@@ -148,13 +146,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessZero(::Wiz::R32::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessZero(::Wiz::R32::Type const & InVal)
         {
             return InVal < ::Wiz::R32::MinZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessZero(::Wiz::R64::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessZero(::Wiz::R64::Type const & InVal)
         {
             return InVal < ::Wiz::R64::MinZeroEp;
         }
@@ -167,13 +165,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterZero(::Wiz::R32::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterZero(::Wiz::R32::Type const & InVal)
         {
             return InVal > ::Wiz::R32::MaxZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterZero(::Wiz::R64::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterZero(::Wiz::R64::Type const & InVal)
         {
             return InVal > ::Wiz::R64::MaxZeroEp;
         }
@@ -186,13 +184,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualZero(::Wiz::R32::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessEqualZero(::Wiz::R32::Type const & InVal)
         {
             return InVal <= ::Wiz::R32::MaxZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualZero(::Wiz::R64::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessEqualZero(::Wiz::R64::Type const & InVal)
         {
             return InVal <= ::Wiz::R64::MaxZeroEp;
         }
@@ -205,13 +203,13 @@ namespace Wiz
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualZero(::Wiz::R32::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterEqualZero(::Wiz::R32::Type const & InVal)
         {
             return InVal >= ::Wiz::R32::MinZeroEp;
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualZero(::Wiz::R64::In InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterEqualZero(::Wiz::R64::Type const & InVal)
         {
             return InVal >= ::Wiz::R64::MinZeroEp;
         }

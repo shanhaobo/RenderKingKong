@@ -7,14 +7,12 @@ namespace rkk
 {
     namespace RenderShader
     {
-        class type
+        RKK_CLASS
         {
         public:
             type();
             ~type();
         };
-
-        RKK_DECLARE(type);
     } /// namespace RenderShader
 } /// namespace rkk
 

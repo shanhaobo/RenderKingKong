@@ -1,4 +1,4 @@
-#include "../../Include/RenderCore/RenderStateManager.hpp"
+#include "./RenderStateManager.hpp"
 
 namespace rkk
 {
@@ -14,9 +14,12 @@ namespace rkk
             {
             }
 
-            Bool::type type::Update()
+            Bool::type type::Update(RenderState::in inNewState)
             {
-                return m_WorkingContent.Update(m_Content);
+
+                m_WorkingState = inNewState;
+
+                return Bool::True;
             }
         } /// end of namespace Manager
     } /// namespace RenderState

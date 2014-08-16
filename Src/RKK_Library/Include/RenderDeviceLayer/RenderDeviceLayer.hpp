@@ -30,7 +30,7 @@ namespace rkk
 
         ptr Create();
 
-        Void::type Destroy(ptr);
+        Void::type Destroy(ptr& RDLPtr);
 
         ///////////////////////////
         ///////////////////////////

@@ -1,7 +1,9 @@
 #ifndef __WIZ_BASIC_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASIC_TEMPLATE_COMPARE_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseTemplateZero.hpp"
+#include "../../01_Basic/01_Type/WizBasicType.hpp"
+#include "./WizMathUtilsZero.hpp"
+#include "./WizMathUtilsOne.hpp"
 
 namespace Wiz
 {
@@ -101,7 +103,7 @@ namespace Wiz
     {
         /// IsEqual
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type IsEqual(const T& v1, const T& v2)
+        WIZ_INLINE ::Wiz::Bool::Type IsEqual(const T v1, const T v2)
         {
             return ::Wiz::Absolute::IsEqual<T>(v1, v2);
         }
@@ -120,7 +122,7 @@ namespace Wiz
 
         /// NotEqual
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type NotEqual(const T& v1, const T& v2)
+        WIZ_INLINE ::Wiz::Bool::Type NotEqual(const T v1, const T v2)
         {
             return ::Wiz::Absolute::NotEqual<T>(v1, v2);
         }
@@ -139,7 +141,7 @@ namespace Wiz
 
         /// Less
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type Less(const T& v1, const T& v2)
+        WIZ_INLINE ::Wiz::Bool::Type Less(const T v1, const T v2)
         {
             return ::Wiz::Absolute::Less<T>(v1, v2);
         }
@@ -158,7 +160,7 @@ namespace Wiz
 
         /// Greater
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type Greater(const T& v1, const T& v2)
+        WIZ_INLINE ::Wiz::Bool::Type Greater(const T v1, const T v2)
         {
             return ::Wiz::Absolute::Greater<T>(v1, v2);
         }
@@ -177,7 +179,7 @@ namespace Wiz
 
         /// LessEqual
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqual(const T& v1, const T& v2)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqual(const T v1, const T v2)
         {
             return ::Wiz::Absolute::LessEqual<T>(v1, v2);
         }
@@ -196,7 +198,7 @@ namespace Wiz
 
         /// GreaterEqual
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqual(const T& v1, const T& v2)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqual(const T v1, const T v2)
         {
             return ::Wiz::Absolute::GreaterEqual<T>(v1, v2);
         }
@@ -215,7 +217,7 @@ namespace Wiz
 
         /// InRange [Min, Max] Close
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type InRange(const T& v, const T& Min, const T& Max)
+        WIZ_INLINE ::Wiz::Bool::Type InRange(const T v, const T Min, const T Max)
         {
             return ::Wiz::Absolute::InRange<T>(v, Min, Max);
         }
@@ -234,7 +236,7 @@ namespace Wiz
 
         /// OutRange
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type OutRange(const T& v, const T& Min, const T& Max)
+        WIZ_INLINE ::Wiz::Bool::Type OutRange(const T v, const T Min, const T Max)
         {
             return ::Wiz::Absolute::OutRange<T>(v, Min, Max);
         }

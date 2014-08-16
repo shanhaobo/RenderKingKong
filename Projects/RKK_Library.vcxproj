@@ -79,6 +79,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\RKK_Library\Include\Base\Base.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColor.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColorU32.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseMacro.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseTemplate.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseType.hpp" />
@@ -93,21 +95,22 @@
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_PixelShader.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_VertexShader.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderStateContent.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderStateManager.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderState.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderTarget.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayerMethod.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Renderer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderFlow.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderPass.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer_D3D11.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Src\RKK_Library\Private\Base\BaseColor.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader_PixelShader.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader_VertexShader.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderStateContent.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderState.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderTarget.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer.cpp" />

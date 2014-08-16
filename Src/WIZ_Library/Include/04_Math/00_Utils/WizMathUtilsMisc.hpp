@@ -3,7 +3,8 @@
 
 #include <math.h>
 
-#include "../01_Basic/01_Type/WizBasicType.hpp"
+#include "../../01_Basic/01_Type/WizBasicType.hpp"
+#include "../../01_Basic/04_TU/WizBasicTUCast.hpp"
 
 namespace Wiz
 {
@@ -277,7 +278,7 @@ namespace Wiz
         return r - ::Wiz::TruncF(r);
     }
 
-    WIZ_INLINE ::Wiz::Int::Type QuadraticEquationRoots(::Wiz::R32::Out Root1, ::Wiz::R32::Out Root2, ::Wiz::R32::In A, ::Wiz::R32::In B, ::Wiz::R32::In C)
+    WIZ_INLINE ::Wiz::I::Type QuadraticEquationRoots(::Wiz::R32::Out Root1, ::Wiz::R32::Out Root2, ::Wiz::R32::In A, ::Wiz::R32::In B, ::Wiz::R32::In C)
     {
         if (A == 0)
         {
@@ -373,7 +374,7 @@ namespace Wiz
     }
 
     /// Quadratic 二次方程
-    WIZ_INLINE ::Wiz::Int::Type QuadraticEquationRoots(::Wiz::R64::Out Root1, ::Wiz::R64::Out Root2, ::Wiz::R64::In A, ::Wiz::R64::In B, ::Wiz::R64::In C)
+    WIZ_INLINE ::Wiz::I::Type QuadraticEquationRoots(::Wiz::R64::Out Root1, ::Wiz::R64::Out Root2, ::Wiz::R64::In A, ::Wiz::R64::In B, ::Wiz::R64::In C)
     {
         if (A == 0)
         {

@@ -6,6 +6,8 @@
 /// 高级类型
 #include "../../../WIZ_Library/Include/02_Adv/01_Type/WizAdvType.hpp"
 
+#include "../../../WIZ_Library/Include/04_Math/00_Utils/WizMathUtils.hpp"
+
 #include "./BaseMacro.hpp"
 #include "./BaseType.hpp"
 #include "./BaseTemplate.hpp"

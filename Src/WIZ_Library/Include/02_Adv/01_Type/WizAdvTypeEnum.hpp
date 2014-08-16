@@ -117,7 +117,6 @@ namespace Wiz
             }
         }; /// end of namespace Enum64
     } /// end of namespace Enum64
-
 } /// end of namespace Wiz
 
 #endif /*__WIZ_ADV_ENUM_HPP__SHANHAOBO_19800429__*/

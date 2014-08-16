@@ -9,7 +9,7 @@ namespace rkk
 {
     namespace Renderer
     {
-        class type
+        RKK_CLASS
         {
         public:
             type();
@@ -17,7 +17,6 @@ namespace rkk
 
             ::rkk::RenderDeviceLayer::ptr m_RDLPtr;
         };
-        RKK_DECLARE(type);
     } /// namespace Renderer
 } /// namespace rkk
 

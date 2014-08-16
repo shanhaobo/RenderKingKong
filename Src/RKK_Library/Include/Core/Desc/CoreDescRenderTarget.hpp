@@ -9,26 +9,26 @@ namespace rkk
     {
         namespace RenderTarget
         {
-            struct Type
+            RKK_STRUCT
             {
                 //////////////////////////////////////////////////////////////////////////
                 //////////////////////////////////////////////////////////////////////////
 
-                Type(
-                    ::rkk::Size16::In              Width,
-                    ::rkk::Size16::In              Height,
-                    ::rkk::Enum::PixelFormat::In   ColorFormat              = ::rkk::Enum::PixelFormat::eRGBA_16F_16F_16F_16F,
-                    ::rkk::Enum::PixelFormat::In   DepthFormat             = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
-                    ::rkk::Enum::PixelFormat::In   StencilFormat           = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
-                    ::rkk::UInt::In                Index                   = 0,
-                    ::rkk::Bool::In                ClearColorEnable        = ::rkk::Bool::False,
-                    ::rkk::Color::In               ClearColorValue         = ::rkk::Color::Black,
-                    ::rkk::Bool::In                ClearDepthEnable        = ::rkk::Bool::False,
-                    ::rkk::Real::In                ClearDepthValue         = 0,
-                    ::rkk::Bool::In                ClearStencilEnable      = ::rkk::Bool::False,
-                    ::rkk::UInt::In                ClearStencilValue       = 0,
-                    ::rkk::Enum::MultiSample::In   MultiSample             = ::rkk::Enum::MultiSample::eNone,
-                    ::rkk::UInt::In                MultiSampleQuality      = 0
+                type(
+                    ::rkk::Size16::In               Width,
+                    ::rkk::Size16::In               Height,
+                    ::rkk::Enum::PixelFormat::In    ColorFormat              = ::rkk::Enum::PixelFormat::eRGBA_16F_16F_16F_16F,
+                    ::rkk::Enum::PixelFormat::In    DepthFormat             = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
+                    ::rkk::Enum::PixelFormat::In    StencilFormat           = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
+                    ::rkk::U::In                    Index                   = 0,
+                    ::rkk::Bool::In                 ClearColorEnable        = ::rkk::Bool::False,
+                    ::rkk::Color::In                ClearColorValue         = ::rkk::Color::Black,
+                    ::rkk::Bool::In                 ClearDepthEnable        = ::rkk::Bool::False,
+                    ::rkk::Real::In                 ClearDepthValue         = 0,
+                    ::rkk::Bool::In                 ClearStencilEnable      = ::rkk::Bool::False,
+                    ::rkk::U::In                    ClearStencilValue       = 0,
+                    ::rkk::Enum::MultiSample::In    MultiSample             = ::rkk::Enum::MultiSample::eNone,
+                    ::rkk::U::In                    MultiSampleQuality      = 0
                     )
                     : m_Width(Width)
                     , m_Height(Height)
@@ -51,14 +51,13 @@ namespace rkk
                 ::rkk::Enum::PixelFormat::Type          m_ColorPixelFormat;
                 ::rkk::Enum::PixelFormat::Type          m_DepthPixelFormat;
                 ::rkk::Enum::PixelFormat::Type          m_StencilPixelFormat;
-                ::Wiz::UInt::Type                       m_Index;
+                ::rkk::U::Type                          m_Index;
 
                 ::rkk::Desc::Clear::Type                Clear;
 
                 ::rkk::Desc::MultiSample::Type          m_MultiSample;
 
             };
-            RKK_DECLARE(::rkk::Desc::RenderTarget::Type);
         } /// end of namespace RenderTarget
     } /// end of namespace Desc
 } /// end of namespace rkk

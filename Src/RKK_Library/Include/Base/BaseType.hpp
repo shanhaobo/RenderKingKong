@@ -1,6 +1,8 @@
 #ifndef __RENDERKINGKONG_BASETYPE_HPP__
 #define __RENDERKINGKONG_BASETYPE_HPP__
 
+#include "../../../WIZ_Library/Include/04_Math/00_Utils/WizMathUtils.hpp"
+
 #include "./TypeDeclareUtils.hpp"
 
 #undef  WIZ_DECLARE_HELPER_CUSTOM_DEFINE

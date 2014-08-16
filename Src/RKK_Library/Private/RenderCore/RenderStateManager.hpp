@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_RENDERSTATE_MANAGER_HPP__
 #define __RENDERKINGKONG_RENDERSTATE_MANAGER_HPP__
 
-#include "RenderStateContent.hpp"
+#include "../../Include/RenderCore/RenderState.hpp"
 
 namespace rkk
 {
@@ -9,21 +9,18 @@ namespace rkk
     {
         namespace Manager
         {
-            class type
+            RKK_CLASS
             {
             public:
                 type();
                 ~type();
 
             public:
-                Bool::type Update();
+                Bool::type Update(RenderState::in inNewState);
 
-            public:
-                Content::type           m_Content;
             protected:
-                Content::Working::type  m_WorkingContent;
+                RenderState::type           m_WorkingState;
             };
-            RKK_DECLARE(type);
         } /// end of namespace Manager
     } /// namespace RenderState
 } /// namespace rkk

@@ -7,8 +7,8 @@ namespace Wiz
 {
     namespace Void
     {
-        typedef void Type;
-        WIZ_DECLARE_PTR(void);
+        WIZ_DECLARE_TYPE_STDNAME(void);
+        WIZ_DECLARE_PTR;
     } /// end of namespace Void
 } /// end of namespace Wiz
 

@@ -7,13 +7,12 @@ namespace rkk
 {
     namespace RenderFlow
     {
-        class type
+        RKK_CLASS
         {
         public:
             type();
             ~type();
         };
-        RKK_DECLARE(type);
     } /// namespace RenderFlow
 } /// namespace rkk
 

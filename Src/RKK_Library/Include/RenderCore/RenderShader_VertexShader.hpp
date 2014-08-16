@@ -9,14 +9,12 @@ namespace rkk
     {
         namespace VertexShader
         {
-            class type : public RenderShader::type
+            RKK_CLASS : public RenderShader::type
             {
             public:
                 type();
                 ~type();
             };
-
-            RKK_DECLARE(type);
         } /// namespace VertexShader
     } /// namespace RenderShader
 }

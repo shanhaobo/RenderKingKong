@@ -1,12 +1,11 @@
 #ifndef __WIZ_BASE_CAST_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASE_CAST_HPP__SHANHAOBO_19800429__
 
-#include "../../../Config/WizConfig.hpp"
-#include "../WizBaseAssert.hpp"
+#include "../../00_Config/WizConfig.hpp"
 
-#include "./WizBaseCastForce.hpp"
-#include "./WizBaseCastStatic.hpp"
-#include "./WizBaseCastLexical.hpp"
+#include "./WizBasicTUCastForce.hpp"
+#include "./WizBasicTUCastStatic.hpp"
+#include "./WizBasicTUCastLexical.hpp"
 
 namespace Wiz
 {

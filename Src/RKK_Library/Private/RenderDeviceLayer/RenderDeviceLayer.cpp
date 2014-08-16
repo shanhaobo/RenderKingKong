@@ -9,8 +9,9 @@ namespace rkk
             return RKK_NULLPTR;
         }
 
-        Void::type Destroy(ptr)
+        Void::type Destroy(ptr& RDLPtr)
         {
+            RDLPtr = RKK_NULLPTR;
         }
     } /// namespace RenderDeviceLayer
 } /// namespace rkk

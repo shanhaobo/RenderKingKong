@@ -9,14 +9,12 @@ namespace rkk
     {
         namespace PixelShader
         {
-            class type : public RenderShader::type
+            RKK_CLASS : public RenderShader::type
             {
             public:
                 type();
                 ~type();
             };
-
-            RKK_DECLARE(type);
         } /// namespace PixelShader
     } /// namespace RenderShader
 } /// namespace rkk
