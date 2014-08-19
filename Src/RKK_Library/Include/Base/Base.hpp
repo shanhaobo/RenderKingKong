@@ -8,8 +8,11 @@
 
 #include "../../../WIZ_Library/Include/04_Math/00_Utils/WizMathUtils.hpp"
 
+#include "../../../WIZ_Library/Include/01_Basic/05_Mem/WizBasicMem.hpp"
+
 #include "./BaseMacro.hpp"
 #include "./BaseType.hpp"
 #include "./BaseTemplate.hpp"
+#include "./BaseObject.hpp"
 
 #endif /// __RENDERKINGKONG_BASE_HPP__

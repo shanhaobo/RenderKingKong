@@ -8,7 +8,7 @@ namespace Wiz
     namespace MemAllocator
     {
         template<int Cat>
-        class Type : public Std::Type {}
+        class Type : public Std::Type {};
 
 
 
@@ -27,7 +27,7 @@ namespace Wiz
 } /// end of namespace Wiz
 
 #if  (WIZ_DEBUG_MODE == WIZ_CFG_TRUE)
-#   define  WIZ_MALLOC(bytes, category)             ::Wiz::MemAllocator::Type<category>::AllocateWithDebugInfo(bytes, __FILE__, __LINE__, __FUNCTION__)
+#   define  WIZ_MALLOC(bytes, category)             ::Wiz::MemAllocator::Type<category>::AllocateWithDebugInfo(bytes, WIZ_FILE, WIZ_LINE, WIZ_FUNC)
 #   define  WIZ_FREE(ptr, category)                 ::Wiz::MemAllocator::Type<category>::DeallocateWithDebugInfo((void*)ptr)
 #else
 #   define  WIZ_MALLOC(bytes, category)             ::Wiz::MemAllocator::Type<category>::Allocate(bytes)
@@ -43,7 +43,7 @@ namespace Wiz
 #   define  WIZ_NEW_ARRAY_T(T, cnt, category)       ::Wiz::MemAllocator::ConstructN<T>(WIZ_MALLOC_ARRAY_T(T, cnt, category), cnt);
 #   define  WIZ_DEL_ARRAY_T(ptr, T, cnt, category)  if(ptr) {for (size_t i = 0; i < cnt; ++i){ptr[i].~T();} WIZ_FREE(ptr, category);}
 
-#   define  WIZ_NEW new (__FILE__, __LINE__, __FUNCTION__)
-#   define  WIZ_DELETE delete
+#   define  WIZ_NEW                                 new (WIZ_FILE, WIZ_LINE, WIZ_FUNC)
+#   define  WIZ_DEL                                 delete
 
 #endif /*__WIZ_MEM_ALLOCATOR_HPP__SHANHAOBO_19800429__*/

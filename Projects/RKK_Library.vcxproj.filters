@@ -126,6 +126,9 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumMultiSample.hpp">
       <Filter>Include\Core\Enum</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseObject.hpp">
+      <Filter>Include\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">

@@ -228,8 +228,11 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocatorStd.hpp">
       <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocator.hpp">
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMem.hpp">
       <Filter>Include\01_Basic\05_Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocator.hpp">
+      <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

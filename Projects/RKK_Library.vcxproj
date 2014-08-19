@@ -82,6 +82,7 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColor.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColorU32.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseMacro.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseObject.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseTemplate.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseType.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\TypeDeclareUtils.hpp" />
