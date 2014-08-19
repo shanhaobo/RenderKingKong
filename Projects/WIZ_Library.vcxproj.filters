@@ -64,6 +64,21 @@
     <Filter Include="Include\02_Adv%28Advanced%29\01_Type\Container">
       <UniqueIdentifier>{0f06ca53-e474-4d09-8851-6160c42a4284}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\01_Basic\05_Mem">
+      <UniqueIdentifier>{a98eaa99-ab5a-4218-bba5-4290fb618a4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\01_Basic\05_Mem\Allocator">
+      <UniqueIdentifier>{5a4290bd-10ac-41e2-8b1b-7539cf9aaf1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{87a0efdd-0291-4eae-ae21-5218d6c01bff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\01_Basic">
+      <UniqueIdentifier>{090316bc-4a89-400b-803f-66e60c4c2467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\01_Basic\05_Mem">
+      <UniqueIdentifier>{21aef6e8-4e59-45ab-b784-d0b2f5e4d072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -201,6 +216,15 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp">
       <Filter>Include\02_Adv%28Advanced%29\01_Type</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemObj.hpp">
+      <Filter>Include\01_Basic\05_Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocatorBase.hpp">
+      <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemRecorder.hpp">
+      <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
@@ -214,5 +238,10 @@
     <Text Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\SmartPtr\DevTips_SmartPtr.txt">
       <Filter>Include\02_Adv%28Advanced%29\01_Type\SmartPtr</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Src\WIZ_Library\Private\01_Basic\05_Mem\WizBasicMemRecorder.cpp">
+      <Filter>Private\01_Basic\05_Mem</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

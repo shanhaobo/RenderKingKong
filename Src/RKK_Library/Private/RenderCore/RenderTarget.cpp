@@ -4,7 +4,7 @@ namespace rkk
 {
     namespace RenderTarget
     {
-        type::type()
+        type::type(Desc::RenderTarget::in inDesc) : m_Description(inDesc)
         {
         }
 

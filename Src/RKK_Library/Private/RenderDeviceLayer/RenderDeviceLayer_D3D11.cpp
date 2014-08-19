@@ -16,7 +16,7 @@ namespace rkk
 
             }
 
-            ::rkk::RenderTarget::ptr type::CreateRenderTarget(::rkk::Desc::RenderTarget::in)
+            RenderTarget::ptr type::CreateRenderTarget(Desc::RenderTarget::in)
             {
                 return RKK_NULLPTR;
             }

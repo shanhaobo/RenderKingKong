@@ -200,7 +200,10 @@ namespace Wiz
     /// Not A Number
     WIZ_INLINE ::Wiz::Bool::Type IsNAN(::Wiz::R32::In v)
     {
-        return ::_isnan(v) != 0;
+        //return ::_isnan(v) != 0;
+        // std::isnan() is C99, not supported by all compilers
+        // However NaN always fails this next test, no other number does.
+        return v != v;
     }
 
     /// -INF << v << INF

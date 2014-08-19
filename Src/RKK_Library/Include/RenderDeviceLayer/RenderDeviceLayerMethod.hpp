@@ -1,2 +1,2 @@
 
-RKK_RDL_METHOD(::rkk::RenderTarget::ptr, CreateRenderTarget, (::rkk::Desc::RenderTarget::in));
+RKK_RDL_METHOD(RenderTarget::ptr, CreateRenderTarget, (Desc::RenderTarget::in));

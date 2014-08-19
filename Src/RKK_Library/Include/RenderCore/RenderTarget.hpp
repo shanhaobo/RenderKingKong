@@ -10,8 +10,10 @@ namespace rkk
         RKK_CLASS
         {
         public:
-            type();
+            type(Desc::RenderTarget::in inDesc);
             ~type();
+
+            Desc::RenderTarget::type m_Description;
         };
     } /// namespace RenderTarget
 } /// namespace rkk
