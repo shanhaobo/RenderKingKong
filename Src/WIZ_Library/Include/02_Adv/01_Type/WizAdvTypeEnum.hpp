@@ -5,62 +5,61 @@
 
 namespace Wiz
 {
-    namespace Enum
+    template<class EnumT, class StorageT>
+    class Enum
     {
-        template<class EnumT, class StorageT>
-        class Type
+    public:
+        typedef typename Enum<EnumT, StorageT>      Type;
+
+        typedef EnumT                               tEnum;
+        typedef StorageT                            tStorage;
+    public:
+        Enum()
         {
-        public:
-            typedef EnumT       tEnum;
-            typedef StorageT    tStorage;
-        public:
-            Type()
-            {
-            }
-            Type(tEnum e) : m_Value(::Wiz::Cast::Static<tStorage>(e))
-            {
-            }
-            operator tEnum() const
-            {
-                return this->Get();
-            }
-            tStorage operator=(tEnum e)
-            {
-                return this->m_Value = ::Wiz::Cast::Static<tStorage>(e);
-            }
-            ::Wiz::Bool::Type operator==(tEnum e) const
-            {
-                return this->m_Value == ::Wiz::Cast::Static<tStorage>(e);
-            }
-            ::Wiz::Bool::Type operator!=(tEnum e) const
-            {
-                return !this->operator==(e);
-            }
-            tEnum Get() const
-            {
-                return ::Wiz::Cast::Static<tEnum>(this->m_Value);;
-            }
-            //////////////////////////////////////////////////////////////////////////
-            tStorage GetStorage() const
-            {
-                return m_Value;
-            }
-            ::Wiz::Void::Type SetStorage(const tStorage& InV)
-            {
-                m_Value = InV;
-            }
-        protected:
-            tStorage m_Value;
-        };
-    } /// end of namespace Enum
+        }
+        Enum(tEnum e) : m_Value(::Wiz::Cast::Static<tStorage>(e))
+        {
+        }
+        operator tEnum() const
+        {
+            return this->Get();
+        }
+        tStorage operator=(tEnum e)
+        {
+            return this->m_Value = ::Wiz::Cast::Static<tStorage>(e);
+        }
+        ::Wiz::Bool::Type operator==(tEnum e) const
+        {
+            return this->m_Value == ::Wiz::Cast::Static<tStorage>(e);
+        }
+        ::Wiz::Bool::Type operator!=(tEnum e) const
+        {
+            return !this->operator==(e);
+        }
+        tEnum Get() const
+        {
+            return ::Wiz::Cast::Static<tEnum>(this->m_Value);;
+        }
+        //////////////////////////////////////////////////////////////////////////
+        tStorage GetStorage() const
+        {
+            return m_Value;
+        }
+        ::Wiz::Void::Type SetStorage(const tStorage& InV)
+        {
+            m_Value = InV;
+        }
+    protected:
+        tStorage m_Value;
+    }; /// end of class Enum
 
     namespace Enum8
     {
         template<class EnumT>
-        class Type : public ::Wiz::Enum::Type<EnumT, ::Wiz::U8::Type>
+        class Type : public ::Wiz::Enum<EnumT, ::Wiz::U8::Type>::Type
         {
-            typedef EnumT       tEnum;
-            typedef ::Wiz::Enum::Type<tEnum, ::Wiz::U8::Type> tSuper;
+            typedef EnumT                                                   tEnum;
+            typedef typename ::Wiz::Enum<tEnum, ::Wiz::U8::Type>::Type      tSuper;
         public:
             Type()
             {}
@@ -73,10 +72,10 @@ namespace Wiz
     namespace Enum16
     {
         template<class EnumT>
-        class Type : public ::Wiz::Enum::Type<EnumT, ::Wiz::U16::Type>
+        class Type : public ::Wiz::Enum<EnumT, ::Wiz::U16::Type>::Type
         {
-            typedef EnumT       tEnum;
-            typedef ::Wiz::Enum::Type<tEnum, ::Wiz::U16::Type> tSuper;
+            typedef EnumT                                                   tEnum;
+            typedef typename ::Wiz::Enum<tEnum, ::Wiz::U16::Type>::Type     tSuper;
         public:
             Type()
             {}
@@ -89,10 +88,10 @@ namespace Wiz
     namespace Enum32
     {
         template<class EnumT>
-        class Type : public ::Wiz::Enum::Type<EnumT, ::Wiz::U32::Type>
+        class Type : public ::Wiz::Enum<EnumT, ::Wiz::U32::Type>::Type
         {
-            typedef EnumT       tEnum;
-            typedef ::Wiz::Enum::Type<tEnum, ::Wiz::U32::Type> tSuper;
+            typedef EnumT                                                   tEnum;
+            typedef typename ::Wiz::Enum<tEnum, ::Wiz::U32::Type>::Type     tSuper;
         public:
             Type()
             {}
@@ -105,10 +104,10 @@ namespace Wiz
     namespace Enum64
     {
         template<class EnumT>
-        class Type : public ::Wiz::Enum::Type<EnumT, ::Wiz::U64::Type>
+        class Type : public ::Wiz::Enum<EnumT, ::Wiz::U64::Type>::Type
         {
-            typedef EnumT       tEnum;
-            typedef ::Wiz::Enum::Type<tEnum, ::Wiz::U64::Type> tSuper;
+            typedef EnumT                                                   tEnum;
+            typedef typename ::Wiz::Enum<tEnum, ::Wiz::U64::Type>::Type     tSuper;
         public:
             Type()
             {}

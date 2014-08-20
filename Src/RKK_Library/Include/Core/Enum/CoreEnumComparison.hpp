@@ -20,7 +20,7 @@ namespace rkk
                 eGreater	        = 6,
                 eGreaterEqual       = 7,
             }; /// end of enum ____
-            typedef ::Wiz::Enum::Type<::rkk::Enum::Comparison::____, ::rkk::U8::type> Type;
+            typedef ::Wiz::Enum<::rkk::Enum::Comparison::____, ::rkk::U8::type>::Type Type;
             RKK_DECLARE(::rkk::Enum::Comparison::Type);
         } /// end of namespace Comparison
     } /// end of namespace Enum

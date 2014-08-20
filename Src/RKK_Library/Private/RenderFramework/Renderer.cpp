@@ -7,6 +7,8 @@ namespace rkk
         type::type()
         {
             m_RDLPtr = RenderDeviceLayer::Create();
+
+            m_RDLList.PushBack(m_RDLPtr);
         }
 
         type::~type()

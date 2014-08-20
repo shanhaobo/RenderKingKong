@@ -155,7 +155,7 @@ namespace rkk
                 /// ========================== ///
                 eMax
             }; /// end of enum Type
-            typedef ::Wiz::Enum::Type<::rkk::Enum::PixelFormat::Type, ::rkk::U8::type> type;
+            typedef ::Wiz::Enum<::rkk::Enum::PixelFormat::Type, ::rkk::U8::type>::Type type;
             RKK_DECLARE(::rkk::Enum::PixelFormat::type);
         } /// end of namespace PixelFormat
     } /// end of namespace Enum

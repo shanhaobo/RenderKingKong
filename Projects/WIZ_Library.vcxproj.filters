@@ -234,6 +234,24 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocator.hpp">
       <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerArray.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerList.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMap.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerSet.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMultiMap.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainer.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">

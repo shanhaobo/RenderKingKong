@@ -106,6 +106,7 @@
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Renderer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderFlow.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderPass.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Root.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer_D3D11.hpp" />
   </ItemGroup>

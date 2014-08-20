@@ -30,7 +30,7 @@ namespace rkk
                 e15         = 15,
                 e16         = 16,
             }; /// end of namespace ____
-            typedef ::Wiz::Enum::Type<::rkk::Enum::MultiSample::____, ::rkk::U8::type> Type;
+            typedef ::Wiz::Enum<::rkk::Enum::MultiSample::____, ::rkk::U8::type>::Type Type;
             RKK_DECLARE(::rkk::Enum::MultiSample::Type);
         } /// end of namespace MultiSample
     } /// end of namespace Enum
