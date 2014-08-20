@@ -252,6 +252,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainer.hpp">
       <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerDeque.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">

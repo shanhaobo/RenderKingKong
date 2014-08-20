@@ -2,6 +2,7 @@
 #define __WIZ_CONTAINER_HPP__SHANHAOBO_19800429__
 
 #include "./WizContainerArray.hpp"
+#include "./WizContainerDeque.hpp"
 #include "./WizContainerList.hpp"
 #include "./WizContainerMap.hpp"
 #include "./WizContainerMultiMap.hpp"
