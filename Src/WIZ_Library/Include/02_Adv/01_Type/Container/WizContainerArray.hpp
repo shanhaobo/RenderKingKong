@@ -5,30 +5,71 @@
 
 #include <vector>
 
+#ifndef     WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+#   define  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE           WIZ_DECLARE
+#endif ///  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+
+#ifndef     WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+#   define  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE           WIZ_DECLARE_ITER
+#endif ///  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+
+#ifndef     WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+#   define  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE     WIZ_DECLARE_ITER_CONST
+#endif ///  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+
 namespace Wiz
 {
-    template<class ElementT>
-    struct Array : private ::std::vector<ElementT>
+    template< class ElementT, class AllocatorT = ::std::allocator<ElementT> >
+    struct Array : private ::std::vector<ElementT, AllocatorT>
     {
-        typedef typename Array<ElementT>                    Type;
+        typedef typename ElementT                               tElement;
+        typedef typename ElementT const                         tElementConst;
+        typedef typename ElementT *                             tElementPtr;
+        typedef typename ElementT const *                       tElementConstPtr;
 
-        typedef typename ElementT                           tElement;
-        typedef typename ElementT const                     tElementConst;
-        typedef typename ElementT *                         tElementPtr;
-        typedef typename ElementT const *                   tElementConstPtr;
+        typedef typename AllocatorT                             tAllocator;
 
-        typedef typename ::std::vector<tElement>            tSuper;
+        ///-----------------------///
 
-        typedef typename tSuper::iterator                   tIterator;
-        typedef typename tSuper::const_iterator             tIteratorConst;
-        typedef typename tSuper::iterator::value_type       tValue;
-        typedef typename tSuper::const_iterator::value_type tValueConst;
-        typedef typename tSuper::reference                  tReference;
-        typedef typename tSuper::const_reference            tReferenceConst;
-        typedef typename tSuper::size_type                  tSize;
-        typedef typename tSuper::reverse_iterator           tReverseIterator;
-        typedef typename tSuper::const_reverse_iterator     tConstReverseIterator;
+        typedef typename Array<tElement, tAllocator>            tThis;
 
+        typedef typename ::std::vector<tElement, tAllocator>    tSuper;
+
+        ///-----------------------///
+
+        typedef typename tSuper::iterator                       tIterator;
+        typedef typename tSuper::const_iterator                 tIteratorConst;
+
+        ///-----------------------///
+
+        typedef typename tSuper::iterator::value_type           tValue;
+        typedef typename tSuper::const_iterator::value_type     tValueConst;
+
+        typedef typename tSuper::reference                      tReference;
+        typedef typename tSuper::const_reference                tReferenceConst;
+
+        typedef typename tSuper::reverse_iterator               tReverseIterator;
+        typedef typename tSuper::const_reverse_iterator         tReverseIteratorConst;
+
+        typedef typename tSuper::size_type                      tSize;
+
+        //////////////////////////////////////////////////////////////////////////
+        WIZ_DECLARE(tThis);
+        WIZ_DECLARE_ITER(tIterator);
+        WIZ_DECLARE_ITER_CONST(tIteratorConst);
+
+#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
+#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+        //////////////////////////////////////////////////////////////////////////
     public:
         Array() : tSuper(){}
         Array(tSuper const & InSuper) : tSuper(InSuper){}
@@ -66,7 +107,7 @@ namespace Wiz
             return tSuper::rbegin();
         }
 
-        tConstReverseIterator RBegin() const
+        tReverseIteratorConst RBegin() const
         {
             return tSuper::rbegin();
         }
@@ -76,7 +117,7 @@ namespace Wiz
             return tSuper::rend();
         }
 
-        tConstReverseIterator REnd() const
+        tReverseIteratorConst REnd() const
         {
             return tSuper::rend();
         }

@@ -1,5 +1,5 @@
-#ifndef __WIZ_MEM_ALLOCATOR_STD_HPP__SHANHAOBO_19800429__
-#define __WIZ_MEM_ALLOCATOR_STD_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_MEM_ALLOCATOR_DEFAULT_HPP__SHANHAOBO_19800429__
+#define __WIZ_MEM_ALLOCATOR_DEFAULT_HPP__SHANHAOBO_19800429__
 
 #include "./WizBasicMemAllocatorBase.hpp"
 
@@ -7,11 +7,11 @@
 
 namespace Wiz
 {
-    namespace MemAllocator
+    namespace Allocator
     {
-        namespace Std
+        namespace Default
         {
-            WIZ_CLASS : public Base::Type<Type>
+            WIZ_CLASS: public Base<Allocator::Default::Type>::Type
             {
             public:
                 ///////////////////////////////////////////
@@ -27,8 +27,9 @@ namespace Wiz
                 }
                 ///////////////////////////////////////////
             };
-        } /// end of namespace Base
-    } /// end of namespace MemAllocator
+        } /// end of namespace Default
+    } /// end of namespace Allocator
 } /// end of namespace Wiz
 
-#endif /*__WIZ_MEM_ALLOCATOR_STD_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_MEM_ALLOCATOR_DEFAULT_HPP__SHANHAOBO_19800429__*/
+ 

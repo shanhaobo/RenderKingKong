@@ -10,7 +10,6 @@
 
 /// 高级类型
 #include "../../../WIZ_Library/Include/02_Adv/01_Type/WizAdvType.hpp"
-#include "../../../WIZ_Library/Include/02_Adv/01_Type/Container/WizContainer.hpp"
 
 #include "./BaseMacro.hpp"
 #include "./BaseType.hpp"

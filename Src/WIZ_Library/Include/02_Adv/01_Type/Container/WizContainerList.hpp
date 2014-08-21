@@ -7,19 +7,47 @@
 
 namespace Wiz
 {
-    template<class T>
-    struct List : private ::std::list<T>
+    template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
+    struct List : private ::std::list<ElementT, AllocatorT>
     {
-        typedef typename List<T>                                Type;
         //////////////////////////////////////////////////////////////////////////
-        typedef typename ::std::list<T>                         tSuper;
-        typedef typename tSuper::iterator                       tIterator;
-        typedef typename tSuper::const_iterator                 tIteratorConst;
-        typedef typename tSuper::iterator::value_type           tValue;
-        typedef typename tSuper::const_iterator::value_type     tValueConst;
-        typedef typename tSuper::reference                      tReference;
-        typedef typename tSuper::const_reference                tReferenceConst;
-        typedef typename tSuper::size_type                      tSize;
+
+        typedef typename ElementT                                       tElement;
+        typedef typename AllocatorT                                     tAllocator;
+
+        typedef typename List<tElement, tAllocator>                     tThis;
+
+        //////////////////////////////////////////////////////////////////////////
+        typedef typename ::std::list<ElementT, tAllocator>              tSuper;
+
+        typedef typename tSuper::iterator                               tIterator;
+        typedef typename tSuper::const_iterator                         tIteratorConst;
+
+        ///-----------------------///
+
+        typedef typename tSuper::iterator::value_type                   tValue;
+        typedef typename tSuper::const_iterator::value_type             tValueConst;
+
+        typedef typename tSuper::reference                              tReference;
+        typedef typename tSuper::const_reference                        tReferenceConst;
+
+        typedef typename tSuper::size_type                              tSize;
+        //////////////////////////////////////////////////////////////////////////
+        WIZ_DECLARE(tThis);
+        WIZ_DECLARE_ITER(tIterator);
+        WIZ_DECLARE_ITER_CONST(tIteratorConst);
+
+#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
+#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
         //////////////////////////////////////////////////////////////////////////
     public:
         List() : tSuper(){}
@@ -79,12 +107,12 @@ namespace Wiz
 
         ///-----------------------///
 
-        ::Wiz::Void::Type Remove(const T& v)
+        ::Wiz::Void::Type Remove(const ElementT& v)
         {
             tSuper::remove(v);
         }
 
-        ::Wiz::Void::Type PushBack(const T& v)
+        ::Wiz::Void::Type PushBack(const ElementT& v)
         {
             tSuper::push_back(v);
         }
@@ -94,7 +122,7 @@ namespace Wiz
             tSuper::pop_back();
         }
 
-        ::Wiz::Void::Type PushFront(const T& v)
+        ::Wiz::Void::Type PushFront(const ElementT& v)
         {
             tSuper::push_front(v);
         }

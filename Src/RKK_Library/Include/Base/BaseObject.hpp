@@ -36,27 +36,27 @@ namespace rkk
     {
         namespace General
         {
-            typedef ::Wiz::MemAllocator::Type<eROC_General>     type;
+            typedef ::Wiz::Allocator::Categorized<eROC_General>::Type     type;
         } /// end of namespace General
 
         namespace Geometry
         {
-            typedef ::Wiz::MemAllocator::Type<eROC_Geometry>    type;
+            typedef ::Wiz::Allocator::Categorized<eROC_Geometry>::Type    type;
         } /// end of namespace Geometry
 
         namespace Animation
         {
-            typedef ::Wiz::MemAllocator::Type<eROC_Animation>   type;
+            typedef ::Wiz::Allocator::Categorized<eROC_Animation>::Type   type;
         } /// end of namespace Animation
 
         namespace Resource
         {
-            typedef ::Wiz::MemAllocator::Type<eROC_Resource>    type;
+            typedef ::Wiz::Allocator::Categorized<eROC_Resource>::Type    type;
         } /// end of namespace Texture
 
         namespace RDL
         {
-            typedef ::Wiz::MemAllocator::Type<eROC_RDL>         type;
+            typedef ::Wiz::Allocator::Categorized<eROC_RDL>::Type         type;
         } /// end of namespace RDL
     } /// end of namespace Allocator
 

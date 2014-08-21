@@ -7,37 +7,39 @@
 
 namespace Wiz
 {
-    template< class IndexT, class ValueT, class CompT = ::std::less<IndexT> >
-    struct MultiMap : private ::std::multimap<IndexT, ValueT, CompT>
+    template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> >  >
+    struct MultiMap : private ::std::multimap<IndexT, ValueT, CompT, AllocatorT>
     {
-        typedef typename MultiMap<IndexT, ValueT, CompT>            Type;
+        typedef typename MultiMap<IndexT, ValueT, CompT, AllocatorT>            tThis;
 
         /////////////////////////////////////////////////////////////////////////
-        typedef typename IndexT                                     tIndex;
-        typedef typename tIndex const                               tIndexConst;
-        typedef typename tIndex const &                             tIndexIn;
-        typedef typename tIndex &                                   tIndexRef;
-        typedef typename tIndex const &                             tIndexRefConst;
+        typedef typename IndexT                                                 tIndex;
+        typedef typename tIndex const                                           tIndexConst;
+        typedef typename tIndex const &                                         tIndexIn;
+        typedef typename tIndex &                                               tIndexRef;
+        typedef typename tIndex const &                                         tIndexRefConst;
 
-        typedef typename ValueT                                     tValue;
-        typedef typename tValue const                               tValueConst;
-        typedef typename tValue const &                             tValueIn;
-        typedef typename tValue &                                   tValueOut;
-        typedef typename tValue &                                   tValueRef;
-        typedef typename tValue const &                             tValueRefConst;
+        typedef typename ValueT                                                 tValue;
+        typedef typename tValue const                                           tValueConst;
+        typedef typename tValue const &                                         tValueIn;
+        typedef typename tValue &                                               tValueOut;
+        typedef typename tValue &                                               tValueRef;
+        typedef typename tValue const &                                         tValueRefConst;
 
-        typedef typename CompT                                      tComp;
+        typedef typename CompT                                                  tComp;
 
-        typedef typename ::std::multimap<tIndex, tValue, tComp>     tSuper;
+        typedef typename AllocatorT                                             tAllocator;
+
+        typedef typename ::std::multimap<tIndex, tValue, tComp, tAllocator>     tSuper;
 
         ////////////////////////////////////////////////////////////////////////
-        typedef typename tSuper::iterator                           tSuperIterator;
-        typedef typename tSuper::const_iterator                     tSuperIteratorConst;
+        typedef typename tSuper::iterator                                       tSuperIterator;
+        typedef typename tSuper::const_iterator                                 tSuperIteratorConst;
         ////////////////////////////////////////////////////////////////////////
 
-        typedef typename tSuper::size_type                          tSize;
+        typedef typename tSuper::size_type                                      tSize;
 
-        typedef typename ::std::pair<tIndex, tValue>                tPair;
+        typedef typename ::std::pair<tIndex, tValue>                            tPair;
 
         ////////////////////////////////////////////////////////////////////////
         struct tIterator : public tSuperIterator
@@ -80,6 +82,22 @@ namespace Wiz
                 return (*this)->second;
             }
         };
+        //////////////////////////////////////////////////////////////////////////
+        WIZ_DECLARE(tThis);
+        WIZ_DECLARE_ITER(tIterator);
+        WIZ_DECLARE_ITER_CONST(tIteratorConst);
+
+#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
+#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
         //////////////////////////////////////////////////////////////////////////
     public:
         MultiMap() : tSuper()

@@ -7,22 +7,41 @@
 
 namespace Wiz
 {
-    template<class T>
-    struct Deque : private ::std::deque<T>
+    template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
+    struct Deque : private ::std::deque<ElementT, AllocatorT>
     {
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename Deque<T>                               Type;
+        typedef typename Deque<ElementT, AllocatorT>                tThis;
 
         //////////////////////////////////////////////////////////////////////////
-        typedef typename ::std::deque<T>                        tSuper;
+        typedef typename ::std::deque<ElementT, AllocatorT>         tSuper;
 
-        typedef typename tSuper::iterator                       tIterator;
-        typedef typename tSuper::const_iterator                 tIteratorConst;
-        typedef typename tSuper::iterator::value_type           tValue;
-        typedef typename tSuper::const_iterator::value_type     tValueConst;
-        typedef typename tSuper::reference                      tReference;
-        typedef typename tSuper::const_reference                tReferenceConst;
+        typedef typename tSuper::iterator                           tIterator;
+        typedef typename tSuper::const_iterator                     tIteratorConst;
+
+        ///-----------------------///
+
+        typedef typename tSuper::iterator::value_type               tValue;
+        typedef typename tSuper::const_iterator::value_type         tValueConst;
+        typedef typename tSuper::reference                          tReference;
+        typedef typename tSuper::const_reference                    tReferenceConst;
+        //////////////////////////////////////////////////////////////////////////
+        WIZ_DECLARE(tThis);
+        WIZ_DECLARE_ITER(tIterator);
+        WIZ_DECLARE_ITER_CONST(tIteratorConst);
+
+#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
+#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+
+#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
+#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
         //////////////////////////////////////////////////////////////////////////
     public:
         Deque() : tSuper(){}
@@ -83,22 +102,22 @@ namespace Wiz
         ///-----------------------///
 
 
-        ::Wiz::Void::Type PushBack(const T& v)
+        ::Wiz::Void::Type PushBack(ElementT const & v)
         {
             tSuper::push_back(v);
         }
 
-        ::Wiz::Void::Type PushFront(const T& v)
+        ::Wiz::Void::Type PushFront(ElementT const & v)
         {
             tSuper::push_front(v);
         }
 
-        ::Wiz::Void::Type PopBack(const T& v)
+        ::Wiz::Void::Type PopBack(ElementT const & v)
         {
             tSuper::pop_back(v);
         }
 
-        ::Wiz::Void::Type PopFront(const T& v)
+        ::Wiz::Void::Type PopFront(ElementT const & v)
         {
             tSuper::pop_front(v);
         }

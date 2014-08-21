@@ -78,4 +78,12 @@
 
 ////////////////////////////////////////////////////////////////////////////
 
+#   define RKK_DECLARE_ITER(t)          \
+    typedef t                           itr;
+
+#   define RKK_DECLARE_ITER_CONST(t)    \
+    typedef t                           itrc;
+
+////////////////////////////////////////////////////////////////////////////
+
 #endif /*__RENDERKINGKONG_TYPEDECLAREUTILS_HPP__SHANHAOBO_19800429__*/

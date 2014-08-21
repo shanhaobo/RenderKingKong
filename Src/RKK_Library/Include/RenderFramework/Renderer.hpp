@@ -16,7 +16,7 @@ namespace rkk
             ~type();
 
 
-            ::Wiz::List<RenderDeviceLayer::ptr>::Type m_RDLList;
+            ::rkk::List<RenderDeviceLayer::ptr>::type m_RDLList;
 
             RenderDeviceLayer::ptr m_RDLPtr;
         };
