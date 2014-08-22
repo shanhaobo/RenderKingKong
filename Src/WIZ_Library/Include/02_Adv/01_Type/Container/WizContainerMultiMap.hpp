@@ -8,11 +8,18 @@
 namespace Wiz
 {
     template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> >  >
-    struct MultiMap : private ::std::multimap<IndexT, ValueT, CompT, AllocatorT>
+    struct MultiMap : public ::Wiz::Container::Base< MultiMap<IndexT, ValueT, CompT, AllocatorT>, ::std::multimap<IndexT, ValueT, CompT, AllocatorT> >
     {
+        ////////////////////////////////////////////////////////////////////////
+
         typedef typename MultiMap<IndexT, ValueT, CompT, AllocatorT>            tThis;
 
+        typedef typename ::std::multimap<IndexT, ValueT, CompT, AllocatorT>     tSuper;
+
+        typedef typename ::Wiz::Container::Base< tThis, tSuper >                tContainerBase;
+
         /////////////////////////////////////////////////////////////////////////
+
         typedef typename IndexT                                                 tIndex;
         typedef typename tIndex const                                           tIndexConst;
         typedef typename tIndex const &                                         tIndexIn;
@@ -30,11 +37,11 @@ namespace Wiz
 
         typedef typename AllocatorT                                             tAllocator;
 
-        typedef typename ::std::multimap<tIndex, tValue, tComp, tAllocator>     tSuper;
-
         ////////////////////////////////////////////////////////////////////////
+
         typedef typename tSuper::iterator                                       tSuperIterator;
         typedef typename tSuper::const_iterator                                 tSuperIteratorConst;
+
         ////////////////////////////////////////////////////////////////////////
 
         typedef typename tSuper::size_type                                      tSize;
@@ -82,68 +89,19 @@ namespace Wiz
                 return (*this)->second;
             }
         };
+
         //////////////////////////////////////////////////////////////////////////
-        WIZ_DECLARE(tThis);
-        WIZ_DECLARE_ITER(tIterator);
-        WIZ_DECLARE_ITER_CONST(tIteratorConst);
 
-#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
-#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-        //////////////////////////////////////////////////////////////////////////
     public:
         MultiMap() : tSuper()
         {
         }
+
         MultiMap(tSuper const & InSuper) : tSuper(InSuper)
         {
         }
         //////////////////////////////////////////////////////////////////////////
     public:
-        tIterator Begin()
-        {
-            return tSuper::begin();
-        }
-
-        tIteratorConst Begin() const
-        {
-            return tSuper::begin();
-        }
-
-        tIterator End()
-        {
-            return tSuper::end();
-        }
-
-        tIteratorConst End() const
-        {
-            return tSuper::end();
-        }
-
-        ///-----------------------///
-
-        tSize Size() const
-        {
-            return tSuper::size();
-        }
-
-        ::Wiz::Void::Type Clear()
-        {
-            tSuper::clear();
-        }
-
-        tIterator Erase(tIterator itr)
-        {
-            return tSuper::erase(itr);
-        }
 
         ::Wiz::Bool::Type Remove(tIndexIn v)
         {
@@ -167,22 +125,6 @@ namespace Wiz
             }
 
             return Erase(Found);
-        }
-
-        ///-----------------------///
-
-        template<class FuncT>
-        tIterator FindIf(FuncT Func)
-        {
-            return ::std::find_if(tSuper::begin(), tSuper::end(), Func);
-        }
-
-        template<class FuncT>
-        ::Wiz::Void::Type RemoveIf(FuncT Func)
-        {
-            tSuper::iterator NewEndItr = ::std::remove_if(tSuper::begin(), tSuper::end(), Func);
-
-            tSuper::erase(NewEndItr, tSuper::end());
         }
 
         ///-----------------------///

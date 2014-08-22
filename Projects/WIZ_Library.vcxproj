@@ -57,6 +57,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMap.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMultiMap.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerSet.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerBase.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvTypeEnum.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp" />

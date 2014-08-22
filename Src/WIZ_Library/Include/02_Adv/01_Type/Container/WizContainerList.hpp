@@ -1,118 +1,112 @@
 #ifndef __WIZ_CONTAINER_LIST_HPP__SHANHAOBO_19800429__
 #define __WIZ_CONTAINER_LIST_HPP__SHANHAOBO_19800429__
 
-#include "../../../01_Basic/01_Type/WizBasicType.hpp"
+#include "./WizContainerBase.hpp"
 
 #include <list>
 
 namespace Wiz
 {
     template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    struct List : private ::std::list<ElementT, AllocatorT>
+    struct List : public ::Wiz::Container::Base< List<ElementT, AllocatorT>, ::std::list<ElementT, AllocatorT> >
     {
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename ElementT                                       tElement;
-        typedef typename AllocatorT                                     tAllocator;
+        typedef typename List<ElementT, AllocatorT>                 tThis;
 
-        typedef typename List<tElement, tAllocator>                     tThis;
+        typedef typename ::std::list<ElementT, AllocatorT>          tSuper;
+
+        typedef typename ::Wiz::Container::Base< tThis, tSuper >    tContainerBase;
 
         //////////////////////////////////////////////////////////////////////////
-        typedef typename ::std::list<ElementT, tAllocator>              tSuper;
 
-        typedef typename tSuper::iterator                               tIterator;
-        typedef typename tSuper::const_iterator                         tIteratorConst;
+        typedef typename ElementT                                   tElement;
+        typedef typename tElement const                             tElementConst;
 
-        ///-----------------------///
+        typedef typename tElement *                                 tElementPtr;
+        typedef typename tElement const *                           tElementConstPtr;
 
-        typedef typename tSuper::iterator::value_type                   tValue;
-        typedef typename tSuper::const_iterator::value_type             tValueConst;
+        typedef typename tElement const &                           tElementIn;
 
-        typedef typename tSuper::reference                              tReference;
-        typedef typename tSuper::const_reference                        tReferenceConst;
-
-        typedef typename tSuper::size_type                              tSize;
         //////////////////////////////////////////////////////////////////////////
-        WIZ_DECLARE(tThis);
-        WIZ_DECLARE_ITER(tIterator);
-        WIZ_DECLARE_ITER_CONST(tIteratorConst);
 
-#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
-#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+        typedef typename AllocatorT                                 tAllocator;
 
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
         //////////////////////////////////////////////////////////////////////////
-    public:
-        List() : tSuper(){}
-        List(const tSuper& InSuper) : tSuper(InSuper){}
 
     public:
-        tIterator Begin()
+        List() : tContainerBase()
+        {}
+
+        List(tSuper const & InSuper) : tContainerBase(InSuper)
+        {}
+
+    public:
+
+        ///-----------------------///
+
+        tIterator Find(tElementIn v)
         {
-            return tSuper::begin();
+            return tSuper::find(v);
         }
 
-        tIteratorConst Begin() const
+        tIteratorConst Find(tElementIn v) const
         {
-            return tSuper::begin();
+            return tSuper::find(v);
         }
 
-        tIterator End()
+        ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
         {
-            return tSuper::end();
+            OItr = Find(v);
+            return OItr != End();
         }
 
-        tIteratorConst End() const
+        ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
         {
-            return tSuper::end();
+            OItr = Find(v);
+            return OItr != End();
         }
 
         ///-----------------------///
 
-        tSize Size() const
+        ::Wiz::Bool::Type HasData(tElementIn v) const
         {
-            return tSuper::size();
-        }
-
-        ::Wiz::Void::Type Clear()
-        {
-            tSuper::clear();
-        }
-
-        tIterator Erase(tIterator itr)
-        {
-            return tSuper::erase(itr);
+            return tSuper::find(v) != End();
         }
 
         ///-----------------------///
 
-        template<class FuncT>
-        tIterator FindIf(FuncT Func)
+        ::Wiz::Bool::Type Remove(tElementIn inELT)
         {
-            return ::std::find_if(tSuper::begin(), tSuper::end(), Func);
+            tIterator FndItr;
+
+            if (Find(inELT, FndItr))
+            {
+                Erase(FndItr);
+
+                return ::Wiz::Bool::True;
+            }
+
+            return ::Wiz::Bool::False;
         }
 
-        template<class FuncT>
-        ::Wiz::Void::Type RemoveIf(FuncT Func)
+        ::Wiz::Bool::Type Remove(tElementIn inELT, tIterator& OItr)
         {
-            tSuper::remove_if(Func);
+            tIterator FndItr;
+
+            if (Find(inELT, FndItr))
+            {
+                OItr = Erase(FndItr);
+
+                return ::Wiz::Bool::True;
+            }
+
+            return ::Wiz::Bool::False;
         }
 
         ///-----------------------///
 
-        ::Wiz::Void::Type Remove(const ElementT& v)
-        {
-            tSuper::remove(v);
-        }
-
-        ::Wiz::Void::Type PushBack(const ElementT& v)
+        ::Wiz::Void::Type PushBack(tElementIn v)
         {
             tSuper::push_back(v);
         }
@@ -122,7 +116,7 @@ namespace Wiz
             tSuper::pop_back();
         }
 
-        ::Wiz::Void::Type PushFront(const ElementT& v)
+        ::Wiz::Void::Type PushFront(tElementIn v)
         {
             tSuper::push_front(v);
         }

@@ -8,69 +8,56 @@
 namespace Wiz
 {
     template< class ElementT, class CompT = ::std::less<ElementT>, class AllocatorT = ::std::allocator<ElementT> >
-    struct Set : private ::std::set<ElementT, CompT, AllocatorT>
+    struct Set : public ::Wiz::Container::Base< Set<ElementT, CompT, AllocatorT>, ::std::set<ElementT, CompT, AllocatorT> >
     {
-        typedef typename Set<ElementT, CompT, AllocatorT>           tThis;
+        //////////////////////////////////////////////////////////////////////////
+
+        typedef typename Set<ElementT, AllocatorT>                  tThis;
+
+        typedef typename ::std::set<ElementT, CompT, AllocatorT>    tSuper;
+
+        typedef typename ::Wiz::Container::Base< tThis, tSuper >    tContainerBase;
 
         //////////////////////////////////////////////////////////////////////////
+
         typedef typename ElementT                                   tElement;
-        typedef typename const ElementT                             tElementConst;
+        typedef typename tElement const                             tElementConst;
+
+        typedef typename tElement *                                 tElementPtr;
+        typedef typename tElement const *                           tElementConstPtr;
+
+        typedef typename tElement const &                           tElementIn;
+
+        typedef typename CompT                                      tComp;
 
         typedef typename AllocatorT                                 tAllocator;
 
-        typedef typename ::std::set<tElement, CompT, tAllocator>    tSuper;
+        //////////////////////////////////////////////////////////////////////////
 
         typedef typename tSuper::iterator                           tIterator;
         typedef typename tSuper::const_iterator                     tIteratorConst;
 
         typedef typename tSuper::reverse_iterator                   tReverseIterator;
         typedef typename tSuper::const_reverse_iterator             tReverseIteratorConst;
+
         typedef typename tSuper::iterator::value_type               tValue;
         typedef typename tSuper::const_iterator::value_type         tValueConst;
+
         typedef typename tSuper::reference                          tReference;
         typedef typename tSuper::const_reference                    tReferenceConst;
+
         //////////////////////////////////////////////////////////////////////////
+
         typedef typename tSuper::size_type                          tSize;
+
         //////////////////////////////////////////////////////////////////////////
-        WIZ_DECLARE(tThis);
-        WIZ_DECLARE_ITER(tIterator);
-        WIZ_DECLARE_ITER_CONST(tIteratorConst);
 
-#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
-#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-        //////////////////////////////////////////////////////////////////////////
     public:
-        Set() : tSuper(){}
-        Set(const tSuper& InSuper) : tSuper(InSuper){}
+        Set() : tContainerBase()
+        {}
+        Set(tSuper const & InSuper) : tContainerBase(InSuper)
+        {}
     public:
-        tIterator Begin()
-        {
-            return tSuper::begin();
-        }
-
-        tIteratorConst Begin() const
-        {
-            return tSuper::begin();
-        }
-
-        tIterator End()
-        {
-            return tSuper::end();
-        }
-
-        tIteratorConst End() const
-        {
-            return tSuper::end();
-        }
 
         ///-----------------------///
 
@@ -96,40 +83,23 @@ namespace Wiz
 
         ///-----------------------///
 
-        ::Wiz::Size::Type Size() const
-        {
-            return ::Wiz::Cast::Static<::Wiz::Size::Type>(tSuper::size());
-        }
-
-        ::Wiz::Void::Type Clear()
-        {
-            tSuper::clear();
-        }
-
-        tIterator Erase(tIterator itr)
-        {
-            return tSuper::erase(itr);
-        }
-
-        ///-----------------------///
-
-        tIterator Find(tElement const & v)
+        tIterator Find(tElementIn v)
         {
             return tSuper::find(v);
         }
 
-        tIteratorConst Find(tElement const & v) const
+        tIteratorConst Find(tElementIn v) const
         {
             return tSuper::find(v);
         }
 
-        ::Wiz::Bool::Type Find(tElement const & v, tIterator& OItr)
+        ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
         {
             OItr = Find(v);
             return OItr != End();
         }
 
-        ::Wiz::Bool::Type Find(tElement const & v, tIteratorConst& OItr) const
+        ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
         {
             OItr = Find(v);
             return OItr != End();
@@ -137,14 +107,14 @@ namespace Wiz
 
         ///-----------------------///
 
-        ::Wiz::Bool::Type HasData(tElement const & v) const
+        ::Wiz::Bool::Type HasData(tElementIn v) const
         {
             return tSuper::find(v) != tSuper::end();
         }
 
         ///-----------------------///
 
-        ::Wiz::Bool::Type Insert(tElement const & i)
+        ::Wiz::Bool::Type Insert(tElementIn i)
         {
             ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
 
@@ -153,7 +123,7 @@ namespace Wiz
             return Result.second;
         }
 
-        ::Wiz::Bool::Type Insert(tElement const & i, tIterator& Itr)
+        ::Wiz::Bool::Type Insert(tElementIn i, tIterator& Itr)
         {
             ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
 
@@ -163,7 +133,7 @@ namespace Wiz
         }
 
 
-        ::Wiz::Bool::Type InsertUnique(tElement Val)
+        ::Wiz::Bool::Type InsertUnique(tElementIn Val)
         {
             if (this->Find(Val) == this->End())
             {
@@ -173,7 +143,7 @@ namespace Wiz
             return ::Wiz::Bool::False;
         }
 
-        ::Wiz::Bool::Type InsertUnique(tElement Val, tIterator& Itr)
+        ::Wiz::Bool::Type InsertUnique(tElementIn Val, tIterator& Itr)
         {
             if (this->Find(Val) == this->End())
             {
@@ -183,7 +153,7 @@ namespace Wiz
             return ::Wiz::Bool::False;
         }
 
-        ::Wiz::Bool::Type Remove(tElement const & ELT)
+        ::Wiz::Bool::Type Remove(tElementIn ELT)
         {
             tIterator Found = Find(ELT);
             if (Found == End())
@@ -195,7 +165,7 @@ namespace Wiz
             return ::Wiz::Bool::True;
         }
 
-        ::Wiz::Bool::Type Remove(tElement const & ELT, tIterator& Itr)
+        ::Wiz::Bool::Type Remove(tElementIn ELT, tIterator& Itr)
         {
             tIterator Found = Find(ELT);
             if (Found == End())
@@ -205,21 +175,6 @@ namespace Wiz
 
             Itr = this->Erase(Found);
             return ::Wiz::Bool::True;
-        }
-
-        ///-----------------------///
-
-        template<class FuncT>
-        tIterator FindIf(FuncT Func)
-        {
-            return ::std::find_if(tSuper::begin(), tSuper::end(), Func);
-        }
-
-        template<class FuncT>
-        ::Wiz::Void::Type RemoveIf(FuncT Func)
-        {
-            tSuper::iterator newend = ::std::remove_if(tSuper::begin(), tSuper::end(), Func);
-            tSuper::erase(newend, tSuper::end());
         }
 
         ///-----------------------///

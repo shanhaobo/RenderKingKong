@@ -1,123 +1,128 @@
 #ifndef __WIZ_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__
 #define __WIZ_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__
 
-#include "../../../01_Basic/01_Type/WizBasicType.hpp"
+#include "./WizContainerBase.hpp"
 
 #include <deque>
 
 namespace Wiz
 {
     template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    struct Deque : private ::std::deque<ElementT, AllocatorT>
+    struct Deque : public ::Wiz::Container::Base< Deque<ElementT, AllocatorT>, ::std::deque<ElementT, AllocatorT> >
     {
         //////////////////////////////////////////////////////////////////////////
 
         typedef typename Deque<ElementT, AllocatorT>                tThis;
 
-        //////////////////////////////////////////////////////////////////////////
         typedef typename ::std::deque<ElementT, AllocatorT>         tSuper;
 
-        typedef typename tSuper::iterator                           tIterator;
-        typedef typename tSuper::const_iterator                     tIteratorConst;
+        typedef ::Wiz::Container::Base< tThis, tSuper >             tContainerBase;
 
-        ///-----------------------///
-
-        typedef typename tSuper::iterator::value_type               tValue;
-        typedef typename tSuper::const_iterator::value_type         tValueConst;
-        typedef typename tSuper::reference                          tReference;
-        typedef typename tSuper::const_reference                    tReferenceConst;
         //////////////////////////////////////////////////////////////////////////
-        WIZ_DECLARE(tThis);
-        WIZ_DECLARE_ITER(tIterator);
-        WIZ_DECLARE_ITER_CONST(tIteratorConst);
 
-#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
-#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+        typedef typename ElementT                                   tElement;
+        typedef typename tElement const                             tElementConst;
 
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+        typedef typename ElementT *                                 tElementPtr;
+        typedef typename ElementT const *                           tElementConstPtr;
 
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+        typedef typename tElement const &                           tElementIn;
+
         //////////////////////////////////////////////////////////////////////////
+
+        typedef typename AllocatorT                                 tAllocator;
+
+        //////////////////////////////////////////////////////////////////////////
+
     public:
-        Deque() : tSuper(){}
-        Deque(const tSuper& InSuper) : tSuper(InSuper){}
+
+        Deque() : tContainerBase()
+        {}
+
+        Deque(tSuper const & InSuper) : tContainerBase(InSuper)
+        {}
+
     public:
-        tIterator Begin()
+
+        ///-----------------------///
+
+        tIterator Find(tElementIn v)
         {
-            return tSuper::begin();
+            return tSuper::find(v);
         }
 
-        tIteratorConst Begin() const
+        tIteratorConst Find(tElementIn v) const
         {
-            return tSuper::begin();
+            return tSuper::find(v);
         }
 
-        tIterator End()
+        ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
         {
-            return tSuper::end();
+            OItr = Find(v);
+            return OItr != End();
         }
 
-        tIteratorConst End() const
+        ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
         {
-            return tSuper::end();
+            OItr = Find(v);
+            return OItr != End();
         }
 
         ///-----------------------///
 
-        ::Wiz::Size::Type Size() const
+        ::Wiz::Bool::Type HasData(tElementIn v) const
         {
-            return ::Wiz::Cast::Static<::Wiz::Size::Type>(tSuper::size());
-        }
-
-        ::Wiz::Void::Type Clear()
-        {
-            tSuper::clear();
-        }
-
-        tIterator Erase(tIterator itr)
-        {
-            return tSuper::erase(itr);
+            return tSuper::find(v) != End();
         }
 
         ///-----------------------///
 
-        template<class FuncT>
-        ::Wiz::Void::Type FindIf(FuncT Func)
+        ::Wiz::Bool::Type Remove(tElementIn inELT)
         {
-            ::std::find_if(tSuper::begin(), tSuper::end(), Func);
+            tIterator FndItr;
+
+            if (Find(inELT, FndItr))
+            {
+                Erase(FndItr);
+
+                return ::Wiz::Bool::True;
+            }
+
+            return ::Wiz::Bool::False;
         }
 
-        template<class FuncT>
-        ::Wiz::Void::Type RemoveIf(FuncT Func)
+        ::Wiz::Bool::Type Remove(tElementIn inELT, tIterator& OItr)
         {
-            tSuper::iterator newend = ::std::remove_if(tSuper::begin(), tSuper::end(), Func);
-            tSuper::erase(newend, tSuper::end());
+            tIterator FndItr;
+
+            if (Find(inELT, FndItr))
+            {
+                OItr = Erase(FndItr);
+
+                return ::Wiz::Bool::True;
+            }
+
+            return ::Wiz::Bool::False;
         }
 
         ///-----------------------///
 
-
-        ::Wiz::Void::Type PushBack(ElementT const & v)
+        ::Wiz::Void::Type PushBack(tElementIn v)
         {
             tSuper::push_back(v);
         }
 
-        ::Wiz::Void::Type PushFront(ElementT const & v)
+        ::Wiz::Void::Type PushFront(tElementIn v)
         {
             tSuper::push_front(v);
         }
 
-        ::Wiz::Void::Type PopBack(ElementT const & v)
+        ::Wiz::Void::Type PopBack(tElementIn v)
         {
             tSuper::pop_back(v);
         }
 
-        ::Wiz::Void::Type PopFront(ElementT const & v)
+        ::Wiz::Void::Type PopFront(tElementIn v)
         {
             tSuper::pop_front(v);
         }

@@ -1,105 +1,53 @@
 #ifndef __WIZ_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__
 #define __WIZ_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__
 
-#include "../../../01_Basic/01_Type/WizBasicType.hpp"
+#include "./WizContainerBase.hpp"
 
 #include <vector>
-
-#ifndef     WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-#   define  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE           WIZ_DECLARE
-#endif ///  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-
-#ifndef     WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-#   define  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE           WIZ_DECLARE_ITER
-#endif ///  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-
-#ifndef     WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-#   define  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE     WIZ_DECLARE_ITER_CONST
-#endif ///  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
 
 namespace Wiz
 {
     template< class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    struct Array : private ::std::vector<ElementT, AllocatorT>
+    struct Array : public ::Wiz::Container::Base< Array<ElementT, AllocatorT>, ::std::vector<ElementT, AllocatorT> >
     {
-        typedef typename ElementT                               tElement;
-        typedef typename ElementT const                         tElementConst;
-        typedef typename ElementT *                             tElementPtr;
-        typedef typename ElementT const *                       tElementConstPtr;
+        //////////////////////////////////////////////////////////////////////////
 
-        typedef typename AllocatorT                             tAllocator;
+        typedef typename Array<ElementT, AllocatorT>                tThis;
 
-        ///-----------------------///
+        typedef typename ::std::vector<ElementT, AllocatorT>        tSuper;
 
-        typedef typename Array<tElement, tAllocator>            tThis;
-
-        typedef typename ::std::vector<tElement, tAllocator>    tSuper;
-
-        ///-----------------------///
-
-        typedef typename tSuper::iterator                       tIterator;
-        typedef typename tSuper::const_iterator                 tIteratorConst;
-
-        ///-----------------------///
-
-        typedef typename tSuper::iterator::value_type           tValue;
-        typedef typename tSuper::const_iterator::value_type     tValueConst;
-
-        typedef typename tSuper::reference                      tReference;
-        typedef typename tSuper::const_reference                tReferenceConst;
-
-        typedef typename tSuper::reverse_iterator               tReverseIterator;
-        typedef typename tSuper::const_reverse_iterator         tReverseIteratorConst;
-
-        typedef typename tSuper::size_type                      tSize;
+        typedef typename ::Wiz::Container::Base< tThis, tSuper >    tContainerBase;
 
         //////////////////////////////////////////////////////////////////////////
-        WIZ_DECLARE(tThis);
-        WIZ_DECLARE_ITER(tIterator);
-        WIZ_DECLARE_ITER_CONST(tIteratorConst);
 
-#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tThis);
-#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+        typedef typename ElementT                                   tElement;
+        typedef typename tElement const                             tElementConst;
 
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+        typedef typename ElementT *                                 tElementPtr;
+        typedef typename ElementT const *                           tElementConstPtr;
 
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-        WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+        typedef typename tElement const &                           tElementIn;
+
         //////////////////////////////////////////////////////////////////////////
+
+        typedef typename AllocatorT                                 tAllocator;
+
+        //////////////////////////////////////////////////////////////////////////
+
+        typedef typename tSuper::reverse_iterator                   tReverseIterator;
+        typedef typename tSuper::const_reverse_iterator             tReverseIteratorConst;
+
+        //////////////////////////////////////////////////////////////////////////
+
     public:
-        Array() : tSuper(){}
-        Array(tSuper const & InSuper) : tSuper(InSuper){}
 
-        Array(tSize Reserved) : tSuper(Reserved){}
-        Array(tSize Reserved, tElementConst Ele) : tSuper(Reserved, Ele){}
+        Array() : tContainerBase()
+        {}
+
+        Array(tSuper const & InSuper) : tContainerBase(InSuper)
+        {}
 
     public:
-        ///-----------------------///
-
-        tIterator Begin()
-        {
-            return tSuper::begin();
-        }
-
-        tIteratorConst Begin() const
-        {
-            return tSuper::begin();
-        }
-
-        tIterator End()
-        {
-            return tSuper::end();
-        }
-
-        tIteratorConst End() const
-        {
-            return tSuper::end();
-        }
-
         ///-----------------------///
 
         tReverseIterator RBegin()
@@ -124,64 +72,7 @@ namespace Wiz
 
         ///-----------------------///
 
-        tSize Size() const
-        {
-            return tSuper::size();
-        }
-
-        ::Wiz::Void::Type Resize(::Wiz::Size::In NewSZ)
-        {
-            return tSuper::resize(NewSZ);
-        }
-
-        ::Wiz::Void::Type Clear()
-        {
-            tSuper::clear();
-        }
-
-        tIterator Erase(tIterator itr)
-        {
-            return tSuper::erase(itr);
-        }
-
-
-        ::Wiz::Void::Type Remove(ElementT const & v)
-        {
-            struct tRemoveInnerStruct
-            {
-                const ElementT m_Ele;
-                tRemoveInnerStruct(const ElementT& InEle) : m_Ele(InEle){}
-
-                bool operator() (const ElementT& InEle)
-                {
-                    return m_Ele == InEle;
-                }
-            };
-
-            tRemoveInnerStruct RIS(v);
-
-            RemoveIf(RIS);
-        }
-
-        ///-----------------------///
-
-        template<class FuncT>
-        tIterator FindIf(FuncT Func)
-        {
-            return ::std::find_if(tSuper::begin(), tSuper::end(), Func);
-        }
-
-        template<class FuncT>
-        ::Wiz::Void::Type RemoveIf(FuncT Func)
-        {
-            tSuper::iterator NewEnd = ::std::remove_if(tSuper::begin(), tSuper::end(), Func);
-
-            tSuper::erase(NewEnd, tSuper::end());
-        }
-
-        ///-----------------------///
-
-        ::Wiz::Void::Type PushBack(ElementT const & v)
+        ::Wiz::Void::Type PushBack(tElementIn v)
         {
             tSuper::push_back(v);
         }
@@ -235,6 +126,67 @@ namespace Wiz
         tReferenceConst operator[](tSize Pos) const
         {
             return tSuper::operator [](Pos);
+        }
+
+        ///-----------------------///
+
+        tIterator Find(tElementIn v)
+        {
+            return tSuper::find(v);
+        }
+
+        tIteratorConst Find(tElementIn v) const
+        {
+            return tSuper::find(v);
+        }
+
+        ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
+        {
+            OItr = Find(v);
+            return OItr != End();
+        }
+
+        ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
+        {
+            OItr = Find(v);
+            return OItr != End();
+        }
+
+        ///-----------------------///
+
+        ::Wiz::Bool::Type HasData(tElementIn v) const
+        {
+            return tSuper::find(v) != End();
+        }
+
+        ///-----------------------///
+
+        ::Wiz::Bool::Type Remove(tElementIn inELT)
+        {
+            tIterator FndItr;
+
+            if (Find(inELT, FndItr))
+            {
+                Erase(FndItr);
+
+                return ::Wiz::Bool::True;
+            }
+
+            return ::Wiz::Bool::False;
+        }
+
+        ::Wiz::Bool::Type Remove(tElementIn inELT, tIterator& OItr)
+        {
+            tIterator FndItr;
+
+            if (Find(inELT, FndItr))
+            {
+                OItr = Erase(FndItr);
+
+                return ::Wiz::Bool::True;
+            }
+
+            return ::Wiz::Bool::False;
         }
 
     public:
