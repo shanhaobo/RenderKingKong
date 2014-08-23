@@ -101,102 +101,103 @@ namespace Wiz
 
         //////////////////////////////////////////////////////////////////////////
     public:
-        ::Wiz::Bool::Type Remove(tIndexIn v)
+        ::Wiz::Bool::Type Remove(tIndexIn InIdx)
         {
-            tIterator Found = Find(v);
-            if (Found == End())
+            tIterator FndItr = Find(InIdx);
+            if (FndItr == End())
             {
                 return ::Wiz::Bool::False;
             }
 
-            Erase(Found);
+            Erase(FndItr);
 
             return ::Wiz::Bool::True;
         }
 
-        tIterator Pop(tIndexIn v)
+        tIterator Pop(tIndexIn InIdx)
         {
-            tIterator Found = Find(v);
-            if (Found == End())
+            tIterator FndItr = Find(InIdx);
+            if (FndItr == End())
             {
                 return End();
             }
 
-            return Erase(Found);
+            return Erase(FndItr);
         }
 
         ///-----------------------///
 
-        tIterator Find(tIndexIn v)
+        tIterator Find(tIndexIn InIdx)
         {
-            return tSuper::find(v);
+            return tSuper::find(InIdx);
         }
 
-        tIteratorConst Find(tIndexIn v) const
+        tIteratorConst Find(tIndexIn InIdx) const
         {
-            return tSuper::find(v);
-        }
-
-        ///-----------------------///
-
-        ::Wiz::Bool::Type HasData(tIndexIn v) const
-        {
-            return tSuper::find(v) != tSuper::end();
+            return tSuper::find(InIdx);
         }
 
         ///-----------------------///
 
-        ::Wiz::Bool::Type TryGet(tValueOut OutV, tIndexIn v)
+        ::Wiz::Bool::Type HasData(tIndexIn InIdx) const
         {
-            tIterator Want = Find(v);
-            if (Want == End())
+            return tSuper::find(InIdx) != tSuper::end();
+        }
+
+        ///-----------------------///
+
+        ::Wiz::Bool::Type TryGet(tValueOut OutV, tIndexIn InIdx)
+        {
+            tIterator FndItr = Find(InIdx);
+            if (FndItr == End())
             {
                 return ::Wiz::Bool::False;
             }
 
-            OutV = Want.GetValue();
+            OutV = FndItr.GetValue();
+
             return ::Wiz::Bool::True;
         }
 
-        ValueT* TryGetPtr(tIndexIn v)
+        ValueT* TryGetPtr(tIndexIn InIdx)
         {
-            tIterator Want = Find(v);
-            if (Want == End())
+            tIterator FndItr = Find(InIdx);
+            if (FndItr == End())
             {
                 return WIZ_NULL;
             }
 
-            return &(Want.GetValue());
+            return &(FndItr.GetValue());
         }
 
         ///-----------------------///
 
-        tIterator Insert(tIndexIn f, tValueIn s)
+        tIterator Insert(tIndexIn InIdx, tValueIn InVl)
         {
-            return tSuper::insert(tPair(f, s)).first;
+            return tSuper::insert(tPair(InIdx, InVl)).first;
         }
 
-        ::Wiz::Bool::Type Insert(tIterator& OutItr, tIndexIn f, tValueIn s)
+        ::Wiz::Bool::Type Insert(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
         {
-            ::std::pair<tIterator, ::Wiz::Bool::Type> Result = tSuper::insert(tPair(f, s));
+            ::std::pair<tIterator, ::Wiz::Bool::Type> Result = tSuper::insert(tPair(InIdx, InVl));
             OutItr = Result.first;
             return Result.second;
         }
 
-        ::Wiz::Bool::Type InsertUnique(tIterator& OutItr, tIndexIn Idx, tValueIn Val)
+        ::Wiz::Bool::Type InsertUnique(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
         {
-            if (this->Find(Idx) == this->End())
+            if (Find(InIdx) == End())
             {
-                OutItr = this->Insert(Idx, Val);
+                OutItr = Insert(InIdx, InVl);
                 return ::Wiz::Bool::True;
             }
             return ::Wiz::Bool::False;
         }
 
-        ::Wiz::Bool::Type InsertUnique(tIndexIn Idx, tValueIn Val)
+        ::Wiz::Bool::Type InsertUnique(tIndexIn InIdx, tValueIn InVl)
         {
             tIterator DummyItr;
-            return InsertUnique(DummyItr, Idx, Val);
+            return InsertUnique(DummyItr, InIdx, InVl);
         }
 
         //////////////////////////////////////////////////////////////////////////

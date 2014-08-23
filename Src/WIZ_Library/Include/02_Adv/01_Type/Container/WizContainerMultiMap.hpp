@@ -44,8 +44,6 @@ namespace Wiz
 
         ////////////////////////////////////////////////////////////////////////
 
-        typedef typename tSuper::size_type                                      tSize;
-
         typedef typename ::std::pair<tIndex, tValue>                            tPair;
 
         ////////////////////////////////////////////////////////////////////////

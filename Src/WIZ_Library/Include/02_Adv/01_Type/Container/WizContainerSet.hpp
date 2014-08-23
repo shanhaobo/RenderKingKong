@@ -34,29 +34,18 @@ namespace Wiz
 
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename tSuper::iterator                           tIterator;
-        typedef typename tSuper::const_iterator                     tIteratorConst;
-
         typedef typename tSuper::reverse_iterator                   tReverseIterator;
         typedef typename tSuper::const_reverse_iterator             tReverseIteratorConst;
-
-        typedef typename tSuper::iterator::value_type               tValue;
-        typedef typename tSuper::const_iterator::value_type         tValueConst;
-
-        typedef typename tSuper::reference                          tReference;
-        typedef typename tSuper::const_reference                    tReferenceConst;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename tSuper::size_type                          tSize;
 
         //////////////////////////////////////////////////////////////////////////
 
     public:
         Set() : tContainerBase()
         {}
+
         Set(tSuper const & InSuper) : tContainerBase(InSuper)
         {}
+
     public:
 
         ///-----------------------///
