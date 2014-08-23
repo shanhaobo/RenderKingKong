@@ -16,7 +16,7 @@ namespace Wiz
 
         typedef typename ::std::deque<ElementT, AllocatorT>         tSuper;
 
-        typedef ::Wiz::Container::Base< tThis, tSuper >             tContainerBase;
+        typedef typename ::Wiz::Container::Base< tThis, tSuper >    tContainerBase;
 
         //////////////////////////////////////////////////////////////////////////
 

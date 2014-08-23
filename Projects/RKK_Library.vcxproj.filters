@@ -28,9 +28,6 @@
     <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer.cpp">
       <Filter>Private\RenderDeviceLayer</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer_D3D11.cpp">
-      <Filter>Private\RenderDeviceLayer\D3D11</Filter>
-    </ClCompile>
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderState.cpp">
       <Filter>Private\RenderCore</Filter>
     </ClCompile>
@@ -71,9 +68,6 @@
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayer.hpp">
       <Filter>Include\RenderDeviceLayer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer_D3D11.hpp">
-      <Filter>Private\RenderDeviceLayer\D3D11</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\Base\Base.hpp">
       <Filter>Include\Base</Filter>
@@ -160,9 +154,6 @@
     </Filter>
     <Filter Include="Private\RenderFramework">
       <UniqueIdentifier>{aa9d3748-4a46-4f52-aea9-749084969840}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Private\RenderDeviceLayer\D3D11">
-      <UniqueIdentifier>{36bb1438-f89f-4d46-b050-876ebb4e450e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Include\Base">
       <UniqueIdentifier>{e00b57bf-8ae1-4459-b6f7-858b9034307a}</UniqueIdentifier>

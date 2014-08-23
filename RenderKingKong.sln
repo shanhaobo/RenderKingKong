@@ -4,10 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RKK_Library", "Projects\RKK_Library.vcxproj", "{D845A969-0CF5-4225-935B-AB0E3A0AD188}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D97800BC-87E5-42CD-A999-B99A4E5B1244} = {D97800BC-87E5-42CD-A999-B99A4E5B1244}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WIZ_Library", "Projects\WIZ_Library.vcxproj", "{D97800BC-87E5-42CD-A999-B99A4E5B1244}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RDL", "RDL", "{364DF884-FAF0-4A72-BF8B-BFAED48C142B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RKK_RDL_D3D11", "Projects\RKK_RDL_D3D11.vcxproj", "{4D0061F7-577A-4788-996C-C561E563CFBD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D845A969-0CF5-4225-935B-AB0E3A0AD188} = {D845A969-0CF5-4225-935B-AB0E3A0AD188}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,8 +31,15 @@ Global
 		{D97800BC-87E5-42CD-A999-B99A4E5B1244}.Debug|Win32.Build.0 = Debug|Win32
 		{D97800BC-87E5-42CD-A999-B99A4E5B1244}.Release|Win32.ActiveCfg = Release|Win32
 		{D97800BC-87E5-42CD-A999-B99A4E5B1244}.Release|Win32.Build.0 = Release|Win32
+		{4D0061F7-577A-4788-996C-C561E563CFBD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D0061F7-577A-4788-996C-C561E563CFBD}.Debug|Win32.Build.0 = Debug|Win32
+		{4D0061F7-577A-4788-996C-C561E563CFBD}.Release|Win32.ActiveCfg = Release|Win32
+		{4D0061F7-577A-4788-996C-C561E563CFBD}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4D0061F7-577A-4788-996C-C561E563CFBD} = {364DF884-FAF0-4A72-BF8B-BFAED48C142B}
 	EndGlobalSection
 EndGlobal

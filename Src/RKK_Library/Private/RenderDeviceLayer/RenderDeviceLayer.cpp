@@ -4,6 +4,14 @@ namespace rkk
 {
     namespace RenderDeviceLayer
     {
+        type::type()
+        {
+        }
+
+        type::~type()
+        {
+        }
+
         ptr Create()
         {
             return RKK_NULLPTR;
