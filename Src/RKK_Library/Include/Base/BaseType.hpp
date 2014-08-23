@@ -5,6 +5,8 @@
 
 #include "./TypeDeclareUtils.hpp"
 
+#include "./BaseAllocator.hpp"
+
 #undef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
 #define WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE           RKK_DECLARE
 
@@ -173,6 +175,16 @@ namespace rkk
     {
         typedef typename ::Wiz::Deque<T, A>::type   type;
     };
+
+    namespace Str
+    {
+        typedef ::Wiz::TString<char>::Type          type;
+    }
+
+    namespace WStr
+    {
+        typedef ::Wiz::TString<wchar_t>::Type      type;
+    }
 
 } /// namespace rkk
 

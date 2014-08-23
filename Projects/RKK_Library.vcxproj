@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\RKK_Library\Include\Base\Base.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseAllocator.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColor.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColorU32.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseMacro.hpp" />

@@ -10,15 +10,15 @@ namespace Wiz
     namespace Container
     {
         template<class DerivedT, class BaseT>
-        struct Base : public BaseT
+        struct Base : protected BaseT
         {
             //////////////////////////////////////////////////////////////////////////
 
             typedef typename DerivedT                                   tDerived;
 
-            //////////////////////////////////////////////////////////////////////////
-
             typedef typename BaseT                                      tSuper;
+
+            //////////////////////////////////////////////////////////////////////////
 
             typedef typename tSuper::iterator                           tIterator;
             typedef typename tSuper::const_iterator                     tIteratorConst;
