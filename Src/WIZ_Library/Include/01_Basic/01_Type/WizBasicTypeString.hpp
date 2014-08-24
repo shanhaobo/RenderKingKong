@@ -62,359 +62,359 @@ namespace Wiz
 
     //////////////////////////////////////////////////////////////////////////////////
 
-    template< typename CharT, class TraitsT = ::std::char_traits<CharT>, class AllocatorT = ::std::allocator<CharT> >
-    class String : public ::std::basic_string<CharT, TraitsT, AllocatorT>
+    namespace String
     {
-    protected:
-        typedef typename String<CharT, TraitsT, AllocatorT>                     tThis;
-
-        typedef typename tThis &                                                tThisRef;
-        typedef typename tThis const &                                          tThisConstRef;
-
-        typedef typename tThis const &                                          tThisIn;
-        typedef typename tThis &                                                tThisOut;
-
-        typedef typename ::std::basic_string<CharT, TraitsT, AllocatorT>        tSuper;
-
-        typedef typename tSuper const &                                         tSuperIn;
-        typedef typename tSuper const &                                         tSuperConstRef;
-
-    public:
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename tSuper::traits_type                                    tTraits;
-        typedef typename tSuper::allocator_type                                 tAllocator;
-        typedef typename tSuper::value_type                                     tChar;
-
-        typedef typename tSuper::iterator                                       tIterator;
-        typedef typename tSuper::const_iterator                                 tIteratorConst;
-
-        typedef tChar const * const                                             tCharPtrFixedConst;
-        typedef tChar const *                                                   tCharPtrConst;
-        typedef tChar *                                                         tCharPtr;
-
-        typedef tChar const * const                                             tStrFixedConst;
-        typedef tChar const *                                                   tStrConst;
-        typedef tChar *                                                         tStr;
-
-        typedef typename tSuper::size_type                                      tSize;
-
-        WIZ_DECLARE(tThis);
-
-    public:
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename std::basic_string<tChar, std::char_traits<tChar>, std::allocator<tChar> >  tStdString;
-        typedef tStdString const &                                                                  tStdStringIn;
-        typedef tStdString &                                                                        tStdStringOut;
-
-    public:
-        //////////////////////////////////////////////////////////////////////////
-        String() : tSuper()
+        template< typename CharT, class TraitsT = ::std::char_traits<CharT>, class AllocatorT = ::std::allocator<CharT> >
+        class Type : protected ::std::basic_string<CharT, TraitsT, AllocatorT>
         {
-        }
+        protected:
+            typedef typename Type<CharT, TraitsT, AllocatorT>                       tThis;
 
-        String(tCharPtrConst InPtr) : tSuper(InPtr)
-        {
-        }
+            typedef typename tThis &                                                tThisRef;
+            typedef typename tThis const &                                          tThisConstRef;
 
-        String(tSuperIn InSuper) : tSuper(InSuper)
-        {
-        }
+            typedef typename tThis const &                                          tThisIn;
+            typedef typename tThis &                                                tThisOut;
 
-        String(tThisIn InThis) : tSuper(InThis)
-        {
-        }
+            typedef typename ::std::basic_string<CharT, TraitsT, AllocatorT>        tSuper;
 
-        String(tThisIn InThis, tSize InOffSZ, tSize InCnt = npos) : tSuper(InThis, InOffSZ, InCnt)
-        {
-        }
+            typedef typename tSuper const &                                         tSuperIn;
+            typedef typename tSuper const &                                         tSuperConstRef;
 
-        String(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
-        {
-        }
+            WIZ_DECLARE_IN_STDCLASS(tThis)
 
-        template<class ItrT>
-        String(ItrT InFirst, ItrT InLast) : tSuper(InFirst, InLast)
-        {
-        }
+        public:
+            //////////////////////////////////////////////////////////////////////////
 
-    public:
-        //////////////////////////////////////////////////////////////////////////
-        Bool::Type operator==(tThisIn InOther) const
-        {
-            return tSuper::compare(InOther) == 0;
-        }
+            typedef typename tSuper::traits_type                                    tTraits;
+            typedef typename tSuper::allocator_type                                 tAllocator;
+            typedef typename tSuper::value_type                                     tChar;
 
-        Bool::Type operator!=(tThisIn InOther) const
-        {
-            return tSuper::compare(InOther) != 0;
-        }
+            typedef typename tSuper::iterator                                       tIterator;
+            typedef typename tSuper::const_iterator                                 tIteratorConst;
 
-        Bool::Type operator==(tCharPtrConst InPtr) const
-        {
-            return tSuper::compare(InPtr) == 0;
-        }
+            typedef tChar const * const                                             tCharPtrFixedConst;
+            typedef tChar const *                                                   tCharPtrConst;
+            typedef tChar *                                                         tCharPtr;
 
-        Bool::Type operator!=(tCharPtrConst InPtr) const
-        {
-            return tSuper::compare(InPtr) != 0;
-        }
+            typedef tChar const * const                                             tStrFixedConst;
+            typedef tChar const *                                                   tStrConst;
+            typedef tChar *                                                         tStr;
 
-        /// operator=
-        tThisRef operator=(tCharPtrConst InPtr)
-        {
-            tSuper::operator=(InPtr);
-            return *this;
-        }
-        tThisRef operator=(tThisIn InOther)
-        {
-            tSuper::operator=(InOther);
-            return *this;
-        }
-        tThisRef operator=(tSuperIn InOther)
-        {
-            tSuper::operator=(InOther);
-            return *this;
-        }
+            typedef typename tSuper::size_type                                      tSize;
 
-        /// operator+=
-        tThisRef operator+=(tCharPtrConst InPtr)
-        {
-            tSuper::operator+=(InPtr);
-            return *this;
-        }
-        tThisRef operator+=(tChar const InCh)
-        {
-            tSuper::operator+=(InCh);
-            return *this;
-        }
-        tThisRef operator+=(tThisIn InOther)
-        {
-            tSuper::operator+=(InOther);
-            return *this;
-        }
+        public:
+            //////////////////////////////////////////////////////////////////////////
 
-        /// operator+
-        tThis operator+(tCharPtrConst InPtr)
-        {
-            tThis TmpStr = *this;
-            return (TmpStr += InPtr);
-        }
-        tThis operator+(tThisIn InOther)
-        {
-            tThis TmpStr = *this;
-            return (TmpStr += InOther);
-        }
+            typedef typename std::basic_string<tChar, std::char_traits<tChar>, std::allocator<tChar> >  tStdString;
+            typedef typename tStdString const &                                                         tStdStringIn;
+            typedef typename tStdString &                                                               tStdStringOut;
 
-    public:
-        //////////////////////////////////////////////////////////////////////////
-        Void::Type Resize(tSize InNewSize)
-        {
-            tSuper::resize(InNewSize);
-        }
-
-        tSize Size() const
-        {
-            return stSuper::size();
-        }
-
-        tSize Capacity() const
-        {
-            return tSuper::capacity();
-        }
-
-        Bool::Type IsEmpty() const
-        {
-            return tSuper::empty();
-        }
-
-        Void::Type Clear()
-        {
-            tSuper::clear();
-        }
-
-        WIZ_INLINE static Bool::Type IsValidPos(tSize InNewSize)
-        {
-            return InNewSize == tSuper::npos;
-        }
-    public:
-        //////////////////////////////////////////////////////////////////////////
-        WIZ_INLINE tCharPtrConst GetBufferConst() const
-        {
-            return tSuper::c_str();
-        }
-
-        WIZ_INLINE tCharPtr GetBuffer() const
-        {
-            return const_cast<tCharPtr>(GetBufferConst());
-        }
-
-    public:
-        operator tCharPtrConst() const
-        {
-            return GetBufferConst();
-        }
-
-    public:
-        //////////////////////////////////////////////////////////////////////////
-        tSize Find(tChar C, tSize Offset = 0) const
-        {
-            return tSuper::find(C, Offset);
-        }
-        tSize Find(tStrConst SubStrPtr, tSize Offset = 0) const
-        {
-            return tSuper::find(SubStrPtr, Offset);
-        }
-
-        /// [OffBegin, OffEnd)
-        tSize Find(tChar C, tSize OffBegin, tSize OffEnd = 0) const
-        {
-            tStrFixedConst  StrBeginPtr = tSuper::c_str();
-            tStrConst       CurrPtr     = StrBeginPtr + OffBegin;
-            tStrFixedConst  EndPtr      = StrBeginPtr + (OffEnd == 0 ? Size() : OffEnd);
-            for (; CurrPtr < EndPtr; CurrPtr++)
+        public:
+            //////////////////////////////////////////////////////////////////////////
+            Type() : tSuper()
             {
-                if (*CurrPtr == C)
-                {
-                    return CurrPtr - StrBeginPtr;
-                }
             }
 
-            return tSuper::npos;
-        }
-
-        /// [OffBegin, OffEnd)
-        tSize Find(tStrConst, tSize SubLen, tSize OffBegin, tSize OffEnd = 0) const
-        {
-            tStrFixedConst StrBeginPtr = tSuper::c_str();
-
-            tStrConst CurrPtr = StrBeginPtr + OffBegin;
-
-            tStrFixedConst EndPtr = StrBeginPtr + (OffEnd == 0 ? Size() : OffEnd);
-            for (; CurrPtr < EndPtr; CurrPtr++)
+            Type(tCharPtrConst InPtr) : tSuper(InPtr)
             {
-                if (::memcmp(CurrPtr, SubStrPtr, SubLen) == 0)
-                {
-                    return CurrPtr - StrBeginPtr;
-                }
             }
 
-            return tSuper::npos;
-        }
-
-    public:
-        //////////////////////////////////////////////////////////////////////////
-        /// [OffBegin, OffEnd)
-        I::Type FindCount(tChar C, tSize OffBegin = 0, tSize OffEnd = 0) const
-        {
-            tSize Temp(OffBegin);
-            I::Type Cnt = -1;
-            do
+            Type(tSuperIn InSuper) : tSuper(InSuper)
             {
-                Temp = Find(C, Temp, OffEnd);
-                Cnt++;
-            } while (Temp != tSuper::npos);
+            }
 
-            return Cnt;
-        }
-
-        /// [OffBegin, OffEnd)
-        I::Type FindCount(tCharPtrConst SubStrPtr, tSize SubLen, tSize OffBegin = 0, tSize OffEnd = 0) const
-        {
-            tSize Temp(OffBegin);
-            I::Type Cnt = -1;
-            do
+            Type(tThisIn InThis) : tSuper(InThis)
             {
-                Temp = Find(SubStrPtr, SubLen, Temp + SubLen, OffEnd);
-                Cnt++;
-            } while (Temp != tSuper::npos);
+            }
 
-            return Cnt;
-        }
+            Type(tThisIn InThis, tSize InOffSZ, tSize InCnt = npos) : tSuper(InThis, InOffSZ, InCnt)
+            {
+            }
 
-    public:
-        //////////////////////////////////////////////////////////////////////////x
+            Type(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
+            {
+            }
 
-        WIZ_INLINE friend Bool::Type operator <(tThisIn l, tStdStringIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) < 0;
-        }
-        WIZ_INLINE friend Bool::Type operator <(tStdStringIn l, tThisIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) < 0;
-        }
-        WIZ_INLINE friend Bool::Type operator <=(tThisIn l, tStdStringIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) <= 0;
-        }
-        WIZ_INLINE friend Bool::Type operator <=(tStdStringIn l, tThisIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) <= 0;
-        }
-        WIZ_INLINE friend Bool::Type operator >(tThisIn l, tStdStringIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) > 0;
-        }
-        WIZ_INLINE friend Bool::Type operator >(tStdStringIn l, tThisIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) > 0;
-        }
-        WIZ_INLINE friend Bool::Type operator >=(tThisIn l, tStdStringIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) >= 0;
-        }
-        WIZ_INLINE friend Bool::Type operator >=(tStdStringIn l, tThisIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) >= 0;
-        }
+            template<class ItrT>
+            Type(ItrT InFirst, ItrT InLast) : tSuper(InFirst, InLast)
+            {
+            }
 
-        WIZ_INLINE friend Bool::Type operator ==(tThisIn l, tStdStringIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) == 0;
-        }
-        WIZ_INLINE friend Bool::Type operator ==(tStdStringIn l, tThisIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) == 0;
-        }
+        public:
+            //////////////////////////////////////////////////////////////////////////
+            Bool::Type operator==(tThisIn InOther) const
+            {
+                return tSuper::compare(InOther) == 0;
+            }
 
-        WIZ_INLINE friend Bool::Type operator !=(tThisIn l, tStdStringIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) != 0;
-        }
-        WIZ_INLINE friend Bool::Type operator !=(tStdStringIn l, tThisIn o)
-        {
-            return l.compare(0, l.length(), o.c_str(), o.length()) != 0;
-        }
+            Bool::Type operator!=(tThisIn InOther) const
+            {
+                return tSuper::compare(InOther) != 0;
+            }
 
-        WIZ_INLINE friend tThis operator +=(tThisIn l, tStdStringIn o)
-        {
-            return tThis(l) += o.c_str();
-        }
-        WIZ_INLINE friend tThis operator +=(tStdStringIn l, tThisIn o)
-        {
-            return tThis(l.c_str()) += o.c_str();
-        }
+            Bool::Type operator==(tCharPtrConst InPtr) const
+            {
+                return tSuper::compare(InPtr) == 0;
+            }
 
-        WIZ_INLINE friend tThis operator +(tThisIn l, tStdStringIn o)
-        {
-            return tThis(l) += o.c_str();
-        }
-        WIZ_INLINE friend tThis operator +(tStdStringIn l, tThisIn o)
-        {
-            return tThis(l.c_str()) += o.c_str();
-        }
+            Bool::Type operator!=(tCharPtrConst InPtr) const
+            {
+                return tSuper::compare(InPtr) != 0;
+            }
 
-        template<typename T>
-        WIZ_INLINE friend tThis operator +(const T* l, tThisIn o)
-        {
-            return tThis(l) += o;
-        }
+            /// operator=
+            tThisRef operator=(tCharPtrConst InPtr)
+            {
+                tSuper::operator=(InPtr);
+                return *this;
+            }
+            tThisRef operator=(tThisIn InOther)
+            {
+                tSuper::operator=(InOther);
+                return *this;
+            }
+            tThisRef operator=(tSuperIn InOther)
+            {
+                tSuper::operator=(InOther);
+                return *this;
+            }
 
-    }; /// end of namespace String
+            /// operator+=
+            tThisRef operator+=(tCharPtrConst InPtr)
+            {
+                tSuper::operator+=(InPtr);
+                return *this;
+            }
+            tThisRef operator+=(tChar const InCh)
+            {
+                tSuper::operator+=(InCh);
+                return *this;
+            }
+            tThisRef operator+=(tThisIn InOther)
+            {
+                tSuper::operator+=(InOther);
+                return *this;
+            }
 
+            /// operator+
+            tThis operator+(tCharPtrConst InPtr)
+            {
+                tThis TmpStr = *this;
+                return (TmpStr += InPtr);
+            }
+            tThis operator+(tThisIn InOther)
+            {
+                tThis TmpStr = *this;
+                return (TmpStr += InOther);
+            }
+
+        public:
+            //////////////////////////////////////////////////////////////////////////
+            Void::Type Resize(tSize InNewSize)
+            {
+                tSuper::resize(InNewSize);
+            }
+
+            tSize Size() const
+            {
+                return tSuper::size();
+            }
+
+            tSize Capacity() const
+            {
+                return tSuper::capacity();
+            }
+
+            Bool::Type IsEmpty() const
+            {
+                return tSuper::empty();
+            }
+
+            Void::Type Clear()
+            {
+                tSuper::clear();
+            }
+
+            WIZ_INLINE static Bool::Type IsValidPos(tSize InNewSize)
+            {
+                return InNewSize == tSuper::npos;
+            }
+        public:
+            //////////////////////////////////////////////////////////////////////////
+            WIZ_INLINE tCharPtrConst GetBufferConst() const
+            {
+                return tSuper::c_str();
+            }
+
+            WIZ_INLINE tCharPtr GetBuffer() const
+            {
+                return const_cast<tCharPtr>(GetBufferConst());
+            }
+
+        public:
+            operator tCharPtrConst() const
+            {
+                return GetBufferConst();
+            }
+
+        public:
+            //////////////////////////////////////////////////////////////////////////
+            tSize Find(tChar C, tSize Offset = 0) const
+            {
+                return tSuper::find(C, Offset);
+            }
+            tSize Find(tStrConst SubStrPtr, tSize Offset = 0) const
+            {
+                return tSuper::find(SubStrPtr, Offset);
+            }
+
+            /// [OffBegin, OffEnd)
+            tSize Find(tChar C, tSize OffBegin, tSize OffEnd = 0) const
+            {
+                tStrFixedConst  StrBeginPtr = tSuper::c_str();
+                tStrConst       CurrPtr = StrBeginPtr + OffBegin;
+                tStrFixedConst  EndPtr = StrBeginPtr + (OffEnd == 0 ? Size() : OffEnd);
+                for (; CurrPtr < EndPtr; CurrPtr++)
+                {
+                    if (*CurrPtr == C)
+                    {
+                        return CurrPtr - StrBeginPtr;
+                    }
+                }
+
+                return tSuper::npos;
+            }
+
+            /// [OffBegin, OffEnd)
+            tSize Find(tStrConst, tSize SubLen, tSize OffBegin, tSize OffEnd = 0) const
+            {
+                tStrFixedConst StrBeginPtr = tSuper::c_str();
+
+                tStrConst CurrPtr = StrBeginPtr + OffBegin;
+
+                tStrFixedConst EndPtr = StrBeginPtr + (OffEnd == 0 ? Size() : OffEnd);
+                for (; CurrPtr < EndPtr; CurrPtr++)
+                {
+                    if (::memcmp(CurrPtr, SubStrPtr, SubLen) == 0)
+                    {
+                        return CurrPtr - StrBeginPtr;
+                    }
+                }
+
+                return tSuper::npos;
+            }
+
+        public:
+            //////////////////////////////////////////////////////////////////////////
+            /// [OffBegin, OffEnd)
+            I::Type FindCount(tChar C, tSize OffBegin = 0, tSize OffEnd = 0) const
+            {
+                tSize Temp(OffBegin);
+                I::Type Cnt = -1;
+                do
+                {
+                    Temp = Find(C, Temp, OffEnd);
+                    Cnt++;
+                } while (Temp != tSuper::npos);
+
+                return Cnt;
+            }
+
+            /// [OffBegin, OffEnd)
+            I::Type FindCount(tCharPtrConst SubStrPtr, tSize SubLen, tSize OffBegin = 0, tSize OffEnd = 0) const
+            {
+                tSize Temp(OffBegin);
+                I::Type Cnt = -1;
+                do
+                {
+                    Temp = Find(SubStrPtr, SubLen, Temp + SubLen, OffEnd);
+                    Cnt++;
+                } while (Temp != tSuper::npos);
+
+                return Cnt;
+            }
+
+        public:
+            //////////////////////////////////////////////////////////////////////////x
+
+            WIZ_INLINE friend Bool::Type operator <(tThisIn l, tStdStringIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) < 0;
+            }
+            WIZ_INLINE friend Bool::Type operator <(tStdStringIn l, tThisIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) < 0;
+            }
+            WIZ_INLINE friend Bool::Type operator <=(tThisIn l, tStdStringIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) <= 0;
+            }
+            WIZ_INLINE friend Bool::Type operator <=(tStdStringIn l, tThisIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) <= 0;
+            }
+            WIZ_INLINE friend Bool::Type operator >(tThisIn l, tStdStringIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) > 0;
+            }
+            WIZ_INLINE friend Bool::Type operator >(tStdStringIn l, tThisIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) > 0;
+            }
+            WIZ_INLINE friend Bool::Type operator >=(tThisIn l, tStdStringIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) >= 0;
+            }
+            WIZ_INLINE friend Bool::Type operator >=(tStdStringIn l, tThisIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) >= 0;
+            }
+
+            WIZ_INLINE friend Bool::Type operator ==(tThisIn l, tStdStringIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) == 0;
+            }
+            WIZ_INLINE friend Bool::Type operator ==(tStdStringIn l, tThisIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) == 0;
+            }
+
+            WIZ_INLINE friend Bool::Type operator !=(tThisIn l, tStdStringIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) != 0;
+            }
+            WIZ_INLINE friend Bool::Type operator !=(tStdStringIn l, tThisIn o)
+            {
+                return l.compare(0, l.length(), o.c_str(), o.length()) != 0;
+            }
+
+            WIZ_INLINE friend tThis operator +=(tThisIn l, tStdStringIn o)
+            {
+                return tThis(l) += o.c_str();
+            }
+            WIZ_INLINE friend tThis operator +=(tStdStringIn l, tThisIn o)
+            {
+                return tThis(l.c_str()) += o.c_str();
+            }
+
+            WIZ_INLINE friend tThis operator +(tThisIn l, tStdStringIn o)
+            {
+                return tThis(l) += o.c_str();
+            }
+            WIZ_INLINE friend tThis operator +(tStdStringIn l, tThisIn o)
+            {
+                return tThis(l.c_str()) += o.c_str();
+            }
+
+            template<typename T>
+            WIZ_INLINE friend tThis operator +(const T* l, tThisIn o)
+            {
+                return tThis(l) += o;
+            }
+        };
+    } /// end of namespace String
     //////////////////////////////////////////////////////////////////////////////////
-
 } /// end of namespace Wiz
 
 #endif /*__WIZ_BASIC_TYPE_STRING_HPP__SHANHAOBO_19800429__*/

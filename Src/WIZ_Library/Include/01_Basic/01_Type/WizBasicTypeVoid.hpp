@@ -8,7 +8,7 @@ namespace Wiz
     namespace Void
     {
         WIZ_DECLARE_TYPE_STDNAME(void);
-        WIZ_DECLARE_PTR;
+        WIZ_DECLARE_PTR(void);
     } /// end of namespace Void
 } /// end of namespace Wiz
 

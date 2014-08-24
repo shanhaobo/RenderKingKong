@@ -5,40 +5,40 @@
 
 namespace Wiz
 {
-    template< typename CharT, class TraitsT = ::std::char_traits<CharT>, class AllocatorT = ::std::allocator<CharT> >
-    class FixedString : private ::Wiz::String<CharT, TraitsT, AllocatorT>::Type
+    namespace FixedString
     {
-    protected:
-        typedef FixedString<CharT, TraitsT, AllocatorT>             tThis;
-
-        typedef ::Wiz::String<CharT, TraitsT, AllocatorT>::Type    tSuper;
-
-    public:
-        WIZ_DECLARE(tThis);
-
-    public:
-        //////////////////////////////////////////////////////////////////////////
-        FixedString() : tSuper()
+        template< typename CharT, class TraitsT = ::std::char_traits<CharT>, class AllocatorT = ::std::allocator<CharT> >
+        class Type : public ::Wiz::String::Type<CharT, TraitsT, AllocatorT>
         {
-        }
+        protected:
+            typedef typename Type<CharT, TraitsT, AllocatorT>                   tThis;
+            typedef tThis const &                                               tThisIn;
 
-        FixedString(tThisIn InThis) : tSuper(InThis)
-        {
-        }
+            typedef typename ::Wiz::String::Type<CharT, TraitsT, AllocatorT>    tSuper;
 
-        FixedString(tStdStringIn InStd) : tSuper(InStd)
-        {
-        }
+        public:
+            //////////////////////////////////////////////////////////////////////////
+            Type() : tSuper()
+            {
+            }
 
-        FixedString(tCharPtrConst InPtr) : tSuper(InPtr)
-        {
-        }
+            Type(tThisIn InThis) : tSuper(InThis)
+            {
+            }
 
-        FixedString(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
-        {
-        }
-    };
+            Type(tStdStringIn InStd) : tSuper(InStd)
+            {
+            }
 
+            Type(tCharPtrConst InPtr) : tSuper(InPtr)
+            {
+            }
+
+            Type(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
+            {
+            }
+        };
+    } /// end of namespace FixedString
 } /// end of namespace Wiz
 
 #endif /*__WIZ_ADV_FIXEDSTRING_HPP__SHANHAOBO_19800429__*/

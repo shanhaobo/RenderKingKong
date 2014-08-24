@@ -11,7 +11,7 @@ namespace Wiz
     {
         namespace Default
         {
-            WIZ_CLASS: public Base<Allocator::Default::Type>::Type
+            WIZ_CLASS: public Base::Type<Allocator::Default::Type>
             {
             public:
                 ///////////////////////////////////////////

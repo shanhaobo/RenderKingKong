@@ -7,168 +7,171 @@
 
 namespace Wiz
 {
-    template< class ElementT, class CompT = ::std::less<ElementT>, class AllocatorT = ::std::allocator<ElementT> >
-    class Set : public ::Wiz::Container::SimpleBase< Set<ElementT, CompT, AllocatorT>, ::std::set<ElementT, CompT, AllocatorT> >
+    namespace Set
     {
-    public:
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename Set<ElementT, AllocatorT>                          tThis;
-
-        typedef typename ::std::set<ElementT, CompT, AllocatorT>            tSuper;
-
-        typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename ElementT                                           tElement;
-        typedef typename tElement const                                     tElementConst;
-
-        typedef typename tElement *                                         tElementPtr;
-        typedef typename tElement const *                                   tElementConstPtr;
-
-        typedef typename tElement const &                                   tElementIn;
-
-        typedef typename CompT                                              tComp;
-
-        typedef typename AllocatorT                                         tAllocator;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename tSuper::reverse_iterator                           tReverseIterator;
-        typedef typename tSuper::const_reverse_iterator                     tReverseIteratorConst;
-
-        //////////////////////////////////////////////////////////////////////////
-
-    public:
-        Set() : tContainerBase()
-        {}
-
-        Set(tSuper const & InSuper) : tContainerBase(InSuper)
-        {}
-
-    public:
-
-        ///-----------------------///
-
-        tReverseIterator RBegin()
+        template< class ElementT, class CompT = ::std::less<ElementT>, class AllocatorT = ::std::allocator<ElementT> >
+        class Type : public ::Wiz::Container::SimpleBase< Type<ElementT, CompT, AllocatorT>, ::std::set<ElementT, CompT, AllocatorT> >
         {
-            return tSuper::rbegin();
-        }
+        public:
+            //////////////////////////////////////////////////////////////////////////
 
-        tReverseIteratorConst RBegin() const
-        {
-            return tSuper::rbegin();
-        }
+            typedef typename Type<ElementT, AllocatorT>                         tThis;
 
-        tReverseIterator REnd()
-        {
-            return tSuper::rend();
-        }
+            typedef typename ::std::set<ElementT, CompT, AllocatorT>            tSuper;
 
-        tReverseIteratorConst REnd() const
-        {
-            return tSuper::rend();
-        }
+            typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
 
-        ///-----------------------///
+            //////////////////////////////////////////////////////////////////////////
 
-        tIterator Find(tElementIn v)
-        {
-            return tSuper::find(v);
-        }
+            typedef typename ElementT                                           tElement;
+            typedef typename tElement const                                     tElementConst;
 
-        tIteratorConst Find(tElementIn v) const
-        {
-            return tSuper::find(v);
-        }
+            typedef typename tElement *                                         tElementPtr;
+            typedef typename tElement const *                                   tElementConstPtr;
 
-        ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
-        {
-            OItr = Find(v);
-            return OItr != End();
-        }
+            typedef typename tElement const &                                   tElementIn;
 
-        ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
-        {
-            OItr = Find(v);
-            return OItr != End();
-        }
+            typedef typename CompT                                              tComp;
 
-        ///-----------------------///
+            typedef typename AllocatorT                                         tAllocator;
 
-        ::Wiz::Bool::Type HasData(tElementIn v) const
-        {
-            return tSuper::find(v) != tSuper::end();
-        }
+            //////////////////////////////////////////////////////////////////////////
 
-        ///-----------------------///
+            typedef typename tSuper::reverse_iterator                           tReverseIterator;
+            typedef typename tSuper::const_reverse_iterator                     tReverseIteratorConst;
 
-        ::Wiz::Bool::Type Insert(tElementIn i)
-        {
-            ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
+            //////////////////////////////////////////////////////////////////////////
 
-            Result = tSuper::insert(i);
+        public:
+            Type() : tContainerBase()
+            {}
 
-            return Result.second;
-        }
+            Type(tSuper const & InSuper) : tContainerBase(InSuper)
+            {}
 
-        ::Wiz::Bool::Type Insert(tElementIn i, tIterator& Itr)
-        {
-            ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
+        public:
 
-            Result = tSuper::insert(i);
-            Itr = Result.first;
-            return Result.second;
-        }
+            ///-----------------------///
 
-
-        ::Wiz::Bool::Type InsertUnique(tElementIn Val)
-        {
-            if (this->Find(Val) == this->End())
+            tReverseIterator RBegin()
             {
-                this->Insert(Val);
-                return ::Wiz::Bool::True;
+                return tSuper::rbegin();
             }
-            return ::Wiz::Bool::False;
-        }
 
-        ::Wiz::Bool::Type InsertUnique(tElementIn Val, tIterator& Itr)
-        {
-            if (this->Find(Val) == this->End())
+            tReverseIteratorConst RBegin() const
             {
-                Itr = this->Insert(Val);
-                return ::Wiz::Bool::True;
+                return tSuper::rbegin();
             }
-            return ::Wiz::Bool::False;
-        }
 
-        ::Wiz::Bool::Type Remove(tElementIn ELT)
-        {
-            tIterator Found = Find(ELT);
-            if (Found == End())
+            tReverseIterator REnd()
             {
+                return tSuper::rend();
+            }
+
+            tReverseIteratorConst REnd() const
+            {
+                return tSuper::rend();
+            }
+
+            ///-----------------------///
+
+            tIterator Find(tElementIn v)
+            {
+                return tSuper::find(v);
+            }
+
+            tIteratorConst Find(tElementIn v) const
+            {
+                return tSuper::find(v);
+            }
+
+            ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
+            {
+                OItr = Find(v);
+                return OItr != End();
+            }
+
+            ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
+            {
+                OItr = Find(v);
+                return OItr != End();
+            }
+
+            ///-----------------------///
+
+            ::Wiz::Bool::Type HasData(tElementIn v) const
+            {
+                return tSuper::find(v) != tSuper::end();
+            }
+
+            ///-----------------------///
+
+            ::Wiz::Bool::Type Insert(tElementIn i)
+            {
+                ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
+
+                Result = tSuper::insert(i);
+
+                return Result.second;
+            }
+
+            ::Wiz::Bool::Type Insert(tElementIn i, tIterator& Itr)
+            {
+                ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
+
+                Result = tSuper::insert(i);
+                Itr = Result.first;
+                return Result.second;
+            }
+
+
+            ::Wiz::Bool::Type InsertUnique(tElementIn Val)
+            {
+                if (this->Find(Val) == this->End())
+                {
+                    this->Insert(Val);
+                    return ::Wiz::Bool::True;
+                }
                 return ::Wiz::Bool::False;
             }
 
-            this->Erase(Found);
-            return ::Wiz::Bool::True;
-        }
-
-        ::Wiz::Bool::Type Remove(tElementIn ELT, tIterator& Itr)
-        {
-            tIterator Found = Find(ELT);
-            if (Found == End())
+            ::Wiz::Bool::Type InsertUnique(tElementIn Val, tIterator& Itr)
             {
+                if (this->Find(Val) == this->End())
+                {
+                    Itr = this->Insert(Val);
+                    return ::Wiz::Bool::True;
+                }
                 return ::Wiz::Bool::False;
             }
 
-            Itr = this->Erase(Found);
-            return ::Wiz::Bool::True;
-        }
+            ::Wiz::Bool::Type Remove(tElementIn ELT)
+            {
+                tIterator Found = Find(ELT);
+                if (Found == End())
+                {
+                    return ::Wiz::Bool::False;
+                }
 
-        ///-----------------------///
-    };
+                this->Erase(Found);
+                return ::Wiz::Bool::True;
+            }
+
+            ::Wiz::Bool::Type Remove(tElementIn ELT, tIterator& Itr)
+            {
+                tIterator Found = Find(ELT);
+                if (Found == End())
+                {
+                    return ::Wiz::Bool::False;
+                }
+
+                Itr = this->Erase(Found);
+                return ::Wiz::Bool::True;
+            }
+
+            ///-----------------------///
+        };
+    } /// end of namespace Set
 } /// end of namespace Wiz
 
 #endif /*__WIZ_ADV_CONTAINER_SET_HPP__SHANHAOBO_19800429__*/

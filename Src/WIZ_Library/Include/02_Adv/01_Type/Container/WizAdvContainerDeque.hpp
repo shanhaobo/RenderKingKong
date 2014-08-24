@@ -7,137 +7,140 @@
 
 namespace Wiz
 {
-    template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    class Deque : public ::Wiz::Container::SimpleBase< Deque<ElementT, AllocatorT>, ::std::deque<ElementT, AllocatorT> >
+    namespace Deque
     {
-    public:
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename Deque<ElementT, AllocatorT>                        tThis;
-
-        typedef typename ::std::deque<ElementT, AllocatorT>                 tSuper;
-
-        typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename ElementT                                           tElement;
-        typedef typename tElement const                                     tElementConst;
-
-        typedef typename ElementT *                                         tElementPtr;
-        typedef typename ElementT const *                                   tElementConstPtr;
-
-        typedef typename tElement const &                                   tElementIn;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename AllocatorT                                         tAllocator;
-
-        //////////////////////////////////////////////////////////////////////////
-
-    public:
-
-        Deque() : tContainerBase()
-        {}
-
-        Deque(tSuper const & InSuper) : tContainerBase(InSuper)
-        {}
-
-    public:
-
-        ///-----------------------///
-
-        tIterator Find(tElementIn v)
+        template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
+        class Type : public ::Wiz::Container::SimpleBase< Type<ElementT, AllocatorT>, ::std::deque<ElementT, AllocatorT> >
         {
-            return tSuper::find(v);
-        }
+        public:
+            //////////////////////////////////////////////////////////////////////////
 
-        tIteratorConst Find(tElementIn v) const
-        {
-            return tSuper::find(v);
-        }
+            typedef typename Type<ElementT, AllocatorT>                         tThis;
 
-        ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
-        {
-            OItr = Find(v);
-            return OItr != End();
-        }
+            typedef typename ::std::deque<ElementT, AllocatorT>                 tSuper;
 
-        ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
-        {
-            OItr = Find(v);
-            return OItr != End();
-        }
+            typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
 
-        ///-----------------------///
+            //////////////////////////////////////////////////////////////////////////
 
-        ::Wiz::Bool::Type HasData(tElementIn v) const
-        {
-            return tSuper::find(v) != End();
-        }
+            typedef typename ElementT                                           tElement;
+            typedef typename tElement const                                     tElementConst;
 
-        ///-----------------------///
+            typedef typename ElementT *                                         tElementPtr;
+            typedef typename ElementT const *                                   tElementConstPtr;
 
-        ::Wiz::Bool::Type Remove(tElementIn inELT)
-        {
-            tIterator FndItr;
+            typedef typename tElement const &                                   tElementIn;
 
-            if (Find(inELT, FndItr))
+            //////////////////////////////////////////////////////////////////////////
+
+            typedef typename AllocatorT                                         tAllocator;
+
+            //////////////////////////////////////////////////////////////////////////
+
+        public:
+
+            Type() : tContainerBase()
+            {}
+
+            Type(tSuper const & InSuper) : tContainerBase(InSuper)
+            {}
+
+        public:
+
+            ///-----------------------///
+
+            tIterator Find(tElementIn v)
             {
-                Erase(FndItr);
-
-                return ::Wiz::Bool::True;
+                return tSuper::find(v);
             }
 
-            return ::Wiz::Bool::False;
-        }
-
-        ::Wiz::Bool::Type Remove(tElementIn inELT, tIterator& OItr)
-        {
-            tIterator FndItr;
-
-            if (Find(inELT, FndItr))
+            tIteratorConst Find(tElementIn v) const
             {
-                OItr = Erase(FndItr);
-
-                return ::Wiz::Bool::True;
+                return tSuper::find(v);
             }
 
-            return ::Wiz::Bool::False;
-        }
+            ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
+            {
+                OItr = Find(v);
+                return OItr != End();
+            }
 
-        ///-----------------------///
+            ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
+            {
+                OItr = Find(v);
+                return OItr != End();
+            }
 
-        ::Wiz::Void::Type PushBack(tElementIn v)
-        {
-            tSuper::push_back(v);
-        }
+            ///-----------------------///
 
-        ::Wiz::Void::Type PushFront(tElementIn v)
-        {
-            tSuper::push_front(v);
-        }
+            ::Wiz::Bool::Type HasData(tElementIn v) const
+            {
+                return tSuper::find(v) != End();
+            }
 
-        ::Wiz::Void::Type PopBack(tElementIn v)
-        {
-            tSuper::pop_back(v);
-        }
+            ///-----------------------///
 
-        ::Wiz::Void::Type PopFront(tElementIn v)
-        {
-            tSuper::pop_front(v);
-        }
+            ::Wiz::Bool::Type Remove(tElementIn inELT)
+            {
+                tIterator FndItr;
 
-        tReference Front()
-        {
-            return tSuper::front();
-        }
+                if (Find(inELT, FndItr))
+                {
+                    Erase(FndItr);
 
-        tReference Back()
-        {
-            return tSuper::back();
-        }
-    };
+                    return ::Wiz::Bool::True;
+                }
+
+                return ::Wiz::Bool::False;
+            }
+
+            ::Wiz::Bool::Type Remove(tElementIn inELT, tIterator& OItr)
+            {
+                tIterator FndItr;
+
+                if (Find(inELT, FndItr))
+                {
+                    OItr = Erase(FndItr);
+
+                    return ::Wiz::Bool::True;
+                }
+
+                return ::Wiz::Bool::False;
+            }
+
+            ///-----------------------///
+
+            ::Wiz::Void::Type PushBack(tElementIn v)
+            {
+                tSuper::push_back(v);
+            }
+
+            ::Wiz::Void::Type PushFront(tElementIn v)
+            {
+                tSuper::push_front(v);
+            }
+
+            ::Wiz::Void::Type PopBack(tElementIn v)
+            {
+                tSuper::pop_back(v);
+            }
+
+            ::Wiz::Void::Type PopFront(tElementIn v)
+            {
+                tSuper::pop_front(v);
+            }
+
+            tReference Front()
+            {
+                return tSuper::front();
+            }
+
+            tReference Back()
+            {
+                return tSuper::back();
+            }
+        };
+    } /// end of namespace Deque
 } /// end of namespace Wiz
 
 #endif /*__WIZ_ADV_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__*/

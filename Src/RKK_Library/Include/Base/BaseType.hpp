@@ -3,6 +3,8 @@
 
 #include "./RKKPrerequisites.hpp"
 
+#include "../../../WIZ_Library/Include/Wiz.hpp"
+
 #include "./BaseAllocator.hpp"
 
 namespace rkk
@@ -133,49 +135,56 @@ namespace rkk
     template <typename T, typename A = ::std::allocator<T> > 
     struct Array
     {
-        typedef typename ::Wiz::Array<T, A>::type   type;
+        typedef typename ::Wiz::Array::Type<T, A>           type;
     };
 
     template <typename T, typename A = ::std::allocator<T> >
     struct List
     {
-        typedef typename ::Wiz::List<T, A>::type    type;
+        typedef typename ::Wiz::List::Type<T, A>            type;
     };
 
     template <typename I, typename V, typename A = ::std::allocator< ::std::pair<I, V> > >
     struct Map
     {
-        typedef typename ::Wiz::Map<I, V, A>::type  type;
+        typedef typename ::Wiz::Map::Type<I, V, A>          type;
     };
 
     template <typename I, typename V, typename A = ::std::allocator< ::std::pair<I, V> > >
     struct MultiMap
     {
-        typedef typename ::Wiz::MultiMap<I, V, A>::type     type;
+        typedef typename ::Wiz::MultiMap::Type<I, V, A>     type;
     };
 
     template <typename T, typename A = ::std::allocator<T> >
     struct Set
     {
-        typedef typename ::Wiz::Set<T, A>::type     type;
+        typedef typename ::Wiz::Set::Type<T, A>             type;
     };
 
     template <typename T, typename A = ::std::allocator<T> >
     struct Deque
     {
-        typedef typename ::Wiz::Deque<T, A>::type   type;
+        typedef typename ::Wiz::Deque::Type<T, A>           type;
     };
 
     /////////////////////////////////////////////////////////////
 
     namespace Str
     {
-        typedef ::Wiz::String<::rkk::Char::type>::Type         type;
+        typedef ::Wiz::String::Type<::rkk::Char::type>      type;
     }
 
     namespace WStr
     {
-        typedef ::Wiz::String<::rkk::WChar::type>::Type        type;
+        typedef ::Wiz::String::Type<::rkk::WChar::type>     type;
+    }
+
+    /////////////////////////////////////////////////////////////
+
+    namespace Name
+    {
+        typedef ::Wiz::HashString::Type< ::rkk::Str::type, ::Wiz::HashString::Proxy::Category::eSDBM, true, 64, 65536, 1024, ::std::allocator<::rkk::Char::type> >   type;
     }
 
     /////////////////////////////////////////////////////////////

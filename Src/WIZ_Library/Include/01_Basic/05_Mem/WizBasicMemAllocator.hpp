@@ -14,7 +14,7 @@ namespace Wiz
 
         /// STLµÄAllocator
         template<class ElementT>
-        struct STL : public Allocator::STLBase<ElementT, Allocator::Type>::Type
+        struct STL : public Allocator::STLBase::Type<ElementT, Allocator::Type>
         {
             typedef typename Allocator::STL<ElementT>            Type;
         };

@@ -60,7 +60,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMultiMap.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerSet.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvFixedString.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashString.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashStringTable.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvString.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashStringProxy.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvTypeEnum.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp" />

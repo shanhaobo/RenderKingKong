@@ -82,6 +82,9 @@
     <Filter Include="Include\02_Adv%28Advanced%29\01_Type\String">
       <UniqueIdentifier>{552f111a-3cda-4c49-a8f2-40fb9f10c25e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29\01_Type\String\HashString">
+      <UniqueIdentifier>{0e96431e-1f0c-4209-855d-847607805dd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -278,6 +281,15 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\Wiz.hpp">
       <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashStringTable.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\String\HashString</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashStringProxy.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\String\HashString</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashString.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\String\HashString</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

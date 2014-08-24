@@ -23,7 +23,7 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
 
-            WIZ_DECLARE(tDerived);
+            WIZ_DECLARE_IN_STDCLASS(tDerived);
 
 #   ifdef   WIZ_CUSTOM_DECLARE_HELPER_CONTAINER
             WIZ_CUSTOM_DECLARE_HELPER_CONTAINER(tDerived);

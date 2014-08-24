@@ -7,153 +7,156 @@
 
 namespace Wiz
 {
-    template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    class List : public ::Wiz::Container::SimpleBase< List<ElementT, AllocatorT>, ::std::list<ElementT, AllocatorT> >
+    namespace List
     {
-    public:
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename List<ElementT, AllocatorT>                         tThis;
-
-        typedef typename ::std::list<ElementT, AllocatorT>                  tSuper;
-
-        typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename ElementT                                           tElement;
-        typedef typename tElement const                                     tElementConst;
-
-        typedef typename ElementT *                                         tElementPtr;
-        typedef typename ElementT const *                                   tElementConstPtr;
-
-        typedef typename tElement const &                                   tElementIn;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename AllocatorT                                         tAllocator;
-
-        //////////////////////////////////////////////////////////////////////////
-
-    public:
-        List() : tContainerBase()
-        {}
-
-        List(tSuper const & InSuper) : tContainerBase(InSuper)
-        {}
-
-    public:
-
-        ///-----------------------///
-
-        tIterator Find(tElementIn v)
+        template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
+        class Type : public ::Wiz::Container::SimpleBase< Type<ElementT, AllocatorT>, ::std::list<ElementT, AllocatorT> >
         {
-            return tSuper::find(v);
-        }
+        public:
+            //////////////////////////////////////////////////////////////////////////
 
-        tIteratorConst Find(tElementIn v) const
-        {
-            return tSuper::find(v);
-        }
+            typedef typename Type<ElementT, AllocatorT>                         tThis;
 
-        ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
-        {
-            OItr = Find(v);
-            return OItr != End();
-        }
+            typedef typename ::std::list<ElementT, AllocatorT>                  tSuper;
 
-        ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
-        {
-            OItr = Find(v);
-            return OItr != End();
-        }
+            typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
 
-        ///-----------------------///
+            //////////////////////////////////////////////////////////////////////////
 
-        ::Wiz::Bool::Type HasData(tElementIn v) const
-        {
-            return tSuper::find(v) != End();
-        }
+            typedef typename ElementT                                           tElement;
+            typedef typename tElement const                                     tElementConst;
 
-        ///-----------------------///
+            typedef typename ElementT *                                         tElementPtr;
+            typedef typename ElementT const *                                   tElementConstPtr;
 
-        ::Wiz::Bool::Type Remove(tElementIn inELT)
-        {
-            tIterator FndItr;
+            typedef typename tElement const &                                   tElementIn;
 
-            if (Find(inELT, FndItr))
+            //////////////////////////////////////////////////////////////////////////
+
+            typedef typename AllocatorT                                         tAllocator;
+
+            //////////////////////////////////////////////////////////////////////////
+
+        public:
+            Type() : tContainerBase()
+            {}
+
+            Type(tSuper const & InSuper) : tContainerBase(InSuper)
+            {}
+
+        public:
+
+            ///-----------------------///
+
+            tIterator Find(tElementIn v)
             {
-                Erase(FndItr);
-
-                return ::Wiz::Bool::True;
+                return tSuper::find(v);
             }
 
-            return ::Wiz::Bool::False;
-        }
-
-        ::Wiz::Bool::Type Remove(tElementIn inELT, tIterator& OItr)
-        {
-            tIterator FndItr;
-
-            if (Find(inELT, FndItr))
+            tIteratorConst Find(tElementIn v) const
             {
-                OItr = Erase(FndItr);
-
-                return ::Wiz::Bool::True;
+                return tSuper::find(v);
             }
 
-            return ::Wiz::Bool::False;
-        }
+            ::Wiz::Bool::Type Find(tElementIn v, tIterator& OItr)
+            {
+                OItr = Find(v);
+                return OItr != End();
+            }
 
-        ///-----------------------///
+            ::Wiz::Bool::Type Find(tElementIn v, tIteratorConst& OItr) const
+            {
+                OItr = Find(v);
+                return OItr != End();
+            }
 
-        ::Wiz::Void::Type PushBack(tElementIn v)
-        {
-            tSuper::push_back(v);
-        }
+            ///-----------------------///
 
-        ::Wiz::Void::Type PopBack()
-        {
-            tSuper::pop_back();
-        }
+            ::Wiz::Bool::Type HasData(tElementIn v) const
+            {
+                return tSuper::find(v) != End();
+            }
 
-        ::Wiz::Void::Type PushFront(tElementIn v)
-        {
-            tSuper::push_front(v);
-        }
+            ///-----------------------///
 
-        ::Wiz::Void::Type PopFront()
-        {
-            tSuper::pop_front();
-        }
+            ::Wiz::Bool::Type Remove(tElementIn inELT)
+            {
+                tIterator FndItr;
 
-        ::Wiz::Void::Type Sort()
-        {
-            tSuper::sort();
-        }
+                if (Find(inELT, FndItr))
+                {
+                    Erase(FndItr);
 
-        ///-----------------------///
+                    return ::Wiz::Bool::True;
+                }
 
-        tReference Front()
-        {
-            return tSuper::front();
-        }
+                return ::Wiz::Bool::False;
+            }
 
-        tReference Back()
-        {
-            return tSuper::back();
-        }
+            ::Wiz::Bool::Type Remove(tElementIn inELT, tIterator& OItr)
+            {
+                tIterator FndItr;
 
-        tReferenceConst Front() const
-        {
-            return tSuper::front();
-        }
+                if (Find(inELT, FndItr))
+                {
+                    OItr = Erase(FndItr);
 
-        tReferenceConst Back() const
-        {
-            return tSuper::back();
-        }
-    };
+                    return ::Wiz::Bool::True;
+                }
+
+                return ::Wiz::Bool::False;
+            }
+
+            ///-----------------------///
+
+            ::Wiz::Void::Type PushBack(tElementIn v)
+            {
+                tSuper::push_back(v);
+            }
+
+            ::Wiz::Void::Type PopBack()
+            {
+                tSuper::pop_back();
+            }
+
+            ::Wiz::Void::Type PushFront(tElementIn v)
+            {
+                tSuper::push_front(v);
+            }
+
+            ::Wiz::Void::Type PopFront()
+            {
+                tSuper::pop_front();
+            }
+
+            ::Wiz::Void::Type Sort()
+            {
+                tSuper::sort();
+            }
+
+            ///-----------------------///
+
+            tReference Front()
+            {
+                return tSuper::front();
+            }
+
+            tReference Back()
+            {
+                return tSuper::back();
+            }
+
+            tReferenceConst Front() const
+            {
+                return tSuper::front();
+            }
+
+            tReferenceConst Back() const
+            {
+                return tSuper::back();
+            }
+        };
+    } /// end of namespace List
 } /// end of namespace Wiz
 
 #endif /*__WIZ_ADV_CONTAINER_LIST_HPP__SHANHAOBO_19800429__*/

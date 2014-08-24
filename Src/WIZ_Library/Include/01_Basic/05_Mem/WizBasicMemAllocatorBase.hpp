@@ -7,41 +7,46 @@ namespace Wiz
 {
     namespace Allocator
     {
-        template<class DerivedT>
-        class Base
+        namespace Base
         {
-        public:
-            typedef typename DerivedT       tDerived;
-
-            typedef typename Base<tDerived> Type;
-
-        public:
-            ///////////////////////////////////////////
-            /// With Debug Info
-            static ::Wiz::Void::Ptr AllocateWithDebugInfo(size_t sz, const char* file, int line, const char* func)
+            template<class DerivedT>
+            class Type
             {
-                ::Wiz::Void::Ptr MemPtr = tDerived::Allocate(sz);
-                if (::Wiz::IsValidPtr(MemPtr))
+            public:
+                typedef typename DerivedT       tDerived;
+
+                typedef typename Type<tDerived> tThis;
+
+                WIZ_DECLARE_IN_STDCLASS(tThis);
+
+            public:
+                ///////////////////////////////////////////
+                /// With Debug Info
+                static ::Wiz::Void::Ptr AllocateWithDebugInfo(size_t sz, const char* file, int line, const char* func)
                 {
-                    ::Wiz::MemRecorder::Alloc(MemPtr, sz, file, ln, func);
+                    ::Wiz::Void::Ptr MemPtr = tDerived::Allocate(sz);
+                    if (::Wiz::IsValidPtr(MemPtr))
+                    {
+                        ::Wiz::MemRecorder::Alloc(MemPtr, sz, file, ln, func);
 
-                    return MemPtr;
+                        return MemPtr;
+                    }
+                    return WIZ_NULL;
                 }
-                return WIZ_NULL;
-            }
 
-            /// With Debug Info
-            static ::Wiz::Void::Type DeallocateWithDebugInfo(void* ptr, const char*, int, const char*)
-            {
-                if (::Wiz::IsValidPtr(ptr))
+                /// With Debug Info
+                static ::Wiz::Void::Type DeallocateWithDebugInfo(void* ptr, const char*, int, const char*)
                 {
-                    tDerived::Deallocate(ptr);
+                    if (::Wiz::IsValidPtr(ptr))
+                    {
+                        tDerived::Deallocate(ptr);
 
-                    ::Wiz::MemRecorder::Dealloc(ptr);
+                        ::Wiz::MemRecorder::Dealloc(ptr);
+                    }
                 }
-            }
-            ///////////////////////////////////////////
-        }; /// end of namespace Base
+                ///////////////////////////////////////////
+            }; /// end of class Type
+        }  /// end of namespace Base
     } /// end of namespace Allocator
 } /// end of namespace Wiz
 

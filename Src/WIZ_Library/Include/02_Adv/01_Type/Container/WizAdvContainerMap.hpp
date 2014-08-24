@@ -7,136 +7,139 @@
 
 namespace Wiz
 {
-    template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> > >
-    class Map : public ::Wiz::Container::MapBase< IndexT, ValueT, CompT, Map<IndexT, ValueT, CompT, AllocatorT>, ::std::map<IndexT, ValueT, CompT, AllocatorT> >
+    namespace Map
     {
-    public:
-        ////////////////////////////////////////////////////////////////////////
-
-        typedef typename Map<IndexT, ValueT, CompT, AllocatorT>                             tThis;
-
-        typedef typename ::std::map<IndexT, ValueT, CompT, AllocatorT>                      tSuper;
-
-        typedef typename ::Wiz::Container::MapBase<IndexT, ValueT, CompT, tThis, tSuper>    tContainerBase;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename AllocatorT                                                         tAllocator;
-
-        //////////////////////////////////////////////////////////////////////////
-
-    public:
-        Map() : tContainerBase()
+        template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> > >
+        class Type : public ::Wiz::Container::MapBase< IndexT, ValueT, CompT, Type<IndexT, ValueT, CompT, AllocatorT>, ::std::map<IndexT, ValueT, CompT, AllocatorT> >
         {
-        }
+        public:
+            ////////////////////////////////////////////////////////////////////////
 
-        Map(tSuper const & InSuper) : tContainerBase(InSuper)
-        {
-        }
+            typedef typename Type<IndexT, ValueT, CompT, AllocatorT>                             tThis;
 
-        //////////////////////////////////////////////////////////////////////////
-    public:
-        ::Wiz::Bool::Type Remove(tIndexIn InIdx)
-        {
-            tIterator FndItr = Find(InIdx);
-            if (FndItr == End())
+            typedef typename ::std::map<IndexT, ValueT, CompT, AllocatorT>                      tSuper;
+
+            typedef typename ::Wiz::Container::MapBase<IndexT, ValueT, CompT, tThis, tSuper>    tContainerBase;
+
+            //////////////////////////////////////////////////////////////////////////
+
+            typedef typename AllocatorT                                                         tAllocator;
+
+            //////////////////////////////////////////////////////////////////////////
+
+        public:
+            Type() : tContainerBase()
             {
-                return ::Wiz::Bool::False;
             }
 
-            Erase(FndItr);
-
-            return ::Wiz::Bool::True;
-        }
-
-        tIterator Pop(tIndexIn InIdx)
-        {
-            tIterator FndItr = Find(InIdx);
-            if (FndItr == End())
+            Type(tSuper const & InSuper) : tContainerBase(InSuper)
             {
-                return End();
             }
 
-            return Erase(FndItr);
-        }
-
-        ///-----------------------///
-
-        tIterator Find(tIndexIn InIdx)
-        {
-            return tSuper::find(InIdx);
-        }
-
-        tIteratorConst Find(tIndexIn InIdx) const
-        {
-            return tSuper::find(InIdx);
-        }
-
-        ///-----------------------///
-
-        ::Wiz::Bool::Type HasData(tIndexIn InIdx) const
-        {
-            return tSuper::find(InIdx) != tSuper::end();
-        }
-
-        ///-----------------------///
-
-        ::Wiz::Bool::Type TryGet(tValueOut OutV, tIndexIn InIdx)
-        {
-            tIterator FndItr = Find(InIdx);
-            if (FndItr == End())
+            //////////////////////////////////////////////////////////////////////////
+        public:
+            ::Wiz::Bool::Type Remove(tIndexIn InIdx)
             {
-                return ::Wiz::Bool::False;
-            }
+                tIterator FndItr = Find(InIdx);
+                if (FndItr == End())
+                {
+                    return ::Wiz::Bool::False;
+                }
 
-            OutV = FndItr.GetValue();
+                Erase(FndItr);
 
-            return ::Wiz::Bool::True;
-        }
-
-        ValueT* TryGetPtr(tIndexIn InIdx)
-        {
-            tIterator FndItr = Find(InIdx);
-            if (FndItr == End())
-            {
-                return WIZ_NULL;
-            }
-
-            return &(FndItr.GetValue());
-        }
-
-        ///-----------------------///
-
-        tIterator Insert(tIndexIn InIdx, tValueIn InVl)
-        {
-            return tSuper::insert(tPair(InIdx, InVl)).first;
-        }
-
-        ::Wiz::Bool::Type Insert(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
-        {
-            ::std::pair<tIterator, ::Wiz::Bool::Type> Result = tSuper::insert(tPair(InIdx, InVl));
-            OutItr = Result.first;
-            return Result.second;
-        }
-
-        ::Wiz::Bool::Type InsertUnique(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
-        {
-            if (Find(InIdx) == End())
-            {
-                OutItr = Insert(InIdx, InVl);
                 return ::Wiz::Bool::True;
             }
-            return ::Wiz::Bool::False;
-        }
 
-        ::Wiz::Bool::Type InsertUnique(tIndexIn InIdx, tValueIn InVl)
-        {
-            tIterator DummyItr;
-            return InsertUnique(DummyItr, InIdx, InVl);
-        }
+            tIterator Pop(tIndexIn InIdx)
+            {
+                tIterator FndItr = Find(InIdx);
+                if (FndItr == End())
+                {
+                    return End();
+                }
 
-        //////////////////////////////////////////////////////////////////////////
-    };
+                return Erase(FndItr);
+            }
+
+            ///-----------------------///
+
+            tIterator Find(tIndexIn InIdx)
+            {
+                return tSuper::find(InIdx);
+            }
+
+            tIteratorConst Find(tIndexIn InIdx) const
+            {
+                return tSuper::find(InIdx);
+            }
+
+            ///-----------------------///
+
+            ::Wiz::Bool::Type HasData(tIndexIn InIdx) const
+            {
+                return tSuper::find(InIdx) != tSuper::end();
+            }
+
+            ///-----------------------///
+
+            ::Wiz::Bool::Type TryGet(tValueOut OutV, tIndexIn InIdx)
+            {
+                tIterator FndItr = Find(InIdx);
+                if (FndItr == End())
+                {
+                    return ::Wiz::Bool::False;
+                }
+
+                OutV = FndItr.GetValue();
+
+                return ::Wiz::Bool::True;
+            }
+
+            ValueT* TryGetPtr(tIndexIn InIdx)
+            {
+                tIterator FndItr = Find(InIdx);
+                if (FndItr == End())
+                {
+                    return WIZ_NULL;
+                }
+
+                return &(FndItr.GetValue());
+            }
+
+            ///-----------------------///
+
+            tIterator Insert(tIndexIn InIdx, tValueIn InVl)
+            {
+                return tSuper::insert(tPair(InIdx, InVl)).first;
+            }
+
+            ::Wiz::Bool::Type Insert(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
+            {
+                ::std::pair<tIterator, ::Wiz::Bool::Type> Result = tSuper::insert(tPair(InIdx, InVl));
+                OutItr = Result.first;
+                return Result.second;
+            }
+
+            ::Wiz::Bool::Type InsertUnique(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
+            {
+                if (Find(InIdx) == End())
+                {
+                    OutItr = Insert(InIdx, InVl);
+                    return ::Wiz::Bool::True;
+                }
+                return ::Wiz::Bool::False;
+            }
+
+            ::Wiz::Bool::Type InsertUnique(tIndexIn InIdx, tValueIn InVl)
+            {
+                tIterator DummyItr;
+                return InsertUnique(DummyItr, InIdx, InVl);
+            }
+
+            //////////////////////////////////////////////////////////////////////////
+        };
+    } /// end of namespace Map
 } /// end of namespace Wiz
 
 #endif /*__WIZ_ADV_CONTAINER_MAP_HPP__SHANHAOBO_19800429__*/
