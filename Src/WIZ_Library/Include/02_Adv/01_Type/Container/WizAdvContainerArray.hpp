@@ -8,35 +8,35 @@
 namespace Wiz
 {
     template< class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    class Array : public ::Wiz::Container::Base< Array<ElementT, AllocatorT>, ::std::vector<ElementT, AllocatorT> >
+    class Array : public ::Wiz::Container::SimpleBase< Array<ElementT, AllocatorT>, ::std::vector<ElementT, AllocatorT> >
     {
     public:
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename Array<ElementT, AllocatorT>                tThis;
+        typedef typename Array<ElementT, AllocatorT>                        tThis;
 
-        typedef typename ::std::vector<ElementT, AllocatorT>        tSuper;
+        typedef typename ::std::vector<ElementT, AllocatorT>                tSuper;
 
-        typedef typename ::Wiz::Container::Base< tThis, tSuper >    tContainerBase;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename ElementT                                   tElement;
-        typedef typename tElement const                             tElementConst;
-
-        typedef typename ElementT *                                 tElementPtr;
-        typedef typename ElementT const *                           tElementConstPtr;
-
-        typedef typename tElement const &                           tElementIn;
+        typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
 
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename AllocatorT                                 tAllocator;
+        typedef typename ElementT                                           tElement;
+        typedef typename tElement const                                     tElementConst;
+
+        typedef typename ElementT *                                         tElementPtr;
+        typedef typename ElementT const *                                   tElementConstPtr;
+
+        typedef typename tElement const &                                   tElementIn;
 
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename tSuper::reverse_iterator                   tReverseIterator;
-        typedef typename tSuper::const_reverse_iterator             tReverseIteratorConst;
+        typedef typename AllocatorT                                         tAllocator;
+
+        //////////////////////////////////////////////////////////////////////////
+
+        typedef typename tSuper::reverse_iterator                           tReverseIterator;
+        typedef typename tSuper::const_reverse_iterator                     tReverseIteratorConst;
 
         //////////////////////////////////////////////////////////////////////////
 

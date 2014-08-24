@@ -8,95 +8,29 @@
 namespace Wiz
 {
     template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> >  >
-    class MultiMap : public ::Wiz::Container::Base< MultiMap<IndexT, ValueT, CompT, AllocatorT>, ::std::multimap<IndexT, ValueT, CompT, AllocatorT> >
+    class MultiMap : public ::Wiz::Container::MapBase< IndexT, ValueT, CompT, MultiMap<IndexT, ValueT, CompT, AllocatorT>, ::std::multimap<IndexT, ValueT, CompT, AllocatorT> >
     {
     public:
         ////////////////////////////////////////////////////////////////////////
 
-        typedef typename MultiMap<IndexT, ValueT, CompT, AllocatorT>            tThis;
+        typedef typename MultiMap<IndexT, ValueT, CompT, AllocatorT>                        tThis;
 
-        typedef typename ::std::multimap<IndexT, ValueT, CompT, AllocatorT>     tSuper;
+        typedef typename ::std::multimap<IndexT, ValueT, CompT, AllocatorT>                 tSuper;
 
-        typedef typename ::Wiz::Container::Base< tThis, tSuper >                tContainerBase;
+        typedef typename ::Wiz::Container::MapBase<IndexT, ValueT, CompT, tThis, tSuper>    tContainerBase;
 
         /////////////////////////////////////////////////////////////////////////
 
-        typedef typename IndexT                                                 tIndex;
-        typedef typename tIndex const                                           tIndexConst;
-        typedef typename tIndex const &                                         tIndexIn;
-        typedef typename tIndex &                                               tIndexRef;
-        typedef typename tIndex const &                                         tIndexRefConst;
-
-        typedef typename ValueT                                                 tValue;
-        typedef typename tValue const                                           tValueConst;
-        typedef typename tValue const &                                         tValueIn;
-        typedef typename tValue &                                               tValueOut;
-        typedef typename tValue &                                               tValueRef;
-        typedef typename tValue const &                                         tValueRefConst;
-
-        typedef typename CompT                                                  tComp;
-
-        typedef typename AllocatorT                                             tAllocator;
+        typedef typename AllocatorT                                                         tAllocator;
 
         ////////////////////////////////////////////////////////////////////////
-
-        typedef typename tSuper::iterator                                       tSuperIterator;
-        typedef typename tSuper::const_iterator                                 tSuperIteratorConst;
-
-        ////////////////////////////////////////////////////////////////////////
-
-        typedef typename ::std::pair<tIndex, tValue>                            tPair;
-
-        ////////////////////////////////////////////////////////////////////////
-        struct tIterator : public tSuperIterator
-        {
-            tIterator()
-            {
-
-            }
-            tIterator(tSuperIterator Itr) : tSuperIterator(Itr)
-            {
-
-            }
-            tIndexRefConst Index() const
-            {
-                return (*this)->first;
-            }
-
-            tValueRef Value() const
-            {
-                return (*this)->second;
-            }
-        };
-        struct tIteratorConst : public tSuperIteratorConst
-        {
-            tIteratorConst()
-            {
-
-            }
-            tIteratorConst(tSuperIteratorConst Itr) : tSuperIteratorConst(Itr)
-            {
-
-            }
-            tIndexRefConst Index() const
-            {
-                return (*this)->first;
-            }
-
-            tValueRefConst Value() const
-            {
-                return (*this)->second;
-            }
-        };
-
-        //////////////////////////////////////////////////////////////////////////
 
     public:
-        MultiMap() : tSuper()
+        MultiMap() : tContainerBase()
         {
         }
 
-        MultiMap(tSuper const & InSuper) : tSuper(InSuper)
+        MultiMap(tSuper const & InSuper) : tContainerBase(InSuper)
         {
         }
         //////////////////////////////////////////////////////////////////////////
@@ -124,18 +58,6 @@ namespace Wiz
             }
 
             return Erase(Found);
-        }
-
-        ///-----------------------///
-
-        tIterator Find(tIndexIn v)
-        {
-            return tSuper::find(v);
-        }
-
-        tIteratorConst Find(tIndexIn v) const
-        {
-            return tSuper::find(v);
         }
 
         ///-----------------------///

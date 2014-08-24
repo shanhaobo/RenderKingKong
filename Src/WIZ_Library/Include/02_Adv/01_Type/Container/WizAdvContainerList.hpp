@@ -8,30 +8,30 @@
 namespace Wiz
 {
     template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    class List : public ::Wiz::Container::Base< List<ElementT, AllocatorT>, ::std::list<ElementT, AllocatorT> >
+    class List : public ::Wiz::Container::SimpleBase< List<ElementT, AllocatorT>, ::std::list<ElementT, AllocatorT> >
     {
     public:
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename List<ElementT, AllocatorT>                 tThis;
+        typedef typename List<ElementT, AllocatorT>                         tThis;
 
-        typedef typename ::std::list<ElementT, AllocatorT>          tSuper;
+        typedef typename ::std::list<ElementT, AllocatorT>                  tSuper;
 
-        typedef typename ::Wiz::Container::Base< tThis, tSuper >    tContainerBase;
-
-        //////////////////////////////////////////////////////////////////////////
-
-        typedef typename ElementT                                   tElement;
-        typedef typename tElement const                             tElementConst;
-
-        typedef typename tElement *                                 tElementPtr;
-        typedef typename tElement const *                           tElementConstPtr;
-
-        typedef typename tElement const &                           tElementIn;
+        typedef typename ::Wiz::Container::SimpleBase< tThis, tSuper >      tContainerBase;
 
         //////////////////////////////////////////////////////////////////////////
 
-        typedef typename AllocatorT                                 tAllocator;
+        typedef typename ElementT                                           tElement;
+        typedef typename tElement const                                     tElementConst;
+
+        typedef typename ElementT *                                         tElementPtr;
+        typedef typename ElementT const *                                   tElementConstPtr;
+
+        typedef typename tElement const &                                   tElementIn;
+
+        //////////////////////////////////////////////////////////////////////////
+
+        typedef typename AllocatorT                                         tAllocator;
 
         //////////////////////////////////////////////////////////////////////////
 

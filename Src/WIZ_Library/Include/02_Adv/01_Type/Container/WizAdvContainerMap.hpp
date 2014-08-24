@@ -8,86 +8,20 @@
 namespace Wiz
 {
     template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> > >
-    class Map : public ::Wiz::Container::Base< Map<IndexT, ValueT, CompT, AllocatorT>, ::std::map<IndexT, ValueT, CompT, AllocatorT> >
+    class Map : public ::Wiz::Container::MapBase< IndexT, ValueT, CompT, Map<IndexT, ValueT, CompT, AllocatorT>, ::std::map<IndexT, ValueT, CompT, AllocatorT> >
     {
     public:
         ////////////////////////////////////////////////////////////////////////
 
-        typedef typename Map<IndexT, ValueT, CompT, AllocatorT>             tThis;
+        typedef typename Map<IndexT, ValueT, CompT, AllocatorT>                             tThis;
 
-        typedef typename ::std::map<IndexT, ValueT, CompT, AllocatorT>      tSuper;
+        typedef typename ::std::map<IndexT, ValueT, CompT, AllocatorT>                      tSuper;
 
-        typedef typename ::Wiz::Container::Base< tThis, tSuper >            tContainerBase;
+        typedef typename ::Wiz::Container::MapBase<IndexT, ValueT, CompT, tThis, tSuper>    tContainerBase;
 
-        /////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////
 
-        typedef typename IndexT                                             tIndex;
-        typedef typename tIndex const                                       tIndexConst;
-        typedef typename tIndex const &                                     tIndexIn;
-        typedef typename tIndex &                                           tIndexRef;
-        typedef typename tIndex const &                                     tIndexRefConst;
-
-        typedef typename ValueT                                             tValue;
-        typedef typename tValue const                                       tValueConst;
-        typedef typename tValue const &                                     tValueIn;
-        typedef typename tValue &                                           tValueOut;
-        typedef typename tValue &                                           tValueRef;
-        typedef typename tValue const &                                     tValueRefConst;
-
-        typedef typename CompT                                              tComp;
-
-        typedef typename AllocatorT                                         tAllocator;
-
-        ////////////////////////////////////////////////////////////////////////
-
-        typedef typename tSuper::iterator                                   tSuperIterator;
-        typedef typename tSuper::const_iterator                             tSuperIteratorConst;
-
-        ////////////////////////////////////////////////////////////////////////
-
-        typedef typename ::std::pair<tIndex, tValue>                        tPair;
-
-        ////////////////////////////////////////////////////////////////////////
-        struct tIterator : public tSuperIterator
-        {
-            tIterator()
-            {
-
-            }
-            tIterator(tSuperIterator Itr) : tSuperIterator(Itr)
-            {
-
-            }
-            tIndexRefConst Index() const
-            {
-                return (*this)->first;
-            }
-
-            tValueRef Value() const
-            {
-                return (*this)->second;
-            }
-        };
-        struct tIteratorConst : public tSuperIteratorConst
-        {
-            tIteratorConst()
-            {
-
-            }
-            tIteratorConst(tSuperIteratorConst Itr) : tSuperIteratorConst(Itr)
-            {
-
-            }
-            tIndexRefConst Index() const
-            {
-                return (*this)->first;
-            }
-
-            tValueRefConst Value() const
-            {
-                return (*this)->second;
-            }
-        };
+        typedef typename AllocatorT                                                         tAllocator;
 
         //////////////////////////////////////////////////////////////////////////
 
