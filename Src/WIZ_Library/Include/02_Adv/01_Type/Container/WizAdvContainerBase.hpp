@@ -1,17 +1,16 @@
-#ifndef __WIZ_CONTAINER_BASE_HPP__SHANHAOBO_19800429__
-#define __WIZ_CONTAINER_BASE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_CONTAINER_BASE_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_CONTAINER_BASE_HPP__SHANHAOBO_19800429__
 
-#include "../../../01_Basic/01_Type/WizBasicType.hpp"
-
-#include <set>
+#include "../../../01_Basic/01_Type/WizBasicTypeDeclareUtils.hpp"
 
 namespace Wiz
 {
     namespace Container
     {
         template<class DerivedT, class BaseT>
-        struct Base : protected BaseT
+        class Base : protected BaseT
         {
+        public:
             //////////////////////////////////////////////////////////////////////////
 
             typedef typename DerivedT                                   tDerived;
@@ -39,17 +38,17 @@ namespace Wiz
             WIZ_DECLARE_ITER(tIterator);
             WIZ_DECLARE_ITER_CONST(tIteratorConst);
 
-#ifdef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-            WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE(tDerived);
-#endif  /// WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
+#   ifdef   WIZ_CUSTOM_DECLARE_HELPER_CONTAINER
+            WIZ_CUSTOM_DECLARE_HELPER_CONTAINER(tDerived);
+#   endif   /// WIZ_CUSTOM_DECLARE_HELPER_CONTAINER
 
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-            WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE(tIterator);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
+#   ifdef   WIZ_CUSTOM_DECLARE_HELPER_ITERATOR
+            WIZ_CUSTOM_DECLARE_HELPER_ITERATOR(tIterator);
+#   endif   /// WIZ_CUSTOM_DECLARE_HELPER_ITERATOR
 
-#ifdef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-            WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE(tIteratorConst);
-#endif /// WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
+#   ifdef   WIZ_CUSTOM_DECLARE_HELPER_ITERATOR_CONST
+            WIZ_CUSTOM_DECLARE_HELPER_ITERATOR_CONST(tIteratorConst);
+#   endif  /// WIZ_CUSTOM_DECLARE_HELPER_ITERATOR_CONST
 
             //////////////////////////////////////////////////////////////////////////
         public:
@@ -109,9 +108,9 @@ namespace Wiz
             template<class FuncT>
             ::Wiz::Void::Type RemoveIf(FuncT Func)
             {
-                tSuper::iterator NewEnd = ::std::remove_if(Begin(), End(), Func);
+                tIterator ItrNewEnd = ::std::remove_if(Begin(), End(), Func);
 
-                tSuper::erase(NewEnd, End());
+                tSuper::erase(ItrNewEnd, End());
             }
 
             ///-----------------------///
@@ -119,4 +118,4 @@ namespace Wiz
     } /// end of namespace Container
 } /// end of namespace Wiz
 
-#endif /*__WIZ_CONTAINER_BASE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_CONTAINER_BASE_HPP__SHANHAOBO_19800429__*/

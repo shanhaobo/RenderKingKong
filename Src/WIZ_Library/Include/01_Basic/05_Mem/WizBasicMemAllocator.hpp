@@ -10,27 +10,27 @@ namespace Wiz
     namespace Allocator
     {
         /// 这里选择使用哪个Allocator
-        typedef ::Wiz::Allocator::Default::Type                         Type;
+        typedef Allocator::Default::Type                         Type;
 
         /// STL的Allocator
         template<class ElementT>
-        struct STL : public ::Wiz::Allocator::STLBase<ElementT, ::Wiz::Allocator::Type>::Type
+        struct STL : public Allocator::STLBase<ElementT, Allocator::Type>::Type
         {
-            typedef typename ::Wiz::Allocator::STL<ElementT>            Type;
+            typedef typename Allocator::STL<ElementT>            Type;
         };
 
         /// 有分类功能的Allocator
         template<int ICat>
-        struct Categorized : public ::Wiz::Allocator::Type
+        struct Categorized : public Allocator::Type
         {
-            typedef typename ::Wiz::Allocator::Categorized<ICat>        Type;
+            typedef typename Allocator::Categorized<ICat>        Type;
         };
 
         /// 有分类功能的STL的Allocator
         template<class ElementT, int ICat>
-        struct STLCategorized : public ::Wiz::Allocator::STL<ElementT>::Type
+        struct STLCategorized : public Allocator::STL<ElementT>::Type
         {
-            typedef typename ::Wiz::Allocator::STLCategorized<ElementT, ICat>   Type;
+            typedef typename Allocator::STLCategorized<ElementT, ICat>   Type;
         };
 
         /// 临时工具

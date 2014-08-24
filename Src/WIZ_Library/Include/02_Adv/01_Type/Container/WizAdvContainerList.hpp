@@ -1,15 +1,16 @@
-#ifndef __WIZ_CONTAINER_LIST_HPP__SHANHAOBO_19800429__
-#define __WIZ_CONTAINER_LIST_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_CONTAINER_LIST_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_CONTAINER_LIST_HPP__SHANHAOBO_19800429__
 
-#include "./WizContainerBase.hpp"
+#include "./WizAdvContainerBase.hpp"
 
 #include <list>
 
 namespace Wiz
 {
     template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    struct List : public ::Wiz::Container::Base< List<ElementT, AllocatorT>, ::std::list<ElementT, AllocatorT> >
+    class List : public ::Wiz::Container::Base< List<ElementT, AllocatorT>, ::std::list<ElementT, AllocatorT> >
     {
+    public:
         //////////////////////////////////////////////////////////////////////////
 
         typedef typename List<ElementT, AllocatorT>                 tThis;
@@ -155,4 +156,4 @@ namespace Wiz
     };
 } /// end of namespace Wiz
 
-#endif /*__WIZ_CONTAINER_LIST_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_CONTAINER_LIST_HPP__SHANHAOBO_19800429__*/

@@ -62,11 +62,11 @@ namespace Wiz
 
     //////////////////////////////////////////////////////////////////////////////////
 
-    template< class CharT, class TraitsT = ::std::char_traits<CharT>, class AllocatorT = ::std::allocator<CharT> >
-    class TString : public ::std::basic_string<CharT, TraitsT, AllocatorT>
+    template< typename CharT, class TraitsT = ::std::char_traits<CharT>, class AllocatorT = ::std::allocator<CharT> >
+    class String : public ::std::basic_string<CharT, TraitsT, AllocatorT>
     {
     protected:
-        typedef typename TString<CharT, TraitsT, AllocatorT>                    tThis;
+        typedef typename String<CharT, TraitsT, AllocatorT>                     tThis;
 
         typedef typename tThis &                                                tThisRef;
         typedef typename tThis const &                                          tThisConstRef;
@@ -103,32 +103,39 @@ namespace Wiz
 
     public:
         //////////////////////////////////////////////////////////////////////////
-        TString() : tSuper()
+
+        typedef typename std::basic_string<tChar, std::char_traits<tChar>, std::allocator<tChar> >  tStdString;
+        typedef tStdString const &                                                                  tStdStringIn;
+        typedef tStdString &                                                                        tStdStringOut;
+
+    public:
+        //////////////////////////////////////////////////////////////////////////
+        String() : tSuper()
         {
         }
 
-        TString(tCharPtrConst InPtr) : tSuper(InPtr)
+        String(tCharPtrConst InPtr) : tSuper(InPtr)
         {
         }
 
-        TString(tSuperIn InSuper) : tSuper(InSuper)
+        String(tSuperIn InSuper) : tSuper(InSuper)
         {
         }
 
-        TString(tThisIn InThis) : tSuper(InThis)
+        String(tThisIn InThis) : tSuper(InThis)
         {
         }
 
-        TString(tThisIn InThis, tSize InOffSZ, tSize InCnt = npos) : tSuper(InThis, InOffSZ, InCnt)
+        String(tThisIn InThis, tSize InOffSZ, tSize InCnt = npos) : tSuper(InThis, InOffSZ, InCnt)
         {
         }
 
-        TString(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
+        String(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
         {
         }
 
         template<class ItrT>
-        TString(ItrT InFirst, ItrT InLast) : tSuper(InFirst, InLast)
+        String(ItrT InFirst, ItrT InLast) : tSuper(InFirst, InLast)
         {
         }
 
@@ -327,9 +334,7 @@ namespace Wiz
         }
 
     public:
-        //////////////////////////////////////////////////////////////////////////
-        typedef typename std::basic_string<tChar, std::char_traits<tChar>, std::allocator<tChar> >  tStdString;
-        typedef tStdString const &                                                                  tStdStringIn;
+        //////////////////////////////////////////////////////////////////////////x
 
         WIZ_INLINE friend Bool::Type operator <(tThisIn l, tStdStringIn o)
         {
@@ -406,7 +411,7 @@ namespace Wiz
             return tThis(l) += o;
         }
 
-    }; /// end of namespace TString
+    }; /// end of namespace String
 
     //////////////////////////////////////////////////////////////////////////////////
 

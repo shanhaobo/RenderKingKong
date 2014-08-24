@@ -1,15 +1,16 @@
-#ifndef __WIZ_CONTAINER_SET_HPP__SHANHAOBO_19800429__
-#define __WIZ_CONTAINER_SET_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_CONTAINER_SET_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_CONTAINER_SET_HPP__SHANHAOBO_19800429__
 
-#include "../../../01_Basic/01_Type/WizBasicType.hpp"
+#include "./WizAdvContainerBase.hpp"
 
 #include <set>
 
 namespace Wiz
 {
     template< class ElementT, class CompT = ::std::less<ElementT>, class AllocatorT = ::std::allocator<ElementT> >
-    struct Set : public ::Wiz::Container::Base< Set<ElementT, CompT, AllocatorT>, ::std::set<ElementT, CompT, AllocatorT> >
+    class Set : public ::Wiz::Container::Base< Set<ElementT, CompT, AllocatorT>, ::std::set<ElementT, CompT, AllocatorT> >
     {
+    public:
         //////////////////////////////////////////////////////////////////////////
 
         typedef typename Set<ElementT, AllocatorT>                  tThis;
@@ -170,4 +171,4 @@ namespace Wiz
     };
 } /// end of namespace Wiz
 
-#endif /*__WIZ_CONTAINER_SET_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_CONTAINER_SET_HPP__SHANHAOBO_19800429__*/

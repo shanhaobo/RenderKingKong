@@ -1,7 +1,7 @@
 #ifndef __WIZ_BASIC_TT_IS_SAME_HPP__SHANHAOBO_19800429__
 #define __WIZ_BASIC_TT_IS_SAME_HPP__SHANHAOBO_19800429__
 
-#include "./WizBaseTTBool.hpp"
+#include "./WizBasicTTBool.hpp"
 
 namespace Wiz
 {

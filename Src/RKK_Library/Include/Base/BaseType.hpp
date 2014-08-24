@@ -1,33 +1,14 @@
 #ifndef __RENDERKINGKONG_BASETYPE_HPP__
 #define __RENDERKINGKONG_BASETYPE_HPP__
 
-#include "../../../WIZ_Library/Include/04_Math/00_Utils/WizMathUtils.hpp"
-
-#include "./TypeDeclareUtils.hpp"
+#include "./RKKPrerequisites.hpp"
 
 #include "./BaseAllocator.hpp"
 
-#undef  WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE
-#define WIZ_DECLARE_HELPER_TEMPLATE_CUSTOM_DEFINE           RKK_DECLARE
-
-#undef  WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE
-#define WIZ_DECLARE_HELPER_ITERATOR_CUSTOM_DEFINE           RKK_DECLARE_ITER
-
-#undef  WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE
-#define WIZ_DECLARE_HELPER_ITERATOR_CONST_CUSTOM_DEFINE     RKK_DECLARE_ITER_CONST
-#include "../../../WIZ_Library/Include/02_Adv/01_Type/Container/WizContainer.hpp"
-
-
-#undef  WIZ_DECLARE_HELPER_CUSTOM_DEFINE
-#define WIZ_DECLARE_HELPER_CUSTOM_DEFINE                    RKK_DECLARE
-#undef  WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE
-#define WIZ_DECLARE_HELPER_CUSTOM_DEFINE_SIMPLE             RKK_DECLARE_SIMPLE
-#undef  WIZ_DECLARE_HELPER_CUSTOM_DEFINE_PTR
-#define WIZ_DECLARE_HELPER_CUSTOM_DEFINE_PTR                RKK_DECLARE_PTR
-#include "../../../WIZ_Library/Include/01_Basic/01_Type/WizBasicTypeDeclareHelper.hpp"
-
 namespace rkk
 {
+    /////////////////////////////////////////////////////////////
+
     namespace I
     {
         WIZ_DECLARE_HELPER_I();
@@ -78,6 +59,8 @@ namespace rkk
         WIZ_DECLARE_HELPER_U64();
     }
 
+    /////////////////////////////////////////////////////////////
+
     namespace Char
     {
         WIZ_DECLARE_HELPER_CHAR();
@@ -93,6 +76,8 @@ namespace rkk
         WIZ_DECLARE_HELPER_MBCHAR();
     }
 
+    /////////////////////////////////////////////////////////////
+
     namespace F32
     {
         WIZ_DECLARE_HELPER_R32();
@@ -102,6 +87,8 @@ namespace rkk
     {
         WIZ_DECLARE_HELPER_R64();
     }
+
+    /////////////////////////////////////////////////////////////
 
     namespace Void
     {
@@ -114,6 +101,7 @@ namespace rkk
         WIZ_DECLARE_HELPER_BOOL();
     }
 
+    /////////////////////////////////////////////////////////////
 
     namespace Size
     {
@@ -139,6 +127,8 @@ namespace rkk
     {
         WIZ_DECLARE_HELPER_SIZE64();
     }
+
+    /////////////////////////////////////////////////////////////
 
     template <typename T, typename A = ::std::allocator<T> > 
     struct Array
@@ -176,15 +166,19 @@ namespace rkk
         typedef typename ::Wiz::Deque<T, A>::type   type;
     };
 
+    /////////////////////////////////////////////////////////////
+
     namespace Str
     {
-        typedef ::Wiz::TString<char>::Type          type;
+        typedef ::Wiz::String<::rkk::Char::type>::Type         type;
     }
 
     namespace WStr
     {
-        typedef ::Wiz::TString<wchar_t>::Type      type;
+        typedef ::Wiz::String<::rkk::WChar::type>::Type        type;
     }
+
+    /////////////////////////////////////////////////////////////
 
 } /// namespace rkk
 

@@ -1,15 +1,16 @@
-#ifndef __WIZ_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__
-#define __WIZ_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__
 
-#include "./WizContainerBase.hpp"
+#include "./WizAdvContainerBase.hpp"
 
 #include <vector>
 
 namespace Wiz
 {
     template< class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    struct Array : public ::Wiz::Container::Base< Array<ElementT, AllocatorT>, ::std::vector<ElementT, AllocatorT> >
+    class Array : public ::Wiz::Container::Base< Array<ElementT, AllocatorT>, ::std::vector<ElementT, AllocatorT> >
     {
+    public:
         //////////////////////////////////////////////////////////////////////////
 
         typedef typename Array<ElementT, AllocatorT>                tThis;
@@ -202,4 +203,4 @@ namespace Wiz
     };
 } /// end of namespace Wiz
 
-#endif /*__WIZ_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_CONTAINER_ARRAY_HPP__SHANHAOBO_19800429__*/

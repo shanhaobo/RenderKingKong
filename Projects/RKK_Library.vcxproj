@@ -86,6 +86,7 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseObject.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseTemplate.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseType.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Base\RKKPrerequisites.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Base\TypeDeclareUtils.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Core.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescClear.hpp" />

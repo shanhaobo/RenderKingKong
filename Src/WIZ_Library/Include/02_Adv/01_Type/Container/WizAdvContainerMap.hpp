@@ -1,15 +1,16 @@
-#ifndef __WIZ_CONTAINER_MAP_HPP__SHANHAOBO_19800429__
-#define __WIZ_CONTAINER_MAP_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_CONTAINER_MAP_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_CONTAINER_MAP_HPP__SHANHAOBO_19800429__
 
-#include "./WizContainerBase.hpp"
+#include "./WizAdvContainerBase.hpp"
 
 #include <map>
 
 namespace Wiz
 {
     template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> > >
-    struct Map : public ::Wiz::Container::Base< Map<IndexT, ValueT, CompT, AllocatorT>, ::std::map<IndexT, ValueT, CompT, AllocatorT> >
+    class Map : public ::Wiz::Container::Base< Map<IndexT, ValueT, CompT, AllocatorT>, ::std::map<IndexT, ValueT, CompT, AllocatorT> >
     {
+    public:
         ////////////////////////////////////////////////////////////////////////
 
         typedef typename Map<IndexT, ValueT, CompT, AllocatorT>             tThis;
@@ -204,4 +205,4 @@ namespace Wiz
     };
 } /// end of namespace Wiz
 
-#endif /*__WIZ_CONTAINER_MAP_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_CONTAINER_MAP_HPP__SHANHAOBO_19800429__*/

@@ -51,14 +51,16 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocatorSTLBase.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemObj.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemRecorder.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainer.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerArray.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerDeque.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerList.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMap.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMultiMap.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerSet.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerBase.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainer.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerArray.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerBase.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerDeque.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerList.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMap.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMultiMap.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerSet.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvFixedString.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvString.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvTypeEnum.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp" />
@@ -72,6 +74,8 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Base.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\Wiz.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\WizCustomDeclareHelper.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl" />

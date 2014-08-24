@@ -1,15 +1,16 @@
-#ifndef __WIZ_CONTAINER_MULTIMAP_HPP__SHANHAOBO_19800429__
-#define __WIZ_CONTAINER_MULTIMAP_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_CONTAINER_MULTIMAP_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_CONTAINER_MULTIMAP_HPP__SHANHAOBO_19800429__
 
-#include "../../../01_Basic/01_Type/WizBasicType.hpp"
+#include "./WizAdvContainerBase.hpp"
 
 #include <map>
 
 namespace Wiz
 {
     template< class IndexT, class ValueT, class CompT = ::std::less<IndexT>, class AllocatorT = ::std::allocator< ::std::pair<const IndexT, ValueT> >  >
-    struct MultiMap : public ::Wiz::Container::Base< MultiMap<IndexT, ValueT, CompT, AllocatorT>, ::std::multimap<IndexT, ValueT, CompT, AllocatorT> >
+    class MultiMap : public ::Wiz::Container::Base< MultiMap<IndexT, ValueT, CompT, AllocatorT>, ::std::multimap<IndexT, ValueT, CompT, AllocatorT> >
     {
+    public:
         ////////////////////////////////////////////////////////////////////////
 
         typedef typename MultiMap<IndexT, ValueT, CompT, AllocatorT>            tThis;
@@ -195,4 +196,4 @@ namespace Wiz
     };
 } /// end of namespace Wiz
 
-#endif /*__WIZ_CONTAINER_MULTIMAP_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_CONTAINER_MULTIMAP_HPP__SHANHAOBO_19800429__*/

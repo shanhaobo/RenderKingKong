@@ -1,15 +1,16 @@
-#ifndef __WIZ_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__
-#define __WIZ_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__
 
-#include "./WizContainerBase.hpp"
+#include "./WizAdvContainerBase.hpp"
 
 #include <deque>
 
 namespace Wiz
 {
     template<class ElementT, class AllocatorT = ::std::allocator<ElementT> >
-    struct Deque : public ::Wiz::Container::Base< Deque<ElementT, AllocatorT>, ::std::deque<ElementT, AllocatorT> >
+    class Deque : public ::Wiz::Container::Base< Deque<ElementT, AllocatorT>, ::std::deque<ElementT, AllocatorT> >
     {
+    public:
         //////////////////////////////////////////////////////////////////////////
 
         typedef typename Deque<ElementT, AllocatorT>                tThis;
@@ -139,4 +140,4 @@ namespace Wiz
     };
 } /// end of namespace Wiz
 
-#endif /*__WIZ_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_CONTAINER_DEQUE_HPP__SHANHAOBO_19800429__*/

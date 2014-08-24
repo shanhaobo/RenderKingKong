@@ -79,6 +79,9 @@
     <Filter Include="Private\01_Basic\05_Mem">
       <UniqueIdentifier>{21aef6e8-4e59-45ab-b784-d0b2f5e4d072}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29\01_Type\String">
+      <UniqueIdentifier>{552f111a-3cda-4c49-a8f2-40fb9f10c25e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -231,38 +234,50 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocator.hpp">
       <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerArray.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerList.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMap.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerSet.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerMultiMap.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainer.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerDeque.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocatorDefault.hpp">
       <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocatorSTLBase.hpp">
       <Filter>Include\01_Basic\05_Mem\Allocator</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizContainerBase.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeString.hpp">
       <Filter>Include\01_Basic\01_Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainer.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerArray.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerBase.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerDeque.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerList.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMap.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMultiMap.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerSet.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvFixedString.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvString.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\WizCustomDeclareHelper.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\Wiz.hpp">
+      <Filter>Include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
