@@ -105,6 +105,7 @@
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderTarget.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayerMethod.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Renderer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderFlow.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderPass.hpp" />

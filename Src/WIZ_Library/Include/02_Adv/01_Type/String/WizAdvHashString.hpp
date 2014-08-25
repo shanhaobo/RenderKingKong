@@ -45,8 +45,11 @@ namespace Wiz
                 eInvalidHashCode    = eTotalCapacity,
             };
 
+            static tIndexConst                       InvalidHashCode = tProxy::InvalidHashCode;
+            static tIndexConst                       InvalidIndex = tProxy::InvalidIndex;
+
         public:
-            Type() : m_Index(::std::numeric_limits<tIndex>::(max)())
+            Type() : m_Index(InvalidIndex)
             {
             }
             explicit Type(tStringRefConst Str)
@@ -61,7 +64,7 @@ namespace Wiz
                 }
                 else
                 {
-                    m_Index = ::std::numeric_limits<tIndex>::(max)();
+                    m_Index = InvalidIndex;
                 }
             }
             Type(tThisIn Nm) : m_Index(Nm.m_Index)
@@ -143,6 +146,9 @@ namespace Wiz
 
                 return Bool::False;
             }
+
+        protected:
+            tIndex m_Index;
         };
     } /// end of namespace HashString
 } /// end of namespace Wiz

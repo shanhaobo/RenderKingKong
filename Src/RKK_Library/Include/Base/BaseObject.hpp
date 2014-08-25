@@ -5,6 +5,8 @@
 
 #include "./BaseAllocator.hpp"
 
+#include "./BaseType.hpp"
+
 //////////////////////////////////////////////////////////////////////////
 
 #define RKK_NEW                                     WIZ_NEW
@@ -29,19 +31,34 @@ namespace rkk
 
     namespace Obj
     {
+
+        template <class AllocatorT>
+        class WIZ_EXPORT type : public ::Wiz::MemObj::Type<AllocatorT>
+        {
+        public:
+            explicit type()
+            { }
+
+            ~type()
+            { }
+
+        protected:
+            Name::type m_ObjName;
+        };
+
         namespace Animation
         {
-            RKK_DECLARE(::Wiz::MemObj::Type<Allocator::Animation::type>);
+            RKK_DECLARE(::rkk::Obj::type<Allocator::Animation::type>);
         } /// end of namespace Animation
 
         namespace Texture
         {
-            RKK_DECLARE(::Wiz::MemObj::Type<Allocator::Resource::type>);
+            RKK_DECLARE(::rkk::Obj::type<Allocator::Resource::type>);
         } /// end of namespace Texture
 
         namespace RDL
         {
-            RKK_DECLARE(::Wiz::MemObj::Type<Allocator::RDL::type>);
+            RKK_DECLARE(::rkk::Obj::type<Allocator::RDL::type>);
         } /// end of namespace RDL
     } /// end of namespace Obj
 

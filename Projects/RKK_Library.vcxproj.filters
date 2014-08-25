@@ -132,6 +132,9 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Base\RKKPrerequisites.hpp">
       <Filter>Include\Base</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp">
+      <Filter>Include\RenderFramework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">

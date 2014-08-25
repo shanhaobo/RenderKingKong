@@ -216,9 +216,12 @@ namespace Wiz
             struct Type
             {
                 static U32::TypeC                       InvalidHashCode = U32::Max;
+                static U32::TypeC                       InvalidIndex    = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
+
+                typedef U32::Type                       tIndex;
 
                 static U32::Type CalcHashCode(tCharPtrConst InStr)
                 {
@@ -230,10 +233,12 @@ namespace Wiz
             struct Type<CharT, Category::eBKDR, CaseSensitiveT, MaxIterationsT>
             {
                 static U32::TypeC                       InvalidHashCode = U32::Max;
+                static U32::TypeC                       InvalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
+                typedef U32::Type                       tIndex;
 
                 static U32::Type CalcHashCode(tCharPtrConst InStr)
                 {
@@ -247,10 +252,12 @@ namespace Wiz
             struct Type<CharT, Category::eSDBM, CaseSensitiveT, MaxIterationsT>
             {
                 static U32::TypeC                       InvalidHashCode = U32::Max;
+                static U32::TypeC                       InvalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
+                typedef U32::Type                       tIndex;
 
                 static U32::Type CalcHashCode(tCharPtrConst InStr)
                 {
@@ -264,10 +271,12 @@ namespace Wiz
             struct Type<CharT, Category::eAP, CaseSensitiveT, MaxIterationsT>
             {
                 static U32::TypeC                       InvalidHashCode = U32::Max;
+                static U32::TypeC                       InvalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
+                typedef U32::Type                       tIndex;
 
                 static U32::Type CalcHashCode(tCharPtrConst InStr)
                 {
@@ -281,10 +290,12 @@ namespace Wiz
             struct Type<CharT, Category::eJS, CaseSensitiveT, MaxIterationsT>
             {
                 static U32::TypeC                       InvalidHashCode = U32::Max;
+                static U32::TypeC                       InvalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
+                typedef U32::Type                       tIndex;
 
                 static U32::Type CalcHashCode(tCharPtrConst InStr)
                 {
@@ -298,10 +309,12 @@ namespace Wiz
             struct Type<CharT, Category::eNoName, CaseSensitiveT, MaxIterationsT>
             {
                 static U32::TypeC                       InvalidHashCode = U32::Max;
+                static U32::TypeC                       InvalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
+                typedef U32::Type                       tIndex;
 
                 static U32::Type CalcHashCode(tCharPtrConst InStr)
                 {
