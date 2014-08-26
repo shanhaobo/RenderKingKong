@@ -17,11 +17,21 @@ namespace rkk
             type();
             ~type();
 
+        public:
+            Bool::type RegisterRDL(Name::in, Plugin::RenderDeviceLayer::ptr);
+            Void::type UnregisterRDL(Name::in);
 
+            Bool::type ActiveRDL(Name::in);
+            Void::type DeactiveRDL(Name::in);
+            Void::type DeactiveRDL(Plugin::RenderDeviceLayer::ptr);
+
+            /// RDL
+        protected:
             typedef Map<Name::type, Plugin::RenderDeviceLayer::ptr>::type tMapRDLPlugin;
             tMapRDLPlugin           m_mapRDLPlugin;
 
-            RenderDeviceLayer::ptr m_RDLPtr;
+            Name::type                      m_ActivedRDLName;
+            RenderDeviceLayer::ptr          m_ActivedRDLPtr;
         };
     } /// namespace Renderer
 } /// namespace rkk

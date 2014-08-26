@@ -56,6 +56,11 @@ namespace rkk
             RKK_DECLARE(::rkk::Obj::type<Allocator::Resource::type>);
         } /// end of namespace Texture
 
+        namespace Plugin
+        {
+            RKK_DECLARE(::rkk::Obj::type<Allocator::General::type>);
+        } /// end of namespace Plugin
+
         namespace RDL
         {
             RKK_DECLARE(::rkk::Obj::type<Allocator::RDL::type>);

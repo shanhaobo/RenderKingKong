@@ -1,17 +1,13 @@
 #ifndef __RENDERKINGKONG_PLUGIN_HPP__
 #define __RENDERKINGKONG_PLUGIN_HPP__
 
-
-#include "../Base/RKKPrerequisites.hpp"
-
-#include "../Base/BaseType.hpp"
-
+#include "../Base/Base.hpp"
 
 namespace rkk
 {
     namespace Plugin
     {
-        class type
+        RKK_CLASS : public Obj::Plugin::type
         {
         public:
             type()
@@ -20,14 +16,16 @@ namespace rkk
 
         public:
             virtual Bool::type Register(Root::ptr, Name::in);
-            virtual Bool::type Unregister() = 0;
+            virtual Void::type Unregister() = 0;
 
         public:
             virtual Bool::type Active() = 0;
-            virtual Bool::type Deactive() = 0;
+            virtual Void::type Deactive() = 0;
 
         protected:
-            Root::ptr    m_RootPtr;
+            Root::ptr   m_RootPtr;
+
+            Name::type  m_PluginName;
         };
     } /// namespace Plugin
 } /// namespace rkk

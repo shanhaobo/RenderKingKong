@@ -12,11 +12,10 @@ namespace rkk
             {
                 if (tSuper::Register(InRootPtr, InName))
                 {
-                    if (::Wiz::IsValidPtr(m_RootPtr->m_Renderer))
+                    m_RendererPtr = m_RootPtr->m_Renderer;
+                    if (::Wiz::IsValidPtr(m_RendererPtr))
                     {
-                        Renderer::ptrf RendererPtr = m_RootPtr->m_Renderer;
-                        
-                        if (RendererPtr->m_mapRDLPlugin.InsertUnique(InName, this))
+                        if (m_RendererPtr->RegisterRDL(InName, this))
                         {
                             return Bool::True;
                         }
@@ -26,27 +25,41 @@ namespace rkk
                 return Bool::False;
             }
 
-            Bool::type type::Unregister()
+            Void::type type::Unregister()
             {
-                return Bool::False;
+                if (::Wiz::IsValidPtr(m_RendererPtr))
+                {
+                    m_RendererPtr->UnregisterRDL(m_PluginName);
+                }
+
+                if (::Wiz::IsValidPtr(m_RDLPtr))
+                {
+                    DestroyRDL(m_RDLPtr);
+
+                    m_RDLPtr = WIZ_NULL;
+                }
+
+                tSuper::Unregister();
             }
 
             Bool::type type::Active()
             {
-                if (::Wiz::IsValidPtr(m_RootPtr))
+                if (tSuper::Active())
                 {
+                    if (::Wiz::NotValidPtr(m_RDLPtr))
+                    {
+                        m_RDLPtr = CreateRDL();
+                    }
 
-
-                    return Bool::True;
+                    return ::Wiz::IsValidPtr(m_RDLPtr);
                 }
 
                 return Bool::False;
             }
 
-            Bool::type type::Deactive()
+            Void::type type::Deactive()
             {
-
-                return Bool::False;
+                tSuper::Deactive();
             }
         } /// namespace RenderDeviceLayer
     } /// end of namespace Plugin

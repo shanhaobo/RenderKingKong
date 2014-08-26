@@ -27,10 +27,48 @@ namespace rkk
         RKK_FORWARD_DECLARE_CLASS;
     } /// end of namespace Root;
 
+    ////////////////////////////////////////////
+
+    namespace RenderShader
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace RenderShader
+
+    namespace RenderState
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace RenderState
+
+    namespace RenderTarget
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace RenderTarget
+
+    ////////////////////////////////////////////
+
+    namespace RenderDeviceLayer
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace RenderDeviceLayer
+
+    ////////////////////////////////////////////
+
     namespace Renderer
     {
         RKK_FORWARD_DECLARE_CLASS;
-    } /// end of namespace Root;
+    } /// end of namespace Renderer;
+
+    namespace RenderPass
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace RenderPass;
+
+    namespace RenderFlow
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace RenderFlow;
+
+    ////////////////////////////////////////////
 
     namespace Plugin
     {
@@ -42,6 +80,8 @@ namespace rkk
         } /// end of namespace RenderDeviceLayer
 
     } /// end of namespace Plugin
+
+    ////////////////////////////////////////////
 
 } /// end of namespace rkk
 

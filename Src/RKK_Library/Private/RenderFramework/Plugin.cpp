@@ -10,6 +10,8 @@ namespace rkk
             {
                 m_RootPtr = InRootPtr;
 
+                m_PluginName = InName;
+
                 return Bool::True;
             }
 

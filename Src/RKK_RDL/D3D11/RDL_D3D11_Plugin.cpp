@@ -10,7 +10,7 @@ namespace rkk
         {
             namespace D3D11
             {
-                RKK_CLASS : public ::rkk::Plugin::type
+                RKK_CLASS : public ::rkk::Plugin::RenderDeviceLayer::type
                 {
                 public:
                     typedef ::rkk::Plugin::type tSuper;
@@ -21,27 +21,22 @@ namespace rkk
                     }
                 public:
 
-                    virtual Bool::type Register(Root::ptr InRootPtr)
+                    virtual RenderDeviceLayer::ptr CreateRDL()
                     {
-                        m_RootPtr = InRootPtr;
+                        /// TODO Create RDL;
 
+                        return m_D3D11RDLPtr;
                     }
 
-                    virtual Bool::type Unregister()
+                    virtual Void::type DestroyRDL(RenderDeviceLayer::ptr InRDLPtr)
                     {
-
+                        if (InRDLPtr == m_D3D11RDLPtr)
+                        {
+                            /// TODO Destroy RDL
+                        }
                     }
 
-                public:
-                    virtual Bool::type Active()
-                    {
-                    }
-                    virtual Bool::type Deactive()
-                    {
-
-                    }
-
-                    ::rkk::RenderDeviceLayer::D3D11::ptr  m_RDLPtr;
+                    ::rkk::RenderDeviceLayer::D3D11::ptr  m_D3D11RDLPtr;
                 };
             } /// end of namespace D3D11
         } /// namespace RenderDeviceLayer

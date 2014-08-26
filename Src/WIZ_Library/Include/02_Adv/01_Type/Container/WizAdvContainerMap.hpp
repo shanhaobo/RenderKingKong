@@ -91,7 +91,7 @@ namespace Wiz
                     return ::Wiz::Bool::False;
                 }
 
-                OutV = FndItr.GetValue();
+                OutV = FndItr.Value();
 
                 return ::Wiz::Bool::True;
             }
@@ -104,7 +104,7 @@ namespace Wiz
                     return WIZ_NULL;
                 }
 
-                return &(FndItr.GetValue());
+                return &(FndItr.Value());
             }
 
             ///-----------------------///

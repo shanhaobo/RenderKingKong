@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_PLUGIN_RENDERDEVICELAYER_HPP__
 #define __RENDERKINGKONG_PLUGIN_RENDERDEVICELAYER_HPP__
 
-#include "../RenderDeviceLayer/RenderDeviceLayer.hpp"
+#include "../Base/Base.hpp"
 
 #include "./Plugin.hpp"
 
@@ -24,18 +24,21 @@ namespace rkk
 
             public:
                 virtual Bool::type Register(Root::ptr, Name::in InName);
-                virtual Bool::type Unregister();
+                virtual Void::type Unregister();
 
             public:
                 virtual Bool::type Active();
-                virtual Bool::type Deactive();
+                virtual Void::type Deactive();
 
             protected:
-                virtual RenderDeviceLayer::ptr CreateRDL() = 0;
-                virtual Bool::type DestroyRDL() = 0;
+                virtual ::rkk::RenderDeviceLayer::ptr CreateRDL() = 0;
+                virtual Void::type DestroyRDL(::rkk::RenderDeviceLayer::ptr) = 0;
 
             protected:
-                RenderDeviceLayer::ptr m_RDLPtr;
+                friend class Renderer::type;
+
+                Renderer::ptr                   m_RendererPtr;
+                ::rkk::RenderDeviceLayer::ptr   m_RDLPtr;
             };
         } /// namespace RenderDeviceLayer
     } /// end of namespace Plugin

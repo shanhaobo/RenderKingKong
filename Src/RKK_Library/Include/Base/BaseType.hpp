@@ -156,10 +156,10 @@ namespace rkk
         typedef typename ::Wiz::MultiMap::Type<I, V, C, A>  type;
     };
 
-    template <typename T, typename A = ::std::allocator<T> >
+    template <typename T, class C = ::std::less<I>, typename A = ::std::allocator<T> >
     struct Set
     {
-        typedef typename ::Wiz::Set::Type<T, A>             type;
+        typedef typename ::Wiz::Set::Type<T, C, A>          type;
     };
 
     template <typename T, typename A = ::std::allocator<T> >

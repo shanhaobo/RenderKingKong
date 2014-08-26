@@ -84,6 +84,10 @@ namespace Wiz
             {
                 return GetHashTab().IsValidIndex(m_Index) == Bool::False;
             }
+            Void::Type Invalid()
+            {
+                m_Index = InvalidIndex;
+            }
         public:
             friend Bool::Type operator==(tThisIn A, tThisIn B)
             {
