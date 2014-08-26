@@ -19,4 +19,31 @@
 
 #include "../../../WIZ_Library/Include/WizCustomDeclareHelper.hpp"
 
+
+namespace rkk
+{
+    namespace Root
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace Root;
+
+    namespace Renderer
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+    } /// end of namespace Root;
+
+    namespace Plugin
+    {
+        RKK_FORWARD_DECLARE_CLASS;
+
+        namespace RenderDeviceLayer
+        {
+            RKK_FORWARD_DECLARE_CLASS;
+        } /// end of namespace RenderDeviceLayer
+
+    } /// end of namespace Plugin
+
+} /// end of namespace rkk
+
+
 #endif /// __RENDERKINGKONG_PREREQUISITES_HPP__

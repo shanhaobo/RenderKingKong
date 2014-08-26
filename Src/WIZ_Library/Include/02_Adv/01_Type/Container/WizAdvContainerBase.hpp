@@ -138,7 +138,7 @@ namespace Wiz
         };
 
         template<class IndexT, class ValueT, class CompT, class DerivedT, class BaseT>
-        class MapBase : public Base<DerivedT, BaseT>
+        class MapBase : public Container::Base<DerivedT, BaseT>
         {
         public:
             //////////////////////////////////////////////////////////////////////////

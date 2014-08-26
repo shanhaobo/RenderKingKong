@@ -106,6 +106,7 @@
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayerMethod.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin_RenderDeviceLayer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Renderer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderFlow.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderPass.hpp" />
@@ -121,9 +122,12 @@
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderTarget.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin_RenderDeviceLayer.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Renderer.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderFlow.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderPass.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Root.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

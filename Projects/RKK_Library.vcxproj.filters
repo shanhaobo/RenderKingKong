@@ -34,6 +34,15 @@
     <ClCompile Include="..\Src\RKK_Library\Private\Base\BaseColor.cpp">
       <Filter>Private\Base</Filter>
     </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Root.cpp">
+      <Filter>Private\RenderFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin_RenderDeviceLayer.cpp">
+      <Filter>Private\RenderFramework\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin.cpp">
+      <Filter>Private\RenderFramework\Plugin</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Core.hpp">
@@ -133,7 +142,10 @@
       <Filter>Include\Base</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp">
-      <Filter>Include\RenderFramework</Filter>
+      <Filter>Include\RenderFramework\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin_RenderDeviceLayer.hpp">
+      <Filter>Include\RenderFramework\Plugin</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +190,12 @@
     </Filter>
     <Filter Include="Private\Core">
       <UniqueIdentifier>{22ac1ffd-cce8-4669-af82-6b68ba07383e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\RenderFramework\Plugin">
+      <UniqueIdentifier>{4e0754e0-81c4-4718-95df-c59788d26096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\RenderFramework\Plugin">
+      <UniqueIdentifier>{49c6d8e0-582a-4ebe-aea6-13764a240799}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

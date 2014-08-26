@@ -1,17 +1,35 @@
-#ifndef __RENDERKINGKONG_ROOT_HPP__
-#define __RENDERKINGKONG_ROOT_HPP__
+#ifndef __RENDERKINGKONG_PLUGIN_HPP__
+#define __RENDERKINGKONG_PLUGIN_HPP__
 
-#include "./Renderer.hpp"
+
+#include "../Base/RKKPrerequisites.hpp"
+
+#include "../Base/BaseType.hpp"
+
 
 namespace rkk
 {
-    namespace Root
+    namespace Plugin
     {
-        RKK_CLASS
+        class type
         {
-            
+        public:
+            type()
+            {
+            }
+
+        public:
+            virtual Bool::type Register(Root::ptr, Name::in);
+            virtual Bool::type Unregister() = 0;
+
+        public:
+            virtual Bool::type Active() = 0;
+            virtual Bool::type Deactive() = 0;
+
+        protected:
+            Root::ptr    m_RootPtr;
         };
-    } /// namespace Root
+    } /// namespace Plugin
 } /// namespace rkk
 
-#endif /// #ifndef __RENDERKINGKONG_ROOT_HPP__
+#endif /// #ifndef __RENDERKINGKONG_PLUGIN_HPP__

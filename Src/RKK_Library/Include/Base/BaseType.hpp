@@ -144,16 +144,16 @@ namespace rkk
         typedef typename ::Wiz::List::Type<T, A>            type;
     };
 
-    template <typename I, typename V, typename A = ::std::allocator< ::std::pair<I, V> > >
+    template <typename I, typename V, class C = ::std::less<I>, typename A = ::std::allocator< ::std::pair<I, V> > >
     struct Map
     {
-        typedef typename ::Wiz::Map::Type<I, V, A>          type;
+        typedef typename ::Wiz::Map::Type<I, V, C, A>       type;
     };
 
-    template <typename I, typename V, typename A = ::std::allocator< ::std::pair<I, V> > >
+    template <typename I, typename V, class C = ::std::less<I>, typename A = ::std::allocator< ::std::pair<I, V> > >
     struct MultiMap
     {
-        typedef typename ::Wiz::MultiMap::Type<I, V, A>     type;
+        typedef typename ::Wiz::MultiMap::Type<I, V, C, A>  type;
     };
 
     template <typename T, typename A = ::std::allocator<T> >
@@ -173,11 +173,13 @@ namespace rkk
     namespace Str
     {
         typedef ::Wiz::String::Type<::rkk::Char::type>      type;
+        RKK_DECLARE(type);
     }
 
     namespace WStr
     {
         typedef ::Wiz::String::Type<::rkk::WChar::type>     type;
+        RKK_DECLARE(type);
     }
 
     /////////////////////////////////////////////////////////////
@@ -185,6 +187,8 @@ namespace rkk
     namespace Name
     {
         typedef ::Wiz::HashString::Type< ::rkk::Str::type, ::Wiz::HashString::Proxy::Category::eSDBM, true, 64, 65536, 1024, ::std::allocator<::rkk::Char::type> >   type;
+
+        RKK_DECLARE(type);
     }
 
     /////////////////////////////////////////////////////////////

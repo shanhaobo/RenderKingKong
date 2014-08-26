@@ -19,7 +19,7 @@ namespace Wiz
             {
             public:
                 typedef ProxyT                                                      tProxy;
-                typedef typename tProxy::tString                                    tString;
+                typedef typename tProxy::tCharPtrConst                              tString;
                 typedef typename tProxy::tIndex                                     tIndex;
 
             private:

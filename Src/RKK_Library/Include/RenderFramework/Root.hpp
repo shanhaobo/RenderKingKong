@@ -9,7 +9,14 @@ namespace rkk
     {
         RKK_CLASS
         {
-            
+        public:
+            type(){}
+
+        public:
+            Bool::type ActivePlugin_RDL(Name::in InRDLName);
+
+        public:
+            ::rkk::Renderer::ptr m_Renderer;
         };
     } /// namespace Root
 } /// namespace rkk

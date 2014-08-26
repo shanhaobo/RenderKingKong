@@ -34,7 +34,7 @@ namespace Wiz
 
             typedef Type<StringT, CatT, CaseSensitiveT, MaxIterationsT, TotalNumT, ReservedNumT, AllocatorT>    tThis;
 
-            typedef tThis const &                                                           tThisIn;
+            typedef Type const &                                                           tThisIn;
 
         public:
             enum

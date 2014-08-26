@@ -3,7 +3,9 @@
 
 #include "../RenderDeviceLayer/RenderDeviceLayer.hpp"
 
-#include "RenderFlow.hpp"
+#include "./Plugin_RenderDeviceLayer.hpp"
+
+#include "./RenderFlow.hpp"
 
 namespace rkk
 {
@@ -16,7 +18,8 @@ namespace rkk
             ~type();
 
 
-            ::rkk::List<RenderDeviceLayer::ptr>::type m_RDLList;
+            typedef Map<Name::type, Plugin::RenderDeviceLayer::ptr>::type tMapRDLPlugin;
+            tMapRDLPlugin           m_mapRDLPlugin;
 
             RenderDeviceLayer::ptr m_RDLPtr;
         };

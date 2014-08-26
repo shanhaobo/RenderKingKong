@@ -15,7 +15,7 @@ namespace Wiz
         public:
             ////////////////////////////////////////////////////////////////////////
 
-            typedef typename Type<IndexT, ValueT, CompT, AllocatorT>                             tThis;
+            typedef typename Type<IndexT, ValueT, CompT, AllocatorT>                            tThis;
 
             typedef typename ::std::map<IndexT, ValueT, CompT, AllocatorT>                      tSuper;
 
