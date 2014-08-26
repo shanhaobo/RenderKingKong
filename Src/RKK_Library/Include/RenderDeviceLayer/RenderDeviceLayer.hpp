@@ -29,12 +29,6 @@ namespace rkk
         ///////////////////////////
         ///////////////////////////
 
-        ptr Create();
-
-        Void::type Destroy(ptr& RDLPtr);
-
-        ///////////////////////////
-        ///////////////////////////
     } /// namespace RenderDeviceLayer
 } /// namespace rkk
 

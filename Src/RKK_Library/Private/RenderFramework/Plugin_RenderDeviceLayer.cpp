@@ -12,7 +12,7 @@ namespace rkk
             {
                 if (tSuper::Register(InRootPtr, InName))
                 {
-                    m_RendererPtr = m_RootPtr->m_Renderer;
+                    m_RendererPtr = m_RootPtr->m_RendererPtr;
                     if (::Wiz::IsValidPtr(m_RendererPtr))
                     {
                         if (m_RendererPtr->RegisterRDL(InName, this))

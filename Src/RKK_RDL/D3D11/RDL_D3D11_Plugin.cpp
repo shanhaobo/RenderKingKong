@@ -13,7 +13,7 @@ namespace rkk
                 RKK_CLASS : public ::rkk::Plugin::RenderDeviceLayer::type
                 {
                 public:
-                    typedef ::rkk::Plugin::type tSuper;
+                    typedef ::rkk::Plugin::RenderDeviceLayer::type tSuper;
                 public:
                     type()
                     {

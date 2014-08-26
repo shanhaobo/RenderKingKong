@@ -13,10 +13,20 @@ namespace rkk
             type(){}
 
         public:
-            Bool::type ActivePlugin_RDL(Name::in InRDLName);
+            Bool::type LoadPlugin(Str::in InPluginFileName, Name::in InPluginName);
+            Void::type UnloadPlugin(Name::in InPluginName);
 
         public:
-            ::rkk::Renderer::ptr m_Renderer;
+            Bool::type ActivePlugin_RDL(Name::in InRDLName);
+
+        protected:
+            typedef Map<Name::type, Plugin::ptr>::type tMapPlugin;
+
+            tMapPlugin  m_mapPlugin;
+
+        protected:
+            friend class Plugin::RenderDeviceLayer::type;
+            ::rkk::Renderer::ptr m_RendererPtr;
         };
     } /// namespace Root
 } /// namespace rkk

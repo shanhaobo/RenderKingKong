@@ -27,7 +27,7 @@ namespace rkk
 
         Bool::type type::ActiveRDL(Name::in InName)
         {
-            Plugin::RenderDeviceLayer::ptr RDLPluginPtr;
+            Plugin::RenderDeviceLayer::ptr RDLPluginPtr = RKK_NULLPTR;
             if (m_mapRDLPlugin.TryGet(RDLPluginPtr, InName) && ::Wiz::IsValidPtr(RDLPluginPtr))
             {
                 DeactiveRDL(RDLPluginPtr);
@@ -46,7 +46,7 @@ namespace rkk
 
         Void::type type::DeactiveRDL(Name::in InName)
         {
-            Plugin::RenderDeviceLayer::ptr RDLPluginPtr;
+            Plugin::RenderDeviceLayer::ptr RDLPluginPtr = RKK_NULLPTR;
             if (m_mapRDLPlugin.TryGet(RDLPluginPtr, InName) && ::Wiz::IsValidPtr(RDLPluginPtr))
             {
                 DeactiveRDL(RDLPluginPtr);

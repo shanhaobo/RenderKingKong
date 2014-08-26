@@ -28,7 +28,7 @@ namespace rkk
             /// RDL
         protected:
             typedef Map<Name::type, Plugin::RenderDeviceLayer::ptr>::type tMapRDLPlugin;
-            tMapRDLPlugin           m_mapRDLPlugin;
+            tMapRDLPlugin                   m_mapRDLPlugin;
 
             Name::type                      m_ActivedRDLName;
             RenderDeviceLayer::ptr          m_ActivedRDLPtr;
