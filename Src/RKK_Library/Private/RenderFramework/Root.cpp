@@ -4,6 +4,12 @@ namespace rkk
 {
     namespace Root
     {
+        Plugin::ptr type::GetPlugin(Name::in InPluginName)
+        {
+            Plugin::ptr PluginPtr = RKK_NULLPTR;
+            m_mapPlugin.TryGet(PluginPtr, InPluginName);
+            return PluginPtr;
+        }
 
         Bool::type type::LoadPlugin(Str::in InPluginFileName, Name::in InPluginName)
         {
@@ -12,7 +18,7 @@ namespace rkk
                 return Bool::False;
             }
 
-            ::rkk::Plugin::ptr LoadedPluginPtr = RKK_NULLPTR;
+            Plugin::ptr LoadedPluginPtr = RKK_NULLPTR;
 
             /// TODO Load Plugin
 
@@ -30,8 +36,8 @@ namespace rkk
 
         Void::type type::UnloadPlugin(Name::in InPluginName)
         {
-            ::rkk::Plugin::ptr FoundPluginPtr = RKK_NULLPTR;
-            if (m_mapPlugin.TryGet(FoundPluginPtr, InPluginName) && ::Wiz::IsValidPtr(FoundPluginPtr))
+            Plugin::ptr FoundPluginPtr = GetPlugin(InPluginName);
+            if (::Wiz::IsValidPtr(FoundPluginPtr))
             {
                 FoundPluginPtr->Unregister();
 
@@ -41,11 +47,14 @@ namespace rkk
             }
         }
 
-        Bool::type type::ActivePlugin_RDL(Name::in InRDLName)
+        Bool::type type::ActivePlugin(Name::in InPluginName)
         {
-            if (::Wiz::IsValidPtr(m_RendererPtr))
+            Plugin::ptr FoundPluginPtr = GetPlugin(InPluginName);
+            if (::Wiz::IsValidPtr(FoundPluginPtr))
             {
-                return m_RendererPtr->ActiveRDL(InRDLName);
+                FoundPluginPtr->Active();
+
+                return Bool::True;
             }
 
             return Bool::False;

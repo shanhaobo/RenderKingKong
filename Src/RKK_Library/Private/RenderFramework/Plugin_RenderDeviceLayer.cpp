@@ -44,14 +44,17 @@ namespace rkk
 
             Bool::type type::Active()
             {
-                if (tSuper::Active())
+                if (tSuper::Active() && ::Wiz::IsValidPtr(m_RendererPtr))
                 {
                     if (::Wiz::NotValidPtr(m_RDLPtr))
                     {
                         m_RDLPtr = CreateRDL();
                     }
 
-                    return ::Wiz::IsValidPtr(m_RDLPtr);
+                    if (::Wiz::IsValidPtr(m_RDLPtr))
+                    {
+                        return m_RendererPtr->ActiveRDL(m_PluginName);
+                    }
                 }
 
                 return Bool::False;

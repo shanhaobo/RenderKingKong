@@ -22,8 +22,13 @@ namespace rkk
             Void::type UnregisterRDL(Name::in);
 
             Bool::type ActiveRDL(Name::in);
+            Bool::type ActiveRDL(Plugin::RenderDeviceLayer::ptr);
+
             Void::type DeactiveRDL(Name::in);
             Void::type DeactiveRDL(Plugin::RenderDeviceLayer::ptr);
+
+        protected:
+            Plugin::RenderDeviceLayer::ptr GetRDL(Name::in);
 
             /// RDL
         protected:

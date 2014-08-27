@@ -14,11 +14,13 @@ namespace rkk
                 {
                 public:
                     typedef ::rkk::Plugin::RenderDeviceLayer::type tSuper;
+
                 public:
-                    type()
+                    type() : m_D3D11RDLPtr(RKK_NULLPTR)
                     {
 
                     }
+
                 public:
 
                     virtual RenderDeviceLayer::ptr CreateRDL()
@@ -34,8 +36,11 @@ namespace rkk
                         {
                             /// TODO Destroy RDL
                         }
+
+                        m_D3D11RDLPtr = RKK_NULLPTR;
                     }
 
+                protected:
                     ::rkk::RenderDeviceLayer::D3D11::ptr  m_D3D11RDLPtr;
                 };
             } /// end of namespace D3D11

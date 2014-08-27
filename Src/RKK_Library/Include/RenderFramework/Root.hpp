@@ -17,11 +17,12 @@ namespace rkk
             Void::type UnloadPlugin(Name::in InPluginName);
 
         public:
-            Bool::type ActivePlugin_RDL(Name::in InRDLName);
+            Bool::type ActivePlugin(Name::in InRDLName);
 
         protected:
-            typedef Map<Name::type, Plugin::ptr>::type tMapPlugin;
+            Plugin::ptr GetPlugin(Name::in InPluginName);
 
+            typedef Map<Name::type, Plugin::ptr>::type tMapPlugin;
             tMapPlugin  m_mapPlugin;
 
         protected:
