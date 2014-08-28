@@ -300,6 +300,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerHighRes.hpp">
       <Filter>Include\03_Utils\TimerUtils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerTicker.hpp">
+      <Filter>Include\03_Utils\TimerUtils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
@@ -319,6 +322,9 @@
       <Filter>Private\01_Basic\05_Mem</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerHighRes.cpp">
+      <Filter>Private\03_Utils\TimerUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerTicker.cpp">
       <Filter>Private\03_Utils\TimerUtils</Filter>
     </ClCompile>
   </ItemGroup>
