@@ -114,9 +114,6 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeReal.hpp">
       <Filter>Include\01_Basic\01_Type</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeVoid.hpp">
-      <Filter>Include\01_Basic\01_Type</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\00_MPP\WizBasicMPPBitOp.hpp">
       <Filter>Include\01_Basic\00_MPP%28MacroPreprocesssor%29</Filter>
     </ClInclude>
@@ -302,6 +299,9 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerFrame.hpp">
       <Filter>Include\03_Utils\TimerUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeMisc.hpp">
+      <Filter>Include\01_Basic\01_Type</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -30,10 +30,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeDeclareHelper.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeDeclareUtils.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeInt.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeMisc.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeReal.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeSize.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeString.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeVoid.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMU.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTT.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTBool.hpp" />

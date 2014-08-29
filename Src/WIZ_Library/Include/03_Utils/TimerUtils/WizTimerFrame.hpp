@@ -7,6 +7,7 @@ namespace Wiz
 {
     namespace Timer
     {
+        /// 这个时钟的目的就是，每帧只更新一次，这帧公用此时间
         namespace Frame
         {
             namespace Wrapper
@@ -18,10 +19,12 @@ namespace Wiz
 
                     virtual ~Type();
 
+                public:
                     Void::Type Reset();
 
                     Void::Type Tick();
 
+                public:
                     R64::RefC Now() const
                     {
                         return m_NowRef;
@@ -38,7 +41,11 @@ namespace Wiz
                     R64::Ref            m_NowRef;
                     R64::Ref            m_DeltaTimeRef;
                 };
-            }
+            } /// end of namespace Wrapper
+
+            ////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////
 
             WIZ_CLASS : public Timer::Frame::Wrapper::Type
             {

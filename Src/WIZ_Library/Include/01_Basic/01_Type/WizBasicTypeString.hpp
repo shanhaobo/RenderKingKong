@@ -3,6 +3,9 @@
 
 #include "./WizBasicTypeDeclareUtils.hpp"
 
+#include "./WizBasicTypeBool.hpp"
+#include "./WizBasicTypeMisc.hpp"
+
 #include <string>
 
 namespace Wiz
