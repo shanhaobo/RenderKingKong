@@ -300,7 +300,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerHighRes.hpp">
       <Filter>Include\03_Utils\TimerUtils</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerTicker.hpp">
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerFrame.hpp">
       <Filter>Include\03_Utils\TimerUtils</Filter>
     </ClInclude>
   </ItemGroup>
@@ -324,7 +324,7 @@
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerHighRes.cpp">
       <Filter>Private\03_Utils\TimerUtils</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerTicker.cpp">
+    <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerFrame.cpp">
       <Filter>Private\03_Utils\TimerUtils</Filter>
     </ClCompile>
   </ItemGroup>

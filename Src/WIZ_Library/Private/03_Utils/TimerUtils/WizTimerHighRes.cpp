@@ -51,7 +51,7 @@ namespace Wiz
                 class Type : public Timer::HighRes::Impl::Type<Type>
                 {
                 public:
-                    Type() : mTimerMask(0)
+                    Type() : m_TimerMask(0)
                     {
                         Reset();
                     }
@@ -61,13 +61,13 @@ namespace Wiz
 
                     }
 
-                public:
-                    virtual Void::Type Reset()
+                protected:
+                    DWORD_PTR GetTimerMask()
                     {
                         // Get the current process core mask
                         DWORD_PTR procMask;
                         DWORD_PTR sysMask;
-                        GetProcessAffinityMask(GetCurrentProcess(), &procMask, &sysMask);
+                        ::GetProcessAffinityMask(::GetCurrentProcess(), &procMask, &sysMask);
 
                         // If procMask is 0, consider there is only one core available
                         // (using 0 as procMask will cause an infinite loop below)
@@ -76,88 +76,94 @@ namespace Wiz
                             procMask = 1;
                         }
 
-                        // Find the lowest core that this process uses
-                        if (mTimerMask == 0)
+                        DWORD_PTR TimerMask = 1;
+                        while ((TimerMask & procMask) == 0)
                         {
-                            mTimerMask = 1;
-                            while ((mTimerMask & procMask) == 0)
-                            {
-                                mTimerMask <<= 1;
-                            }
+                            TimerMask <<= 1;
                         }
+                    }
 
-                        HANDLE thread = GetCurrentThread();
+                public:
+                    virtual Void::Type Reset()
+                    {
+                        if (m_TimerMask == 0)
+                        {
+                            m_TimerMask = GetTimerMask();
+                        } /// end if
+
+                        HANDLE CurrThread = ::GetCurrentThread();
 
                         // Set affinity to the first core
-                        DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
+                        DWORD_PTR OldMask = ::SetThreadAffinityMask(CurrThread, m_TimerMask);
 
                         // Get the constant frequency
-                        QueryPerformanceFrequency(&mFrequency);
+                        ::QueryPerformanceFrequency(&m_Frequency);
 
                         // Query the timer
-                        QueryPerformanceCounter(&mStartTime);
+                        ::QueryPerformanceCounter(&m_StartTime);
 
-                        mStartTick = GetTickCount();
+                        mStartTick = ::GetTickCount();
 
                         // Reset affinity
-                        SetThreadAffinityMask(thread, oldMask);
+                        ::SetThreadAffinityMask(CurrThread, OldMask);
 
                         mLastTime = 0;
 
-                        m_R64Frequency = R64::Type(mFrequency.QuadPart);
+                        m_FrequencyR64 = R64::Type(m_Frequency.QuadPart);
                     }
 
                     template<int iMultiTime>
                     R64::Type Now()
                     {
-                        LARGE_INTEGER curTime;
+                        LARGE_INTEGER CurTime;
 
-                        HANDLE thread = GetCurrentThread();
+                        HANDLE CurrThread = ::GetCurrentThread();
 
                         // Set affinity to the first core
-                        DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
+                        DWORD_PTR oldMask = ::SetThreadAffinityMask(CurrThread, m_TimerMask);
 
                         // Query the timer
-                        QueryPerformanceCounter(&curTime);
+                        ::QueryPerformanceCounter(&CurTime);
 
                         // Reset affinity
-                        SetThreadAffinityMask(thread, oldMask);
+                        ::SetThreadAffinityMask(CurrThread, oldMask);
 
-                        LONGLONG newTime = curTime.QuadPart - mStartTime.QuadPart;
+                        LONGLONG NewTime = CurTime.QuadPart - m_StartTime.QuadPart;
 
-                        // scale by 1000 for milliseconds
-                        R64::Type NowTicks = static_cast<R64::Type>((iMultiTime * newTime) / m_R64Frequency);
+                        // scale by iMultiTime
+                        unsigned long newTicks = (unsigned long)(iMultiTime * NewTime / m_Frequency.QuadPart);
+                        R64::Type NowTime = static_cast<R64::Type>(iMultiTime * NewTime) / m_FrequencyR64;
 
                         // detect and compensate for performance counter leaps
                         // (surprisingly common, see Microsoft KB: Q274323)
-                        unsigned long check = GetTickCount() - mStartTick;
-                        signed long msecOff = (signed long)(NowTicks - check);
+                        unsigned long check = ::GetTickCount() - mStartTick;
+                        signed long msecOff = (signed long)(newTicks - check);
                         if (msecOff < -100 || msecOff > 100)
                         {
                             // We must keep the timer running forward :)
-                            LONGLONG adjust = (::std::min)(msecOff * mFrequency.QuadPart / iMultiTime, newTime - mLastTime);
-                            mStartTime.QuadPart += adjust;
-                            newTime -= adjust;
+                            LONGLONG adjust = (::std::min)(msecOff * m_Frequency.QuadPart / iMultiTime, NewTime - mLastTime);
+                            m_StartTime.QuadPart += adjust;
+                            NewTime -= adjust;
 
                             // Re-calculate milliseconds
-                            NowTicks = static_cast<R64::Type>((iMultiTime * newTime) / m_R64Frequency);
+                            NowTime = static_cast<R64::Type>((iMultiTime * NewTime) / m_FrequencyR64);
                         }
 
                         // Record last time for adjust
-                        mLastTime = newTime;
+                        mLastTime = NewTime;
 
-                        return NowTicks;
+                        return NowTime;
                     }
 
                 protected:
-                    LARGE_INTEGER   mStartTime;
-                    LARGE_INTEGER   mFrequency;
-                    R64::Type       m_R64Frequency;
+                    LARGE_INTEGER   m_StartTime;
+                    LARGE_INTEGER   m_Frequency;
+                    R64::Type       m_FrequencyR64;
 
                     DWORD           mStartTick;
                     LONGLONG        mLastTime;
 
-                    DWORD_PTR       mTimerMask;
+                    DWORD_PTR       m_TimerMask;
                 };
             } /// end of namespace Windows
 #endif /// (WIZ_CFG_PLATFORM == WIZ_CFG_PLATFORM_WINDOWS)

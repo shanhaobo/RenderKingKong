@@ -66,8 +66,8 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashStringProxy.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvTypeEnum.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerFrame.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerHighRes.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerTicker.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtils.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\00_Utils\WizMathUtilsCompare.hpp" />
@@ -91,8 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\WIZ_Library\Private\01_Basic\05_Mem\WizBasicMemRecorder.cpp" />
+    <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerFrame.cpp" />
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerHighRes.cpp" />
-    <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerTicker.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D97800BC-87E5-42CD-A999-B99A4E5B1244}</ProjectGuid>
