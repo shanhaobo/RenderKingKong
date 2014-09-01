@@ -15,16 +15,22 @@ namespace Wiz
         }
 
         template<class Ret, class Arg>
-        WIZ_INLINE Ret Static(const Arg* const rSrc)
+        WIZ_INLINE Ret Static(Arg const * const rSrc)
         {
-            return static_cast<Ret>(static_cast<const void* const>(rSrc));
+            return static_cast<Ret>(static_cast<void const * const>(rSrc));
         }
 
         template<class Ret, class Arg>
-        WIZ_INLINE Ret Static(Arg* const rSrc)
+        WIZ_INLINE Ret Static(Arg * const rSrc)
         {
-            return static_cast<Ret>(static_cast<void* const>(rSrc));
+            return static_cast<Ret>(static_cast<void * const>(rSrc));
         }
+
+//         template<class Ret, class Arg>
+//         WIZ_INLINE Ret Static(Arg const * rSrc)
+//         {
+//             return static_cast<Ret>(static_cast<void const *>(rSrc));
+//         }
         ////////////////////////////////////////////////////////////////////////
     } /// end of namespace Cast
 } /// end of namespace Wiz

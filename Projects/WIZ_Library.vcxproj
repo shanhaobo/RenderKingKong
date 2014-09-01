@@ -39,11 +39,15 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTBool.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIF.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIsSame.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUSingletonInit.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUMisc.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUNoncopyable.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTU.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCast.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastForce.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastLexical.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastStatic.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUSingleton.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMem.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocator.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocatorBase.hpp" />

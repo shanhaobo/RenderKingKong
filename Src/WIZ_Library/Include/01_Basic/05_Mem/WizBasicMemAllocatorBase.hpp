@@ -22,12 +22,12 @@ namespace Wiz
             public:
                 ///////////////////////////////////////////
                 /// With Debug Info
-                static ::Wiz::Void::Ptr AllocateWithDebugInfo(size_t sz, const char* file, int line, const char* func)
+                static ::Wiz::Void::Ptr AllocateWithDebugInfo(size_t InSZInByte, char const * InFileName, int InLine, char const * InFuncName)
                 {
-                    ::Wiz::Void::Ptr MemPtr = tDerived::Allocate(sz);
+                    ::Wiz::Void::Ptr MemPtr = tDerived::Allocate(InSZInByte);
                     if (::Wiz::IsValidPtr(MemPtr))
                     {
-                        ::Wiz::MemRecorder::Alloc(MemPtr, sz, file, ln, func);
+                        ::Wiz::MemRecorder::Alloc(MemPtr, InSZInByte, InFileName, InLine, InFuncName);
 
                         return MemPtr;
                     }
@@ -35,13 +35,13 @@ namespace Wiz
                 }
 
                 /// With Debug Info
-                static ::Wiz::Void::Type DeallocateWithDebugInfo(void* ptr, const char*, int, const char*)
+                static ::Wiz::Void::Type DeallocateWithDebugInfo(void* MemPtr, const char*, int, const char*)
                 {
-                    if (::Wiz::IsValidPtr(ptr))
+                    if (::Wiz::IsValidPtr(MemPtr))
                     {
-                        tDerived::Deallocate(ptr);
+                        tDerived::Deallocate(MemPtr);
 
-                        ::Wiz::MemRecorder::Dealloc(ptr);
+                        ::Wiz::MemRecorder::Dealloc(MemPtr);
                     }
                 }
                 ///////////////////////////////////////////

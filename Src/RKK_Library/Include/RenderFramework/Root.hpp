@@ -29,6 +29,18 @@ namespace rkk
             friend class Plugin::RenderDeviceLayer::type;
             ::rkk::Renderer::ptr m_RendererPtr;
         };
+
+        WIZ_SINGLETON_DECLARE(::rkk::Root::type);
+
+//      inline Root::ref Instance()
+//      {
+//          return ::Wiz::Singleton::Type<Root::type>::Instance();
+//      }
+// 
+//      inline Root::ptr InstancePtr()
+//      {
+//          return ::Wiz::Singleton::Type<Root::type>::InstancePtr();
+//      }
     } /// namespace Root
 } /// namespace rkk
 

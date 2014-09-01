@@ -9,19 +9,19 @@
 
 //////////////////////////////////////////////////////////////////////////
 
-#define RKK_NEW                                     WIZ_NEW
-#define RKK_DEL                                     WIZ_DEL
+#define RKK_NEW                                         WIZ_NEW
+#define RKK_DEL                                         WIZ_DEL
 
-#define RKK_MALLOC(bytes, category)                 WIZ_MALLOC(bytes, category)
-#define RKK_FREE(ptr, category)                     WIZ_FREE(ptr, category)
-#define RKK_MALLOC_T(T, category)                   WIZ_MALLOC_T(T, category)
-#define RKK_MALLOC_ARRAY_T(T, cnt, category)        WIZ_MALLOC_ARRAY_T(T, cnt, category)
+#define RKK_MALLOC(SizeInByte, InCat)                   WIZ_MALLOC_CAT(SizeInByte, InCat)
+#define RKK_FREE(MemPtr, InCat)                         WIZ_FREE_CAT(MemPtr, InCat)
+#define RKK_MALLOC_T(InType, InCat)                     WIZ_MALLOC_T_CAT(InType, InCat)
+#define RKK_MALLOC_ARRAY_T(InType, InCnt, InCat)        WIZ_MALLOC_ARRAY_T_CAT(InType, InCnt, InCat)
 
-#define RKK_NEW_T(T, category)                      WIZ_NEW_T(T, category)
-#define RKK_DEL_T(ptr, T, category)                 WIZ_DEL_T(ptr, T, category)
+#define RKK_NEW_T(InType, InCat)                        WIZ_NEW_T_CAT(InType, InCat)
+#define RKK_DEL_T(MemPtr, InType, InCat)                WIZ_DEL_T_CAT(MemPtr, InType, InCat)
 
-#define RKK_NEW_ARRAY_T(T, cnt, category)           WIZ_NEW_ARRAY_T(T, cnt, category)
-#define RKK_DEL_ARRAY_T(ptr, T, cnt, category)      WIZ_DEL_ARRAY_T(ptr, T, cnt, category)
+#define RKK_NEW_ARRAY_T(InType, InCnt, InCat)           WIZ_NEW_ARRAY_T_CAT(InType, InCnt, InCat)
+#define RKK_DEL_ARRAY_T(MemPtr, InType, InCnt, InCat)   WIZ_DEL_ARRAY_T_CAT(MemPtr, InType, InCnt, InCat)
 
 //////////////////////////////////////////////////////////////////////////
 

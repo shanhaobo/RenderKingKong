@@ -10,16 +10,16 @@ namespace Wiz
         ////////////////////////////////////////////////////////////////////////
         // general case
         template<class Ret, class Arg>
-        WIZ_INLINE Ret& Force(Arg &rSrc)
+        WIZ_INLINE Ret& Force(Arg & rSrc)
         {
             return(*reinterpret_cast<Ret *>(&rSrc));
         }
 
         // specialization for const
         template<class Ret, class Arg>
-        WIZ_INLINE const Ret& Force(const Arg &rSrc)
+        WIZ_INLINE Ret const & Force(Arg const & rSrc)
         {
-            return(*reinterpret_cast<const Ret *>(&rSrc));
+            return(*reinterpret_cast<Ret const *>(&rSrc));
         }
         ////////////////////////////////////////////////////////////////////////
     } /// end of namespace Cast

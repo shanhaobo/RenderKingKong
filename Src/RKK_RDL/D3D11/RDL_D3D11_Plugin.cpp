@@ -27,6 +27,8 @@ namespace rkk
                     {
                         /// TODO Create RDL;
 
+                        m_D3D11RDLPtr = RKK_NEW RenderDeviceLayer::D3D11::type;
+
                         return m_D3D11RDLPtr;
                     }
 
