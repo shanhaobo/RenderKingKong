@@ -25,6 +25,7 @@ namespace rkk
 
                 WIZ_SINGLETONINIT_DECLARE(IDXGIFactory);
             } /// end of namespace Factory
+
         } /// end of namespace D3D11
     } /// namespace RenderDeviceLayer
 } /// namespace rkk

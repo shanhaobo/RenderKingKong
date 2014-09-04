@@ -16,8 +16,10 @@ namespace rkk
 
             }
 
-            RenderTarget::ptr type::CreateRenderTarget(Desc::RenderTarget::in)
+            RenderTarget::ptr type::CreateRenderTarget(Desc::RenderTarget::in InDesc)
             {
+
+
                 return RKK_NULLPTR;
             }
         } /// end of namespace D3D11

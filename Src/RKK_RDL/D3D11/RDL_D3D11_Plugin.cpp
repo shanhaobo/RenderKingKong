@@ -16,7 +16,7 @@ namespace rkk
                     typedef ::rkk::Plugin::RenderDeviceLayer::type tSuper;
 
                 public:
-                    type() : m_D3D11RDLPtr(RKK_NULLPTR)
+                    type() : tSuper(), m_D3D11RDLPtr(RKK_NULLPTR)
                     {
 
                     }
@@ -48,5 +48,4 @@ namespace rkk
             } /// end of namespace D3D11
         } /// namespace RenderDeviceLayer
     } /// end of namespace Plugin
-
 } /// namespace rkk

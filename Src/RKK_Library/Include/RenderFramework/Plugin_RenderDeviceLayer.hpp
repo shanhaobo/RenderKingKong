@@ -17,7 +17,7 @@ namespace rkk
                 typedef Plugin::type tSuper;
 
             public:
-                type()
+                type() : tSuper()
                 {
 
                 }
