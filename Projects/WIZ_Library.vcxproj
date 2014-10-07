@@ -39,7 +39,6 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTBool.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIF.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIsSame.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUSingletonInit.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUMisc.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUNoncopyable.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTU.hpp" />
