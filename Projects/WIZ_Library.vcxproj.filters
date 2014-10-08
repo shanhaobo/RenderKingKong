@@ -91,6 +91,9 @@
     <Filter Include="Private\03_Utils\TimerUtils">
       <UniqueIdentifier>{03aa979e-f58d-4d3c-94fd-cde3587da56b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29\02_MU">
+      <UniqueIdentifier>{de989f6e-19aa-4ca1-b4d3-6264863c3950}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -314,6 +317,9 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCallProxy.hpp">
       <Filter>Include\01_Basic\04_TU%28TemplateUtils%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\02_MU\WizAdvMacroAssert.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\02_MU</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

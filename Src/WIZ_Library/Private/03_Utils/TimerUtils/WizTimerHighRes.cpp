@@ -1,4 +1,5 @@
 #include "../../../Include/01_Basic/04_TU/WizBasicTU.hpp"
+#include "../../../Include/02_Adv/02_MU/WizAdvMacroAssert.hpp"
 #include "../../../Include/03_Utils/TimerUtils/WizTimerHighRes.hpp"
 
 #include <algorithm>
@@ -248,6 +249,10 @@ namespace Wiz
                 if (::Wiz::NotValidPtr(InnerSingletonInstance.ManagedPtr))
                 {
                     InnerSingletonInstance.ManagedPtr = Create();
+                    if (::Wiz::NotValidPtr(InnerSingletonInstance.ManagedPtr))
+                    {
+                        WIZ_ASSERT(::Wiz::Bool::False);
+                    }
                 }
                 return InnerSingletonInstance.ManagedPtr;
             }

@@ -1,5 +1,5 @@
-#ifndef __WIZ_ADVANCED_MACRO_ASSERT_HPP__SHANHAOBO_19800429__
-#define __WIZ_ADVANCED_MACRO_ASSERT_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_ADV_MACRO_ASSERT_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_MACRO_ASSERT_HPP__SHANHAOBO_19800429__
 
 #include <assert.h>
 
@@ -64,4 +64,4 @@ namespace Wiz
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif /*__WIZ_ADVANCED_MACRO_ASSERT_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_ADV_MACRO_ASSERT_HPP__SHANHAOBO_19800429__*/

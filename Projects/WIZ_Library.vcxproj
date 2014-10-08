@@ -70,6 +70,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashStringProxy.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvTypeEnum.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\02_MU\WizAdvMacroAssert.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerFrame.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerHighRes.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp" />
