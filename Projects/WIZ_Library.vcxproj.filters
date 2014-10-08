@@ -312,6 +312,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUMisc.hpp">
       <Filter>Include\01_Basic\04_TU%28TemplateUtils%29</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCallProxy.hpp">
+      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">

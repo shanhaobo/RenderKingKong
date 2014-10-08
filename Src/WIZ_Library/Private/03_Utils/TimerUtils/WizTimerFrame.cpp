@@ -45,7 +45,6 @@ namespace Wiz
 
             Type::Type() : tSuper(m_Now, m_DeltaTime)
             {
-
             }
 
         } /// end of namespace Frame
