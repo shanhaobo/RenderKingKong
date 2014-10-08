@@ -1,3 +1,4 @@
+#include "../../../Include/01_Basic/04_TU/WizBasicTU.hpp"
 #include "../../../Include/03_Utils/TimerUtils/WizTimerHighRes.hpp"
 
 #include <algorithm>
@@ -81,6 +82,8 @@ namespace Wiz
                         {
                             TimerMask <<= 1;
                         }
+
+                        return TimerMask;
                     }
 
                 public:
@@ -207,13 +210,46 @@ namespace Wiz
 
             Ptr Create()
             {
+#if (WIZ_CFG_PLATFORM == WIZ_CFG_PLATFORM_WINDOWS)
+                return new Windows::Type;
+#elif (WIZ_CFG_PLATFORM == WIZ_CFG_PLATFORM_LINUX)
+                return new Linux::Type;
+#else
+
+#   error WIZ_CFG_PLATFORM Is Illegal
                 return WIZ_NULLPTR;
+#endif 
             }
 
             Void::Type Destroy(Ptr& InPtr)
             {
-
                 InPtr = WIZ_NULLPTR;
+            }
+
+            ////////////////////////////////////////////////////////
+
+            struct tInnerSingletonManagedInstance
+            {
+                Ptr ManagedPtr;
+
+                tInnerSingletonManagedInstance() : ManagedPtr(WIZ_NULLPTR)
+                {
+                }
+
+                ~tInnerSingletonManagedInstance()
+                {
+                    Destroy(ManagedPtr);
+                }
+            };
+            tInnerSingletonManagedInstance InnerSingletonInstance;
+
+            Ptr InstancePtr()
+            {
+                if (::Wiz::NotValidPtr(InnerSingletonInstance.ManagedPtr))
+                {
+                    InnerSingletonInstance.ManagedPtr = Create();
+                }
+                return InnerSingletonInstance.ManagedPtr;
             }
         } /// end of namespace HighRes
     } /// end of namespace Timer

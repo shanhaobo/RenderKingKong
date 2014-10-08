@@ -30,8 +30,7 @@ namespace Wiz
                 virtual R64::Type Now_MicroSecond() = 0;        /// Œ¢√Î
             };
 
-            Ptr Create();
-            Void::Type Destroy(Ptr& InPtr);
+            Ptr InstancePtr();
         } /// end of namespace HighRes
     } /// end of namespace Timer
 } /// end of namespace Wiz

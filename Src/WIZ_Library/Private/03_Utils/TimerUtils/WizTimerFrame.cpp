@@ -9,44 +9,26 @@ namespace Wiz
     {
         namespace Frame
         {
-            namespace Wrapper
+            Type::Type()
             {
-                Type::Type(R64::Ref InNowRef, R64::Ref InDeltaTimeRef) : m_NowRef(InNowRef), m_DeltaTimeRef(InDeltaTimeRef)
-                {
-                    m_HighResTimerPtr = ::Wiz::Timer::HighRes::Create();
-                }
-
-                Type::~Type()
-                {
-                    ::Wiz::Timer::HighRes::Destroy(m_HighResTimerPtr);
-                }
-
-                Void::Type Type::Reset()
-                {
-                    if (::Wiz::IsValidPtr(m_HighResTimerPtr))
-                    {
-                        m_HighResTimerPtr->Reset();
-                    }
-                }
-
-                Void::Type Type::Tick()
-                {
-                    if (::Wiz::IsValidPtr(m_HighResTimerPtr))
-                    {
-                        R64::TypeC NowSec = m_HighResTimerPtr->Now_Second();
-
-                        m_DeltaTimeRef = NowSec - m_NowRef;
-
-                        m_NowRef = NowSec;
-                    }
-                }
-            } /// end of namespace Wrapper
-
-
-            Type::Type() : tSuper(m_Now, m_DeltaTime)
-            {
+                Reset();
             }
 
+            Void::Type Type::Reset()
+            {
+                m_Now       = ::Wiz::Timer::HighRes::InstancePtr()->Now_Second();
+
+                m_DeltaTime = 0;
+            }
+
+            Void::Type Type::Tick()
+            {
+                R64::TypeC NowSec = ::Wiz::Timer::HighRes::InstancePtr()->Now_Second();
+
+                m_DeltaTime = NowSec - m_Now;
+
+                m_Now = NowSec;
+            }
         } /// end of namespace Frame
     } /// end of namespace Timer
 } /// end of namespace Wiz
