@@ -252,6 +252,7 @@ namespace Wiz
                     if (::Wiz::NotValidPtr(InnerSingletonInstance.ManagedPtr))
                     {
                         WIZ_ASSERT(::Wiz::Bool::False);
+                        return WIZ_NULLPTR;
                     }
                 }
                 return InnerSingletonInstance.ManagedPtr;

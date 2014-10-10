@@ -2,7 +2,6 @@
 
 #include "../../../Include/01_Basic/04_TU/WizBasicTU.hpp"
 
-
 namespace Wiz
 {
     namespace Timer
