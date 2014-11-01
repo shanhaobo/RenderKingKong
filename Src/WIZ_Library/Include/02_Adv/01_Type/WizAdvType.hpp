@@ -7,4 +7,6 @@
 
 #include "./String/WizAdvString.hpp"
 
+#include "./Graph/WizAdvGraph.hpp"
+
 #endif /*__WIZ_ADV_HPP__SHANHAOBO_19800429__*/

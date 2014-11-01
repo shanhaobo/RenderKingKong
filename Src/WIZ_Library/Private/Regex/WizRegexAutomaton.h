@@ -12,10 +12,11 @@ namespace Wiz
     {
         namespace Automaton
         {
-            class Type : public ::Wiz::MemObj::type<Allocator::Automaton::Type>
+            class Type : public ::Wiz::MemObj::Type<Allocator::Automaton::Type, ::Wiz::Graph::Type>
             {
             protected:
-                typedef List::Type<State::Ptr>  tStateList;
+                typedef ::Wiz::Graph::Type tSuper;
+
             public:
                 Type()
                 {
@@ -23,10 +24,9 @@ namespace Wiz
                 }
             public:
 
-
+                Transition::Ptr LinkNode(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr);
 
             protected:
-                tStateList  m_StateList;
 
                 State::Ptr  m_StartState;
             };

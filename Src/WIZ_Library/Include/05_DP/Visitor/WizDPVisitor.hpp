@@ -10,7 +10,7 @@ namespace Wiz
         /// ÉùÃ÷Visitor
         namespace Visitor
         {
-            template<class Param> struct Type;
+            template<class ParamT> struct Type;
         } /// end of namespace Visitor
 
         /// ÉùÃ÷Visitable

@@ -15,7 +15,7 @@ namespace Wiz
         public:
             //////////////////////////////////////////////////////////////////////////
 
-            typedef typename Type<ElementT, AllocatorT>                         tThis;
+            typedef typename Type<ElementT, CompT, AllocatorT>                  tThis;
 
             typedef typename ::std::set<ElementT, CompT, AllocatorT>            tSuper;
 

@@ -11,7 +11,7 @@ namespace Wiz
         {
             ////////////////////////////////////////////
 
-            class Type : public ::Wiz::MemObj::type<Allocator::Expression::Type>
+            class Type : public ::Wiz::MemObj::Type<Allocator::Expression::Type>
             {
             public:
                 Type() : m_Final(Bool::False)

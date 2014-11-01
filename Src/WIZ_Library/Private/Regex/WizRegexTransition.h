@@ -11,19 +11,16 @@ namespace Wiz
         {
             namespace Epsilon
             {
-                class Type : public MemObj::type<Allocator::Transition::Type>
+                class Type : public MemObj::Type<Allocator::Transition::Type, ::Wiz::Graph::Link::Type>
                 {
                 public:
-                    Type() : m_FromPtr(WIZ_NULLPTR), m_ToPtr(WIZ_NULLPTR)
+                    Type()
                     {
 
                     }
                 public:
 
                 protected:
-
-                    State::Ptr m_FromPtr;
-                    State::Ptr m_ToPtr;
                 };
             } /// end of namespace Epsilon
 

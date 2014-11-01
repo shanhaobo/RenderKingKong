@@ -9,10 +9,8 @@ namespace Wiz
     {
         namespace State
         {
-            class Type : public ::Wiz::MemObj::Type<Allocator::State::Type>
+            class Type : public ::Wiz::MemObj::Type<Allocator::State::Type, ::Wiz::Graph::Node::Type>
             {
-                typedef List::Type<Transition::Ptr> tTransitionList;
-
             public:
                 Type() : m_Final(Bool::False)
                 {
@@ -25,9 +23,6 @@ namespace Wiz
                 };
             protected:
                 Bool::Type m_Final;
-
-                tTransitionList InTransitions;
-                tTransitionList OutTransitions;
             };
         } /// end of namespace State
     } /// end of namespace Regex

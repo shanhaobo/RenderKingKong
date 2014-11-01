@@ -35,7 +35,7 @@ namespace Wiz
                 }
 
                 /// With Debug Info
-                static ::Wiz::Void::Type DeallocateWithDebugInfo(void* MemPtr, const char*, int, const char*)
+                static ::Wiz::Void::Type DeallocateWithDebugInfo(void* MemPtr, const char* InFileName = WIZ_NULL, int InLine = 0, const char* InFuncName = WIZ_NULL)
                 {
                     if (::Wiz::IsValidPtr(MemPtr))
                     {

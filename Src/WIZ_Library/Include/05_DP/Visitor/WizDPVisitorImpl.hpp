@@ -1,7 +1,7 @@
 #ifndef __WIZ_DESIGNPATTERN_VISITOR_IMPL_HPP__SHANHAOBO_19800429__
 #define __WIZ_DESIGNPATTERN_VISITOR_IMPL_HPP__SHANHAOBO_19800429__
 
-#include "../../01_Basic/04_TU/TypeList/WizBasicTUTypeListImpl.hpp"
+#include "../../01_Basic/04_TU/WizBasicTUTypeList.hpp"
 
 namespace Wiz
 {
@@ -25,7 +25,7 @@ namespace Wiz
 				}; /// end of class Type
 
 				template <class Head, class Tail>
-				class Type< ::Wiz::TypeList::Impl::Type<Head, Tail> > : public Type<Head>, public Type<Tail>
+				class Type< ::Wiz::TypeList::Type<Head, Tail> > : public Type<Head>, public Type<Tail>
 				{
 				protected:
 					Type(){}
@@ -33,7 +33,7 @@ namespace Wiz
 				}; /// end of class Type
 
 				template <class Head>
-				class Type< ::Wiz::TypeList::Impl::Type<Head, ::Wiz::Null::Type> > : public Type<Head>
+				class Type< ::Wiz::TypeList::Type<Head, ::Wiz::Null::Type> > : public Type<Head>
 				{
 				protected:
 					Type(){}

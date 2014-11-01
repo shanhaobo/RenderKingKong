@@ -106,8 +106,8 @@
     <Filter Include="Include\05_DP%28Design Pattern%29\Visitor">
       <UniqueIdentifier>{7be37e82-4c30-44e0-9f6c-b0963935cf0a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\01_Basic\04_TU%28TemplateUtils%29\TypeList">
-      <UniqueIdentifier>{c964d6c3-f219-426d-be99-a57fc2b5dd78}</UniqueIdentifier>
+    <Filter Include="Include\02_Adv%28Advanced%29\01_Type\Graph">
+      <UniqueIdentifier>{7f6cc97e-36f8-4a03-86ff-7a01294fa61f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -348,15 +348,6 @@
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexTransition.h">
       <Filter>Private\Regex</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeList.hpp">
-      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29\TypeList</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListImpl.hpp">
-      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29\TypeList</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListTemplate.hpp">
-      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29\TypeList</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitor.hpp">
       <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
     </ClInclude>
@@ -371,6 +362,21 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionVisitor.h">
       <Filter>Private\Regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUTypeList.hpp">
+      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraph.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphForwardDeclare.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphLink.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphNode.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Graph</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -395,6 +401,9 @@
     </ClCompile>
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerFrame.cpp">
       <Filter>Private\03_Utils\TimerUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.cpp">
+      <Filter>Private\Regex</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

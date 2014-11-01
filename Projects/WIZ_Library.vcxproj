@@ -39,9 +39,6 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTBool.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIF.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIsSame.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeList.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListImpl.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListTemplate.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCallProxy.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUMisc.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUNoncopyable.hpp" />
@@ -51,6 +48,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastLexical.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCastStatic.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUSingleton.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUTypeList.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMem.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocator.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\05_Mem\WizBasicMemAllocatorBase.hpp" />
@@ -66,6 +64,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMap.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMultiMap.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerSet.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraph.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphForwardDeclare.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphLink.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphNode.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvFixedString.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashString.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\String\WizAdvHashStringTable.hpp" />
@@ -110,6 +112,7 @@
     <ClCompile Include="..\Src\WIZ_Library\Private\01_Basic\05_Mem\WizBasicMemRecorder.cpp" />
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerFrame.cpp" />
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerHighRes.cpp" />
+    <ClCompile Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D97800BC-87E5-42CD-A999-B99A4E5B1244}</ProjectGuid>
