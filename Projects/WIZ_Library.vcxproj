@@ -39,6 +39,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTBool.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIF.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIsSame.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeList.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListImpl.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListTemplate.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCallProxy.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUMisc.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUNoncopyable.hpp" />
@@ -86,6 +89,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\Wiz.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\WizCustomDeclareHelper.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.h" />
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexBaseType.h" />
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexState.h" />
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexTransition.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl" />

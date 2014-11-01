@@ -9,5 +9,11 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Include\Skill">
+      <UniqueIdentifier>{480781c5-2254-44f4-8a6d-4b646455d805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\AI">
+      <UniqueIdentifier>{f24b94ba-217e-49f4-a8fd-c01ea522818b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

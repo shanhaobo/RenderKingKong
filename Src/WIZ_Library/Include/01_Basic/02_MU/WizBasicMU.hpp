@@ -2,6 +2,7 @@
 #define __WIZ_BASIC_MU_HPP__SHANHAOBO_19800429__
 
 #include "../../00_Config/WizConfig.hpp"
+#include "../00_MPP/WizBasicMPP.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 

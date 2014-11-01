@@ -1,4 +1,7 @@
 /// #pragma once 不能互斥
+/// 只支持 0 ~ 255 也就是说  WIZ_MPP_REPEAT_FILE_BEGIN ~ WIZ_MPP_REPEAT_FILE_END 【0， 255】
+/// 也就是说 WIZ_MPP_REPEAT_FILE_COUNT 【0， 255】
+
 
 #if defined(WIZ_MPP_REPEAT_FILE_BEGIN) && defined(WIZ_MPP_REPEAT_FILE_END)
 

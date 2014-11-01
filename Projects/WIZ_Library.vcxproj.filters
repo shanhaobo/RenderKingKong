@@ -94,6 +94,21 @@
     <Filter Include="Include\02_Adv%28Advanced%29\02_MU">
       <UniqueIdentifier>{de989f6e-19aa-4ca1-b4d3-6264863c3950}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\Regex">
+      <UniqueIdentifier>{9f274f9e-82bc-4227-8b36-67df102a9267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Regex">
+      <UniqueIdentifier>{e2ec650e-709d-4c01-8838-0c92e37a281d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\05_DP%28Design Pattern%29">
+      <UniqueIdentifier>{ba05d1a9-0347-4d02-b906-0d32878da6bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\05_DP%28Design Pattern%29\Visitor">
+      <UniqueIdentifier>{7be37e82-4c30-44e0-9f6c-b0963935cf0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\01_Basic\04_TU%28TemplateUtils%29\TypeList">
+      <UniqueIdentifier>{c964d6c3-f219-426d-be99-a57fc2b5dd78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -320,6 +335,27 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\02_MU\WizAdvMacroAssert.hpp">
       <Filter>Include\02_Adv%28Advanced%29\02_MU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.h">
+      <Filter>Private\Regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexBaseType.h">
+      <Filter>Private\Regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexState.h">
+      <Filter>Private\Regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexTransition.h">
+      <Filter>Private\Regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeList.hpp">
+      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29\TypeList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListImpl.hpp">
+      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29\TypeList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListTemplate.hpp">
+      <Filter>Include\01_Basic\04_TU%28TemplateUtils%29\TypeList</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
