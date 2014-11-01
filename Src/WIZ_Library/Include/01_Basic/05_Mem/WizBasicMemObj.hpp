@@ -14,8 +14,8 @@ namespace Wiz
 {
     namespace MemObj
     {
-        template <class AllocatorT>
-        class WIZ_EXPORT Type
+        template <class AllocatorT, class BaseT = Null::Type>
+        class WIZ_EXPORT Type : public BaseT
         {
             typedef AllocatorT              tAllocator;
 

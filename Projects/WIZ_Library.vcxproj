@@ -87,10 +87,15 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Base.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitor.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorImpl.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorTemplate.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\Wiz.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\WizCustomDeclareHelper.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.h" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexBaseType.h" />
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpression.h" />
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionVisitor.h" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexState.h" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexTransition.h" />
   </ItemGroup>

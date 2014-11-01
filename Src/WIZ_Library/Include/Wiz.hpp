@@ -17,4 +17,6 @@
 
 #include "04_Math/00_Utils/WizMathUtils.hpp"
 
+#include "05_DP/Visitor/WizDPVisitor.hpp"
+
 #endif /*__WIZ_HPP__SHANHAOBO_19800429__*/

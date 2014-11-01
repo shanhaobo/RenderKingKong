@@ -17,6 +17,7 @@ namespace Wiz
     {
         WIZ_CLASS
         {
+        public:
             Type() {}
             Type(In, In) {}
 

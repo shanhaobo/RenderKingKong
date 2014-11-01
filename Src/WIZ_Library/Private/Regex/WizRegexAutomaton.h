@@ -4,6 +4,7 @@
 #include "./WizRegexBaseType.h"
 
 #include "./WizRegexState.h"
+#include "./WizRegexTransition.h"
 
 namespace Wiz
 {
@@ -21,6 +22,8 @@ namespace Wiz
 
                 }
             public:
+
+
 
             protected:
                 tStateList  m_StateList;

@@ -4,6 +4,8 @@
 #include "../../../Include/01_Basic/01_Type/WizBasicType.hpp"
 #include "../../../Include/01_Basic/05_Mem/WizBasicMem.hpp"
 
+#include "../../../Include/05_DP/Visitor/WizDPVisitor.hpp"
+
 namespace Wiz
 {
     namespace Regex
@@ -13,6 +15,7 @@ namespace Wiz
             eOC_State,
             eOC_Transition,
             eOC_Automaton,
+            eOC_Expression,
         };
 
         namespace Allocator
@@ -31,6 +34,11 @@ namespace Wiz
             {
                 typedef ::Wiz::Allocator::Categorized<eOC_Automaton>::Type  Type;
             } /// end of namespace Automaton
+
+            namespace Expression
+            {
+                typedef ::Wiz::Allocator::Categorized<eOC_Expression>::Type  Type;
+            } /// end of namespace Expression
         } /// end of namespace Allocator
 
         namespace State
@@ -50,8 +58,33 @@ namespace Wiz
 
         namespace Automaton
         {
-            WIZ_FORWARD_DECLARE_CLASS
+            WIZ_FORWARD_DECLARE_CLASS;
         } /// end of namespace Automaton
+
+        namespace Expression
+        {
+            namespace Visitor
+            {
+                WIZ_FORWARD_DECLARE_CLASS;
+            } /// end of namespace Visitor
+
+            namespace Sequence
+            {
+                WIZ_FORWARD_DECLARE_CLASS;
+            } /// end of namespace Sequence
+
+            namespace Alternative
+            {
+                WIZ_FORWARD_DECLARE_CLASS;
+            } /// end of namespace Sequence
+
+            namespace Repeat
+            {
+                WIZ_FORWARD_DECLARE_CLASS;
+            } /// end of namespace Repeat
+
+            WIZ_FORWARD_DECLARE_CLASS;
+        } /// end of namespace Expression
     } /// end of namespace Regex
 } /// end of namespace Wiz
 

@@ -357,6 +357,21 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\TypeList\WizBasicTUTypeListTemplate.hpp">
       <Filter>Include\01_Basic\04_TU%28TemplateUtils%29\TypeList</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitor.hpp">
+      <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorTemplate.hpp">
+      <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorImpl.hpp">
+      <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpression.h">
+      <Filter>Private\Regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionVisitor.h">
+      <Filter>Private\Regex</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">

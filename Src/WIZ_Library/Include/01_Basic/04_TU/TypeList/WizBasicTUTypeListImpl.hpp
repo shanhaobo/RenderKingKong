@@ -19,6 +19,14 @@ namespace Wiz
     } /// end of namespace TypeList
 } /// end of namespace Wiz
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
+/// Cnt：链表长度， TN：类型名称 
+/// WIZ_TYPELIST_FAST_DEFINE(5, T)  => WIZ_TYPELIST_5(T1, T2, T3, T4, T5)
+#define WIZ_TYPELIST_FAST_DEFINE(Cnt, TN) WIZ_MPP_COMBINE(WIZ_MPP_COMBINE(WIZ_TYPELIST_, Cnt), (WIZ_ENUM_PARAM_X(Cnt, TN)))
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 #define WIZ_TYPELIST_1(T1) \
     ::Wiz::TypeList::Impl::Type<T1, ::Wiz::Null::Type>
 
@@ -67,8 +75,6 @@ namespace Wiz
 #define WIZ_TYPELIST_16(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) \
     ::Wiz::TypeList::Impl::Type<T1, WIZ_TYPELIST_15(T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16)>
 
-#if 0 /// 为了加快编译速度只是用了 1~16
-
 #define WIZ_TYPELIST_17(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) \
     ::Wiz::TypeList::Impl::Type<T1, WIZ_TYPELIST_16(T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17)>
 
@@ -116,6 +122,8 @@ namespace Wiz
 
 #define WIZ_TYPELIST_32(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32) \
     ::Wiz::TypeList::Impl::Type<T1, WIZ_TYPELIST_31(T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32)>
+
+#if 0 /// 为了加快编译速度只是用了 1~32
 
 #define WIZ_TYPELIST_33(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33) \
     ::Wiz::TypeList::Impl::Type<T1, WIZ_TYPELIST_32(T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33)>
