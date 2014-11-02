@@ -1,7 +1,7 @@
 #ifndef __WIZ_REGEX_EXPRESSION_VISITOR_HPP__SHANHAOBO_19800429__
 #define __WIZ_REGEX_EXPRESSION_VISITOR_HPP__SHANHAOBO_19800429__
 
-#include "./WizRegexExpression.h"
+#include "./WizRegexExpression.hpp"
 
 namespace Wiz
 {

@@ -17,6 +17,11 @@ namespace Wiz
                 {
 
                 }
+
+                virtual ~Type()
+                {
+
+                }
             public:
 
             protected:

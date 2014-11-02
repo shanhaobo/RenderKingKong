@@ -19,6 +19,11 @@ namespace Wiz
             {
 
             }
+
+            virtual ~Type()
+            {
+
+            }
         public:
 
             Bool::Type LinkNode(Link::Ptr InLinkPtr, Node::Ptr InBeginNodePtr, Node::Ptr InEndNodePtr)
@@ -37,8 +42,19 @@ namespace Wiz
                 return Bool::False;
             }
 
+            Void::Type InsetLink(Link::Ptr InLinkPtr)
+            {
+                LinkSet.Insert(InLinkPtr);
+            }
+
+            Void::Type InsertNode(Node::Ptr InNodePtr)
+            {
+                NodeSet.Insert(InNodePtr);
+            }
+
         protected:
             tNodeSet NodeSet;
+            tLinkSet LinkSet;
         };
     } /// end of namespace Graph
 } /// end of namespace Wiz

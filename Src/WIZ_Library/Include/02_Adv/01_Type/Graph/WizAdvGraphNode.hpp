@@ -19,6 +19,11 @@ namespace Wiz
                 {
 
                 }
+
+                virtual ~Type()
+                {
+
+                }
             public:
             protected:
                 tLinkSet m_InputSet;

@@ -1,7 +1,7 @@
 #ifndef __WIZ_REGEX_STATE_HPP__SHANHAOBO_19800429__
 #define __WIZ_REGEX_STATE_HPP__SHANHAOBO_19800429__
 
-#include "./WizRegexBaseType.h"
+#include "./WizRegexBaseType.hpp"
 
 namespace Wiz
 {

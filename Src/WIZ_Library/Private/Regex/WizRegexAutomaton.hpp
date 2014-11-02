@@ -1,10 +1,10 @@
 #ifndef __WIZ_REGEX_AUTOMATON_HPP__SHANHAOBO_19800429__
 #define __WIZ_REGEX_AUTOMATON_HPP__SHANHAOBO_19800429__
 
-#include "./WizRegexBaseType.h"
+#include "./WizRegexBaseType.hpp"
 
-#include "./WizRegexState.h"
-#include "./WizRegexTransition.h"
+#include "./WizRegexState.hpp"
+#include "./WizRegexTransition.hpp"
 
 namespace Wiz
 {
@@ -24,7 +24,9 @@ namespace Wiz
                 }
             public:
 
-                Transition::Ptr LinkNode(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr);
+                Transition::Ptr StateTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr);
+
+                Transition::Epsilon::Ptr EpsilonTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr);
 
             protected:
 

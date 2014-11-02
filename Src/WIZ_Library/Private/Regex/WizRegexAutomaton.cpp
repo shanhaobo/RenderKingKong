@@ -1,5 +1,4 @@
-#include "./WizRegexAutomaton.h"
-
+#include "./WizRegexAutomaton.hpp"
 
 namespace Wiz
 {
@@ -7,17 +6,38 @@ namespace Wiz
     {
         namespace Automaton
         {
-            Transition::Ptr Type::LinkNode(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr)
+            Transition::Ptr Type::StateTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr)
             {
                 Transition::Ptr TransPtr = WIZ_NEW Transition::Type;
                 if (::Wiz::IsValidPtr(TransPtr))
                 {
-                    if (tSuper::LinkNode(TransPtr, InBeginStatePtr, InEndStatePtr))
+                    if (LinkNode(TransPtr, InBeginStatePtr, InEndStatePtr))
                     {
+                        InsetLink(TransPtr);
                         return TransPtr;
                     }
 
                     WIZ_DEL TransPtr;
+                    TransPtr = WIZ_NULL;
+                }
+
+                return WIZ_NULL;
+            }
+
+
+            Transition::Epsilon::Ptr Type::EpsilonTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr)
+            {
+                Transition::Epsilon::Ptr EpsilonPtr = WIZ_NEW Transition::Epsilon::Type;
+                if (::Wiz::IsValidPtr(EpsilonPtr))
+                {
+                    if (LinkNode(EpsilonPtr, InBeginStatePtr, InEndStatePtr))
+                    {
+                        InsetLink(EpsilonPtr);
+                        return EpsilonPtr;
+                    }
+
+                    WIZ_DEL EpsilonPtr;
+                    EpsilonPtr = WIZ_NULL;
                 }
 
                 return WIZ_NULL;
