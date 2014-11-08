@@ -342,9 +342,6 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorTemplate.hpp">
       <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorImpl.hpp">
-      <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUTypeList.hpp">
       <Filter>Include\01_Basic\04_TU%28TemplateUtils%29</Filter>
     </ClInclude>
@@ -378,6 +375,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexTransition.hpp">
       <Filter>Private\Regex</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitablel.hpp">
+      <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
@@ -403,6 +403,9 @@
       <Filter>Private\03_Utils\TimerUtils</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.cpp">
+      <Filter>Private\Regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionVisitor.cpp">
       <Filter>Private\Regex</Filter>
     </ClCompile>
   </ItemGroup>

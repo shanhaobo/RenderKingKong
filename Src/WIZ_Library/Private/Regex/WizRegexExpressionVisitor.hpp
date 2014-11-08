@@ -9,15 +9,34 @@ namespace Wiz
     {
         namespace Expression
         {
-            namespace Visitor
+            namespace Traverse
             {
-                struct Type : public ::Wiz::DP::Visitor::Type<Expression::Type(Sequence::Type, Alternative::Type, Repeat::Type)>
+                struct Type : Expression::Visitor::Type
                 {
-                    virtual Void::Type Visit(Sequence::Ref ioExpRef) = 0;
-                    virtual Void::Type Visit(Alternative::Ref ioExpRef) = 0;
-                    virtual Void::Type Visit(Repeat::Ref ioExpRef) = 0;
+                    Type() : m_AutomatonPtr(WIZ_NULLPTR)
+                    {
+                    }
+
+                    Automaton::Ptr m_AutomatonPtr;
+
+                    virtual Void::Type Visit(CharSet::Ref       ioExpRef)
+                    {
+                    }
+                    virtual Void::Type Visit(Sequence::Ref      ioExpRef)
+                    {
+//                         ioExpRef.m_LeftPtr->RequestAccept(*this);
+//                         ioExpRef.m_RightPtr->RequestAccept(*this);
+                    }
+                    virtual Void::Type Visit(Alternative::Ref   ioExpRef)
+                    {
+
+                    }
+                    virtual Void::Type Visit(Repeat::Ref        ioExpRef)
+                    {
+
+                    }
                 };
-            } /// end of namespace Visitor
+            } /// end of namespace ThompsonConstruction
         } /// end of namespace State
     } /// end of namespace Regex
 } /// end of namespace Wiz

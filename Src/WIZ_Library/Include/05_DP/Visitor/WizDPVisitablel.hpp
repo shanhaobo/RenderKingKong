@@ -11,29 +11,29 @@ namespace Wiz
 		{
 			namespace Impl
 			{
-				template <class VisitableT>
+				template <class VisitableT, class ReturnT>
 				class Type
 				{
                 protected:
-                    typedef VisitableT tVisitable;
+                    typedef VisitableT                          tVisitable;
 				protected:
 					Type(){}
 				public:
 					virtual ~Type(){}
 				public:
-                    virtual ::Wiz::Void::Type Visit(tVisitable&) = 0;
+                    virtual ReturnT Visit(tVisitable&) = 0;
 				}; /// end of class Type
 
-				template <class Head, class Tail>
-				class Type< ::Wiz::TypeList::Type<Head, Tail> > : public Type<Head>, public Type<Tail>
+                template <class HeadT, class TailT, class ReturnT>
+                class Type< ::Wiz::TypeList::Type<HeadT, TailT>, ReturnT > : public Type<HeadT, ReturnT>, public Type<TailT, ReturnT>
 				{
 				protected:
 					Type(){}
 				public:
 				}; /// end of class Type
 
-				template <class Head>
-				class Type< ::Wiz::TypeList::Type<Head, ::Wiz::Null::Type> > : public Type<Head>
+                template <class HeadT, class ReturnT>
+                class Type< ::Wiz::TypeList::Type<HeadT, ::Wiz::Null::Type>, ReturnT > : public Type<HeadT, ReturnT>
 				{
 				protected:
 					Type(){}

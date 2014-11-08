@@ -10,43 +10,30 @@ namespace Wiz
         /// ÉùÃ÷Visitor
         namespace Visitor
         {
-            template<class ParamT> struct Type;
+            template<class VisitableListT> struct Type;
         } /// end of namespace Visitor
 
         /// ÉùÃ÷Visitable
         namespace Visitable
         {
-            namespace Base
+            template<class DerivedT, class VisitorT, class BaseT>
+            struct Type : public BaseT
             {
-                template<class VisitorT>
-                struct Type : public VisitorT::tVisitableBase
-                {
-                    typedef typename VisitorT::tVisitableBase tSuper;
-
-                    Type() : tSuper()
-                    {}
-
-                    template<class T>
-                    static ::Wiz::Void::Type AcceptImpl(T* VAPtr, VisitorT& VRef)
-                    {
-                        return VRef.Visit(*VAPtr);
-                    }
-                }; /// end of struct Type
-            } /// end of namespace Base
-
-            template<class DerivedT, class VisitorT>
-            struct Type : public ::Wiz::DP::Visitable::Base::Type<VisitorT>
-            {
-                typedef ::Wiz::DP::Visitable::Base::Type<VisitorT> tSuper;
-
-                Type() : tSuper()
+                Type() : BaseT()
                 {}
 
-                typedef ::Wiz::DP::Visitable::Base::Type<VisitorT> tSuper;
-
-                ::Wiz::Void::Type Accept(VisitorT& VRef)
+            public:
+                template<class ReturnT>
+                ReturnT Accept(VisitorT& VRef)
                 {
-                    tSuper::AcceptImpl<DerivedT>(::Wiz::Cast::Static<DerivedT*>(this), VRef);
+                    return StaticAcceptImpl<ReturnT>(::Wiz::Cast::Static<DerivedT*>(this), VRef);
+                }
+
+            protected:
+                template<class ReturnT>
+                static ReturnT StaticAcceptImpl(DerivedT* VAPtr, VisitorT& VRef)
+                {
+                    return VRef.Visit(*VAPtr);
                 }
             }; /// end of struct Type
         } /// end of namespace Visitable

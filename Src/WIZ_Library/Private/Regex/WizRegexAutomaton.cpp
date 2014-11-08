@@ -1,5 +1,8 @@
 #include "./WizRegexAutomaton.hpp"
 
+#include "./WizRegexExpressionVisitor.hpp"
+#include "./WizRegexExpression.hpp"
+
 namespace Wiz
 {
     namespace Regex

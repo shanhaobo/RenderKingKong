@@ -9,6 +9,19 @@ namespace Wiz
     {
         namespace Expression
         {
+            namespace Visitor
+            {
+                struct Type : public ::Wiz::DP::Visitor::Type<Void::Type(CharSet::Type, Sequence::Type, Alternative::Type, Repeat::Type)>
+                {
+                    virtual Void::Type Visit(CharSet::Ref       ioExpRef) = 0;
+                    virtual Void::Type Visit(Sequence::Ref      ioExpRef) = 0;
+                    virtual Void::Type Visit(Alternative::Ref   ioExpRef) = 0;
+                    virtual Void::Type Visit(Repeat::Ref        ioExpRef) = 0;
+                };
+            } /// end of namespace Visitor
+
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
             ////////////////////////////////////////////
 
             class Type : public ::Wiz::MemObj::Type<Allocator::Expression::Type>
@@ -23,39 +36,126 @@ namespace Wiz
                 {
                     return m_Final;
                 };
+
+            public:
+
+
             protected:
                 Bool::Type m_Final;
             };
 
             ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+
+            namespace Terminal
+            {
+                template<class DerivedT>
+                class Type : public DP::Visitable::Type<DerivedT, Visitor::Type, Expression::Type>
+                {
+                protected:
+                    Type()
+                    {
+
+                    }
+                protected:
+
+                };
+            } /// end of namespace Terminal
+
+            namespace Unary
+            {
+                template<class DerivedT>
+                class Type : public DP::Visitable::Type<DerivedT, Visitor::Type, Expression::Type>
+                {
+                protected:
+                    Type() : m_ChildPtr(WIZ_NULLPTR)
+                    {
+
+                    }
+                protected:
+                    Expression::Ptr m_ChildPtr;
+                };
+            } /// end of namespace Unary
+
+            namespace Binary
+            {
+                template<class DerivedT>
+                class Type : public DP::Visitable::Type<DerivedT, Visitor::Type, Expression::Type>
+                {
+                protected:
+                    Type() : m_LeftPtr(WIZ_NULLPTR), m_RightPtr(WIZ_NULLPTR)
+                    {
+
+                    }
+                public:
+                    Expression::Ptr m_LeftPtr;
+                    Expression::Ptr m_RightPtr;
+                };
+            } /// end of namespace Binary
+
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+
+            namespace CharSet
+            {
+                class Type : public Terminal::Type<Type>
+                {
+                protected:
+                    typedef Terminal::Type<Type> tSuper;
+                public:
+                    Type() : tSuper()
+                    {
+
+                    }
+                };
+            } /// end of namespace CharSet
 
             namespace Sequence
             {
-                class Type : public DP::Visitable::Type<Sequence::Type, Visitor::Type>
+                class Type : public Binary::Type<Type>
                 {
                 protected:
+                    typedef Binary::Type<Type> tSuper;
+                public:
+                    Type() : tSuper()
+                    {
 
+                    }
                 };
             } /// end of namespace Sequence
 
             namespace Alternative
             {
-                class Type : public DP::Visitable::Type<Alternative::Type, Visitor::Type>
+                class Type : public Binary::Type<Type>
                 {
                 protected:
+                    typedef Binary::Type<Type> tSuper;
+                public:
+                    Type() : tSuper()
+                    {
 
+                    }
                 };
             } /// end of namespace Alternative
 
             namespace Repeat
             {
-                class Type : public DP::Visitable::Type<Repeat::Type, Visitor::Type>
+                class Type : public Unary::Type<Type>
                 {
                 protected:
+                    typedef Unary::Type<Type> tSuper;
+                public:
+                    Type() : tSuper()
+                    {
 
+                    }
                 };
             } /// end of namespace Repeat
 
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
             ////////////////////////////////////////////
 
         } /// end of namespace State

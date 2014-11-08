@@ -66,8 +66,13 @@ namespace Wiz
         {
             namespace Visitor
             {
-                WIZ_FORWARD_DECLARE_CLASS;
+                WIZ_FORWARD_DECLARE_STRUCT;
             } /// end of namespace Visitor
+
+            namespace CharSet
+            {
+                WIZ_FORWARD_DECLARE_CLASS;
+            } /// end of namespace CharSet;
 
             namespace Sequence
             {
