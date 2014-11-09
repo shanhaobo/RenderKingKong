@@ -13,12 +13,20 @@ namespace Wiz
             ////////////////////////////////////////////
             ////////////////////////////////////////////
             /// ::Wiz::DP::Visitable::Base::Type
-            class Type : public ::Wiz::DP::Visitable::Base::Type<Visitor::Type, I32::Type, ::Wiz::MemObj::Type<Allocator::Expression::Type> >
+            class Type : public ::Wiz::DP::Visitable::Base::Type<Visitor::Type, Expression::Ptr, ::Wiz::MemObj::Type<Allocator::Expression::Type> >
             {
+            protected:
+                typedef ::Wiz::DP::Visitable::Base::Type<Visitor::Type, Expression::Ptr, ::Wiz::MemObj::Type<Allocator::Expression::Type> > tSuper;
+
             public:
-                Type() : m_Final(Bool::False)
+                Type() : tSuper(), m_Final(Bool::False)
                 {
 
+                }
+            public:
+                Void::Type Accept(Visitor::Ref inVisitorRef)
+                {
+                    tSuper::Accept(inVisitorRef, this);
                 }
 
             public:
@@ -56,12 +64,12 @@ namespace Wiz
                 class Type : public ::Wiz::DP::Visitable::Type<DerivedT, Expression::Type>
                 {
                 protected:
-                    Type() : m_ChildPtr(WIZ_NULLPTR)
+                    Type() : m_OnlyChildPtr(WIZ_NULLPTR)
                     {
 
                     }
-                protected:
-                    Expression::Ptr m_ChildPtr;
+                public:
+                    Expression::Ptr m_OnlyChildPtr;
                 };
             } /// end of namespace Unary
 
@@ -71,13 +79,13 @@ namespace Wiz
                 class Type : public ::Wiz::DP::Visitable::Type<DerivedT, Expression::Type>
                 {
                 protected:
-                    Type() : m_LeftPtr(WIZ_NULLPTR), m_RightPtr(WIZ_NULLPTR)
+                    Type() : m_LeftChildPtr(WIZ_NULLPTR), m_RightChildPtr(WIZ_NULLPTR)
                     {
 
                     }
                 public:
-                    Expression::Ptr m_LeftPtr;
-                    Expression::Ptr m_RightPtr;
+                    Expression::Ptr m_LeftChildPtr;
+                    Expression::Ptr m_RightChildPtr;
                 };
             } /// end of namespace Binary
 

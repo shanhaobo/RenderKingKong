@@ -8,6 +8,7 @@ namespace Wiz
         /// 声明Visitable
         namespace Visitable
         {
+            /// 在使用过程中,必须先声明这个Visitable::Base::Type,然后具体类,使用下面的Visitable::Type
             namespace Base
             {
                 template<class VisitorT, class IOParamT, class BaseT = ::Wiz::Null::Type>
@@ -20,13 +21,13 @@ namespace Wiz
                     virtual ~Type(){}
 
                 public:
-                    virtual Void::Type Accept(VisitorT& VRef, tIOParam ioParam) = 0;
+                    virtual Void::Type Accept(VisitorT& VisitorRef, tIOParam ioParam) = 0;
 
                 protected:
                     template<class T>
-                    static Void::Type StaticAcceptImpl(T* inVAPtr, VisitorT& VRef, tIOParam ioParam)
+                    static Void::Type StaticAcceptImpl(T* inVisitablePtr, VisitorT& VisitorRef, tIOParam ioParam)
                     {
-                        VRef.Visit(*inVAPtr, ioParam);
+                        VisitorRef.Visit(*inVisitablePtr, ioParam);
                     }
                 }; /// end of struct Type
             } /// end of namespace Base
@@ -43,9 +44,9 @@ namespace Wiz
                 virtual ~Type(){}
 
             public:
-                virtual Void::Type Accept(tVisitor& VRef, tIOParam ioParam)
+                virtual Void::Type Accept(tVisitor& VisitorRef, tIOParam ioParam)
                 {
-                    StaticAcceptImpl<DerivedT>(::Wiz::Cast::Static<DerivedT*>(this), VRef, ioParam);
+                    StaticAcceptImpl<DerivedT>(::Wiz::Cast::Static<DerivedT*>(this), VisitorRef, ioParam);
                 }
             }; /// end of struct Type
         } /// end of namespace Visitable

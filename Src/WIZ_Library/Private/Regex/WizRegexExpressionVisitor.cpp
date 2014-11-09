@@ -8,16 +8,37 @@ namespace Wiz
         {
             namespace Traverse
             {
-                Void::Type TestFunc()
+                Void::Type Type::Visit(CharSet::Ref       ioExpRef, Expression::Ptr)
                 {
-                    CharSet::Type TestCharSet;
-                    Sequence::Type TestSequenceSet;
-
-
-                    Traverse::Type TestTraverse;
-
-                    //TestCharSet.Accept<I32::Type>(TestTraverse);
-                    //TestSequenceSet.Accept<>
+                }
+                Void::Type Type::Visit(Sequence::Ref      ioExpRef, Expression::Ptr inParentPtr)
+                {
+                    if (::Wiz::IsValidPtr(ioExpRef.m_LeftChildPtr))
+                    {
+                        ioExpRef.m_LeftChildPtr->Accept(*this);
+                    }
+                    if (::Wiz::IsValidPtr(ioExpRef.m_RightChildPtr))
+                    {
+                        ioExpRef.m_RightChildPtr->Accept(*this);
+                    }
+                }
+                Void::Type Type::Visit(Alternative::Ref   ioExpRef, Expression::Ptr inParentPtr)
+                {
+                    if (::Wiz::IsValidPtr(ioExpRef.m_LeftChildPtr))
+                    {
+                        ioExpRef.m_LeftChildPtr->Accept(*this);
+                    }
+                    if (::Wiz::IsValidPtr(ioExpRef.m_RightChildPtr))
+                    {
+                        ioExpRef.m_RightChildPtr->Accept(*this);
+                    }
+                }
+                Void::Type Type::Visit(Repeat::Ref        ioExpRef, Expression::Ptr inParentPtr)
+                {
+                    if (::Wiz::IsValidPtr(ioExpRef.m_OnlyChildPtr))
+                    {
+                        ioExpRef.m_OnlyChildPtr->Accept(*this);
+                    }
                 }
             } /// end of namespace ThompsonConstruction
         } /// end of namespace State
