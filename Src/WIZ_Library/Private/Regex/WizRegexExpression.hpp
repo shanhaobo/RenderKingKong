@@ -12,8 +12,8 @@ namespace Wiz
             ////////////////////////////////////////////
             ////////////////////////////////////////////
             ////////////////////////////////////////////
-            ///  π”√Referenceº¥ø…
-            class Type : public ::Wiz::DP::Visitable::Base::Type<Visitor::Type, I32::Type, U32::Type, ::Wiz::MemObj::Type<Allocator::Expression::Type> >
+            /// ::Wiz::DP::Visitable::Base::Type
+            class Type : public ::Wiz::DP::Visitable::Base::Type<Visitor::Type, I32::Type, ::Wiz::MemObj::Type<Allocator::Expression::Type> >
             {
             public:
                 Type() : m_Final(Bool::False)
@@ -34,7 +34,7 @@ namespace Wiz
             ////////////////////////////////////////////
             ////////////////////////////////////////////
             ////////////////////////////////////////////
-
+            /// ::Wiz::DP::Visitable::Type
             namespace Terminal
             {
                 template<class DerivedT>

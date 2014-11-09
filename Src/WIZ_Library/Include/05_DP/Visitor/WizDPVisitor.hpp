@@ -21,14 +21,13 @@ namespace Wiz
                 {
                 protected:
                     typedef VisitableT                      tVisitable;
-                    typedef typename tVisitable::tReturn    tReturn;
-                    typedef typename tVisitable::tParam     tParam;
+                    typedef typename tVisitable::tIOParam   tIOParam;
                 protected:
                     Type(){}
                 public:
                     virtual ~Type(){}
                 public:
-                    virtual tReturn Visit(tVisitable&, tParam) = 0;
+                    virtual Void::Type Visit(tVisitable&, tIOParam) = 0;
                 }; /// end of class Type
 
                 template <class HeadT, class TailT>

@@ -35,6 +35,12 @@
 /// T0 X0, T1 X1
 #define WIZ_ENUM_PARAM_M_XY(S, C, P)    WIZ_COMMA_IF(C) WIZ_MPP_COMBINE(WIZ_MPP_TUPLE_ELEM(2, 0, P), C) WIZ_MPP_COMBINE(WIZ_MPP_TUPLE_ELEM(2, 1, P), C)
 #define WIZ_ENUM_PARAM_XY(S, X, Y)      WIZ_MPP_LOOP(S, WIZ_ENUM_PARAM_M_XY, (X, Y))
+
+namespace Wiz
+{
+    typedef void EnumParamWrapper;
+} /// end of namespace Wiz
+
 //////////////////////////////////////////////////////////////////////////
 
 #endif /*__WIZ_BASIC_MPP_HPP__SHANHAOBO_19800429__*/

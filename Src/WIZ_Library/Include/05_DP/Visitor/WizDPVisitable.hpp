@@ -10,24 +10,23 @@ namespace Wiz
         {
             namespace Base
             {
-                template<class VisitorT, class ReturnT, class ParamT, class BaseT = ::Wiz::Null::Type>
+                template<class VisitorT, class IOParamT, class BaseT = ::Wiz::Null::Type>
                 struct Type : public BaseT
                 {
                     typedef VisitorT    tVisitor;
-                    typedef ReturnT     tReturn;
-                    typedef ParamT      tParam;
+                    typedef IOParamT    tIOParam;
                 public:
-                    Type(){}
+                    Type() : BaseT(){}
                     virtual ~Type(){}
 
                 public:
-                    virtual tReturn Accept(VisitorT& VRef, tParam InParam) = 0;
+                    virtual Void::Type Accept(VisitorT& VRef, tIOParam ioParam) = 0;
 
                 protected:
                     template<class T>
-                    static tReturn StaticAcceptImpl(T* VAPtr, VisitorT& VRef, tParam InParam)
+                    static Void::Type StaticAcceptImpl(T* inVAPtr, VisitorT& VRef, tIOParam ioParam)
                     {
-                        return VRef.Visit(*VAPtr, InParam);
+                        VRef.Visit(*inVAPtr, ioParam);
                     }
                 }; /// end of struct Type
             } /// end of namespace Base
@@ -38,16 +37,15 @@ namespace Wiz
                 typedef BaseT                       tSuper;
 
                 typedef typename tSuper::tVisitor   tVisitor;
-                typedef typename tSuper::tReturn    tReturn;
-                typedef typename tSuper::tParam     tParam;
+                typedef typename tSuper::tIOParam   tIOParam;
             public:
-                Type() : tSuper()
-                {}
+                Type() : tSuper(){}
+                virtual ~Type(){}
 
             public:
-                virtual tReturn Accept(tVisitor& VRef, tParam InParam)
+                virtual Void::Type Accept(tVisitor& VRef, tIOParam ioParam)
                 {
-                    return StaticAcceptImpl<DerivedT>(::Wiz::Cast::Static<DerivedT*>(this), VRef, InParam);
+                    StaticAcceptImpl<DerivedT>(::Wiz::Cast::Static<DerivedT*>(this), VRef, ioParam);
                 }
             }; /// end of struct Type
         } /// end of namespace Visitable

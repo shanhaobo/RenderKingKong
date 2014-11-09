@@ -9,7 +9,7 @@ namespace Wiz
 		namespace Visitor
 		{
             template<WIZ_ENUM_PARAM_X(WIZ_VISITOR_PARAM_COUNT, class T)>
-            struct Type<TypeWrapper(WIZ_ENUM_PARAM_X(WIZ_VISITOR_PARAM_COUNT, T))> : public ::Wiz::DP::Visitor::Impl::Type<WIZ_TYPELIST_FAST_DEFINE(WIZ_VISITOR_PARAM_COUNT, T)>
+            struct Type<EnumParamWrapper(WIZ_ENUM_PARAM_X(WIZ_VISITOR_PARAM_COUNT, T))> : public ::Wiz::DP::Visitor::Impl::Type<WIZ_TYPELIST_FAST_DEFINE(WIZ_VISITOR_PARAM_COUNT, T)>
 			{
 			}; /// end of struct Type
 		} /// end of namespace Visitor
