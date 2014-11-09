@@ -23,11 +23,6 @@ namespace Wiz
                 {
 
                 }
-            public:
-                Void::Type Accept(Visitor::Ref inVisitorRef)
-                {
-                    tSuper::Accept(inVisitorRef, this);
-                }
 
             public:
                 WIZ_INLINE Bool::Type IsFinal()
