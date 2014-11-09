@@ -8,10 +8,9 @@ namespace Wiz
 	{
 		namespace Visitor
 		{
-            template<class VisitReturnT, WIZ_ENUM_PARAM_X(WIZ_VISITOR_PARAM_COUNT, class T)>
-            struct Type<VisitReturnT(WIZ_ENUM_PARAM_X(WIZ_VISITOR_PARAM_COUNT, T))> : public ::Wiz::DP::Visitor::Impl::Type<WIZ_TYPELIST_FAST_DEFINE(WIZ_VISITOR_PARAM_COUNT, T), VisitReturnT>
+            template<WIZ_ENUM_PARAM_X(WIZ_VISITOR_PARAM_COUNT, class T)>
+            struct Type<TypeWrapper(WIZ_ENUM_PARAM_X(WIZ_VISITOR_PARAM_COUNT, T))> : public ::Wiz::DP::Visitor::Impl::Type<WIZ_TYPELIST_FAST_DEFINE(WIZ_VISITOR_PARAM_COUNT, T)>
 			{
-                typedef VisitReturnT        tVisitReturn;
 			}; /// end of struct Type
 		} /// end of namespace Visitor
 	} /// end of namespace DesignPattern

@@ -9,6 +9,22 @@ namespace Wiz
     {
         namespace Expression
         {
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            /// Visitor
+
+            namespace Visitor
+            {
+                struct Type : public ::Wiz::DP::Visitor::Type<TypeWrapper(CharSet::Type, Sequence::Type, Alternative::Type, Repeat::Type)>
+                {
+                    virtual I32::Type Visit(CharSet::Ref       ioExpRef, U32::Type) = 0;
+                    virtual I32::Type Visit(Sequence::Ref      ioExpRef, U32::Type) = 0;
+                    virtual I32::Type Visit(Alternative::Ref   ioExpRef, U32::Type) = 0;
+                    virtual I32::Type Visit(Repeat::Ref        ioExpRef, U32::Type) = 0;
+                };
+            } /// end of namespace Visitor
+
             namespace Traverse
             {
                 struct Type : Expression::Visitor::Type
@@ -19,21 +35,25 @@ namespace Wiz
 
                     Automaton::Ptr m_AutomatonPtr;
 
-                    virtual Void::Type Visit(CharSet::Ref       ioExpRef)
+                    virtual I32::Type Visit(CharSet::Ref       ioExpRef, U32::Type)
                     {
+                        return 0;
                     }
-                    virtual Void::Type Visit(Sequence::Ref      ioExpRef)
+                    virtual I32::Type Visit(Sequence::Ref      ioExpRef, U32::Type)
                     {
 //                         ioExpRef.m_LeftPtr->RequestAccept(*this);
-//                         ioExpRef.m_RightPtr->RequestAccept(*this);
+                        //                         ioExpRef.m_RightPtr->RequestAccept(*this);
+                        return 0;
                     }
-                    virtual Void::Type Visit(Alternative::Ref   ioExpRef)
+                    virtual I32::Type Visit(Alternative::Ref   ioExpRef, U32::Type)
                     {
 
+                        return 0;
                     }
-                    virtual Void::Type Visit(Repeat::Ref        ioExpRef)
+                    virtual I32::Type Visit(Repeat::Ref        ioExpRef, U32::Type)
                     {
 
+                        return 0;
                     }
                 };
             } /// end of namespace ThompsonConstruction

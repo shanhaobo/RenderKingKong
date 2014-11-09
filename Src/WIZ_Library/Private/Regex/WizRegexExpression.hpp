@@ -9,36 +9,23 @@ namespace Wiz
     {
         namespace Expression
         {
-            namespace Visitor
-            {
-                struct Type : public ::Wiz::DP::Visitor::Type<Void::Type(CharSet::Type, Sequence::Type, Alternative::Type, Repeat::Type)>
-                {
-                    virtual Void::Type Visit(CharSet::Ref       ioExpRef) = 0;
-                    virtual Void::Type Visit(Sequence::Ref      ioExpRef) = 0;
-                    virtual Void::Type Visit(Alternative::Ref   ioExpRef) = 0;
-                    virtual Void::Type Visit(Repeat::Ref        ioExpRef) = 0;
-                };
-            } /// end of namespace Visitor
-
             ////////////////////////////////////////////
             ////////////////////////////////////////////
             ////////////////////////////////////////////
-
-            class Type : public ::Wiz::MemObj::Type<Allocator::Expression::Type>
+            ///  π”√Referenceº¥ø…
+            class Type : public ::Wiz::DP::Visitable::Base::Type<Visitor::Type, I32::Type, U32::Type, ::Wiz::MemObj::Type<Allocator::Expression::Type> >
             {
             public:
                 Type() : m_Final(Bool::False)
                 {
 
                 }
+
             public:
                 WIZ_INLINE Bool::Type IsFinal()
                 {
                     return m_Final;
                 };
-
-            public:
-
 
             protected:
                 Bool::Type m_Final;
@@ -51,7 +38,7 @@ namespace Wiz
             namespace Terminal
             {
                 template<class DerivedT>
-                class Type : public DP::Visitable::Type<DerivedT, Visitor::Type, Expression::Type>
+                class Type : public ::Wiz::DP::Visitable::Type<DerivedT, Expression::Type>
                 {
                 protected:
                     Type()
@@ -66,7 +53,7 @@ namespace Wiz
             namespace Unary
             {
                 template<class DerivedT>
-                class Type : public DP::Visitable::Type<DerivedT, Visitor::Type, Expression::Type>
+                class Type : public ::Wiz::DP::Visitable::Type<DerivedT, Expression::Type>
                 {
                 protected:
                     Type() : m_ChildPtr(WIZ_NULLPTR)
@@ -81,7 +68,7 @@ namespace Wiz
             namespace Binary
             {
                 template<class DerivedT>
-                class Type : public DP::Visitable::Type<DerivedT, Visitor::Type, Expression::Type>
+                class Type : public ::Wiz::DP::Visitable::Type<DerivedT, Expression::Type>
                 {
                 protected:
                     Type() : m_LeftPtr(WIZ_NULLPTR), m_RightPtr(WIZ_NULLPTR)
@@ -157,8 +144,7 @@ namespace Wiz
             ////////////////////////////////////////////
             ////////////////////////////////////////////
             ////////////////////////////////////////////
-
-        } /// end of namespace State
+        } /// end of namespace Expression
     } /// end of namespace Regex
 } /// end of namespace Wiz
 

@@ -375,7 +375,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexTransition.hpp">
       <Filter>Private\Regex</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitablel.hpp">
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitable.hpp">
       <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
     </ClInclude>
   </ItemGroup>

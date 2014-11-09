@@ -13,6 +13,8 @@ namespace Wiz
         WIZ_DECLARE_PTR(void);
     } /// end of namespace Void
 
+    typedef void TypeWrapper;
+
     namespace Null
     {
         WIZ_CLASS

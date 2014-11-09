@@ -1,7 +1,9 @@
 #ifndef __WIZ_DESIGNPATTERN_VISITOR_HPP__SHANHAOBO_19800429__
 #define __WIZ_DESIGNPATTERN_VISITOR_HPP__SHANHAOBO_19800429__
 
-#include "./WizDPVisitorImpl.hpp"
+#include "../../01_Basic/04_TU/WizBasicTUTypeList.hpp"
+
+#include "./WizDPVisitable.hpp"
 
 namespace Wiz
 {
@@ -11,33 +13,42 @@ namespace Wiz
         namespace Visitor
         {
             template<class VisitableListT> struct Type;
-        } /// end of namespace Visitor
 
-        /// ÉùÃ÷Visitable
-        namespace Visitable
-        {
-            template<class DerivedT, class VisitorT, class BaseT>
-            struct Type : public BaseT
+            namespace Impl
             {
-                Type() : BaseT()
-                {}
-
-            public:
-                template<class ReturnT>
-                ReturnT Accept(VisitorT& VRef)
+                template <class VisitableT>
+                class Type
                 {
-                    return StaticAcceptImpl<ReturnT>(::Wiz::Cast::Static<DerivedT*>(this), VRef);
-                }
+                protected:
+                    typedef VisitableT                      tVisitable;
+                    typedef typename tVisitable::tReturn    tReturn;
+                    typedef typename tVisitable::tParam     tParam;
+                protected:
+                    Type(){}
+                public:
+                    virtual ~Type(){}
+                public:
+                    virtual tReturn Visit(tVisitable&, tParam) = 0;
+                }; /// end of class Type
 
-            protected:
-                template<class ReturnT>
-                static ReturnT StaticAcceptImpl(DerivedT* VAPtr, VisitorT& VRef)
+                template <class HeadT, class TailT>
+                class Type< ::Wiz::TypeList::Type<HeadT, TailT> > : public Type<HeadT>, public Type<TailT>
                 {
-                    return VRef.Visit(*VAPtr);
-                }
-            }; /// end of struct Type
-        } /// end of namespace Visitable
-    } /// end of namespace DesignPattern
+                protected:
+                    Type(){}
+                public:
+                }; /// end of class Type
+
+                template <class HeadT>
+                class Type< ::Wiz::TypeList::Type<HeadT, ::Wiz::Null::Type> > : public Type<HeadT>
+                {
+                protected:
+                    Type(){}
+                public:
+                }; /// end of class Type
+            } /// end of namespace Impl
+        } /// end of namespace Visitor
+    } /// end of namespace DP
 } /// end of namespace Wiz
 
 /////////////////////////////////////////////////////////////////////////////////////////

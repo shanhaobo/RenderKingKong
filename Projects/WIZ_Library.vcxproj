@@ -89,7 +89,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Base.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.hpp" />
-    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitablel.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitable.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitor.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorTemplate.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\Wiz.hpp" />
