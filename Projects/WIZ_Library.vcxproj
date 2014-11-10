@@ -64,6 +64,10 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMap.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerMultiMap.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvContainerSet.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunction.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunctionInvoker.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunctionMemFunc.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunctionTemplate.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraph.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphForwardDeclare.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Graph\WizAdvGraphLink.hpp" />

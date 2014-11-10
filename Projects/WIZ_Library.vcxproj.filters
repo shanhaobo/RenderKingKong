@@ -109,6 +109,9 @@
     <Filter Include="Include\02_Adv%28Advanced%29\01_Type\Graph">
       <UniqueIdentifier>{7f6cc97e-36f8-4a03-86ff-7a01294fa61f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\02_Adv%28Advanced%29\01_Type\Function">
+      <UniqueIdentifier>{63931029-0eae-4b2d-9e0b-f94424da17bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -377,6 +380,18 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitable.hpp">
       <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunctionInvoker.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunctionMemFunc.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunctionTemplate.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunction.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Function</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

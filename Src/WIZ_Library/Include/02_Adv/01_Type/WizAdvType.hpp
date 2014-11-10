@@ -9,4 +9,6 @@
 
 #include "./Graph/WizAdvGraph.hpp"
 
+#include "./Function/WizAdvFunction.hpp"
+
 #endif /*__WIZ_ADV_HPP__SHANHAOBO_19800429__*/

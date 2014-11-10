@@ -59,6 +59,7 @@ namespace Wiz
 #define WIZ_MPP_REPEAT_FILE_END     32
 #define WIZ_MPP_REPEAT_FILE_1_NAME  "./WizDPVisitorTemplate.hpp"
 #undef  WIZ_MPP_REPEAT_FILE_2_NAME
+#undef  WIZ_MPP_REPEAT_FILE_3_NAME
 
 #include "../../01_Basic/00_MPP/WizBasicMPPRepeatFile.hpp"
 
@@ -67,6 +68,7 @@ namespace Wiz
 
 #undef WIZ_MPP_REPEAT_FILE_1_NAME
 #undef WIZ_MPP_REPEAT_FILE_2_NAME
+#undef WIZ_MPP_REPEAT_FILE_3_NAME
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
