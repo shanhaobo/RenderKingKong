@@ -145,12 +145,15 @@ namespace Wiz
                     {
                         tIndex const StrIdx = *Itr;
 
-                        if ((StrIdx < eReservedNum) && (InStr == m_ReservedStringTab[StrIdx]))
+                        if (StrIdx < eReservedNum)
                         {
-                            OutIndex = StrIdx;
-                            return Bool::True;
+                            if (InStr == m_ReservedStringTab[StrIdx])
+                            {
+                                OutIndex = StrIdx;
+                                return Bool::True;
+                            }
                         }
-                        else if (InStr == m_StringArray[StrIdx])
+                        else if (InStr == m_StringArray[StrIdx - eReservedNum])
                         {
                             OutIndex = StrIdx;
                             return Bool::True;
