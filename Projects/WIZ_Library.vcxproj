@@ -96,6 +96,13 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitable.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitor.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitorTemplate.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaData.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataBasic.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataClass.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataField.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataFunction.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataProperty.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataStruct.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\Wiz.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\WizCustomDeclareHelper.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.hpp" />

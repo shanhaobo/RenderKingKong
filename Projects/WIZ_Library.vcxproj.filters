@@ -94,9 +94,6 @@
     <Filter Include="Include\02_Adv%28Advanced%29\02_MU">
       <UniqueIdentifier>{de989f6e-19aa-4ca1-b4d3-6264863c3950}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\Regex">
-      <UniqueIdentifier>{9f274f9e-82bc-4227-8b36-67df102a9267}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Private\Regex">
       <UniqueIdentifier>{e2ec650e-709d-4c01-8838-0c92e37a281d}</UniqueIdentifier>
     </Filter>
@@ -111,6 +108,9 @@
     </Filter>
     <Filter Include="Include\02_Adv%28Advanced%29\01_Type\Function">
       <UniqueIdentifier>{63931029-0eae-4b2d-9e0b-f94424da17bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\MetaData">
+      <UniqueIdentifier>{9f274f9e-82bc-4227-8b36-67df102a9267}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -392,6 +392,27 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Function\WizAdvFunction.hpp">
       <Filter>Include\02_Adv%28Advanced%29\01_Type\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataField.hpp">
+      <Filter>Include\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaData.hpp">
+      <Filter>Include\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataBasic.hpp">
+      <Filter>Include\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataProperty.hpp">
+      <Filter>Include\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataStruct.hpp">
+      <Filter>Include\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataClass.hpp">
+      <Filter>Include\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataFunction.hpp">
+      <Filter>Include\MetaData</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

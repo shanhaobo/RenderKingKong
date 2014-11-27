@@ -165,7 +165,7 @@ namespace Wiz
 
                 Bool::Type AddReserved(tStringRefConst InStr, tIndex InHashCode, tIndex InReservedIndex)
                 {
-                    WIZ_ASSERT(IsValidHashCode(InHashCode) && (InReservedIndex < eReservedNum));
+                    WIZ_ASSERT((InStr.Size() > 0) && IsValidHashCode(InHashCode) && (InReservedIndex < eReservedNum));
 
                     if (m_ReservedStringTab[InReservedIndex].Size() > 0)
                     {
@@ -182,7 +182,7 @@ namespace Wiz
 
                 tIndexConst AddNonReserved(tStringRefConst InStr, tIndex InHashCode)
                 {
-                    WIZ_ASSERT(IsValidHashCode(InHashCode));
+                    WIZ_ASSERT((InStr.Size() > 0) && IsValidHashCode(InHashCode));
 
                     tIndex const ResultIdx = m_StringArray.Size() + eReservedNum;
                     m_StringArray.PushBack(InStr);
