@@ -15,6 +15,17 @@ namespace Wiz
                 typedef tThis*                  tThisPtr;
 
                 typedef MetaData::Field::Type   tSuper;
+
+            public:
+                WIZ_DECLARE_RTTI(Type, MetaData::Field::Type);
+
+            protected:
+                typedef tThis                   tStruct;
+                typedef tStruct*                tStructPtr;
+
+            protected:
+                tStructPtr                      m_ParentPtr;
+                tFieldPtr                       m_ChildPtr;
             };
         } /// end of namespace Struct
     } /// end of namespace MetaData

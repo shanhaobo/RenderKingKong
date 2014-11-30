@@ -15,6 +15,10 @@ namespace Wiz
                 typedef tThis*                  tThisPtr;
 
                 typedef MetaData::Struct::Type  tSuper;
+
+            public:
+                WIZ_DECLARE_RTTI(Type, MetaData::Struct::Type);
+
             };
         } /// end of namespace Function
     } /// end of namespace MetaData

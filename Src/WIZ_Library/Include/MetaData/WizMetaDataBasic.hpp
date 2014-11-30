@@ -2,6 +2,7 @@
 #define __WIZ_METADATA_BASIC_HPP__SHANHAOBO_19800429__
 
 #include "../01_Basic/01_Type/WizBasicType.hpp"
+#include "../01_Basic/02_MU/WizBasicMURTTI.hpp"
 #include "../01_Basic/04_TU/WizBasicTU.hpp"
 #include "../01_Basic/05_Mem/WizBasicMem.hpp"
 
@@ -9,18 +10,23 @@ namespace Wiz
 {
     namespace MetaData
     {
-        enum OBJ_CAT
+        namespace Object
         {
-            eOC_Field,
-        };
-
-        namespace Allocator
-        {
-            namespace Field
+            enum OBJ_CAT
             {
-                typedef ::Wiz::Allocator::Categorized<eOC_Field>::Type      Type;
-            } /// end of namespace Field
-        } /// end of namespace Allocator
+                eOC_Object,
+            };
+
+            namespace Allocator
+            {
+                namespace Object
+                {
+                    typedef ::Wiz::Allocator::Categorized<eOC_Object>::Type      Type;
+                } /// end of namespace Object
+            } /// end of namespace Allocator
+
+            typedef ::Wiz::MemObj::Type<Allocator::Object::Type>    Type;
+        } /// end of namespace Object
 
         namespace Field
         {

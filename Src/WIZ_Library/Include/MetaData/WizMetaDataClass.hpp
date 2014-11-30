@@ -11,6 +11,9 @@ namespace Wiz
         {
             class Type : public MetaData::Struct::Type
             {
+            public:
+                WIZ_DECLARE_RTTI(Type, MetaData::Struct::Type);
+
                 typedef Type                    tThis;
                 typedef tThis*                  tThisPtr;
 

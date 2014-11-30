@@ -112,6 +112,9 @@
     <Filter Include="Include\MetaData">
       <UniqueIdentifier>{9f274f9e-82bc-4227-8b36-67df102a9267}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Private\MetaData">
+      <UniqueIdentifier>{8ae91768-f51d-4347-b416-087e284be2c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -414,6 +417,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\MetaData\WizMetaDataFunction.hpp">
       <Filter>Include\MetaData</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMURTTI.hpp">
+      <Filter>Include\01_Basic\02_MU%28MacroUtils%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
@@ -443,6 +449,9 @@
     </ClCompile>
     <ClCompile Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionVisitor.cpp">
       <Filter>Private\Regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WIZ_Library\Private\MetaData\WizMetaDataField.cpp">
+      <Filter>Private\MetaData</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

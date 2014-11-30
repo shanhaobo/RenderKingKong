@@ -35,6 +35,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeSize.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeString.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMU.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMURTTI.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTT.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTBool.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\03_TT\WizBasicTTIF.hpp" />
@@ -123,6 +124,7 @@
     <ClCompile Include="..\Src\WIZ_Library\Private\01_Basic\05_Mem\WizBasicMemRecorder.cpp" />
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerFrame.cpp" />
     <ClCompile Include="..\Src\WIZ_Library\Private\03_Utils\TimerUtils\WizTimerHighRes.cpp" />
+    <ClCompile Include="..\Src\WIZ_Library\Private\MetaData\WizMetaDataField.cpp" />
     <ClCompile Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.cpp" />
     <ClCompile Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionVisitor.cpp" />
   </ItemGroup>
