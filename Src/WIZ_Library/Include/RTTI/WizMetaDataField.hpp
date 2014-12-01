@@ -25,6 +25,8 @@ namespace Wiz
 
             protected:
                 tFieldPtr                           m_SiblingPtr;
+
+                ::Wiz::Bitsfield64::Type            m_CastFlags;
             };
 
             namespace Iterator
