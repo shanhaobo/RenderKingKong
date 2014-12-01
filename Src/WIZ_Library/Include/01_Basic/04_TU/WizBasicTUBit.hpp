@@ -21,7 +21,7 @@ namespace Wiz
         }
 
         template<class T>
-        WIZ_INLINE ::Wiz::Void::Type SetN(T& BtsFld, ::Wiz::Int::In n)
+        WIZ_INLINE ::Wiz::Void::Type SetN(T& BtsFld, ::Wiz::I::In n)
         {
             BtsFld |= (1 << n);
         }
@@ -41,7 +41,7 @@ namespace Wiz
         }
 
         template<class T>
-        WIZ_INLINE T TestSetN(const T& BtsFld, ::Wiz::Int::In n)
+        WIZ_INLINE T TestSetN(const T& BtsFld, ::Wiz::I::In n)
         {
             return BtsFld | (1 << n);
         }

@@ -53,12 +53,12 @@ namespace Wiz
                 return ::Wiz::Bit::TestClear(this->m_Value, Val);
             }
 
-            ::Wiz::Void::Type SetN(::Wiz::Int::In n)
+            ::Wiz::Void::Type SetN(::Wiz::I::In n)
             {
                 ::Wiz::Bit::SetN(this->m_Value, n)
             }
 
-            tStorage TestSetN(::Wiz::Int::In n)
+            tStorage TestSetN(::Wiz::I::In n)
             {
                 return ::Wiz::Bit::TestSetN(this->m_Value, n);
             }

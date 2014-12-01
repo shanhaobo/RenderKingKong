@@ -6,6 +6,8 @@
 #include "../01_Basic/04_TU/WizBasicTU.hpp"
 #include "../01_Basic/05_Mem/WizBasicMem.hpp"
 
+#include "../02_Adv/01_Type/WizAdvBitsfield.hpp"
+
 namespace Wiz
 {
     namespace RTTI
@@ -49,6 +51,11 @@ namespace Wiz
             {
                 WIZ_FORWARD_DECLARE_CLASS;
             } /// end of namespace Class
+
+            namespace Function
+            {
+                WIZ_FORWARD_DECLARE_CLASS;
+            } /// end of namespace Function
         } /// end of namespace MetaData
     } /// end of namespace RTTI
 } /// end of namespace Wiz

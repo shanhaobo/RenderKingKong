@@ -1,7 +1,7 @@
 #ifndef __WIZ_RTTI_METADATA_FIELD_HPP__SHANHAOBO_19800429__
 #define __WIZ_RTTI_METADATA_FIELD_HPP__SHANHAOBO_19800429__
 
-#include "./WizMetaDataBasic.hpp"
+#include "./WizRTTIMetaDataBasic.hpp"
 
 namespace Wiz
 {

@@ -1,12 +1,14 @@
-#ifndef __WIZ_METADATA_HPP__SHANHAOBO_19800429__
-#define __WIZ_METADATA_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_RTTI_HPP__SHANHAOBO_19800429__
+#define __WIZ_RTTI_HPP__SHANHAOBO_19800429__
 
-#include "./WizMetaDataProperty.hpp"
+#include "./WizRTTIMetaDataField.hpp"
 
-#include "./WizMetaDataStruct.hpp"
+#include "./WizRTTIMetaDataProperty.hpp"
 
-#include "./WizMetaDataClass.hpp"
+#include "./WizRTTIMetaDataStruct.hpp"
 
-#include "./WizMetaDataFunction.hpp"
+#include "./WizRTTIMetaDataClass.hpp"
 
-#endif /*__WIZ_METADATA_HPP__SHANHAOBO_19800429__*/
+#include "./WizRTTIMetaDataFunction.hpp"
+
+#endif /*__WIZ_RTTI_HPP__SHANHAOBO_19800429__*/
