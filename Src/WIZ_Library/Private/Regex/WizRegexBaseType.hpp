@@ -11,34 +11,47 @@ namespace Wiz
 {
     namespace Regex
     {
-        enum OBJ_CAT
+        namespace OBJ_CAT
         {
-            eOC_State,
-            eOC_Transition,
-            eOC_Automaton,
-            eOC_Expression,
-        };
+            enum eOC_State
+            {
+            };
+
+            enum eOC_Transition
+            {
+            };
+
+
+            enum eOC_Automaton
+            {
+            };
+
+
+            enum eOC_Expression
+            {
+            };
+        }
 
         namespace Allocator
         {
             namespace State
             {
-                typedef ::Wiz::Allocator::Categorized<eOC_State>::Type      Type;
+                typedef ::Wiz::Allocator::Categorized<OBJ_CAT::eOC_State>::Type      Type;
             } /// end of namespace State
 
             namespace Transition
             {
-                typedef ::Wiz::Allocator::Categorized<eOC_Transition>::Type Type;
+                typedef ::Wiz::Allocator::Categorized<OBJ_CAT::eOC_Transition>::Type Type;
             } /// end of namespace Transition
 
             namespace Automaton
             {
-                typedef ::Wiz::Allocator::Categorized<eOC_Automaton>::Type  Type;
+                typedef ::Wiz::Allocator::Categorized<OBJ_CAT::eOC_Automaton>::Type  Type;
             } /// end of namespace Automaton
 
             namespace Expression
             {
-                typedef ::Wiz::Allocator::Categorized<eOC_Expression>::Type  Type;
+                typedef ::Wiz::Allocator::Categorized<OBJ_CAT::eOC_Expression>::Type  Type;
             } /// end of namespace Expression
         } /// end of namespace Allocator
 

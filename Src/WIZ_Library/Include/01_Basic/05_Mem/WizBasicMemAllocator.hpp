@@ -45,14 +45,14 @@ namespace Wiz
         };
 
         /// 有分类功能的Allocator
-        template<int ICat>
+        template<typename ICat>
         struct Categorized : public Allocator::Type
         {
             typedef typename Allocator::Categorized<ICat>        Type;
         };
 
         /// 有分类功能的STL的Allocator
-        template<class ElementT, int ICat>
+        template<class ElementT, typename ICat>
         struct STLCategorized : public Allocator::STL<ElementT>::Type
         {
             typedef typename Allocator::STLCategorized<ElementT, ICat>   Type;

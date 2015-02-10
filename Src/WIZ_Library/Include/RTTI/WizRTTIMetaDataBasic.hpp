@@ -16,16 +16,18 @@ namespace Wiz
         {
             namespace Object
             {
-                enum OBJ_CAT
+                namespace OBJ_CAT
                 {
-                    eOC_Object,
+                    enum eOC_Object
+                    {
+                    };
                 };
 
                 namespace Allocator
                 {
                     namespace Object
                     {
-                        typedef ::Wiz::Allocator::Categorized<eOC_Object>::Type      Type;
+                        typedef ::Wiz::Allocator::Categorized<OBJ_CAT::eOC_Object>::Type      Type;
                     } /// end of namespace Object
                 } /// end of namespace Allocator
 
