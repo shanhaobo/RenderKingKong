@@ -1,7 +1,6 @@
 #ifndef __WIZ_ADV_FUNCTION_HPP__SHANHAOBO_19800429__
 #define __WIZ_ADV_FUNCTION_HPP__SHANHAOBO_19800429__
 
-
 namespace Wiz
 {
     namespace Function
@@ -13,23 +12,6 @@ namespace Wiz
 
         namespace MemFunc
         {
-            namespace Storage
-            {
-                struct Type
-                {
-                    Type() : m_ClassInstPtr(WIZ_NULL), m_MemFuncPtr(WIZ_NULL)
-                    {
-                    }
-                    Type(::Wiz::Void::Ptr InstPtr, ::Wiz::Void::Ptr MemFPtr) : m_ClassInstPtr(InstPtr), m_MemFuncPtr(MemFPtr)
-                    {
-                    }
-                    ::Wiz::Void::Ptr m_ClassInstPtr;
-                    ::Wiz::Void::Ptr m_MemFuncPtr;
-                };
-                WIZ_DECLARE(Type);
-            } /// end of namespace Storage
-
-            template <class ClassT, class ParamT> class Type;
         } /// end of namespace MemFunc
     } /// end of namespace Function
 } /// end of namespace Wiz

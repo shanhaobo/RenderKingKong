@@ -42,7 +42,7 @@ namespace Wiz
                 return Bool::False;
             }
 
-            Void::Type InsetLink(Link::Ptr InLinkPtr)
+            Void::Type InsertLink(Link::Ptr InLinkPtr)
             {
                 LinkSet.Insert(InLinkPtr);
             }

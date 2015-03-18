@@ -1,3 +1,37 @@
+#ifndef __WIZ_ADV_FUNCTION_MEMFUNC_HPP__SHANHAOBO_19800429__
+#define __WIZ_ADV_FUNCTION_MEMFUNC_HPP__SHANHAOBO_19800429__
+
+namespace Wiz
+{
+    namespace Function
+    {
+        namespace MemFunc
+        {
+            template <class ClassT, class ParamT> class Type;
+
+            namespace Storage
+            {
+                class UnknownClass;
+                typedef ::Wiz::Void::Type(UnknownClass::*tUnknownClassMemFuncPtr)(::Wiz::I::Type);
+                struct Type
+                {
+                    Type() : m_ClassInstPtr(WIZ_NULL), m_MemFuncPtr(WIZ_NULL)
+                    {
+                    }
+                    Type(::Wiz::Void::Ptr InstPtr, tUnknownClassMemFuncPtr MemFPtr) : m_ClassInstPtr(InstPtr), m_MemFuncPtr(MemFPtr)
+                    {
+                    }
+                    ::Wiz::Void::Ptr        m_ClassInstPtr;
+                    tUnknownClassMemFuncPtr m_MemFuncPtr;
+                };
+                WIZ_DECLARE(Type);
+            } /// end of namespace Storage
+        } /// end of namespace MemFunc
+    } /// end of namespace Function
+} /// end of namespace Wiz
+
+#endif /// __WIZ_ADV_FUNCTION_MEMFUNC_HPP__SHANHAOBO_19800429__
+
 #undef  WIZ_MEMFUNC_PARAM_COUNT
 #define WIZ_MEMFUNC_PARAM_COUNT        WIZ_MPP_REPEAT_FILE_COUNT
 //////////////////////////////////////////////////////////////////////////
