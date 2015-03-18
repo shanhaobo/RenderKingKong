@@ -11,23 +11,24 @@ namespace Wiz
             /// 在使用过程中,必须先声明这个Visitable::Base::Type,然后具体类,使用下面的Visitable::Type
             namespace Base
             {
-                template<class VisitorT, class IOParamT, class BaseT = ::Wiz::Null::Type>
+                template<class VisitorT, class ReturnT, class IOParamT, class BaseT = ::Wiz::Null::Type>
                 struct Type : public BaseT
                 {
-                    typedef VisitorT    tVisitor;
-                    typedef IOParamT    tIOParam;
+                    typedef VisitorT                    tVisitor;
+                    typedef ReturnT                     tReturn;
+                    typedef IOParamT                    tIOParam;
                 public:
                     Type() : BaseT(){}
                     virtual ~Type(){}
 
                 public:
-                    virtual Void::Type Accept(VisitorT& VisitorRef, tIOParam ioParam) = 0;
+                    virtual tReturn Accept(VisitorT& VisitorRef, tIOParam ioParam) = 0;
 
                 protected:
                     template<class T>
-                    static Void::Type StaticAcceptImpl(T* inVisitablePtr, VisitorT& VisitorRef, tIOParam ioParam)
+                    static tReturn StaticAcceptImpl(T* inVisitablePtr, VisitorT& VisitorRef, tIOParam ioParam)
                     {
-                        VisitorRef.Visit(*inVisitablePtr, ioParam);
+                        return VisitorRef.Visit(*inVisitablePtr, ioParam);
                     }
                 }; /// end of struct Type
             } /// end of namespace Base
@@ -39,14 +40,15 @@ namespace Wiz
 
                 typedef typename tSuper::tVisitor   tVisitor;
                 typedef typename tSuper::tIOParam   tIOParam;
+                typedef typename tSuper::tReturn    tReturn;
             public:
                 Type() : tSuper(){}
                 virtual ~Type(){}
 
             public:
-                virtual Void::Type Accept(tVisitor& VisitorRef, tIOParam ioParam)
+                virtual tReturn Accept(tVisitor& VisitorRef, tIOParam ioParam)
                 {
-                    StaticAcceptImpl<DerivedT>(::Wiz::Cast::Static<DerivedT*>(this), VisitorRef, ioParam);
+                    return StaticAcceptImpl<DerivedT>(::Wiz::Cast::Static<DerivedT*>(this), VisitorRef, ioParam);
                 }
             }; /// end of struct Type
         } /// end of namespace Visitable

@@ -22,12 +22,15 @@ namespace Wiz
                     WIZ_DECLARE_RTTI(Type, MetaData::Field::Type);
 
                 protected:
-                    typedef tThis                   tStruct;
-                    typedef tStruct*                tStructPtr;
+                    typedef tThis                       tStruct;
+                    typedef tStruct*                    tStructPtr;
+
+                    typedef MetaData::Property::Type    tProperty;
+                    typedef tProperty*                  tPropertyPtr;
 
                 protected:
-                    tStructPtr                      m_ParentPtr;
-                    tFieldPtr                       m_ChildPtr;
+                    tStructPtr                          m_ParentPtr;
+                    tPropertyPtr                        m_ChildPtr;
                 };
             } /// end of namespace Struct
         } /// end of namespace MetaData
