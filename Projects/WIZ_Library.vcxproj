@@ -111,6 +111,7 @@
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexAutomaton.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexBaseType.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpression.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionBase.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionVisitor.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexState.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexTransition.hpp" />

@@ -16,7 +16,7 @@ namespace Wiz
                 {
                     if (LinkNode(TransPtr, InBeginStatePtr, InEndStatePtr))
                     {
-                        InsetLink(TransPtr);
+                        InsertLink(TransPtr);
                         return TransPtr;
                     }
 
@@ -35,7 +35,7 @@ namespace Wiz
                 {
                     if (LinkNode(EpsilonPtr, InBeginStatePtr, InEndStatePtr))
                     {
-                        InsetLink(EpsilonPtr);
+                        InsertLink(EpsilonPtr);
                         return EpsilonPtr;
                     }
 

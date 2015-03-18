@@ -17,10 +17,10 @@ namespace Wiz
             {
                 struct Type : public ::Wiz::DP::Visitor::Type<EnumParamWrapper(CharSet::Type, Sequence::Type, Alternative::Type, Repeat::Type)>
                 {
-                    virtual Void::Type Visit(CharSet::Ref       ioExpRef, Expression::Ptr) = 0;
-                    virtual Void::Type Visit(Sequence::Ref      ioExpRef, Expression::Ptr) = 0;
-                    virtual Void::Type Visit(Alternative::Ref   ioExpRef, Expression::Ptr) = 0;
-                    virtual Void::Type Visit(Repeat::Ref        ioExpRef, Expression::Ptr) = 0;
+                    virtual Bool::Type Visit(CharSet::Ref ioExpRef, Expression::Ptr) = 0;
+                    virtual Bool::Type Visit(Sequence::Ref ioExpRef, Expression::Ptr) = 0;
+                    virtual Bool::Type Visit(Alternative::Ref ioExpRef, Expression::Ptr) = 0;
+                    virtual Bool::Type Visit(Repeat::Ref ioExpRef, Expression::Ptr) = 0;
                 };
             } /// end of namespace Visitor
 
@@ -34,13 +34,13 @@ namespace Wiz
 
                     Automaton::Ptr m_AutomatonPtr;
 
-                    virtual Void::Type Visit(CharSet::Ref       ioExpRef, Expression::Ptr inParentPtr);
+                    virtual Bool::Type Visit(CharSet::Ref ioExpRef, Expression::Ptr inParentPtr);
 
-                    virtual Void::Type Visit(Sequence::Ref      ioExpRef, Expression::Ptr inParentPtr);
+                    virtual Bool::Type Visit(Sequence::Ref ioExpRef, Expression::Ptr inParentPtr);
 
-                    virtual Void::Type Visit(Alternative::Ref   ioExpRef, Expression::Ptr inParentPtr);
+                    virtual Bool::Type Visit(Alternative::Ref ioExpRef, Expression::Ptr inParentPtr);
 
-                    virtual Void::Type Visit(Repeat::Ref        ioExpRef, Expression::Ptr inParentPtr);
+                    virtual Bool::Type Visit(Repeat::Ref ioExpRef, Expression::Ptr inParentPtr);
                 };
             } /// end of namespace Traverse
         } /// end of namespace Expression

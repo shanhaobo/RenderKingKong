@@ -426,6 +426,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\RTTI\WizRTTIMetaDataStruct.hpp">
       <Filter>Include\RTTI%28Run-Time Type Information%29</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionBase.hpp">
+      <Filter>Private\Regex</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
