@@ -1,11 +1,11 @@
-#ifndef __WIZ_MATH_VECTOR2_METHOD_INL__SHANHAOBO_19800429__
-#define __WIZ_MATH_VECTOR2_METHOD_INL__SHANHAOBO_19800429__
+#ifndef __WIZ_MATH_VECTOR4_METHOD_INL__SHANHAOBO_19800429__
+#define __WIZ_MATH_VECTOR4_METHOD_INL__SHANHAOBO_19800429__
 
-#include "./WizMathVector2Method.hpp"
+#include "WizMathVector4Method.hpp"
 
 namespace Wiz
 {
-    namespace Vector2
+    namespace Vector4
     {
         namespace Method
         {
@@ -15,6 +15,8 @@ namespace Wiz
             {
                 OutVec.e0 = InVec1.e0 + InVec2.e0;
                 OutVec.e1 = InVec1.e1 + InVec2.e1;
+                OutVec.e2 = InVec1.e2 + InVec2.e2;
+                OutVec.e3 = InVec1.e3 + InVec2.e3;
 
                 return OutVec;
             }
@@ -23,6 +25,8 @@ namespace Wiz
             {
                 OutVec.e0 = InVec.e0 + InEle;
                 OutVec.e1 = InVec.e1 + InEle;
+                OutVec.e2 = InVec.e2 + InEle;
+                OutVec.e3 = InVec.e3 + InEle;
 
                 return OutVec;
             }
@@ -32,6 +36,8 @@ namespace Wiz
             {
                 IOVec.e0 += InVec.e0;
                 IOVec.e1 += InVec.e1;
+                IOVec.e2 += InVec.e2;
+                IOVec.e3 += InVec.e3;
 
                 return IOVec;
             }
@@ -40,6 +46,8 @@ namespace Wiz
             {
                 IOVec.e0 += InEle;
                 IOVec.e1 += InEle;
+                IOVec.e2 += InEle;
+                IOVec.e3 += InEle;
 
                 return IOVec;
             }
@@ -51,6 +59,8 @@ namespace Wiz
             {
                 OutVec.e0 = InVec1.e0 - InVec2.e0;
                 OutVec.e1 = InVec1.e1 - InVec2.e1;
+                OutVec.e2 = InVec1.e2 - InVec2.e2;
+                OutVec.e3 = InVec1.e3 - InVec2.e3;
 
                 return OutVec;
             }
@@ -59,6 +69,8 @@ namespace Wiz
             {
                 OutVec.e0 = InVec.e0 - InEle;
                 OutVec.e1 = InVec.e1 - InEle;
+                OutVec.e2 = InVec.e2 - InEle;
+                OutVec.e3 = InVec.e3 - InEle;
 
                 return OutVec;
             }
@@ -68,6 +80,8 @@ namespace Wiz
             {
                 IOVec.e0 -= InVec.e0;
                 IOVec.e1 -= InVec.e1;
+                IOVec.e2 -= InVec.e2;
+                IOVec.e3 -= InVec.e3;
 
                 return IOVec;
             }
@@ -76,6 +90,8 @@ namespace Wiz
             {
                 IOVec.e0 -= InEle;
                 IOVec.e1 -= InEle;
+                IOVec.e2 -= InEle;
+                IOVec.e3 -= InEle;
 
                 return IOVec;
             }
@@ -87,6 +103,8 @@ namespace Wiz
             {
                 OutVec.e0 = InVec1.e0 * InVec2.e0;
                 OutVec.e1 = InVec1.e1 * InVec2.e1;
+                OutVec.e2 = InVec1.e2 * InVec2.e2;
+                OutVec.e3 = InVec1.e3 * InVec2.e3;
 
                 return OutVec;
             }
@@ -95,6 +113,8 @@ namespace Wiz
             {
                 OutVec.e0 = InVec.e0 * InEle;
                 OutVec.e1 = InVec.e1 * InEle;
+                OutVec.e2 = InVec.e2 * InEle;
+                OutVec.e3 = InVec.e3 * InEle;
 
                 return OutVec;
             }
@@ -104,6 +124,8 @@ namespace Wiz
             {
                 IOVec.e0 *= InVec.e0;
                 IOVec.e1 *= InVec.e1;
+                IOVec.e2 *= InVec.e2;
+                IOVec.e3 *= InVec.e3;
 
                 return IOVec;
             }
@@ -112,6 +134,8 @@ namespace Wiz
             {
                 IOVec.e0 *= InEle;
                 IOVec.e1 *= InEle;
+                IOVec.e2 *= InEle;
+                IOVec.e3 *= InEle;
 
                 return IOVec;
             }
@@ -124,6 +148,8 @@ namespace Wiz
             {
                 OutVec.e0 = InVec1.e0 / InVec2.e0;
                 OutVec.e1 = InVec1.e1 / InVec2.e1;
+                OutVec.e2 = InVec1.e2 / InVec2.e2;
+                OutVec.e3 = InVec1.e3 / InVec2.e3;
 
                 return OutVec;
             }
@@ -136,6 +162,8 @@ namespace Wiz
 
                     OutVec.e0 = InVec.e0 * lRecipEle;
                     OutVec.e1 = InVec.e1 * lRecipEle;
+                    OutVec.e2 = InVec.e2 * lRecipEle;
+                    OutVec.e3 = InVec.e3 * lRecipEle;
 
                     return OutVec;
                 }
@@ -146,6 +174,8 @@ namespace Wiz
             {
                 OutVec.e0 = InEle / InVec.e0;
                 OutVec.e1 = InEle / InVec.e1;
+                OutVec.e2 = InEle / InVec.e2;
+                OutVec.e3 = InEle / InVec.e3;
 
                 return OutVec;
             }
@@ -154,6 +184,8 @@ namespace Wiz
             {
                 IOVec.e0 /= InVec.e0;
                 IOVec.e1 /= InVec.e1;
+                IOVec.e2 /= InVec.e2;
+                IOVec.e3 /= InVec.e3;
 
                 return IOVec;
             }
@@ -166,6 +198,8 @@ namespace Wiz
 
                     IOVec.e0 *= lRecipEle;
                     IOVec.e1 *= lRecipEle;
+                    IOVec.e2 *= lRecipEle;
+                    IOVec.e3 *= lRecipEle;
                 }
 
                 return IOVec;
@@ -175,13 +209,14 @@ namespace Wiz
             template<class VectorT>
             typename VectorT::tElement Type<VectorT>::Dot(tVectorIn InVec1, tVectorIn InVec2)
             {
-                return InVec1.e0 * InVec2.e0 + InVec1.e1 * InVec2.e1;
+                return InVec1.e0 * InVec2.e0 + InVec1.e1 * InVec2.e1 + InVec1.e2 * InVec2.e2 + InVec1.e3 * InVec2.e3;
             }
 
             template<class VectorT>
             typename VectorT::tElement Type<VectorT>::AbsDot(tVectorIn InVec1, tVectorIn InVec2)
             {
-                return ::Wiz::Abs(InVec1.e0 * InVec2.e0) + ::Wiz::Abs(InVec1.e1 * InVec2.e1);
+                return ::Wiz::Abs(InVec1.e0 * InVec2.e0) + ::Wiz::Abs(InVec1.e1 * InVec2.e1) +
+                    ::Wiz::Abs(InVec1.e2 * InVec2.e2) + ::Wiz::Abs(InVec1.e3 * InVec2.e3);
             }
 
             //////////////////////////////////////////////////////////////////////////
@@ -189,17 +224,20 @@ namespace Wiz
             template<class VectorT>
             typename VectorT::tElement Type<VectorT>::Normalize(tVectorIO IOVec)
             {
-                tElement const lLen = Length(IOVec);
+                tElement const Len = Length(IOVec);
+
                 // Will also work for zero-sized Vectors, but will change nothing
-                if (lLen > 0)
+                if (::Wiz::Nearly::GreaterZero(Len))
                 {
-                    tElement const lRecipLen = 1 / lLen;
+                    tElement const lRecipLen = 1 / Len;
 
                     IOVec.e0 *= lRecipLen;
                     IOVec.e1 *= lRecipLen;
+                    IOVec.e2 *= lRecipLen;
+                    IOVec.e3 *= lRecipLen;
                 }
 
-                return lLen;
+                return Len;
             }
 
             template<class VectorT>
@@ -208,27 +246,31 @@ namespace Wiz
                 tElement const lLen = Length(InVec);
 
                 // Will also work for zero-sized Vectors, but will change nothing
-                if (lLen > 0)
+                if (::Wiz::Nearly::GreaterZero(lLen))
                 {
                     tElement const lRecipLen = 1 / lLen;
 
                     OutVec.e0 = InVec.e0 * lRecipLen;
                     OutVec.e1 = InVec.e1 * lRecipLen;
+                    OutVec.e2 = InVec.e2 * lRecipLen;
+                    OutVec.e3 = InVec.e3 * lRecipLen;
                 }
                 else
                 {
                     OutVec.e0 = InVec.e0;
                     OutVec.e1 = InVec.e1;
+                    OutVec.e2 = InVec.e2;
+                    OutVec.e3 = InVec.e3;
                 }
 
-                return tLen;
+                return lLen;
             }
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
             typename VectorT::tElement Type<VectorT>::SqrLen(tVectorIn InVec)
             {
-                return InVec.e0 * InVec.e0 + InVec.e1 * InVec.e1;;
+                return InVec.e0 * InVec.e0 + InVec.e1 * InVec.e1 + InVec.e2 * InVec.e2 + InVec.e3 * InVec.e3;
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -244,7 +286,7 @@ namespace Wiz
             template<class VectorT>
             typename VectorT::tElement Type<VectorT>::RecipLen(tVectorIn InVec)
             {
-                return ::Wiz::RecipSqrt<tElement>(SqrLen(InVec));
+                return ::Wiz::RecipSqrt(SqrLen(InVec));
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -258,9 +300,9 @@ namespace Wiz
             template<class VectorT>
             typename VectorT::tElement Type<VectorT>::SqrDist(tVectorIn InVec1, tVectorIn InVec2)
             {
-                tVector lVec;
-                Subtract(lVec, InVec1, InVec2);
-                return SqrLen(lVec);
+                tVector Vec;
+                Subtract(Vec, InVec1, InVec2);
+                return SqrLen(Vec);
             }
             ////////////////////////////////////////////////////////////////
 
@@ -268,24 +310,24 @@ namespace Wiz
             template<class VectorT>
             ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteEqual(tVectorIn InVec1, tVectorIn InVec2)
             {
-                return (InVec1.e0 == InVec2.e0) && (InVec1.e1 == InVec2.e1);
+                return ::Wiz::Absolute::IsEqual(InVec1.e0, InVec2.e0) && ::Wiz::Absolute::IsEqual(InVec1.e1, InVec2.e1) && ::Wiz::Absolute::IsEqual(InVec1.e2, InVec2.e2) && ::Wiz::Absolute::IsEqual(InVec1.e3, InVec2.e3);
             }
 
             template<class VectorT>
             ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteZero(tVectorIn InVec)
             {
-                return (InVec.e0 == 0) && (InVec.e1 == 0);
+                return ::Wiz::Absolute::IsZero(InVec.e0) && ::Wiz::Absolute::IsZero(InVec.e1) && ::Wiz::Absolute::IsZero(InVec.e2) && ::Wiz::Absolute::IsZero(InVec.e3);
             }
 
             template<class VectorT>
             ::Wiz::Bool::Type Type<VectorT>::IsNearlyZero(tVectorIn InVec, tElementIn InTolerance)
             {
-                WIZ_ASSERT(InTolerance > 0);
-                return ::Wiz::Absolute::InRange(InVec.e0, -InTolerance, InTolerance) && ::Wiz::Absolute::InRange(InVec.e1, -InTolerance, InTolerance);
+                WIZ_ASSERT(::Wiz::Absolute::GreaterZero(InTolerance));
+                return ::Wiz::Absolute::InRange(InVec.e0, -InTolerance, InTolerance) && ::Wiz::Absolute::InRange(InVec.e1, -InTolerance, InTolerance) && ::Wiz::Absolute::InRange(InVec.e2, -InTolerance, InTolerance) && ::Wiz::Absolute::InRange(InVec.e3, -InTolerance, InTolerance);
             }
             ////////////////////////////////////////////////////////////////
         } /// end of namespace Method
-    } /// end of namespace Vector2
+    } /// end of namespace Vector4
 } /// end of namespace Wiz
 
-#endif /*__WIZ_MATH_VECTOR2_METHOD_INL__SHANHAOBO_19800429__*/
+#endif /*__WIZ_MATH_VECTOR4_METHOD_INL__SHANHAOBO_19800429__*/

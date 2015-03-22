@@ -1,37 +1,57 @@
-#ifndef __WIZ_MATH_VECTOR2_HPP__SHANHAOBO_19800429__
-#define __WIZ_MATH_VECTOR2_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_MATH_VECTOR3_HPP__SHANHAOBO_19800429__
+#define __WIZ_MATH_VECTOR3_HPP__SHANHAOBO_19800429__
 
 #include "../../00_Utils/WizMathUtils.hpp"
-#include "./WizMathVector2Base.hpp"
-#include "./WizMathVector2Method.hpp"
+
+#include "./WizMathVector3Base.hpp"
+#include "./WizMathVector3Method.hpp"
+
+#include "./WizMathVector2.hpp"
 
 namespace Wiz
 {
-    namespace Vector2
+    namespace Vector3
     {
         template<class ElementT>
-        struct Type : ::Wiz::Vector2::Base::Type<ElementT>
+        struct Type : ::Wiz::Vector3::Base::Type<ElementT>
         {
-            ////////////////////////////////////////////////////////////////
-            typedef ::Wiz::Vector2::Base::Type<tElement>    tSuper;
+            typedef ::Wiz::Vector3::Base::Type<tElement>    tSuper;
             typedef tSuper const &                          tSuperIn;
 
-            typedef Type                                    tThis;
+            typedef Type<tElement>                          tThis;
             typedef tThis const &                           tThisIn;
+            typedef ::Wiz::Vector3::Method::Type<tThis>     tMethod;
 
-            typedef ::Wiz::Vector2::Method::Type<tThis>     tMethod;
+            typedef ::Wiz::Vector2::Type<tElement>          tVector2;
             ////////////////////////////////////////////////////////////////
             Type()
             {}
-            Type(tElementIn InX, tElementIn InY) : tSuper(InX, InY)
+            Type(tElementIn InX, tElementIn InY, tElementIn InZ) : tSuper(InX, InY, InZ)
             {}
             Type(tElementIn InEle) : tSuper(InEle)
             {}
             Type(tSuperIn InOther) : tSuper(InOther)
             {}
             ////////////////////////////////////////////////////////////////
-
             WIZ_INLINE tThis& operator=(tSuperIn InVec)
+            {
+                x = InVec.x;
+                y = InVec.y;
+                z = InVec.z;
+
+                return *this;
+            }
+            WIZ_INLINE tThis& operator=(tThisIn InVec)
+            {
+                x = InVec.x;
+                y = InVec.y;
+                z = InVec.z;
+
+                return *this;
+            }
+
+
+            WIZ_INLINE tThis& operator=(const tVector2& InVec)
             {
                 x = InVec.x;
                 y = InVec.y;
@@ -56,8 +76,8 @@ namespace Wiz
             WIZ_INLINE friend tThis operator +(tThisIn InVec1, tThisIn InVec2)
             {
                 tThis lResult;
-                tMethod::Add(lResult, InVec1, InVec2);
-                return lResult;
+
+                return tMethod::Add(lResult, InVec1, InVec2);
             }
             WIZ_INLINE friend tThis operator +(tThisIn InVec, tElementIn InEle)
             {
@@ -74,11 +94,13 @@ namespace Wiz
 
             WIZ_INLINE friend tThis& operator +=(tThisIO IOVec, tElementIn InEle)
             {
-                return tMethod::AddAssign(IOVec, InEle);
+                tMethod::AddAssign(IOVec, InEle);
+                return IOVec;
             }
             WIZ_INLINE friend tThis& operator +=(tThisIO IOVec, tThisIn InVec)
             {
-                return tMethod::AddAssign(IOVec, InVec);
+                tMethod::AddAssign(IOVec, InVec);
+                return IOVec;
             }
             ////////////////////////////////////////////////////////////////
 
@@ -93,16 +115,19 @@ namespace Wiz
             WIZ_INLINE friend tThis operator-(tThisIn InVec, tElementIn InEle)
             {
                 tThis lResult;
+
                 return tMethod::Subtract(lResult, InVec, InEle);
             }
 
             WIZ_INLINE friend tThis& operator -=(tThisIO IOVec, tElementIn InEle)
             {
-                return tMethod::SubtractAssign(IOVec, InEle);
+                tMethod::SubtractAssign(IOVec, InEle);
+                return IOVec;
             }
             WIZ_INLINE friend tThis& operator -=(tThisIO IOVec, tThisIn InVec)
             {
-                return tMethod::SubtractAssign(IOVec, InVec);
+                tMethod::SubtractAssign(IOVec, InVec);
+                return IOVec;
             }
             ////////////////////////////////////////////////////////////////
 
@@ -130,11 +155,13 @@ namespace Wiz
 
             WIZ_INLINE friend tThis& operator *=(tThisIO IOVec, tElementIn InEle)
             {
-                return tMethod::MultiplyAssign(IOVec, InEle);
+                tMethod::MultiplyAssign(IOVec, InEle);
+                return IOVec;
             }
             WIZ_INLINE friend tThis& operator *=(tThisIO IOVec, tThisIn InVec)
             {
-                return tMethod::MultiplyAssign(IOVec, InVec);
+                tMethod::MultiplyAssign(IOVec, InVec);
+                return IOVec;
             }
             ////////////////////////////////////////////////////////////////
 
@@ -162,11 +189,13 @@ namespace Wiz
 
             WIZ_INLINE friend tThis& operator/=(tThisIO IOVec, tElementIn InEle)
             {
-                return tMethod::DivideAssign(IOVec, InEle);
+                tMethod::DivideAssign(IOVec, InEle);
+                return IOVec;
             }
             WIZ_INLINE friend tThis& operator/=(tThisIO IOVec, tThisIn InVec)
             {
-                return tMethod::DivideAssign(IOVec, InVec);
+                tMethod::DivideAssign(IOVec, InVec);
+                return IOVec;
             }
             ////////////////////////////////////////////////////////////////
 
@@ -190,15 +219,28 @@ namespace Wiz
 
             WIZ_INLINE tThis operator-() const
             {
-                return tThis(-x, -y);
+                return tThis(-x, -y, -z);
+            }
+
+            WIZ_INLINE operator tVector2() const
+            {
+                return tVector2(x, y);
             }
             ////////////////////////////////////////////////////////////////
-
+            WIZ_INLINE const tVector2& ToVector2() const
+            {
+                return *reinterpret_cast<tVector2*>this;
+            }
+            WIZ_INLINE tVector2& ToVector2()
+            {
+                return *reinterpret_cast<tVector2*>this;
+            }
             ////////////////////////////////////////////////////////////////////
             WIZ_INLINE tThis& operator=(tElementIn InEle)
             {
                 x = InEle;
                 y = InEle;
+                z = InEle;
 
                 return *this;
             }
@@ -207,20 +249,21 @@ namespace Wiz
             {
                 x = ::Wiz::Absolute::GetZero<tElement>();
                 y = ::Wiz::Absolute::GetZero<tElement>();
+                z = ::Wiz::Absolute::GetZero<tElement>();
             }
             //////////////////////////////////////////////////////////////////////////
-            WIZ_INLINE ::Wiz::Void::Type Set(tElementIn InX, tElementIn InY)
+            WIZ_INLINE ::Wiz::Void::Type Set(tElementIn InX, tElementIn InY, tElementIn InZ)
             {
-                this->x = InX;
-                this->y = InY;
+                x = InX;
+                y = InY;
+                z = InZ;
             }
-
-            WIZ_INLINE ::Wiz::Void::Type Get(tElementOut OutX, tElementOut OutY)
+            WIZ_INLINE ::Wiz::Void::Type Get(tElementOut OutX, tElementOut OutY, tElementOut OutZ) const
             {
-                OutX = this->x;
-                OutY = this->y;
+                OutX = x;
+                OutY = y;
+                OutZ = z;
             }
-
             ////////////////////////////////////////////////////////////////
             WIZ_INLINE tElement Dot(tThisIn InVec) const
             {
@@ -231,7 +274,17 @@ namespace Wiz
                 return tMethod::Dot(InVec1, InVec2);
             }
             ////////////////////////////////////////////////////////////////
-
+            WIZ_INLINE static tThis Cross(tThisIn InVec1, tThisIn InVec2)
+            {
+                tThis lResult;
+                tMethod::Cross(lResult, InVec1, InVec2);
+                return lResult;
+            }
+            WIZ_INLINE static tThis& Cross(tThisOut OutVec, tThisIn InVec1, tThisIn InVec2)
+            {
+                tMethod::Cross(OutVec, InVec1, InVec2);
+                return OutVec;
+            }
             ////////////////////////////////////////////////////////////////
             WIZ_INLINE tElement AbsDot(tThisIn InVec) const
             {
@@ -256,9 +309,9 @@ namespace Wiz
             ////////////////////////////////////////////////////////////////
             WIZ_INLINE tThis GetNormal() const
             {
-                tThis lResult;
-                tMethod::Normalize(lResult, *this);
-                return lResult;
+                tThis OutVec;
+                tMethod::Normalize(OutVec, *this);
+                return OutVec;
             }
             ////////////////////////////////////////////////////////////////
 
@@ -318,7 +371,7 @@ namespace Wiz
             }
             //////////////////////////////////////////////////////////////////////////
         }; /// end of struct Type
-    } /// end of namespace Vector2
+    } /// end of namespace Vector3
 } /// end of namespace Wiz
 
-#endif /*__WIZ_MATH_VECTOR2_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_MATH_VECTOR3_HPP__SHANHAOBO_19800429__*/

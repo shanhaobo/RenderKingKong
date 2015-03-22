@@ -1,12 +1,11 @@
-#ifndef __WIZ_MATH_VECTOR2_METHOD_HPP__SHANHAOBO_19800429__
-#define __WIZ_MATH_VECTOR2_METHOD_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_MATH_VECTOR3_METHOD_HPP__SHANHAOBO_19800429__
+#define __WIZ_MATH_VECTOR3_METHOD_HPP__SHANHAOBO_19800429__
 
-#include "../../00_Utils/WizMathUtils.hpp"
-#include "./WizMathVector2Base.hpp"
+#include "../../Utils/WizMathUtils.hpp"
 
 namespace Wiz
 {
-    namespace Vector2
+    namespace Vector3
     {
         namespace Method
         {
@@ -26,59 +25,53 @@ namespace Wiz
                 ////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
-                WIZ_INLINE static tVectorOut Add(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
-                WIZ_INLINE static tVectorOut Add(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
+                WIZ_INLINE static tVector& Add(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
+                WIZ_INLINE static tVector& Add(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
-                WIZ_INLINE static tVectorOut AddAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut AddAssign(tVectorIO IOVec, tElementIn InEle);
+                WIZ_INLINE static tVector& AddAssign(tVectorIO IOVec, tVectorIn InVec);
+                WIZ_INLINE static tVector& AddAssign(tVectorIO IOVec, tElementIn InEle);
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
-                WIZ_INLINE static tVectorOut Subtract(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
-                WIZ_INLINE static tVectorOut Subtract(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
+                WIZ_INLINE static tVector& Subtract(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
+                WIZ_INLINE static tVector& Subtract(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
-                WIZ_INLINE static tVectorOut SubtractAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut SubtractAssign(tVectorIO IOVec, tElementIn InEle);
+                WIZ_INLINE static tVector& SubtractAssign(tVectorIO IOVec, tVectorIn InVec);
+                WIZ_INLINE static tVector& SubtractAssign(tVectorIO IOVec, tElementIn InEle);
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
-                WIZ_INLINE static tVectorOut Multiply(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
-                WIZ_INLINE static tVectorOut Multiply(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
+                WIZ_INLINE static tVector& Multiply(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
+                WIZ_INLINE static tVector& Multiply(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
-                WIZ_INLINE static tVectorOut MultiplyAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut MultiplyAssign(tVectorIO IOVec, tElementIn InEle);
-                //////////////////////////////////////////////////////////////////////////
-
-
-                //////////////////////////////////////////////////////////////////////////
-                WIZ_INLINE static tVectorOut Divide(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
-                WIZ_INLINE static tVectorOut Divide(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
-                WIZ_INLINE static tVectorOut Divide(tVectorOut OutVec, tElementIn InEle, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut DivideAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut DivideAssign(tVectorIO IOVec, tElementIn InEle);
+                WIZ_INLINE static tVector& MultiplyAssign(tVectorIO IOVec, tVectorIn InVec);
+                WIZ_INLINE static tVector& MultiplyAssign(tVectorIO IOVec, tElementIn InEle);
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
+                WIZ_INLINE static tVector& Divide(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
+                WIZ_INLINE static tVector& Divide(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
+                WIZ_INLINE static tVector& Divide(tVectorOut OutVec, tElementIn InEle, tVectorIn InVec);
+
+                WIZ_INLINE static tVector& DivideAssign(tVectorIO IOVec, tVectorIn InVec);
+                WIZ_INLINE static tVector& DivideAssign(tVectorIO IOVec, tElementIn InEle);
+                //////////////////////////////////////////////////////////////////////////
+
+                //////////////////////////////////////////////////////////////////////////
+                WIZ_INLINE static tVector& Cross(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
                 WIZ_INLINE static tElement Dot(tVectorIn InVec1, tVectorIn InVec2);
                 WIZ_INLINE static tElement AbsDot(tVectorIn InVec1, tVectorIn InVec2);
-                //////////////////////////////////////////////////////////////////////////
-
                 //////////////////////////////////////////////////////////////////////////
                 WIZ_INLINE static tElement Normalize(tVectorIO IOVec);
                 WIZ_INLINE static tElement Normalize(tVectorOut OutVec, tVectorIn InVec);
                 //////////////////////////////////////////////////////////////////////////
-
-                //////////////////////////////////////////////////////////////////////////
-                WIZ_INLINE static tElement Length(tVectorIn InVec);
                 WIZ_INLINE static tElement SqrLen(tVectorIn InVec);
+                WIZ_INLINE static tElement Length(tVectorIn InVec);
                 WIZ_INLINE static tElement RecipLen(tVectorIn InVec);
-                //////////////////////////////////////////////////////////////////////////
-
                 //////////////////////////////////////////////////////////////////////////
                 WIZ_INLINE static tElement Distance(tVectorIn InVec1, tVectorIn InVec2);
                 WIZ_INLINE static tElement SqrDist(tVectorIn InVec1, tVectorIn InVec2);
                 ////////////////////////////////////////////////////////////////
-
 
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE static ::Wiz::Bool::Type IsAbsoluteEqual(tVectorIn InVec1, tVectorIn InVec2);
@@ -87,9 +80,9 @@ namespace Wiz
                 ////////////////////////////////////////////////////////////////
             }; /// end of struct Type
         } /// end of namespace Method
-    } /// end of namespace Vector2
+    } /// end of namespace Vector3
 } /// end of namespace Wiz
 
-#include "./WizMathVector2Method.inl"
+#include "./WizMathVector3Method.inl"
 
-#endif /*__WIZ_MATH_VECTOR2_METHOD_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_MATH_VECTOR3_METHOD_HPP__SHANHAOBO_19800429__*/

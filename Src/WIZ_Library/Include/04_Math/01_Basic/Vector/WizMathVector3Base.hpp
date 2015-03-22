@@ -1,15 +1,15 @@
-#ifndef __WIZ_MATH_VECTOR2_BASE_HPP__SHANHAOBO_19800429__
-#define __WIZ_MATH_VECTOR2_BASE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_MATH_VECTOR3_BASE_HPP__SHANHAOBO_19800429__
+#define __WIZ_MATH_VECTOR3_BASE_HPP__SHANHAOBO_19800429__
 
 namespace Wiz
 {
-    namespace Vector2
+    namespace Vector3
     {
         namespace Base
         {
 #       pragma pack(push, 1)
             template<typename ElementT>
-            struct WIZ_EXPORT Type
+            struct Type
             {
                 ////////////////////////////////////////////////////////////////
 
@@ -26,26 +26,25 @@ namespace Wiz
                 ////////////////////////////////////////////////////////////////
                 enum
                 {
-                    eCount = 2,
+                    eCount = 3,
                     eSize = sizeof(tElement) * eCount,
                 };
                 ////////////////////////////////////////////////////////////////
-
                 typedef tElement            tElementArray[eCount];
                 ////////////////////////////////////////////////////////////////
                 union
                 {
                     struct
                     {
-                        tElement              x, y;
+                        tElement              x, y, z;
                     };
                     struct
                     {
-                        tElement              X, Y;
+                        tElement              X, Y, Z;
                     };
                     struct
                     {
-                        tElement              e0, e1;
+                        tElement              e0, e1, e2;
                     };
                     struct
                     {
@@ -58,23 +57,25 @@ namespace Wiz
                     };
                 };
                 ////////////////////////////////////////////////////////////////
-
                 Type()
                 {}
-                Type(tElementIn InX, tElementIn InY)
+                Type(tElementIn InX, tElementIn InY, tElementIn InZ)
                 {
                     this->x = InX;
                     this->y = InY;
+                    this->z = InZ;
                 }
                 Type(tElementIn InEle) 
                 {
                     this->x = InEle;
                     this->y = InEle;
+                    this->z = InEle;
                 }
                 Type(tThisIn InOther)
                 {
                     this->x = InOther.x;
                     this->y = InOther.y;
+                    this->z = InOther.z;
                 }
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE ::Wiz::Size::TypeC GetSizeInByte() const
@@ -89,11 +90,10 @@ namespace Wiz
                 {
                     return this->e;
                 }
-                ////////////////////////////////////////////////////////////////
             };
 #       pragma pack(pop)
         } /// end of namespace Base
-    } /// end of namespace Vector2
+    } /// end of namespace Vector3
 } /// end of namespace Wiz
 
-#endif /*__WIZ_MATH_VECTOR2_BASE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_MATH_VECTOR3_BASE_HPP__SHANHAOBO_19800429__*/
