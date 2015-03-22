@@ -29,24 +29,30 @@ namespace Wiz
                 WIZ_INLINE static tVectorOut Add(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
                 WIZ_INLINE static tVectorOut Add(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
-                WIZ_INLINE static tVectorOut AddAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut AddAssign(tVectorIO IOVec, tElementIn InEle);
+                WIZ_INLINE static tVectorOut AddAssign(tVectorIO ioVec, tVectorIn InVec);
+
+                WIZ_INLINE static tVectorOut AddAssign(tVectorIO ioVec, tElementIn InEle);
+
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
                 WIZ_INLINE static tVectorOut Subtract(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
                 WIZ_INLINE static tVectorOut Subtract(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
-                WIZ_INLINE static tVectorOut SubtractAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut SubtractAssign(tVectorIO IOVec, tElementIn InEle);
+                WIZ_INLINE static tVectorOut SubtractAssign(tVectorIO ioVec, tVectorIn InVec);
+
+                WIZ_INLINE static tVectorOut SubtractAssign(tVectorIO ioVec, tElementIn InEle);
+
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
                 WIZ_INLINE static tVectorOut Multiply(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
                 WIZ_INLINE static tVectorOut Multiply(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
-                WIZ_INLINE static tVectorOut MultiplyAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut MultiplyAssign(tVectorIO IOVec, tElementIn InEle);
+                WIZ_INLINE static tVectorOut MultiplyAssign(tVectorIO ioVec, tVectorIn InVec);
+
+                WIZ_INLINE static tVectorOut MultiplyAssign(tVectorIO ioVec, tElementIn InEle);
+
                 //////////////////////////////////////////////////////////////////////////
 
 
@@ -54,8 +60,10 @@ namespace Wiz
                 WIZ_INLINE static tVectorOut Divide(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2);
                 WIZ_INLINE static tVectorOut Divide(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
                 WIZ_INLINE static tVectorOut Divide(tVectorOut OutVec, tElementIn InEle, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut DivideAssign(tVectorIO IOVec, tVectorIn InVec);
-                WIZ_INLINE static tVectorOut DivideAssign(tVectorIO IOVec, tElementIn InEle);
+                WIZ_INLINE static tVectorOut DivideAssign(tVectorIO ioVec, tVectorIn InVec);
+
+                WIZ_INLINE static tVectorOut DivideAssign(tVectorIO ioVec, tElementIn InEle);
+
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
@@ -64,7 +72,8 @@ namespace Wiz
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
-                WIZ_INLINE static tElement Normalize(tVectorIO IOVec);
+                WIZ_INLINE static tElement Normalize(tVectorIO ioVec);
+
                 WIZ_INLINE static tElement Normalize(tVectorOut OutVec, tVectorIn InVec);
                 //////////////////////////////////////////////////////////////////////////
 

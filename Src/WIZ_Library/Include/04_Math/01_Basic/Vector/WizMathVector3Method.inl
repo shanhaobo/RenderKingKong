@@ -30,22 +30,32 @@ namespace Wiz
             }
 
             template<class VectorT>
-            VectorT& Type<VectorT>::AddAssign(tVectorIO IOVec, tVectorIn InVec)
-            {
-                IOVec.e0 += InVec.e0;
-                IOVec.e1 += InVec.e1;
-                IOVec.e2 += InVec.e2;
+            VectorT& Type<VectorT>::AddAssign(tVectorIO ioVec, tVectorIn InVec)
 
-                return IOVec;
+            {
+                ioVec.e0 += InVec.e0;
+
+                ioVec.e1 += InVec.e1;
+
+                ioVec.e2 += InVec.e2;
+
+
+                return ioVec;
+
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::AddAssign(tVectorIO IOVec, tElementIn InEle)
-            {
-                IOVec.e0 += InEle;
-                IOVec.e1 += InEle;
-                IOVec.e2 += InEle;
+            VectorT& Type<VectorT>::AddAssign(tVectorIO ioVec, tElementIn InEle)
 
-                return IOVec;
+            {
+                ioVec.e0 += InEle;
+
+                ioVec.e1 += InEle;
+
+                ioVec.e2 += InEle;
+
+
+                return ioVec;
+
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -70,22 +80,32 @@ namespace Wiz
             }
 
             template<class VectorT>
-            VectorT& Type<VectorT>::SubtractAssign(tVectorIO IOVec, tVectorIn InVec)
-            {
-                IOVec.e0 -= InVec.e0;
-                IOVec.e1 -= InVec.e1;
-                IOVec.e2 -= InVec.e2;
+            VectorT& Type<VectorT>::SubtractAssign(tVectorIO ioVec, tVectorIn InVec)
 
-                return IOVec;
+            {
+                ioVec.e0 -= InVec.e0;
+
+                ioVec.e1 -= InVec.e1;
+
+                ioVec.e2 -= InVec.e2;
+
+
+                return ioVec;
+
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::SubtractAssign(tVectorIO IOVec, tElementIn InEle)
-            {
-                IOVec.e0 -= InEle;
-                IOVec.e1 -= InEle;
-                IOVec.e2 -= InEle;
+            VectorT& Type<VectorT>::SubtractAssign(tVectorIO ioVec, tElementIn InEle)
 
-                return IOVec;
+            {
+                ioVec.e0 -= InEle;
+
+                ioVec.e1 -= InEle;
+
+                ioVec.e2 -= InEle;
+
+
+                return ioVec;
+
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -110,22 +130,32 @@ namespace Wiz
             }
 
             template<class VectorT>
-            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO IOVec, tVectorIn InVec)
-            {
-                IOVec.e0 *= InVec.e0;
-                IOVec.e1 *= InVec.e1;
-                IOVec.e2 *= InVec.e2;
+            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO ioVec, tVectorIn InVec)
 
-                return IOVec;
+            {
+                ioVec.e0 *= InVec.e0;
+
+                ioVec.e1 *= InVec.e1;
+
+                ioVec.e2 *= InVec.e2;
+
+
+                return ioVec;
+
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO IOVec, tElementIn InEle)
-            {
-                IOVec.e0 *= InEle;
-                IOVec.e1 *= InEle;
-                IOVec.e2 *= InEle;
+            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO ioVec, tElementIn InEle)
 
-                return IOVec;
+            {
+                ioVec.e0 *= InEle;
+
+                ioVec.e1 *= InEle;
+
+                ioVec.e2 *= InEle;
+
+
+                return ioVec;
+
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -165,27 +195,37 @@ namespace Wiz
                 return OutVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::DivideAssign(tVectorIO IOVec, tVectorIn InVec)
-            {
-                IOVec.e0 /= InVec.e0;
-                IOVec.e1 /= InVec.e1;
-                IOVec.e2 /= InVec.e2;
+            VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tVectorIn InVec)
 
-                return IOVec;
+            {
+                ioVec.e0 /= InVec.e0;
+
+                ioVec.e1 /= InVec.e1;
+
+                ioVec.e2 /= InVec.e2;
+
+
+                return ioVec;
+
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::DivideAssign(tVectorIO IOVec, tElementIn InEle)
+            VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tElementIn InEle)
+
             {
                 if (::Wiz::Nearly::GreaterZero(InEle))
                 {
                     tElement const lRecipEle = 1 / InEle;
 
-                    IOVec.e0 *= lRecipEle;
-                    IOVec.e1 *= lRecipEle;
-                    IOVec.e2 *= lRecipEle;
+                    ioVec.e0 *= lRecipEle;
+
+                    ioVec.e1 *= lRecipEle;
+
+                    ioVec.e2 *= lRecipEle;
+
                 }
 
-                return IOVec;
+                return ioVec;
+
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -213,18 +253,23 @@ namespace Wiz
             //////////////////////////////////////////////////////////////////////////
 
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::Normalize(tVectorIO IOVec)
+            typename VectorT::tElement Type<VectorT>::Normalize(tVectorIO ioVec)
+
             {
-                tElement const lLen = Length(IOVec);
+                tElement const lLen = Length(ioVec);
+
 
                 // Will also work for zero-sized Vectors, but will change nothing
                 if (::Wiz::Nearly::GreaterZero(lLen))
                 {
                     tElement const lRecipLen = 1 / lLen;
 
-                    IOVec.e0 *= lRecipLen;
-                    IOVec.e1 *= lRecipLen;
-                    IOVec.e2 *= lRecipLen;
+                    ioVec.e0 *= lRecipLen;
+
+                    ioVec.e1 *= lRecipLen;
+
+                    ioVec.e2 *= lRecipLen;
+
                 }
 
                 return lLen;

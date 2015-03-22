@@ -72,13 +72,17 @@ namespace Wiz
                 return tMethod::Add(lResult, InVec, InEle);
             }
 
-            WIZ_INLINE friend tThis& operator +=(tThisIO IOVec, tElementIn InEle)
+            WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tElementIn InEle)
+
             {
-                return tMethod::AddAssign(IOVec, InEle);
+                return tMethod::AddAssign(ioVec, InEle);
+
             }
-            WIZ_INLINE friend tThis& operator +=(tThisIO IOVec, tThisIn InVec)
+            WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tThisIn InVec)
+
             {
-                return tMethod::AddAssign(IOVec, InVec);
+                return tMethod::AddAssign(ioVec, InVec);
+
             }
             ////////////////////////////////////////////////////////////////
 
@@ -96,13 +100,17 @@ namespace Wiz
                 return tMethod::Subtract(lResult, InVec, InEle);
             }
 
-            WIZ_INLINE friend tThis& operator -=(tThisIO IOVec, tElementIn InEle)
+            WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tElementIn InEle)
+
             {
-                return tMethod::SubtractAssign(IOVec, InEle);
+                return tMethod::SubtractAssign(ioVec, InEle);
+
             }
-            WIZ_INLINE friend tThis& operator -=(tThisIO IOVec, tThisIn InVec)
+            WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tThisIn InVec)
+
             {
-                return tMethod::SubtractAssign(IOVec, InVec);
+                return tMethod::SubtractAssign(ioVec, InVec);
+
             }
             ////////////////////////////////////////////////////////////////
 
@@ -128,13 +136,17 @@ namespace Wiz
                 return tMethod::Multiply(lResult, InVec, InEle);
             }
 
-            WIZ_INLINE friend tThis& operator *=(tThisIO IOVec, tElementIn InEle)
+            WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tElementIn InEle)
+
             {
-                return tMethod::MultiplyAssign(IOVec, InEle);
+                return tMethod::MultiplyAssign(ioVec, InEle);
+
             }
-            WIZ_INLINE friend tThis& operator *=(tThisIO IOVec, tThisIn InVec)
+            WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tThisIn InVec)
+
             {
-                return tMethod::MultiplyAssign(IOVec, InVec);
+                return tMethod::MultiplyAssign(ioVec, InVec);
+
             }
             ////////////////////////////////////////////////////////////////
 
@@ -160,13 +172,17 @@ namespace Wiz
                 return tMethod::Divide(lResult, InEle, InVec);
             }
 
-            WIZ_INLINE friend tThis& operator/=(tThisIO IOVec, tElementIn InEle)
+            WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tElementIn InEle)
+
             {
-                return tMethod::DivideAssign(IOVec, InEle);
+                return tMethod::DivideAssign(ioVec, InEle);
+
             }
-            WIZ_INLINE friend tThis& operator/=(tThisIO IOVec, tThisIn InVec)
+            WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tThisIn InVec)
+
             {
-                return tMethod::DivideAssign(IOVec, InVec);
+                return tMethod::DivideAssign(ioVec, InVec);
+
             }
             ////////////////////////////////////////////////////////////////
 
