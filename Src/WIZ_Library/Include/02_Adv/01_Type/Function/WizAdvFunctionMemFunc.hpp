@@ -57,12 +57,12 @@ namespace Wiz
                 Type() : m_Storage()
                 {
                     WIZ_STATIC_ASSERT(sizeof(m_Storage.m_ClassInstPtr) == sizeof(m_ClassPtr));
-                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) == sizeof(m_MemberPtr));
+                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) >= sizeof(m_MemberPtr));
                 }
                 Type(::Wiz::Void::Ptr ClassPtr, ::Wiz::Void::Ptr MemPtr)
                 {
                     WIZ_STATIC_ASSERT(sizeof(m_Storage.m_ClassInstPtr) == sizeof(m_ClassPtr));
-                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) == sizeof(m_MemberPtr));
+                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) >= sizeof(m_MemberPtr));
                     /// Don't initialize union members;
                     m_Storage.m_ClassInstPtr = ClassPtr;
                     m_Storage.m_MemFuncPtr = MemPtr;
@@ -70,7 +70,7 @@ namespace Wiz
                 Type(const tClass* ClassPtr, tMemberPtr MemberPtr)
                 {
                     WIZ_STATIC_ASSERT(sizeof(m_Storage.m_ClassInstPtr) == sizeof(m_ClassPtr));
-                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) == sizeof(m_MemberPtr));
+                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) >= sizeof(m_MemberPtr));
                     /// Don't initialize union members;
                     m_ClassPtr = ::Wiz::Cast::Const<tClass*>(ClassPtr);
                     m_MemberPtr = MemberPtr;
@@ -78,7 +78,7 @@ namespace Wiz
                 Type(const tClass* ClassPtr, tMemberConstPtr MemberPtr)
                 {
                     WIZ_STATIC_ASSERT(sizeof(m_Storage.m_ClassInstPtr) == sizeof(m_ClassPtr));
-                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) == sizeof(m_MemberPtr));
+                    WIZ_STATIC_ASSERT(sizeof(m_Storage.m_MemFuncPtr) >= sizeof(m_MemberPtr));
                     /// Don't initialize union members;
                     m_ClassPtr = ::Wiz::Cast::Const<tClass*>(ClassPtr);
                     m_MemberConstPtr = MemberPtr;
@@ -98,12 +98,12 @@ namespace Wiz
                     return (m_ClassPtr->*m_MemberConstPtr)(WIZ_ENUM_PARAM_X(WIZ_MEMFUNC_PARAM_COUNT, A));
                 }
             public:
-                ::Wiz::Void::Type Set(const tClass* ClassPtr, tMemberPtr MemberPtr)
+                ::Wiz::Void::Type Set(tClass const * ClassPtr, tMemberPtr MemberPtr)
                 {
                     m_ClassPtr = ::Wiz::Cast::Const<tClass*>(ClassPtr);;
                     m_MemberPtr = MemberPtr;
                 }
-                ::Wiz::Void::Type Set(const tClass* ClassPtr, tMemberConstPtr MemberPtr)
+                ::Wiz::Void::Type Set(tClass const * ClassPtr, tMemberConstPtr MemberPtr)
                 {
                     m_ClassPtr = ::Wiz::Cast::Const<tClass*>(ClassPtr);;
                     m_MemberConstPtr = MemberPtr;

@@ -25,8 +25,7 @@ namespace Wiz
 
             }
         public:
-
-            Bool::Type LinkNode(Link::Ptr InLinkPtr, Node::Ptr InBeginNodePtr, Node::Ptr InEndNodePtr)
+            static Bool::Type LinkNode(Link::Ptr InLinkPtr, Node::Ptr InBeginNodePtr, Node::Ptr InEndNodePtr)
             {
                 if (::Wiz::IsValidPtr(InLinkPtr) && ::Wiz::IsValidPtr(InBeginNodePtr) && ::Wiz::IsValidPtr(InEndNodePtr))
                 {

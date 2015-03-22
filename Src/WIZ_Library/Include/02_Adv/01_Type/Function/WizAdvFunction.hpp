@@ -9,10 +9,6 @@ namespace Wiz
         class Type
         {
         };
-
-        namespace MemFunc
-        {
-        } /// end of namespace MemFunc
     } /// end of namespace Function
 } /// end of namespace Wiz
 
