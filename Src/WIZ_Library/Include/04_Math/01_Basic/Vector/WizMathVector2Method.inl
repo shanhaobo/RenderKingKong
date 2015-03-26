@@ -11,20 +11,20 @@ namespace Wiz
         {
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            VectorT& Type<VectorT>::Add(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Add(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
             {
-                OutVec.e0 = InVec1.e0 + InVec2.e0;
-                OutVec.e1 = InVec1.e1 + InVec2.e1;
+                outVec.e0 = InVec1.e0 + InVec2.e0;
+                outVec.e1 = InVec1.e1 + InVec2.e1;
 
-                return OutVec;
+                return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Add(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle)
+            VectorT& Type<VectorT>::Add(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
             {
-                OutVec.e0 = InVec.e0 + InEle;
-                OutVec.e1 = InVec.e1 + InEle;
+                outVec.e0 = InVec.e0 + InEle;
+                outVec.e1 = InVec.e1 + InEle;
 
-                return OutVec;
+                return outVec;
             }
 
             template<class VectorT>
@@ -51,20 +51,20 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            VectorT& Type<VectorT>::Subtract(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Subtract(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
             {
-                OutVec.e0 = InVec1.e0 - InVec2.e0;
-                OutVec.e1 = InVec1.e1 - InVec2.e1;
+                outVec.e0 = InVec1.e0 - InVec2.e0;
+                outVec.e1 = InVec1.e1 - InVec2.e1;
 
-                return OutVec;
+                return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Subtract(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle)
+            VectorT& Type<VectorT>::Subtract(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
             {
-                OutVec.e0 = InVec.e0 - InEle;
-                OutVec.e1 = InVec.e1 - InEle;
+                outVec.e0 = InVec.e0 - InEle;
+                outVec.e1 = InVec.e1 - InEle;
 
-                return OutVec;
+                return outVec;
             }
 
             template<class VectorT>
@@ -91,20 +91,20 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            VectorT& Type<VectorT>::Multiply(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Multiply(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
             {
-                OutVec.e0 = InVec1.e0 * InVec2.e0;
-                OutVec.e1 = InVec1.e1 * InVec2.e1;
+                outVec.e0 = InVec1.e0 * InVec2.e0;
+                outVec.e1 = InVec1.e1 * InVec2.e1;
 
-                return OutVec;
+                return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Multiply(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle)
+            VectorT& Type<VectorT>::Multiply(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
             {
-                OutVec.e0 = InVec.e0 * InEle;
-                OutVec.e1 = InVec.e1 * InEle;
+                outVec.e0 = InVec.e0 * InEle;
+                outVec.e1 = InVec.e1 * InEle;
 
-                return OutVec;
+                return outVec;
             }
 
             template<class VectorT>
@@ -132,34 +132,34 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            VectorT& Type<VectorT>::Divide(tVectorOut OutVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
             {
-                OutVec.e0 = InVec1.e0 / InVec2.e0;
-                OutVec.e1 = InVec1.e1 / InVec2.e1;
+                outVec.e0 = InVec1.e0 / InVec2.e0;
+                outVec.e1 = InVec1.e1 / InVec2.e1;
 
-                return OutVec;
+                return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Divide(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle)
+            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
             {
                 if (::Wiz::Nearly::GreaterZero(InEle))
                 {
                     tElement const lRecipEle = 1 / InEle;
 
-                    OutVec.e0 = InVec.e0 * lRecipEle;
-                    OutVec.e1 = InVec.e1 * lRecipEle;
+                    outVec.e0 = InVec.e0 * lRecipEle;
+                    outVec.e1 = InVec.e1 * lRecipEle;
 
-                    return OutVec;
+                    return outVec;
                 }
-                return OutVec;
+                return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Divide(tVectorOut OutVec, tElementIn InEle, tVectorIn InVec)
+            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tElementIn InEle, tVectorIn InVec)
             {
-                OutVec.e0 = InEle / InVec.e0;
-                OutVec.e1 = InEle / InVec.e1;
+                outVec.e0 = InEle / InVec.e0;
+                outVec.e1 = InEle / InVec.e1;
 
-                return OutVec;
+                return outVec;
             }
             template<class VectorT>
             VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tVectorIn InVec)
@@ -221,7 +221,7 @@ namespace Wiz
             }
 
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::Normalize(tVectorOut OutVec, tVectorIn InVec)
+            typename VectorT::tElement Type<VectorT>::Normalize(tVectorOut outVec, tVectorIn InVec)
             {
                 tElement const lLen = Length(InVec);
 
@@ -230,13 +230,13 @@ namespace Wiz
                 {
                     tElement const lRecipLen = 1 / lLen;
 
-                    OutVec.e0 = InVec.e0 * lRecipLen;
-                    OutVec.e1 = InVec.e1 * lRecipLen;
+                    outVec.e0 = InVec.e0 * lRecipLen;
+                    outVec.e1 = InVec.e1 * lRecipLen;
                 }
                 else
                 {
-                    OutVec.e0 = InVec.e0;
-                    OutVec.e1 = InVec.e1;
+                    outVec.e0 = InVec.e0;
+                    outVec.e1 = InVec.e1;
                 }
 
                 return tLen;

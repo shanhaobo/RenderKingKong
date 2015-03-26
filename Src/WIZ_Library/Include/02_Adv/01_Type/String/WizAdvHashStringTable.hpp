@@ -77,11 +77,11 @@ namespace Wiz
                     return AddNonReserved(InStr, HashCode);
                 }
 
-                Bool::Type FindString(tStringRefConst InStr, tIndexOut OutIdx)
+                Bool::Type FindString(tStringRefConst InStr, tIndexOut outIdx)
                 {
                     tIndexConst HashCode = CalcHashCode(InStr);
 
-                    if (FindString(InStr, HashCode, OutIdx))
+                    if (FindString(InStr, HashCode, outIdx))
                     {
                         return Bool::True;
                     }
@@ -133,7 +133,7 @@ namespace Wiz
 
             private:
 
-                Bool::Type FindString(tStringRefConst InStr, tIndex InHashCode, tIndexOut OutIndex)
+                Bool::Type FindString(tStringRefConst InStr, tIndex InHashCode, tIndexOut outIndex)
                 {
                     WIZ_ASSERT(IsValidHashCode(InHashCode));
 
@@ -149,13 +149,13 @@ namespace Wiz
                         {
                             if (InStr == m_ReservedStringTab[StrIdx])
                             {
-                                OutIndex = StrIdx;
+                                outIndex = StrIdx;
                                 return Bool::True;
                             }
                         }
                         else if (InStr == m_StringArray[StrIdx - eReservedNum])
                         {
-                            OutIndex = StrIdx;
+                            outIndex = StrIdx;
                             return Bool::True;
                         }
                     }

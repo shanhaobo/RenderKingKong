@@ -4889,7 +4889,7 @@
 #include<string>
 #include<iostream>
 
-void OutputStream(::std::ostream& os, int i)
+void outputStream(::std::ostream& os, int i)
 {
     os << "/// µÚ" << i + 1<< "´Îµü´ú" << ::std::endl;
     os << "#   if WIZ_MPP_REPEAT_FILE_BEGIN <= " << i << " && WIZ_MPP_REPEAT_FILE_END >= " << i << ::std::endl;
@@ -4916,7 +4916,7 @@ int _tmain(int argc, _TCHAR* argv[])
     outFile << "#if defined(WIZ_MPP_REPEAT_FILE_BEGIN) && defined(WIZ_MPP_REPEAT_FILE_END)" << ::std::endl << ::std::endl;
     for (int i = 0; i < 256; ++i)
     {
-        OutputStream(outFile, i);
+        outputStream(outFile, i);
     }
     outFile << ::std::endl << "#endif /// defined(WIZ_MPP_REPEAT_FILE_BEGIN) && defined(WIZ_MPP_REPEAT_FILE_END)" << ::std::endl;
     outFile.close();

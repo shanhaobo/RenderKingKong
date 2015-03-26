@@ -125,9 +125,9 @@ namespace Wiz
                 return false;
             }
         public:
-            Bool::Type GetStr(tStringRef OutStr) const
+            Bool::Type GetStr(tStringRef outStr) const
             {
-                return GetString(OutStr, m_Index);
+                return GetString(outStr, m_Index);
             }
         protected:
             static tHashTab& GetHashTab()
@@ -139,12 +139,12 @@ namespace Wiz
             {
                 return GetHashTab().GetStringPtr(InIdx);
             }
-            static WIZ_INLINE Bool::Type GetString(tStringRef OutStr, tIndex InIdx)
+            static WIZ_INLINE Bool::Type GetString(tStringRef outStr, tIndex InIdx)
             {
                 tStringPtrConst StrPtr = GetStringPtr(InIdx);
                 if (IsValidPtr(StrPtr))
                 {
-                    OutStr = *StrPtr;
+                    outStr = *StrPtr;
                     return Bool::True;
                 }
 

@@ -93,18 +93,18 @@ namespace Wiz
                 return tSuper::insert(tPair(f, s)).first;
             }
 
-            ::Wiz::Bool::Type Insert(tIterator& OutItr, tIndexIn f, tValueIn s)
+            ::Wiz::Bool::Type Insert(tIterator& outItr, tIndexIn f, tValueIn s)
             {
                 ::std::pair<tIterator, ::Wiz::Bool::Type> Result = tSuper::insert(tPair(f, s));
-                OutItr = Result.first;
+                outItr = Result.first;
                 return Result.second;
             }
 
-            ::Wiz::Bool::Type InsertUnique(tIterator& OutItr, tIndexIn Idx, tValueIn Val)
+            ::Wiz::Bool::Type InsertUnique(tIterator& outItr, tIndexIn Idx, tValueIn Val)
             {
                 if (this->Find(Idx) == this->End())
                 {
-                    OutItr = this->Insert(Idx, Val);
+                    outItr = this->Insert(Idx, Val);
                     return ::Wiz::Bool::True;
                 }
                 return ::Wiz::Bool::False;

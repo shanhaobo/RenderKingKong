@@ -266,11 +266,11 @@ namespace Wiz
                 y = InY;
                 z = InZ;
             }
-            WIZ_INLINE ::Wiz::Void::Type Get(tElementOut OutX, tElementOut OutY, tElementOut OutZ) const
+            WIZ_INLINE ::Wiz::Void::Type Get(tElementOut outX, tElementOut outY, tElementOut outZ) const
             {
-                OutX = x;
-                OutY = y;
-                OutZ = z;
+                outX = x;
+                outY = y;
+                outZ = z;
             }
             ////////////////////////////////////////////////////////////////
             WIZ_INLINE tElement Dot(tThisIn InVec) const
@@ -288,10 +288,10 @@ namespace Wiz
                 tMethod::Cross(lResult, InVec1, InVec2);
                 return lResult;
             }
-            WIZ_INLINE static tThis& Cross(tThisOut OutVec, tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE static tThis& Cross(tThisOut outVec, tThisIn InVec1, tThisIn InVec2)
             {
-                tMethod::Cross(OutVec, InVec1, InVec2);
-                return OutVec;
+                tMethod::Cross(outVec, InVec1, InVec2);
+                return outVec;
             }
             ////////////////////////////////////////////////////////////////
             WIZ_INLINE tElement AbsDot(tThisIn InVec) const
@@ -308,18 +308,18 @@ namespace Wiz
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE tElement GetNormal(tThisOut OutVec) const
+            WIZ_INLINE tElement GetNormal(tThisOut outVec) const
             {
-                return tMethod::Normalize(OutVec, *this);
+                return tMethod::Normalize(outVec, *this);
             }
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
             WIZ_INLINE tThis GetNormal() const
             {
-                tThis OutVec;
-                tMethod::Normalize(OutVec, *this);
-                return OutVec;
+                tThis outVec;
+                tMethod::Normalize(outVec, *this);
+                return outVec;
             }
             ////////////////////////////////////////////////////////////////
 

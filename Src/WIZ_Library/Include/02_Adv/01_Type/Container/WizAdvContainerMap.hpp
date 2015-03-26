@@ -83,7 +83,7 @@ namespace Wiz
 
             ///-----------------------///
 
-            ::Wiz::Bool::Type TryGet(tValueOut OutV, tIndexIn InIdx)
+            ::Wiz::Bool::Type TryGet(tValueOut outV, tIndexIn InIdx)
             {
                 tIterator FndItr = Find(InIdx);
                 if (FndItr == End())
@@ -91,7 +91,7 @@ namespace Wiz
                     return ::Wiz::Bool::False;
                 }
 
-                OutV = FndItr.Value();
+                outV = FndItr.Value();
 
                 return ::Wiz::Bool::True;
             }
@@ -114,18 +114,18 @@ namespace Wiz
                 return tSuper::insert(tPair(InIdx, InVl)).first;
             }
 
-            ::Wiz::Bool::Type Insert(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
+            ::Wiz::Bool::Type Insert(tIterator& outItr, tIndexIn InIdx, tValueIn InVl)
             {
                 ::std::pair<tIterator, ::Wiz::Bool::Type> Result = tSuper::insert(tPair(InIdx, InVl));
-                OutItr = Result.first;
+                outItr = Result.first;
                 return Result.second;
             }
 
-            ::Wiz::Bool::Type InsertUnique(tIterator& OutItr, tIndexIn InIdx, tValueIn InVl)
+            ::Wiz::Bool::Type InsertUnique(tIterator& outItr, tIndexIn InIdx, tValueIn InVl)
             {
                 if (Find(InIdx) == End())
                 {
-                    OutItr = Insert(InIdx, InVl);
+                    outItr = Insert(InIdx, InVl);
                     return ::Wiz::Bool::True;
                 }
                 return ::Wiz::Bool::False;

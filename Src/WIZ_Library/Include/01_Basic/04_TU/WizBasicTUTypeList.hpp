@@ -417,7 +417,7 @@ namespace Wiz
 //// Éú³É´úÂë
 /*
 
-void OutputTypeList_Ti(::std::ostream& os, int ib, int ie)
+void outputTypeList_Ti(::std::ostream& os, int ib, int ie)
 {
 os << "(";
 for (; ib < ie; ib++)
@@ -428,24 +428,24 @@ os << "T" << ie;
 os << ")";
 }
 
-void OutputTypeList_FirstLine(::std::ostream& os, int ie)
+void outputTypeList_FirstLine(::std::ostream& os, int ie)
 {
 os << "#define WIZ_TYPELIST_" << ie;
-OutputTypeList_Ti(os, 1, ie);
+outputTypeList_Ti(os, 1, ie);
 os << " \\" << ::std::endl;
 }
 
-void OutputTypeList_SecondLine(::std::ostream& os, int ie)
+void outputTypeList_SecondLine(::std::ostream& os, int ie)
 {
 os << "    ::Wiz::TypeList::Type<T1, WIZ_TYPELIST_" << ie - 1;
-OutputTypeList_Ti(os, 2, ie);
+outputTypeList_Ti(os, 2, ie);
 os << ">" << ::std::endl;
 }
 
-void OutputTypeList(::std::ostream& os, int i)
+void outputTypeList(::std::ostream& os, int i)
 {
-OutputTypeList_FirstLine(os, i);
-OutputTypeList_SecondLine(os, i);
+outputTypeList_FirstLine(os, i);
+outputTypeList_SecondLine(os, i);
 }
 
 
@@ -460,7 +460,7 @@ os << "    ::Wiz::TypeList::Type<T1, ::Wiz::Null::Type>" << ::std::endl;
 for (int i = 2; i < 128; ++i)
 {
 os << ::std::endl;
-OutputTypeList(os, i);
+outputTypeList(os, i);
 }
 
 return 0;

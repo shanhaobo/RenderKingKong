@@ -287,12 +287,12 @@ namespace Wiz
                 w = InW;
             }
 
-            WIZ_INLINE::Wiz::Void::Type Get(tElementOut OutX, tElementOut OutY, tElementOut OutZ, tElementOut OutW)
+            WIZ_INLINE::Wiz::Void::Type Get(tElementOut outX, tElementOut outY, tElementOut outZ, tElementOut outW)
             {
-                OutX = x;
-                OutY = y;
-                OutZ = z;
-                OutW = w;
+                outX = x;
+                outY = y;
+                outZ = z;
+                outW = w;
             }
 
             ////////////////////////////////////////////////////////////////
@@ -328,9 +328,9 @@ namespace Wiz
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE tElement GetNormal(tThisOut OutVec) const
+            WIZ_INLINE tElement GetNormal(tThisOut outVec) const
             {
-                return tMethod::Normalize(OutVec, *this);
+                return tMethod::Normalize(outVec, *this);
             }
             ////////////////////////////////////////////////////////////////
 
