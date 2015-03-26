@@ -14,7 +14,7 @@ namespace rkk
 
                     ::CreateDXGIFactory(__uuidof(IDXGIFactory), (void**)&DXGIFactoryPtr);
 
-                    Factory::Init(DXGIFactoryPtr);
+                    Factory::init(DXGIFactoryPtr);
 
                     return Bool::True;
                 }
@@ -26,7 +26,7 @@ namespace rkk
                 {
                     IDXGIAdapter* EnumAdapterPtr = RKK_NULLPTR;
                     U32::type CurrentAdapter = 0;
-                    while (Factory::Instance().EnumAdapters(CurrentAdapter, &EnumAdapterPtr) != DXGI_ERROR_NOT_FOUND)
+                    while (Factory::instance().EnumAdapters(CurrentAdapter, &EnumAdapterPtr) != DXGI_ERROR_NOT_FOUND)
                     {
                         if (::Wiz::IsValidPtr(EnumAdapterPtr))
                         {
@@ -71,7 +71,7 @@ namespace rkk
                             &ContextPtr
                         );
 
-                        Device::Init(Direct3DDevicePtr);
+                        Device::init(Direct3DDevicePtr);
 
                         return Bool::True;
                     }

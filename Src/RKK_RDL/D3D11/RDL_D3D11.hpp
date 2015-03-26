@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_RENDERDEVICELAYER_D3D11_HPP__
 #define __RENDERKINGKONG_RENDERDEVICELAYER_D3D11_HPP__
 
-#include "../../RKK_Library/Include/RenderDeviceLayer/RenderDeviceLayer.hpp"
+#include "../../RKK_Library/include/RenderDeviceLayer/RenderDeviceLayer.hpp"
 
 namespace rkk
 {
@@ -20,7 +20,7 @@ namespace rkk
             public:
 #               undef RKK_RDL_METHOD
 #               define RKK_RDL_METHOD(MPRet, MPName, MPParam)          virtual MPRet MPName MPParam
-#                   include "../../RKK_Library/Include/RenderDeviceLayer/RenderDeviceLayerMethod.hpp"
+#                   include "../../RKK_Library/include/RenderDeviceLayer/RenderDeviceLayerMethod.hpp"
 #               undef RKK_RDL_METHOD
             };
             ///////////////////////////

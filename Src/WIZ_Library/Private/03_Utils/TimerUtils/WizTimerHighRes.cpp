@@ -1,6 +1,6 @@
-#include "../../../Include/01_Basic/04_TU/WizBasicTU.hpp"
-#include "../../../Include/02_Adv/02_MU/WizAdvMacroAssert.hpp"
-#include "../../../Include/03_Utils/TimerUtils/WizTimerHighRes.hpp"
+#include "../../../include/01_Basic/04_TU/WizBasicTU.hpp"
+#include "../../../include/02_Adv/02_MU/WizAdvMacroAssert.hpp"
+#include "../../../include/03_Utils/TimerUtils/WizTimerHighRes.hpp"
 
 #include <algorithm>
 
@@ -222,9 +222,9 @@ namespace Wiz
 #endif 
             }
 
-            Void::Type Destroy(Ptr& InPtr)
+            Void::Type Destroy(Ptr& inPtr)
             {
-                InPtr = WIZ_NULLPTR;
+                inPtr = WIZ_NULLPTR;
             }
 
             ////////////////////////////////////////////////////////
@@ -242,20 +242,20 @@ namespace Wiz
                     Destroy(ManagedPtr);
                 }
             };
-            tInnerSingletonManagedInstance InnerSingletonInstance;
+            tInnerSingletonManagedInstance innerSingletonInstance;
 
-            Ptr InstancePtr()
+            Ptr instancePtr()
             {
-                if (::Wiz::NotValidPtr(InnerSingletonInstance.ManagedPtr))
+                if (::Wiz::NotValidPtr(innerSingletonInstance.ManagedPtr))
                 {
-                    InnerSingletonInstance.ManagedPtr = Create();
-                    if (::Wiz::NotValidPtr(InnerSingletonInstance.ManagedPtr))
+                    innerSingletonInstance.ManagedPtr = Create();
+                    if (::Wiz::NotValidPtr(innerSingletonInstance.ManagedPtr))
                     {
                         WIZ_ASSERT(::Wiz::Bool::False);
                         return WIZ_NULLPTR;
                     }
                 }
-                return InnerSingletonInstance.ManagedPtr;
+                return innerSingletonInstance.ManagedPtr;
             }
         } /// end of namespace HighRes
     } /// end of namespace Timer

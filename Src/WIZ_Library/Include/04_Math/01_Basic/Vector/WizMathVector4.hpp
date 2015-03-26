@@ -33,47 +33,47 @@ namespace Wiz
             ////////////////////////////////////////////////////////////////
             Type()
             {}
-            Type(tElementIn InX, tElementIn InY, tElementIn InZ, tElementIn InW) : tSuper(InX, InY, InZ, InW)
+            Type(tElementIn inX, tElementIn inY, tElementIn inZ, tElementIn inW) : tSuper(inX, inY, inZ, inW)
             {}
-            Type(tElementIn InEle) : tSuper(InEle)
+            Type(tElementIn inEle) : tSuper(inEle)
             {}
-            Type(tSuperIn InOther) : tSuper(InOther)
+            Type(tSuperIn inOther) : tSuper(inOther)
             {}
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE tThis& operator=(tSuperIn InVec)
+            WIZ_INLINE tThis& operator=(tSuperIn inVec)
             {
-                x = InVec.x;
-                y = InVec.y;
-                z = InVec.z;
-                w = InVec.w;
+                x = inVec.x;
+                y = inVec.y;
+                z = inVec.z;
+                w = inVec.w;
 
                 return *this;
             }
-            WIZ_INLINE tThis& operator=(tThisIn InVec)
+            WIZ_INLINE tThis& operator=(tThisIn inVec)
             {
-                x = InVec.x;
-                y = InVec.y;
-                z = InVec.z;
-                w = InVec.w;
-
-                return *this;
-            }
-
-
-            WIZ_INLINE tThis& operator=(tVector2In InVec)
-            {
-                x = InVec.x;
-                y = InVec.y;
+                x = inVec.x;
+                y = inVec.y;
+                z = inVec.z;
+                w = inVec.w;
 
                 return *this;
             }
 
 
-            WIZ_INLINE tThis& operator=(tVector3In InVec)
+            WIZ_INLINE tThis& operator=(tVector2In inVec)
             {
-                x = InVec.x;
-                y = InVec.y;
-                z = InVec.z;
+                x = inVec.x;
+                y = inVec.y;
+
+                return *this;
+            }
+
+
+            WIZ_INLINE tThis& operator=(tVector3In inVec)
+            {
+                x = inVec.x;
+                y = inVec.y;
+                z = inVec.z;
 
                 return *this;
             }
@@ -92,133 +92,133 @@ namespace Wiz
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE friend tThis operator +(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE friend tThis operator +(tThisIn inVec1, tThisIn inVec2)
             {
                 tThis lResult;
-                tMethod::Add(lResult, InVec1, InVec2);
+                tMethod::Add(lResult, inVec1, inVec2);
                 return lResult;
             }
-            WIZ_INLINE friend tThis operator +(tThisIn InVec, tElementIn InEle)
+            WIZ_INLINE friend tThis operator +(tThisIn inVec, tElementIn inEle)
             {
                 tThis lResult;
-                tMethod::Add(lResult, InVec, InEle);
+                tMethod::Add(lResult, inVec, inEle);
                 return lResult;
             }
-            WIZ_INLINE friend tThis operator +(tElementIn InEle, tThisIn InVec)
+            WIZ_INLINE friend tThis operator +(tElementIn inEle, tThisIn inVec)
             {
                 tThis lResult;
-                tMethod::Add(lResult, InVec, InEle);
+                tMethod::Add(lResult, inVec, inEle);
                 return lResult;
             }
 
-            WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tElementIn InEle)
+            WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tElementIn inEle)
             {
-                return tMethod::AddAssign(ioVec, InEle);
+                return tMethod::AddAssign(ioVec, inEle);
             }
-            WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tThisIn InVec)
+            WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tThisIn inVec)
             {
-                return tMethod::AddAssign(ioVec, InVec);
+                return tMethod::AddAssign(ioVec, inVec);
             }
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE friend tThis operator-(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE friend tThis operator-(tThisIn inVec1, tThisIn inVec2)
             {
                 tThis lResult;
-                tMethod::Subtract(lResult, InVec1, InVec2);
+                tMethod::Subtract(lResult, inVec1, inVec2);
 
                 return lResult;
             }
-            WIZ_INLINE friend tThis operator-(tThisIn InVec, tElementIn InEle)
+            WIZ_INLINE friend tThis operator-(tThisIn inVec, tElementIn inEle)
             {
                 tThis lResult;
-                tMethod::Subtract(lResult, InVec, InEle);
+                tMethod::Subtract(lResult, inVec, inEle);
                 return lResult;
             }
 
-            WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tElementIn InEle)
+            WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tElementIn inEle)
             {
-                return tMethod::SubtractAssign(ioVec, InEle);
+                return tMethod::SubtractAssign(ioVec, inEle);
             }
-            WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tThisIn InVec)
+            WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tThisIn inVec)
             {
-                return tMethod::SubtractAssign(ioVec, InVec);
+                return tMethod::SubtractAssign(ioVec, inVec);
             }
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE friend tThis operator*(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE friend tThis operator*(tThisIn inVec1, tThisIn inVec2)
             {
                 tThis lResult;
-                tMethod::Multiply(lResult, InVec1, InVec2);
+                tMethod::Multiply(lResult, inVec1, inVec2);
                 return lResult;
             }
-            WIZ_INLINE friend tThis operator*(tThisIn InVec, tElementIn InEle)
+            WIZ_INLINE friend tThis operator*(tThisIn inVec, tElementIn inEle)
             {
                 tThis lResult;
-                tMethod::Multiply(lResult, InVec, InEle);
+                tMethod::Multiply(lResult, inVec, inEle);
                 return lResult;
             }
-            WIZ_INLINE friend tThis operator*(tElementIn InEle, tThisIn InVec)
+            WIZ_INLINE friend tThis operator*(tElementIn inEle, tThisIn inVec)
             {
                 tThis lResult;
-                tMethod::Multiply(lResult, InVec, InEle);
+                tMethod::Multiply(lResult, inVec, inEle);
                 return lResult;
             }
 
-            WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tElementIn InEle)
+            WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tElementIn inEle)
             {
-                return tMethod::MultiplyAssign(ioVec, InEle);
+                return tMethod::MultiplyAssign(ioVec, inEle);
             }
-            WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tThisIn InVec)
+            WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tThisIn inVec)
             {
-                return tMethod::MultiplyAssign(ioVec, InVec);
+                return tMethod::MultiplyAssign(ioVec, inVec);
             }
             ////////////////////////////////////////////////////////////////
 
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE friend tThis operator/(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE friend tThis operator/(tThisIn inVec1, tThisIn inVec2)
             {
                 tThis lResult;
-                tMethod::Divide(lResult, InVec1, InVec2);
+                tMethod::Divide(lResult, inVec1, inVec2);
                 return lResult;
             }
-            WIZ_INLINE friend tThis operator/(tThisIn InVec, tElementIn InEle)
+            WIZ_INLINE friend tThis operator/(tThisIn inVec, tElementIn inEle)
             {
                 tThis lResult;
-                tMethod::Divide(lResult, InVec, InEle);
-                return lResult;
-            }
-
-            WIZ_INLINE friend tThis operator/(tElementIn InEle, tThisIn InVec)
-            {
-                tThis lResult;
-                tMethod::Divide(lResult, InEle, InVec);
+                tMethod::Divide(lResult, inVec, inEle);
                 return lResult;
             }
 
-            WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tElementIn InEle)
+            WIZ_INLINE friend tThis operator/(tElementIn inEle, tThisIn inVec)
             {
-                return tMethod::DivideAssign(ioVec, InEle);
+                tThis lResult;
+                tMethod::Divide(lResult, inEle, inVec);
+                return lResult;
             }
-            WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tThisIn InVec)
+
+            WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tElementIn inEle)
             {
-                return tMethod::DivideAssign(ioVec, InVec);
+                return tMethod::DivideAssign(ioVec, inEle);
+            }
+            WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tThisIn inVec)
+            {
+                return tMethod::DivideAssign(ioVec, inVec);
             }
             ////////////////////////////////////////////////////////////////
 
             //////////////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE ::Wiz::Bool::Type operator==(tThisIn InVec) const
+            WIZ_INLINE ::Wiz::Bool::Type operator==(tThisIn inVec) const
             {
-                return tMethod::IsAbsoluteEqual(*this, InVec);
+                return tMethod::IsAbsoluteEqual(*this, inVec);
             }
 
-            WIZ_INLINE ::Wiz::Bool::Type operator!=(tThisIn InVec) const
+            WIZ_INLINE ::Wiz::Bool::Type operator!=(tThisIn inVec) const
             {
-                return !this->operator==(InVec);
+                return !this->operator==(inVec);
             }
 
             WIZ_INLINE tThisIn operator+() const
@@ -260,12 +260,12 @@ namespace Wiz
             }
 
             ////////////////////////////////////////////////////////////////////
-            WIZ_INLINE tThis& operator=(tElementIn InEle)
+            WIZ_INLINE tThis& operator=(tElementIn inEle)
             {
-                x = InEle;
-                y = InEle;
-                z = InEle;
-                w = InEle;
+                x = inEle;
+                y = inEle;
+                z = inEle;
+                w = inEle;
 
                 return *this;
             }
@@ -279,12 +279,12 @@ namespace Wiz
             }
             //////////////////////////////////////////////////////////////////////////
 
-            WIZ_INLINE ::Wiz::Void::Type Set(tElementIn InX, tElementIn InY, tElementIn InZ, tElementIn InW)
+            WIZ_INLINE ::Wiz::Void::Type Set(tElementIn inX, tElementIn inY, tElementIn inZ, tElementIn inW)
             {
-                x = InX;
-                y = InY;
-                z = InZ;
-                w = InW;
+                x = inX;
+                y = inY;
+                z = inZ;
+                w = inW;
             }
 
             WIZ_INLINE::Wiz::Void::Type Get(tElementOut outX, tElementOut outY, tElementOut outZ, tElementOut outW)
@@ -296,27 +296,27 @@ namespace Wiz
             }
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE tElement Dot(tThisIn InVec) const
+            WIZ_INLINE tElement Dot(tThisIn inVec) const
             {
-                return tMethod::Dot(*this, InVec);
+                return tMethod::Dot(*this, inVec);
             }
-            WIZ_INLINE static tElement Dot(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE static tElement Dot(tThisIn inVec1, tThisIn inVec2)
             {
-                return tMethod::Dot(InVec1, InVec2);
-            }
-            ////////////////////////////////////////////////////////////////
-
-            ////////////////////////////////////////////////////////////////
-            WIZ_INLINE tElement AbsDot(tThisIn InVec) const
-            {
-                return tMethod::AbsDot(*this, InVec);
+                return tMethod::Dot(inVec1, inVec2);
             }
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE static tElement AbsDot(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE tElement AbsDot(tThisIn inVec) const
             {
-                return tMethod::AbsDot(InVec1, InVec2);
+                return tMethod::AbsDot(*this, inVec);
+            }
+            ////////////////////////////////////////////////////////////////
+
+            ////////////////////////////////////////////////////////////////
+            WIZ_INLINE static tElement AbsDot(tThisIn inVec1, tThisIn inVec2)
+            {
+                return tMethod::AbsDot(inVec1, inVec2);
             }
             ////////////////////////////////////////////////////////////////
 
@@ -365,30 +365,30 @@ namespace Wiz
             //////////////////////////////////////////////////////////////////////////
 
             //////////////////////////////////////////////////////////////////////////
-            WIZ_INLINE tElement Distance(tThisIn InVec) const
+            WIZ_INLINE tElement Distance(tThisIn inVec) const
             {
-                return tMethod::Distance(*this, InVec);
+                return tMethod::Distance(*this, inVec);
             }
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE tElement SqrDist(tThisIn InVec) const
+            WIZ_INLINE tElement SqrDist(tThisIn inVec) const
             {
-                return tMethod::SqrDist(*this, InVec);
+                return tMethod::SqrDist(*this, inVec);
             }
             ////////////////////////////////////////////////////////////////
 
             //////////////////////////////////////////////////////////////////////////
-            WIZ_INLINE static tElement Distance(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE static tElement Distance(tThisIn inVec1, tThisIn inVec2)
             {
-                return tMethod::Distance(InVec1, InVec2);
+                return tMethod::Distance(inVec1, inVec2);
             }
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
-            WIZ_INLINE static tElement SqrDist(tThisIn InVec1, tThisIn InVec2)
+            WIZ_INLINE static tElement SqrDist(tThisIn inVec1, tThisIn inVec2)
             {
-                return tMethod::SqrDist(InVec1, InVec2);
+                return tMethod::SqrDist(inVec1, inVec2);
             }
             ////////////////////////////////////////////////////////////////
 

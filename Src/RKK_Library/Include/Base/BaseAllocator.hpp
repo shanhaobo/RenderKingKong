@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_BASEALLOCATOR_HPP__
 #define __RENDERKINGKONG_BASEALLOCATOR_HPP__
 
-#include "../../../WIZ_Library/Include/01_Basic/05_Mem/WizBasicMemAllocator.hpp"
+#include "../../../WIZ_Library/include/01_Basic/05_Mem/WizBasicMemAllocator.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 

@@ -1,4 +1,4 @@
-#include "../../Include/RenderCore/RenderShader_PixelShader.hpp"
+#include "../../include/RenderCore/RenderShader_PixelShader.hpp"
 
 namespace rkk
 {

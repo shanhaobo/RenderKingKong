@@ -23,7 +23,7 @@ namespace rkk
                     ::rkk::Enum::PixelFormat::in    ColorFormat             = ::rkk::Enum::PixelFormat::eRGBA_16F_16F_16F_16F,
                     ::rkk::Enum::PixelFormat::in    DepthFormat             = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
                     ::rkk::Enum::PixelFormat::in    StencilFormat           = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
-                    ::rkk::U::in                    Index                   = 0,
+                    ::rkk::U::in                    index                   = 0,
                     ::rkk::Bool::in                 ClearColorEnable        = ::rkk::Bool::False,
                     ::rkk::Color::in                ClearColorValue         = ::rkk::Color::Black,
                     ::rkk::Bool::in                 ClearDepthEnable        = ::rkk::Bool::False,
@@ -38,7 +38,7 @@ namespace rkk
                     , m_ColorPixelFormat(ColorFormat)
                     , m_DepthPixelFormat(DepthFormat)
                     , m_StencilPixelFormat(StencilFormat)
-                    , m_Index(Index)
+                    , m_Index(index)
                     , Clear(ClearColorEnable, ClearColorValue, ClearDepthEnable, ClearDepthValue, ClearStencilEnable, ClearStencilValue)
                     , m_MultiSample(MultiSample, MultiSampleQuality)
                 {

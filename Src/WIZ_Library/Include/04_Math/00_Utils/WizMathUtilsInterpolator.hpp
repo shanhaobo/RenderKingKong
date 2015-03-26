@@ -35,9 +35,9 @@ namespace Wiz
         return -2 * v3 + 3 * v2;
     }
     //////////////////////////////////////////////////////////////////////////
-    /// INTERPOLATE 一次多项式
+    /// inTERPOLATE 一次多项式
     template<class T, class U>
-    WIZ_INLINE T Interpolate1(const U& t, const T& a, const T& b)
+    WIZ_INLINE T interpolate1(const U& t, const T& a, const T& b)
     {
         /// (1 - t) * a + t * b     => a + t * (b - a)
         return  a + (b - a) * t;
@@ -45,7 +45,7 @@ namespace Wiz
 
     // 二次多项式
     template<class T, class U>
-    WIZ_INLINE T Interpolate2(const U& t, const T& a, const T& b, const T& c)
+    WIZ_INLINE T interpolate2(const U& t, const T& a, const T& b, const T& c)
     {
         /// pow((1 - t), 2) * a + 2 * t * ( 1 - t) * b +  pow(t, 2) * c
         return  a + 2 * (b - a) * t + (c - 2 * b + a) * t * t;
@@ -53,7 +53,7 @@ namespace Wiz
 
     /// 三次多项式
     template<class T, class U>
-    WIZ_INLINE T Interpolate3(const U& t, const T& a, const T& b, const T& c, const T& d)
+    WIZ_INLINE T interpolate3(const U& t, const T& a, const T& b, const T& c, const T& d)
     {
         /// pow((1 - t), 3) * a + 3 * pow((1 - t), 2) * t * b + 3 * (1 - t) * pow(t, 2) * c + pow(t, 3) * d
         return  a + 3 * (b - a) * t + 3 * (c - 2 * b + a) * t * t + (d - 3 * c + 3 * b - a) * t * t * t;

@@ -46,7 +46,7 @@ namespace Wiz
             Type() : tContainerBase()
             {}
 
-            Type(tSuper const & InSuper) : tContainerBase(InSuper)
+            Type(tSuper const & inSuper) : tContainerBase(inSuper)
             {}
 
         public:
@@ -106,7 +106,7 @@ namespace Wiz
 
             ///-----------------------///
 
-            ::Wiz::Bool::Type Insert(tElementIn i)
+            ::Wiz::Bool::Type insert(tElementIn i)
             {
                 ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
 
@@ -115,7 +115,7 @@ namespace Wiz
                 return Result.second;
             }
 
-            ::Wiz::Bool::Type Insert(tElementIn i, tIterator& Itr)
+            ::Wiz::Bool::Type insert(tElementIn i, tIterator& Itr)
             {
                 ::std::pair<tIterator, ::Wiz::Bool::Type> Result;
 
@@ -125,21 +125,21 @@ namespace Wiz
             }
 
 
-            ::Wiz::Bool::Type InsertUnique(tElementIn Val)
+            ::Wiz::Bool::Type insertUnique(tElementIn Val)
             {
                 if (this->Find(Val) == this->End())
                 {
-                    this->Insert(Val);
+                    this->insert(Val);
                     return ::Wiz::Bool::True;
                 }
                 return ::Wiz::Bool::False;
             }
 
-            ::Wiz::Bool::Type InsertUnique(tElementIn Val, tIterator& Itr)
+            ::Wiz::Bool::Type insertUnique(tElementIn Val, tIterator& Itr)
             {
                 if (this->Find(Val) == this->End())
                 {
-                    Itr = this->Insert(Val);
+                    Itr = this->insert(Val);
                     return ::Wiz::Bool::True;
                 }
                 return ::Wiz::Bool::False;

@@ -22,19 +22,19 @@ namespace Wiz
             {
             }
 
-            Type(tThisIn InThis) : tSuper(InThis)
+            Type(tThisIn inThis) : tSuper(inThis)
             {
             }
 
-            Type(tStdStringIn InStd) : tSuper(InStd)
+            Type(tStdStringIn inStd) : tSuper(inStd)
             {
             }
 
-            Type(tCharPtrConst InPtr) : tSuper(InPtr)
+            Type(tCharPtrConst inPtr) : tSuper(inPtr)
             {
             }
 
-            Type(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
+            Type(tCharPtrConst inPtr, tSize inCnt) : tSuper(inPtr, inCnt)
             {
             }
         };

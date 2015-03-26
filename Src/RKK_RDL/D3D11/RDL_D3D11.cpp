@@ -16,7 +16,7 @@ namespace rkk
 
             }
 
-            RenderTarget::ptr type::CreateRenderTarget(Desc::RenderTarget::in InDesc)
+            RenderTarget::ptr type::CreateRenderTarget(Desc::RenderTarget::in inDesc)
             {
 
 

@@ -5,7 +5,7 @@
 #include "./RKKPrerequisites.hpp"
 
 /// Wiz Basic Library
-#include "../../../WIZ_Library/Include/Wiz.hpp"
+#include "../../../WIZ_Library/include/Wiz.hpp"
 
 #include "./BaseMacro.hpp"
 #include "./BaseType.hpp"

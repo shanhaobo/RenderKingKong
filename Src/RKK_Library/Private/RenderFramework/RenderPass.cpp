@@ -1,4 +1,4 @@
-#include "../../Include/RenderFramework/RenderPass.hpp"
+#include "../../include/RenderFramework/RenderPass.hpp"
 
 namespace rkk
 {

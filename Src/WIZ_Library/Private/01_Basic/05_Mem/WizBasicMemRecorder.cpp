@@ -1,4 +1,4 @@
-#include "../../../Include/01_Basic/05_Mem/WizBasicMemRecorder.hpp"
+#include "../../../include/01_Basic/05_Mem/WizBasicMemRecorder.hpp"
 
 namespace Wiz
 {

@@ -36,11 +36,11 @@ namespace rkk
                     }
 
                     Void::type Set(
-                        tColorDesc const &  InDesc
+                        tColorDesc const &  inDesc
                         )
                     {
-                        m_Enable        = InDesc.m_Enable;
-                        m_Value         = InDesc.m_Value;
+                        m_Enable        = inDesc.m_Enable;
+                        m_Value         = inDesc.m_Value;
                     }
                 public:
                     Bool::type      m_Enable;
@@ -69,11 +69,11 @@ namespace rkk
                     }
 
                     Void::type Set(
-                        tDepthDesc const &  InDesc
+                        tDepthDesc const &  inDesc
                         )
                     {
-                        m_Enable        = InDesc.m_Enable;
-                        m_Value         = InDesc.m_Value;
+                        m_Enable        = inDesc.m_Enable;
+                        m_Value         = inDesc.m_Value;
                     }
                 public:
                     Bool::type      m_Enable;
@@ -102,11 +102,11 @@ namespace rkk
                     }
 
                     Void::type Set(
-                        tStencilDesc const &    InDesc
+                        tStencilDesc const &    inDesc
                         )
                     {
-                        m_Enable        = InDesc.m_Enable;
-                        m_Value         = InDesc.m_Value;
+                        m_Enable        = inDesc.m_Enable;
+                        m_Value         = inDesc.m_Value;
                     }
                 public:
                     Bool::type      m_Enable;

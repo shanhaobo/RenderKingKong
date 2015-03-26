@@ -1,4 +1,4 @@
-#include "../../RKK_Library/Include/RenderFramework/Plugin.hpp"
+#include "../../RKK_Library/include/RenderFramework/Plugin.hpp"
 
 #include "./RDL_D3D11.hpp"
 
@@ -32,9 +32,9 @@ namespace rkk
                         return m_D3D11RDLPtr;
                     }
 
-                    virtual Void::type DestroyRDL(RenderDeviceLayer::ptr InRDLPtr)
+                    virtual Void::type DestroyRDL(RenderDeviceLayer::ptr inRDLPtr)
                     {
-                        if (InRDLPtr == m_D3D11RDLPtr)
+                        if (inRDLPtr == m_D3D11RDLPtr)
                         {
                             /// TODO Destroy RDL
                         }

@@ -41,7 +41,7 @@ namespace Wiz
             Type() : tContainerBase()
             {}
 
-            Type(tSuper const & InSuper) : tContainerBase(InSuper)
+            Type(tSuper const & inSuper) : tContainerBase(inSuper)
             {}
 
         public:

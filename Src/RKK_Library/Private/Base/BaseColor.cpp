@@ -1,6 +1,6 @@
-#include "../../Include/Base/BaseColor.hpp"
+#include "../../include/Base/BaseColor.hpp"
 
-#include "../../../WIZ_Library/Include/04_Math/00_Utils/WizMathUtils.hpp"
+#include "../../../WIZ_Library/include/04_Math/00_Utils/WizMathUtils.hpp"
 
 
 namespace rkk

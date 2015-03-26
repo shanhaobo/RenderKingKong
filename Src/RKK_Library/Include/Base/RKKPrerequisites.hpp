@@ -17,7 +17,7 @@
 #undef  WIZ_CUSTOM_DECLARE_HELPER_ITERATOR_CONST
 #define WIZ_CUSTOM_DECLARE_HELPER_ITERATOR_CONST     RKK_DECLARE_ITER_CONST
 
-#include "../../../WIZ_Library/Include/WizCustomDeclareHelper.hpp"
+#include "../../../WIZ_Library/include/WizCustomDeclareHelper.hpp"
 
 
 namespace rkk

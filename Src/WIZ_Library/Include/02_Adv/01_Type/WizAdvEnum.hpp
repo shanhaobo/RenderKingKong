@@ -45,9 +45,9 @@ namespace Wiz
         {
             return m_Value;
         }
-        ::Wiz::Void::Type SetStorage(const tStorage& InV)
+        ::Wiz::Void::Type SetStorage(const tStorage& inV)
         {
-            m_Value = InV;
+            m_Value = inV;
         }
     protected:
         tStorage m_Value;

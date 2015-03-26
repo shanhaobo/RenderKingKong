@@ -1,4 +1,4 @@
-#include "../../Include/RenderCore/RenderTarget.hpp"
+#include "../../include/RenderCore/RenderTarget.hpp"
 
 namespace rkk
 {

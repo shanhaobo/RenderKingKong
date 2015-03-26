@@ -24,9 +24,9 @@ namespace Wiz
                 }
             public:
 
-                Transition::Ptr StateTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr);
+                Transition::Ptr StateTransition(State::Ptr inBeginStatePtr, State::Ptr inEndStatePtr);
 
-                Transition::Epsilon::Ptr EpsilonTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr);
+                Transition::Epsilon::Ptr EpsilonTransition(State::Ptr inBeginStatePtr, State::Ptr inEndStatePtr);
 
             protected:
 

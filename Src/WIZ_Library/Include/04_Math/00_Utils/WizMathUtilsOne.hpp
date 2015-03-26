@@ -14,39 +14,39 @@ namespace Wiz
         }
 
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type IsOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type IsOne(const T& inVal)
         {
-            return ::Wiz::Absolute::GetOne<T>() == InVal;
+            return ::Wiz::Absolute::GetOne<T>() == inVal;
         }
 
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type NotOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type NotOne(const T& inVal)
         {
-            return ::Wiz::Absolute::GetOne<T>() != InVal;
+            return ::Wiz::Absolute::GetOne<T>() != inVal;
         }
 
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type LessOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessOne(const T& inVal)
         {
-            return InVal < ::Wiz::Absolute::GetOne<T>();
+            return inVal < ::Wiz::Absolute::GetOne<T>();
         }
 
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(const T& inVal)
         {
-            return InVal > ::Wiz::Absolute::GetOne<T>();
+            return inVal > ::Wiz::Absolute::GetOne<T>();
         }
 
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(const T& inVal)
         {
-            return InVal <= ::Wiz::Absolute::GetOne<T>();
+            return inVal <= ::Wiz::Absolute::GetOne<T>();
         }
 
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(const T& inVal)
         {
-            return InVal >= ::Wiz::Absolute::GetOne<T>();
+            return inVal >= ::Wiz::Absolute::GetOne<T>();
         }
     } /// end of namespace Absolute
 
@@ -59,39 +59,39 @@ namespace Wiz
     }
 
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type IsOne(const T& InVal)
+    WIZ_INLINE ::Wiz::Bool::Type IsOne(const T& inVal)
     {
-        return ::Wiz::Absolute::IsOne<T>(InVal);
+        return ::Wiz::Absolute::IsOne<T>(inVal);
     }
 
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type NotOne(const T& InVal)
+    WIZ_INLINE ::Wiz::Bool::Type NotOne(const T& inVal)
     {
-        return ::Wiz::Absolute::NotOne<T>(InVal);
+        return ::Wiz::Absolute::NotOne<T>(inVal);
     }
 
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type LessOne(const T& InVal)
+    WIZ_INLINE ::Wiz::Bool::Type LessOne(const T& inVal)
     {
-        return ::Wiz::Absolute::LessOne<T>(InVal);
+        return ::Wiz::Absolute::LessOne<T>(inVal);
     }
 
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type GreaterOne(const T& InVal)
+    WIZ_INLINE ::Wiz::Bool::Type GreaterOne(const T& inVal)
     {
-        return ::Wiz::Absolute::GreaterOne<T>(InVal);
+        return ::Wiz::Absolute::GreaterOne<T>(inVal);
     }
 
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(const T& InVal)
+    WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(const T& inVal)
     {
-        return ::Wiz::Absolute::LessEqualOne<T>(InVal);
+        return ::Wiz::Absolute::LessEqualOne<T>(inVal);
     }
 
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(const T& InVal)
+    WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(const T& inVal)
     {
-        return ::Wiz::Absolute::GreaterEqualOne<T>(InVal);
+        return ::Wiz::Absolute::GreaterEqualOne<T>(inVal);
     }
 
     /////////////////////////
@@ -100,116 +100,116 @@ namespace Wiz
     {
         /// IsOne
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type IsOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type IsOne(const T& inVal)
         {
-            return ::Wiz::Absolute::IsOne<T>(InVal);
+            return ::Wiz::Absolute::IsOne<T>(inVal);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type IsOne(::Wiz::R32::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type IsOne(::Wiz::R32::Type const & inVal)
         {
-            return (InVal >= ::Wiz::R32::MinOneEp) && (InVal <= ::Wiz::R32::MaxOneEp);
+            return (inVal >= ::Wiz::R32::MinOneEp) && (inVal <= ::Wiz::R32::MaxOneEp);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type IsOne(::Wiz::R64::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type IsOne(::Wiz::R64::Type const & inVal)
         {
-            return (InVal >= ::Wiz::R64::MinOneEp) && (InVal <= ::Wiz::R64::MaxOneEp);
+            return (inVal >= ::Wiz::R64::MinOneEp) && (inVal <= ::Wiz::R64::MaxOneEp);
         }
 
         /// NotOne
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type NotOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type NotOne(const T& inVal)
         {
-            return ::Wiz::Absolute::NotOne<T>(InVal);
+            return ::Wiz::Absolute::NotOne<T>(inVal);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type NotOne(::Wiz::R32::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type NotOne(::Wiz::R32::Type const & inVal)
         {
-            return (InVal < ::Wiz::R32::MinOneEp) || (InVal > ::Wiz::R32::MaxOneEp);
+            return (inVal < ::Wiz::R32::MinOneEp) || (inVal > ::Wiz::R32::MaxOneEp);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type NotOne(::Wiz::R64::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type NotOne(::Wiz::R64::Type const & inVal)
         {
-            return (InVal < ::Wiz::R64::MinOneEp) || (InVal > ::Wiz::R64::MaxOneEp);
+            return (inVal < ::Wiz::R64::MinOneEp) || (inVal > ::Wiz::R64::MaxOneEp);
         }
 
         /// LessOne
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type LessOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessOne(const T& inVal)
         {
-            return ::Wiz::Absolute::LessOne<T>(InVal);
+            return ::Wiz::Absolute::LessOne<T>(inVal);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type LessOne(::Wiz::R32::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessOne(::Wiz::R32::Type const & inVal)
         {
-            return InVal < ::Wiz::R32::MinOneEp;
+            return inVal < ::Wiz::R32::MinOneEp;
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type LessOne(::Wiz::R64::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessOne(::Wiz::R64::Type const & inVal)
         {
-            return InVal < ::Wiz::R64::MinOneEp;
+            return inVal < ::Wiz::R64::MinOneEp;
         }
 
         /// GreaterOne
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterOne(const T& inVal)
         {
-            return ::Wiz::Absolute::GreaterOne<T>(InVal);
+            return ::Wiz::Absolute::GreaterOne<T>(inVal);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type GreaterOne(::Wiz::R32::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterOne(::Wiz::R32::Type const & inVal)
         {
-            return InVal > ::Wiz::R32::MaxOneEp;
+            return inVal > ::Wiz::R32::MaxOneEp;
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type GreaterOne(::Wiz::R64::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterOne(::Wiz::R64::Type const & inVal)
         {
-            return InVal > ::Wiz::R64::MaxOneEp;
+            return inVal > ::Wiz::R64::MaxOneEp;
         }
 
         /// LessEqualOne
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type LessEqualOne(const T& inVal)
         {
-            return ::Wiz::Absolute::LessEqualOne<T>(InVal);
+            return ::Wiz::Absolute::LessEqualOne<T>(inVal);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type LessEqualOne(::Wiz::R32::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessEqualOne(::Wiz::R32::Type const & inVal)
         {
-            return InVal <= ::Wiz::R32::MaxOneEp;
+            return inVal <= ::Wiz::R32::MaxOneEp;
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type LessEqualOne(::Wiz::R64::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type LessEqualOne(::Wiz::R64::Type const & inVal)
         {
-            return InVal <= ::Wiz::R64::MaxOneEp;
+            return inVal <= ::Wiz::R64::MaxOneEp;
         }
 
         /// GreaterEqualOne
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(const T& InVal)
+        WIZ_INLINE ::Wiz::Bool::Type GreaterEqualOne(const T& inVal)
         {
-            return ::Wiz::Absolute::GreaterEqualOne<T>(InVal);
+            return ::Wiz::Absolute::GreaterEqualOne<T>(inVal);
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type GreaterEqualOne(::Wiz::R32::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterEqualOne(::Wiz::R32::Type const & inVal)
         {
-            return InVal >= ::Wiz::R32::MinOneEp;
+            return inVal >= ::Wiz::R32::MinOneEp;
         }
 
         template<>
-        WIZ_INLINE::Wiz::Bool::Type GreaterEqualOne(::Wiz::R64::Type const & InVal)
+        WIZ_INLINE::Wiz::Bool::Type GreaterEqualOne(::Wiz::R64::Type const & inVal)
         {
-            return InVal >= ::Wiz::R64::MinOneEp;
+            return inVal >= ::Wiz::R64::MinOneEp;
         }
     } /// end of namespace Nearly
 

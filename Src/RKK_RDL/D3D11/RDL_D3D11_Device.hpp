@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_RENDERDEVICELAYER_D3D11_DEVICE_HPP__
 #define __RENDERKINGKONG_RENDERDEVICELAYER_D3D11_DEVICE_HPP__
 
-#include "../../RKK_Library/Include/RenderDeviceLayer/RenderDeviceLayer.hpp"
+#include "../../RKK_Library/include/RenderDeviceLayer/RenderDeviceLayer.hpp"
 
 #include <dxgi.h>
 #include <d3d11.h>

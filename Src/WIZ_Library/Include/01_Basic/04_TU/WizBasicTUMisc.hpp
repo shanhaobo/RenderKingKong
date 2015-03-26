@@ -38,14 +38,14 @@ namespace Wiz
     //////////////////////////////////////////////////////////////////////////
 
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type IsValid(const T& InDT)
+    WIZ_INLINE ::Wiz::Bool::Type IsValid(const T& inDT)
     {
-        return InDT != T::Invalid;
+        return inDT != T::invalid;
     }
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type NotValid(const T& InDT)
+    WIZ_INLINE ::Wiz::Bool::Type NotValid(const T& inDT)
     {
-        return ::Wiz::IsValid<T>(InDT) == ::Wiz::Bool::False;
+        return ::Wiz::IsValid<T>(inDT) == ::Wiz::Bool::False;
     }
 
     //////////////////////////////////////////////////////////////////////////

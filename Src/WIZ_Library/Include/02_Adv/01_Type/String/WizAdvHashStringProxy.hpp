@@ -32,17 +32,17 @@ namespace Wiz
 
                     struct CharSameFunctor
                     {
-                        WIZ_INLINE tChar operator()(tChar InChar) const
+                        WIZ_INLINE tChar operator()(tChar inChar) const
                         {
-                            return InChar;
+                            return inChar;
                         }
                     };
 
                     struct CharToUpperFunctor
                     {
-                        WIZ_INLINE tChar operator()(tChar InChar) const
+                        WIZ_INLINE tChar operator()(tChar inChar) const
                         {
-                            return ToUpper(InChar);
+                            return ToUpper(inChar);
                         }
 
                         WIZ_INLINE char ToUpper(char c) const
@@ -56,16 +56,16 @@ namespace Wiz
                         }
                     };
 
-                    static U32::Type Calc(tChar const * InStr)
+                    static U32::Type Calc(tChar const * inStr)
                     {
                         typedef TT::If<tDerived::CaseSensitiveT, CharSameFunctor, CharToUpperFunctor>::tType tCharFunctor;
 
-                        return tDerived::CalcImpl<tCharFunctor>(InStr);
+                        return tDerived::CalcImpl<tCharFunctor>(inStr);
                     }
 
-                    U32::Type operator()(tChar const * InStr) const
+                    U32::Type operator()(tChar const * inStr) const
                     {
-                        return Calc(InStr);
+                        return Calc(inStr);
                     }
                 };
 
@@ -79,15 +79,15 @@ namespace Wiz
 
                     /// Case sensitive
                     template<class CharFuncT>
-                    U32::Type CalcImpl(CharT const * InStr) const
+                    U32::Type CalcImpl(CharT const * inStr) const
                     {
-                        CharFuncT const             InCharFunc;
+                        CharFuncT const             inCharFunc;
 
                         register ::Wiz::U32::Type   Hash = 0;
                         register ::Wiz::U32::Type   CurrChar;
                         register int                i = 0;
 
-                        for (; (CurrChar = InCharFunc(InStr[i])) && (iMaxIterations > i); i++)
+                        for (; (CurrChar = inCharFunc(inStr[i])) && (iMaxIterations > i); i++)
                         {
                             /// 31 131 1313 13131 131313 etc..
                             static ::Wiz::U32::TypeC Seed = 131;
@@ -108,15 +108,15 @@ namespace Wiz
                     static const int  iMaxIterations = MaxIterationsT;
 
                     template<class CharFuncT>
-                    U32::Type CalcImpl(CharT const * InStr)
+                    U32::Type CalcImpl(CharT const * inStr)
                     {
-                        CharFuncT const             InCharFunc;
+                        CharFuncT const             inCharFunc;
 
                         register ::Wiz::U32::Type   Hash = 0;
                         register ::Wiz::U32::Type   CurrChar;
                         register int                i = 0;
 
-                        for (; (CurrChar = InCharFunc(InStr[i])) && (iMaxIterations > i); i++)
+                        for (; (CurrChar = inCharFunc(inStr[i])) && (iMaxIterations > i); i++)
                         {
                             /// equivalent to: hash = 65599*hash + (*str++);
                             Hash = (Hash << 6) + (Hash << 16) - Hash + CurrChar;
@@ -135,15 +135,15 @@ namespace Wiz
                     static const int  iMaxIterations = MaxIterationsT;
 
                     template<class CharFuncT>
-                    U32::Type CalcImpl(CharT const * InStr)
+                    U32::Type CalcImpl(CharT const * inStr)
                     {
-                        CharFuncT const InCharFunc;
+                        CharFuncT const inCharFunc;
 
                         register ::Wiz::U32::Type Hash = 0;
                         register ::Wiz::U32::Type CurrChar;
                         register int i = 0;
 
-                        for (; (CurrChar = InCharFunc(InStr[i])) && (iMaxIterations > i); i++)
+                        for (; (CurrChar = inCharFunc(inStr[i])) && (iMaxIterations > i); i++)
                         {
                             if ((i & 1) == 0)
                             {
@@ -168,15 +168,15 @@ namespace Wiz
                     static const int  iMaxIterations = MaxIterationsT;
 
                     template<class CharFuncT>
-                    U32::Type CalcImpl(CharT const * InStr)
+                    U32::Type CalcImpl(CharT const * inStr)
                     {
-                        CharFuncT const             InCharFunc;
+                        CharFuncT const             inCharFunc;
 
                         register ::Wiz::U32::Type   Hash = 0x4E67C6A7;
                         register ::Wiz::U32::Type   CurrChar;
                         register int                i = 0;
 
-                        for (; (CurrChar = InCharFunc(InStr[i])) && (iMaxIterations > i); i++)
+                        for (; (CurrChar = inCharFunc(inStr[i])) && (iMaxIterations > i); i++)
                         {
                             Hash ^= ((Hash << 5) + CurrChar + (Hash >> 2));
                         }
@@ -194,15 +194,15 @@ namespace Wiz
                     static const int  iMaxIterations = MaxIterationsT;
 
                     template<class CharFuncT>
-                    U32::Type CalcImpl(CharT const * InStr)
+                    U32::Type CalcImpl(CharT const * inStr)
                     {
-                        CharFuncT const             InCharFunc;
+                        CharFuncT const             inCharFunc;
 
                         register ::Wiz::U32::Type   Hash = 0;
                         register ::Wiz::U32::Type   CurrChar;
                         register int                i = 0;
 
-                        for (; (CurrChar = InCharFunc(InStr[i])) && (iMaxIterations > i); i++)
+                        for (; (CurrChar = inCharFunc(inStr[i])) && (iMaxIterations > i); i++)
                         {
                             Hash ^= CurrChar << (i & 0x07); /// 0111
                         }
@@ -215,15 +215,15 @@ namespace Wiz
             template< class CharT, Category::Type CatT = Category::eSDBM, bool CaseSensitiveT = true, int MaxIterationsT = 128 >
             struct Type
             {
-                static U32::TypeC                       InvalidHashCode = U32::Max;
-                static U32::TypeC                       InvalidIndex    = U32::Max;
+                static U32::TypeC                       invalidHashCode = U32::Max;
+                static U32::TypeC                       invalidIndex    = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
                 typedef U32::Type                       tIndex;
 
-                static U32::Type CalcHashCode(tCharPtrConst InStr)
+                static U32::Type CalcHashCode(tCharPtrConst inStr)
                 {
                     return 0;
                 }
@@ -232,95 +232,95 @@ namespace Wiz
             template< class CharT, bool CaseSensitiveT, int MaxIterationsT >
             struct Type<CharT, Category::eBKDR, CaseSensitiveT, MaxIterationsT>
             {
-                static U32::TypeC                       InvalidHashCode = U32::Max;
-                static U32::TypeC                       InvalidIndex = U32::Max;
+                static U32::TypeC                       invalidHashCode = U32::Max;
+                static U32::TypeC                       invalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
                 typedef U32::Type                       tIndex;
 
-                static U32::Type CalcHashCode(tCharPtrConst InStr)
+                static U32::Type CalcHashCode(tCharPtrConst inStr)
                 {
                     typedef Proxy::Functor::BKDR<tChar, CaseSensitiveT, MaxIterationsT> tFunctor;
 
-                    return tFunctor::Calc(InStr);
+                    return tFunctor::Calc(inStr);
                 }
             };
 
             template< class CharT, bool CaseSensitiveT, int MaxIterationsT >
             struct Type<CharT, Category::eSDBM, CaseSensitiveT, MaxIterationsT>
             {
-                static U32::TypeC                       InvalidHashCode = U32::Max;
-                static U32::TypeC                       InvalidIndex = U32::Max;
+                static U32::TypeC                       invalidHashCode = U32::Max;
+                static U32::TypeC                       invalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
                 typedef U32::Type                       tIndex;
 
-                static U32::Type CalcHashCode(tCharPtrConst InStr)
+                static U32::Type CalcHashCode(tCharPtrConst inStr)
                 {
                     typedef Proxy::Functor::SDBM<tChar, CaseSensitiveT, MaxIterationsT> tFunctor;
 
-                    return tFunctor::Calc(InStr);
+                    return tFunctor::Calc(inStr);
                 }
             };
 
             template< class CharT, bool CaseSensitiveT, int MaxIterationsT >
             struct Type<CharT, Category::eAP, CaseSensitiveT, MaxIterationsT>
             {
-                static U32::TypeC                       InvalidHashCode = U32::Max;
-                static U32::TypeC                       InvalidIndex = U32::Max;
+                static U32::TypeC                       invalidHashCode = U32::Max;
+                static U32::TypeC                       invalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
                 typedef U32::Type                       tIndex;
 
-                static U32::Type CalcHashCode(tCharPtrConst InStr)
+                static U32::Type CalcHashCode(tCharPtrConst inStr)
                 {
                     typedef Proxy::Functor::AP<tChar, CaseSensitiveT, MaxIterationsT> tFunctor;
 
-                    return tFunctor::Calc(InStr);
+                    return tFunctor::Calc(inStr);
                 }
             };
 
             template< class CharT, bool CaseSensitiveT, int MaxIterationsT >
             struct Type<CharT, Category::eJS, CaseSensitiveT, MaxIterationsT>
             {
-                static U32::TypeC                       InvalidHashCode = U32::Max;
-                static U32::TypeC                       InvalidIndex = U32::Max;
+                static U32::TypeC                       invalidHashCode = U32::Max;
+                static U32::TypeC                       invalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
                 typedef U32::Type                       tIndex;
 
-                static U32::Type CalcHashCode(tCharPtrConst InStr)
+                static U32::Type CalcHashCode(tCharPtrConst inStr)
                 {
                     typedef Proxy::Functor::JS<tChar, CaseSensitiveT, MaxIterationsT> tFunctor;
 
-                    return tFunctor::Calc(InStr);
+                    return tFunctor::Calc(inStr);
                 }
             };
 
             template< class CharT, bool CaseSensitiveT, int MaxIterationsT >
             struct Type<CharT, Category::eNoName, CaseSensitiveT, MaxIterationsT>
             {
-                static U32::TypeC                       InvalidHashCode = U32::Max;
-                static U32::TypeC                       InvalidIndex = U32::Max;
+                static U32::TypeC                       invalidHashCode = U32::Max;
+                static U32::TypeC                       invalidIndex = U32::Max;
 
                 typedef CharT                           tChar;
                 typedef tChar const *                   tCharPtrConst;
 
                 typedef U32::Type                       tIndex;
 
-                static U32::Type CalcHashCode(tCharPtrConst InStr)
+                static U32::Type CalcHashCode(tCharPtrConst inStr)
                 {
                     typedef Proxy::Functor::NoName<tChar, CaseSensitiveT, MaxIterationsT> tFunctor;
 
-                    return tFunctor::Calc(InStr);
+                    return tFunctor::Calc(inStr);
                 }
             };
         } /// end of namespace Proxy

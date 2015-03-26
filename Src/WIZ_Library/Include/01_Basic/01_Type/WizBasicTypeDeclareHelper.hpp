@@ -166,26 +166,26 @@
 
 #define WIZ_DECLARE_HELPER_SIZE8()                                  \
     WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size8::Type)            \
-    static ::Wiz::Size8::TypeC Invalid  = ::Wiz::U8::Max;           \
+    static ::Wiz::Size8::TypeC invalid  = ::Wiz::U8::Max;           \
     static ::Wiz::Size8::TypeC Min      = 0;                        \
     static ::Wiz::Size8::TypeC Max      = ::Wiz::U8::Max - 1;
 
 
 #define WIZ_DECLARE_HELPER_SIZE16()                                 \
     WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size16::Type)           \
-    static ::Wiz::Size16::TypeC Invalid = ::Wiz::U16::Max;          \
+    static ::Wiz::Size16::TypeC invalid = ::Wiz::U16::Max;          \
     static ::Wiz::Size16::TypeC Min     = 0;                        \
     static ::Wiz::Size16::TypeC Max     = ::Wiz::U16::Max - 1;
 
 #define WIZ_DECLARE_HELPER_SIZE32()                                 \
     WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size32::Type)           \
-    static ::Wiz::Size32::TypeC Invalid = ::Wiz::U32::Max;          \
+    static ::Wiz::Size32::TypeC invalid = ::Wiz::U32::Max;          \
     static ::Wiz::Size32::TypeC Min     = 0;                        \
     static ::Wiz::Size32::TypeC Max     = ::Wiz::U32::Max - 1;
 
 #define WIZ_DECLARE_HELPER_SIZE64()                                 \
     WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size64::Type)           \
-    static ::Wiz::Size64::TypeC Invalid = ::Wiz::U64::Max;          \
+    static ::Wiz::Size64::TypeC invalid = ::Wiz::U64::Max;          \
     static ::Wiz::Size64::TypeC Min     = 0;                        \
     static ::Wiz::Size64::TypeC Max     = ::Wiz::U64::Max - 1;
 

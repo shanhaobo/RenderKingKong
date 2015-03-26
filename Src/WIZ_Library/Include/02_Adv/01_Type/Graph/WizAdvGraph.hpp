@@ -25,15 +25,15 @@ namespace Wiz
 
             }
         public:
-            static Bool::Type LinkNode(Link::Ptr InLinkPtr, Node::Ptr InBeginNodePtr, Node::Ptr InEndNodePtr)
+            static Bool::Type LinkNode(Link::Ptr inLinkPtr, Node::Ptr inBeginNodePtr, Node::Ptr inEndNodePtr)
             {
-                if (::Wiz::IsValidPtr(InLinkPtr) && ::Wiz::IsValidPtr(InBeginNodePtr) && ::Wiz::IsValidPtr(InEndNodePtr))
+                if (::Wiz::IsValidPtr(inLinkPtr) && ::Wiz::IsValidPtr(inBeginNodePtr) && ::Wiz::IsValidPtr(inEndNodePtr))
                 {
-                    InLinkPtr->m_BeginNodePtr = InBeginNodePtr;
-                    InLinkPtr->m_EndNodePtr = InEndNodePtr;
+                    inLinkPtr->m_BeginNodePtr = inBeginNodePtr;
+                    inLinkPtr->m_EndNodePtr = inEndNodePtr;
 
-                    InBeginNodePtr->m_OutputSet.Insert(InLinkPtr);
-                    InEndNodePtr->m_InputSet.Insert(InLinkPtr);
+                    inBeginNodePtr->m_OutputSet.insert(inLinkPtr);
+                    inEndNodePtr->m_InputSet.insert(inLinkPtr);
 
                     return Bool::True;
                 }
@@ -41,14 +41,14 @@ namespace Wiz
                 return Bool::False;
             }
 
-            Void::Type InsertLink(Link::Ptr InLinkPtr)
+            Void::Type insertLink(Link::Ptr inLinkPtr)
             {
-                LinkSet.Insert(InLinkPtr);
+                LinkSet.insert(inLinkPtr);
             }
 
-            Void::Type InsertNode(Node::Ptr InNodePtr)
+            Void::Type insertNode(Node::Ptr inNodePtr)
             {
-                NodeSet.Insert(InNodePtr);
+                NodeSet.insert(inNodePtr);
             }
 
         protected:

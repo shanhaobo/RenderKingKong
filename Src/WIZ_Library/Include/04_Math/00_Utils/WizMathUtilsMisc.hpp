@@ -206,7 +206,7 @@ namespace Wiz
         return v != v;
     }
 
-    /// -INF << v << INF
+    /// -inF << v << inF
     WIZ_INLINE ::Wiz::Bool::Type IsFinite(::Wiz::R32::In v)
     {
         return ::_finite(v) != 0;

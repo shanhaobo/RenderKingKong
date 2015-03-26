@@ -1,11 +1,11 @@
 #ifndef __WIZ_REGEX_BASETYPE_HPP__SHANHAOBO_19800429__
 #define __WIZ_REGEX_BASETYPE_HPP__SHANHAOBO_19800429__
 
-#include "../../Include/01_Basic/01_Type/WizBasicType.hpp"
-#include "../../Include/01_Basic/04_TU/WizBasicTU.hpp"
-#include "../../Include/01_Basic/05_Mem/WizBasicMem.hpp"
-#include "../../Include/02_Adv/01_Type/Graph/WizAdvGraph.hpp"
-#include "../../Include/05_DP/Visitor/WizDPVisitor.hpp"
+#include "../../include/01_Basic/01_Type/WizBasicType.hpp"
+#include "../../include/01_Basic/04_TU/WizBasicTU.hpp"
+#include "../../include/01_Basic/05_Mem/WizBasicMem.hpp"
+#include "../../include/02_Adv/01_Type/Graph/WizAdvGraph.hpp"
+#include "../../include/05_DP/Visitor/WizDPVisitor.hpp"
 
 namespace Wiz
 {

@@ -21,14 +21,14 @@ namespace Wiz
             virtual tRTTIPtrFC Get() const = WIZ_NULL;
 
         public:
-            ::Wiz::Bool::Type IsA(tRTTIPtrFC InRTTI) const
+            ::Wiz::Bool::Type IsA(tRTTIPtrFC inRTTI) const
             {
-                return InRTTI == Get();
+                return inRTTI == Get();
             }
 
-            ::Wiz::Bool::Type IsKindOf(tRTTIPtrFC InRTTI) const
+            ::Wiz::Bool::Type IsKindOf(tRTTIPtrFC inRTTI) const
             {
-                return IsA(InRTTI) || ((GetSuper() != WIZ_NULLPTR) && GetSuper()->IsKindOf(InRTTI));
+                return IsA(inRTTI) || ((GetSuper() != WIZ_NULLPTR) && GetSuper()->IsKindOf(inRTTI));
             }
 
             template<class U>
@@ -79,7 +79,7 @@ namespace Wiz
             {
                 typedef Type<DerivedT, BaseT>   tThis;
             public:
-                Type(tRTTIPtrFC InSuperPtr) : m_SuperPtr(InSuperPtr)
+                Type(tRTTIPtrFC inSuperPtr) : m_SuperPtr(inSuperPtr)
                 {
                 }
 

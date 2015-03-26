@@ -1,4 +1,4 @@
-#include "../../Include/RenderCore/RenderState.hpp"
+#include "../../include/RenderCore/RenderState.hpp"
 
 namespace rkk
 {

@@ -119,104 +119,104 @@ namespace Wiz
             {
             }
 
-            Type(tCharPtrConst InPtr) : tSuper(InPtr)
+            Type(tCharPtrConst inPtr) : tSuper(inPtr)
             {
             }
 
-            Type(tSuperIn InSuper) : tSuper(InSuper)
+            Type(tSuperIn inSuper) : tSuper(inSuper)
             {
             }
 
-            Type(tThisIn InThis) : tSuper(InThis)
+            Type(tThisIn inThis) : tSuper(inThis)
             {
             }
 
-            Type(tThisIn InThis, tSize InOffSZ, tSize InCnt = npos) : tSuper(InThis, InOffSZ, InCnt)
+            Type(tThisIn inThis, tSize inOffSZ, tSize inCnt = npos) : tSuper(inThis, inOffSZ, inCnt)
             {
             }
 
-            Type(tCharPtrConst InPtr, tSize InCnt) : tSuper(InPtr, InCnt)
+            Type(tCharPtrConst inPtr, tSize inCnt) : tSuper(inPtr, inCnt)
             {
             }
 
             template<class ItrT>
-            Type(ItrT InFirst, ItrT InLast) : tSuper(InFirst, InLast)
+            Type(ItrT inFirst, ItrT inLast) : tSuper(inFirst, inLast)
             {
             }
 
         public:
             //////////////////////////////////////////////////////////////////////////
-            Bool::Type operator==(tThisIn InOther) const
+            Bool::Type operator==(tThisIn inOther) const
             {
-                return tSuper::compare(InOther) == 0;
+                return tSuper::compare(inOther) == 0;
             }
 
-            Bool::Type operator!=(tThisIn InOther) const
+            Bool::Type operator!=(tThisIn inOther) const
             {
-                return tSuper::compare(InOther) != 0;
+                return tSuper::compare(inOther) != 0;
             }
 
-            Bool::Type operator==(tCharPtrConst InPtr) const
+            Bool::Type operator==(tCharPtrConst inPtr) const
             {
-                return tSuper::compare(InPtr) == 0;
+                return tSuper::compare(inPtr) == 0;
             }
 
-            Bool::Type operator!=(tCharPtrConst InPtr) const
+            Bool::Type operator!=(tCharPtrConst inPtr) const
             {
-                return tSuper::compare(InPtr) != 0;
+                return tSuper::compare(inPtr) != 0;
             }
 
             /// operator=
-            tThisRef operator=(tCharPtrConst InPtr)
+            tThisRef operator=(tCharPtrConst inPtr)
             {
-                tSuper::operator=(InPtr);
+                tSuper::operator=(inPtr);
                 return *this;
             }
-            tThisRef operator=(tThisIn InOther)
+            tThisRef operator=(tThisIn inOther)
             {
-                tSuper::operator=(InOther);
+                tSuper::operator=(inOther);
                 return *this;
             }
-            tThisRef operator=(tSuperIn InOther)
+            tThisRef operator=(tSuperIn inOther)
             {
-                tSuper::operator=(InOther);
+                tSuper::operator=(inOther);
                 return *this;
             }
 
             /// operator+=
-            tThisRef operator+=(tCharPtrConst InPtr)
+            tThisRef operator+=(tCharPtrConst inPtr)
             {
-                tSuper::operator+=(InPtr);
+                tSuper::operator+=(inPtr);
                 return *this;
             }
-            tThisRef operator+=(tChar const InCh)
+            tThisRef operator+=(tChar const inCh)
             {
-                tSuper::operator+=(InCh);
+                tSuper::operator+=(inCh);
                 return *this;
             }
-            tThisRef operator+=(tThisIn InOther)
+            tThisRef operator+=(tThisIn inOther)
             {
-                tSuper::operator+=(InOther);
+                tSuper::operator+=(inOther);
                 return *this;
             }
 
             /// operator+
-            tThis operator+(tCharPtrConst InPtr)
+            tThis operator+(tCharPtrConst inPtr)
             {
                 tThis TmpStr = *this;
-                return (TmpStr += InPtr);
+                return (TmpStr += inPtr);
             }
-            tThis operator+(tThisIn InOther)
+            tThis operator+(tThisIn inOther)
             {
                 tThis TmpStr = *this;
-                return (TmpStr += InOther);
+                return (TmpStr += inOther);
             }
 
         public:
             //////////////////////////////////////////////////////////////////////////
-            Void::Type Resize(tSize InNewSize)
+            Void::Type Resize(tSize inNewSize)
             {
-                tSuper::resize(InNewSize);
+                tSuper::resize(inNewSize);
             }
 
             tSize Size() const
@@ -239,9 +239,9 @@ namespace Wiz
                 tSuper::clear();
             }
 
-            WIZ_INLINE static Bool::Type IsValidPos(tSize InNewSize)
+            WIZ_INLINE static Bool::Type IsValidPos(tSize inNewSize)
             {
-                return InNewSize == tSuper::npos;
+                return inNewSize == tSuper::npos;
             }
         public:
             //////////////////////////////////////////////////////////////////////////

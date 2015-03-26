@@ -1,9 +1,9 @@
-#include "../../Include/RTTI/WizRTTIMetaDataField.hpp"
+#include "../../include/RTTI/WizRTTIMetaDataField.hpp"
 
-#include "../../Include/RTTI/WizRTTIMetaDataProperty.hpp"
-#include "../../Include/RTTI/WizRTTIMetaDataStruct.hpp"
-#include "../../Include/RTTI/WizRTTIMetaDataClass.hpp"
-#include "../../Include/RTTI/WizRTTIMetaDataFunction.hpp"
+#include "../../include/RTTI/WizRTTIMetaDataProperty.hpp"
+#include "../../include/RTTI/WizRTTIMetaDataStruct.hpp"
+#include "../../include/RTTI/WizRTTIMetaDataClass.hpp"
+#include "../../include/RTTI/WizRTTIMetaDataFunction.hpp"
 
 namespace Wiz
 {

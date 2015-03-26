@@ -1,4 +1,4 @@
-#include "../../Include/RenderCore/RenderShader_VertexShader.hpp"
+#include "../../include/RenderCore/RenderShader_VertexShader.hpp"
 
 namespace rkk
 {

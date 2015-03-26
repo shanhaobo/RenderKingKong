@@ -9,14 +9,14 @@ namespace Wiz
     {
         namespace Automaton
         {
-            Transition::Ptr Type::StateTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr)
+            Transition::Ptr Type::StateTransition(State::Ptr inBeginStatePtr, State::Ptr inEndStatePtr)
             {
                 Transition::Ptr TransPtr = WIZ_NEW Transition::Type;
                 if (::Wiz::IsValidPtr(TransPtr))
                 {
-                    if (LinkNode(TransPtr, InBeginStatePtr, InEndStatePtr))
+                    if (LinkNode(TransPtr, inBeginStatePtr, inEndStatePtr))
                     {
-                        InsertLink(TransPtr);
+                        insertLink(TransPtr);
                         return TransPtr;
                     }
 
@@ -28,14 +28,14 @@ namespace Wiz
             }
 
 
-            Transition::Epsilon::Ptr Type::EpsilonTransition(State::Ptr InBeginStatePtr, State::Ptr InEndStatePtr)
+            Transition::Epsilon::Ptr Type::EpsilonTransition(State::Ptr inBeginStatePtr, State::Ptr inEndStatePtr)
             {
                 Transition::Epsilon::Ptr EpsilonPtr = WIZ_NEW Transition::Epsilon::Type;
                 if (::Wiz::IsValidPtr(EpsilonPtr))
                 {
-                    if (LinkNode(EpsilonPtr, InBeginStatePtr, InEndStatePtr))
+                    if (LinkNode(EpsilonPtr, inBeginStatePtr, inEndStatePtr))
                     {
-                        InsertLink(EpsilonPtr);
+                        insertLink(EpsilonPtr);
                         return EpsilonPtr;
                     }
 

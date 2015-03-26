@@ -1,19 +1,19 @@
-#include "../../Include/RenderFramework/Root.hpp"
+#include "../../include/RenderFramework/Root.hpp"
 
 namespace rkk
 {
     namespace Root
     {
-        Plugin::ptr type::GetPlugin(Name::in InPluginName)
+        Plugin::ptr type::GetPlugin(Name::in inPluginName)
         {
             Plugin::ptr PluginPtr = RKK_NULLPTR;
-            m_mapPlugin.TryGet(PluginPtr, InPluginName);
+            m_mapPlugin.TryGet(PluginPtr, inPluginName);
             return PluginPtr;
         }
 
-        Bool::type type::LoadPlugin(Str::in InPluginFileName, Name::in InPluginName)
+        Bool::type type::LoadPlugin(Str::in inPluginFileName, Name::in inPluginName)
         {
-            if (m_mapPlugin.HasData(InPluginName))
+            if (m_mapPlugin.HasData(inPluginName))
             {
                 return Bool::False;
             }
@@ -24,9 +24,9 @@ namespace rkk
 
             if (::Wiz::IsValidPtr(LoadedPluginPtr))
             {
-                LoadedPluginPtr->Register(this, InPluginName);
+                LoadedPluginPtr->Register(this, inPluginName);
 
-                m_mapPlugin.Insert(InPluginName, LoadedPluginPtr);
+                m_mapPlugin.insert(inPluginName, LoadedPluginPtr);
 
                 return Bool::True;
             }
@@ -34,22 +34,22 @@ namespace rkk
             return Bool::False;
         }
 
-        Void::type type::UnloadPlugin(Name::in InPluginName)
+        Void::type type::UnloadPlugin(Name::in inPluginName)
         {
-            Plugin::ptr FoundPluginPtr = GetPlugin(InPluginName);
+            Plugin::ptr FoundPluginPtr = GetPlugin(inPluginName);
             if (::Wiz::IsValidPtr(FoundPluginPtr))
             {
                 FoundPluginPtr->Unregister();
 
-                m_mapPlugin.Remove(InPluginName);
+                m_mapPlugin.Remove(inPluginName);
 
                 /// TODO Destroy FoundPluginPtr;
             }
         }
 
-        Bool::type type::ActivePlugin(Name::in InPluginName)
+        Bool::type type::ActivePlugin(Name::in inPluginName)
         {
-            Plugin::ptr FoundPluginPtr = GetPlugin(InPluginName);
+            Plugin::ptr FoundPluginPtr = GetPlugin(inPluginName);
             if (::Wiz::IsValidPtr(FoundPluginPtr))
             {
                 FoundPluginPtr->Active();

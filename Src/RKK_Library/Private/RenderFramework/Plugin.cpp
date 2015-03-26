@@ -1,16 +1,16 @@
-#include "../../Include/RenderFramework/Plugin.hpp"
+#include "../../include/RenderFramework/Plugin.hpp"
 
 namespace rkk
 {
     namespace Plugin
     {
-        Bool::type type::Register(Root::ptr InRootPtr, Name::in InName)
+        Bool::type type::Register(Root::ptr inRootPtr, Name::in inName)
         {
-            if (::Wiz::IsValidPtr(InRootPtr) && InName.IsValid())
+            if (::Wiz::IsValidPtr(inRootPtr) && inName.IsValid())
             {
-                m_RootPtr = InRootPtr;
+                m_RootPtr = inRootPtr;
 
-                m_PluginName = InName;
+                m_PluginName = inName;
 
                 return Bool::True;
             }

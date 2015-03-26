@@ -27,7 +27,7 @@ namespace rkk
                 eRGBA_32_32_32_32,              /// TypeLess
                 eRGBA_32F_32F_32F_32F,          /// Float / Real
                 eRGBA_32U_32U_32U_32U,          /// UInt
-                eRGBA_32S_32S_32S_32S,          /// Sint / Int
+                eRGBA_32S_32S_32S_32S,          /// Sint / int
 
                 eRGBA_16_16_16_16,
                 eRGBA_16F_16F_16F_16F,          /// D3DDECLTYPE_FLOAT16_4(D3D9)

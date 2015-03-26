@@ -13,7 +13,7 @@ namespace Wiz
     namespace Size8
     {
         WIZ_DECLARE_SIMPLE(U8::Type);
-        static TypeC Invalid    = ::Wiz::U8::Max;
+        static TypeC invalid    = ::Wiz::U8::Max;
         static TypeC Min        = 0;
         static TypeC Max        = ::Wiz::U8::Max - 1;
     } /// end of namespace Size8
@@ -21,7 +21,7 @@ namespace Wiz
     namespace Size16
     {
         WIZ_DECLARE_SIMPLE(U16::Type);
-        static TypeC Invalid    = ::Wiz::U16::Max;
+        static TypeC invalid    = ::Wiz::U16::Max;
         static TypeC Min        = 0;
         static TypeC Max        = ::Wiz::U16::Max - 1;
     } /// end of namespace Size16
@@ -29,7 +29,7 @@ namespace Wiz
     namespace Size32
     {
         WIZ_DECLARE_SIMPLE(U32::Type);
-        static TypeC Invalid    = ::Wiz::U32::Max;
+        static TypeC invalid    = ::Wiz::U32::Max;
         static TypeC Min        = 0;
         static TypeC Max        = ::Wiz::U32::Max - 1;
     } /// end of namespace Size32
@@ -37,7 +37,7 @@ namespace Wiz
     namespace Size64
     {
         WIZ_DECLARE_SIMPLE(U64::Type);
-        static TypeC Invalid    = ::Wiz::U64::Max;
+        static TypeC invalid    = ::Wiz::U64::Max;
         static TypeC Min        = 0;
         static TypeC Max        = ::Wiz::U64::Max - 1;
     } /// end of namespace Size64

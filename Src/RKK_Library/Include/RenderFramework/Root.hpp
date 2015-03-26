@@ -13,14 +13,14 @@ namespace rkk
             type(){}
 
         public:
-            Bool::type LoadPlugin(Str::in InPluginFileName, Name::in InPluginName);
-            Void::type UnloadPlugin(Name::in InPluginName);
+            Bool::type LoadPlugin(Str::in inPluginFileName, Name::in inPluginName);
+            Void::type UnloadPlugin(Name::in inPluginName);
 
         public:
-            Bool::type ActivePlugin(Name::in InRDLName);
+            Bool::type ActivePlugin(Name::in inRDLName);
 
         protected:
-            Plugin::ptr GetPlugin(Name::in InPluginName);
+            Plugin::ptr GetPlugin(Name::in inPluginName);
 
             typedef Map<Name::type, Plugin::ptr>::type tMapPlugin;
             tMapPlugin  m_mapPlugin;

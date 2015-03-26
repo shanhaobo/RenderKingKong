@@ -1,6 +1,6 @@
-#include "../../Include/RenderFramework/Plugin_RenderDeviceLayer.hpp"
+#include "../../include/RenderFramework/Plugin_RenderDeviceLayer.hpp"
 
-#include "../../Include/RenderFramework/Root.hpp"
+#include "../../include/RenderFramework/Root.hpp"
 
 namespace rkk
 {
@@ -8,14 +8,14 @@ namespace rkk
     {
         namespace RenderDeviceLayer
         {
-            Bool::type type::Register(Root::ptr InRootPtr, Name::in InName)
+            Bool::type type::Register(Root::ptr inRootPtr, Name::in inName)
             {
-                if (tSuper::Register(InRootPtr, InName))
+                if (tSuper::Register(inRootPtr, inName))
                 {
                     m_RendererPtr = m_RootPtr->m_RendererPtr;
                     if (::Wiz::IsValidPtr(m_RendererPtr))
                     {
-                        if (m_RendererPtr->RegisterRDL(InName, this))
+                        if (m_RendererPtr->RegisterRDL(inName, this))
                         {
                             return Bool::True;
                         }

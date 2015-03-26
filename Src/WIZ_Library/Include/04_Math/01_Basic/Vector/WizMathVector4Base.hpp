@@ -59,26 +59,26 @@ namespace Wiz
                 ////////////////////////////////////////////////////////////////
                 Type()
                 {}
-                Type(tElementIn InX, tElementIn InY, tElementIn InZ, tElementIn InW)
+                Type(tElementIn inX, tElementIn inY, tElementIn inZ, tElementIn inW)
                 {
-                    this->x = InX;
-                    this->y = InY;
-                    this->z = InZ;
-                    this->w = InW;
+                    this->x = inX;
+                    this->y = inY;
+                    this->z = inZ;
+                    this->w = inW;
                 }
-                Type(tElementIn InEle) 
+                Type(tElementIn inEle) 
                 {
-                    this->x = InEle;
-                    this->y = InEle;
-                    this->z = InEle;
-                    this->w = InEle;
+                    this->x = inEle;
+                    this->y = inEle;
+                    this->z = inEle;
+                    this->w = inEle;
                 }
-                Type(tThisIn InOther)
+                Type(tThisIn inOther)
                 {
-                    this->x = InOther.x;
-                    this->y = InOther.y;
-                    this->z = InOther.z;
-                    this->w = InOther.w;
+                    this->x = inOther.x;
+                    this->y = inOther.y;
+                    this->z = inOther.z;
+                    this->w = inOther.w;
                 }
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE ::Wiz::Size::TypeC GetSizeInByte() const

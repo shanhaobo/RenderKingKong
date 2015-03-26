@@ -429,9 +429,33 @@
     <ClInclude Include="..\Src\WIZ_Library\Private\Regex\WizRegexExpressionBase.hpp">
       <Filter>Private\Regex</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector3.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector3Base.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector3Method.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector4.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector4Base.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector4Method.hpp">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </None>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector3Method.inl">
+      <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </None>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector4Method.inl">
       <Filter>Include\04_Math\01_Basic\Vector</Filter>
     </None>
   </ItemGroup>

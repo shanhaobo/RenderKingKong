@@ -80,7 +80,7 @@ namespace Wiz
         }
 
         /// BtsFld只含有Val的Bit（这个有点怪怪的）
-        /// BtsFld only has the bits that included by Val (some bits included by Val Is not Included by BtsFld)
+        /// BtsFld only has the bits that included by Val (some bits included by Val Is not included by BtsFld)
         /// Val = Flag1 | Flag2 | Flag3 | Flag4;
         /// BtsFld = Flag1 | Flag4 -----> True
         /// BtsFld = Flag1 | Flag5 -----> False(Flag5)
@@ -187,10 +187,10 @@ namespace Wiz
             {
                 /// ---- ---- 7654 3210 => -7-6 -5-4 -3-2 -1-0
                 WIZ_INLINE ::Wiz::U16::Type Low8(
-                    ::Wiz::U16::In InX
+                    ::Wiz::U16::In inX
                     )
                 {
-                    ::Wiz::U16::Type Ret = ::Wiz::Bit::GetLowBits<8, ::Wiz::U16::Type>(InX);
+                    ::Wiz::U16::Type Ret = ::Wiz::Bit::GetLowBits<8, ::Wiz::U16::Type>(inX);
 
                     /// - 表示 0,除了常数，数字表示原始数据的BIT的位置序号
                     /// x = ---- ---- 7654 3210
@@ -213,15 +213,15 @@ namespace Wiz
                     Ret = (Ret | (Ret << 2)) & 0x3333;
                     Ret = (Ret | (Ret << 1)) & 0x5555;
 
-                    return InX;
+                    return inX;
                 }
 
                 /// ---- ---- 7654 3210 => -7-6 -5-4 -3-2 -1-0
                 WIZ_INLINE ::Wiz::U32::Type Low16(
-                    ::Wiz::U32::In InX
+                    ::Wiz::U32::In inX
                     )
                 {
-                    ::Wiz::U32::Type Ret = ::Wiz::Bit::GetLowBits<16, ::Wiz::U32::Type>(InX);
+                    ::Wiz::U32::Type Ret = ::Wiz::Bit::GetLowBits<16, ::Wiz::U32::Type>(inX);
 
                     Ret = (Ret | (Ret << 8)) & 0x00FF00FF;
                     Ret = (Ret | (Ret << 4)) & 0x0F0F0F0F;
@@ -233,10 +233,10 @@ namespace Wiz
 
                 /// ---- ---- 7654 3210 => -7-6 -5-4 -3-2 -1-0
                 WIZ_INLINE ::Wiz::U64::Type Low32(
-                    ::Wiz::U64::In InX
+                    ::Wiz::U64::In inX
                     )
                 {
-                    ::Wiz::U64::Type Ret = ::Wiz::Bit::GetLowBits<32, ::Wiz::U64::Type>(InX);
+                    ::Wiz::U64::Type Ret = ::Wiz::Bit::GetLowBits<32, ::Wiz::U64::Type>(inX);
 
                     Ret = (Ret | (Ret << 16)) & 0x0000FFFF0000FFFF;
                     Ret = (Ret | (Ret <<  8)) & 0x00FF00FF00FF00FF;
@@ -253,10 +253,10 @@ namespace Wiz
             {
                 /// ---- ---- ---43210 => ---4--3--2--1--0
                 WIZ_INLINE ::Wiz::U16::Type Low5(
-                    ::Wiz::U16::In InX
+                    ::Wiz::U16::In inX
                     )
                 {
-                    ::Wiz::U16::Type Ret = ::Wiz::Bit::GetLowBits<5, ::Wiz::U16::Type>(InX);
+                    ::Wiz::U16::Type Ret = ::Wiz::Bit::GetLowBits<5, ::Wiz::U16::Type>(inX);
 
                     Ret = (Ret | (Ret<<8)) & 0x100F;
                     Ret = (Ret | (Ret<<4)) & 0x10C3;
@@ -267,10 +267,10 @@ namespace Wiz
 
                 /// ---- ---- ---43210 => ---4--3--2--1--0
                 WIZ_INLINE ::Wiz::U32::Type Low10(
-                    ::Wiz::U32::In InX
+                    ::Wiz::U32::In inX
                     )
                 {
-                    ::Wiz::U32::Type Ret = ::Wiz::Bit::GetLowBits<10, ::Wiz::U32::Type>(InX);
+                    ::Wiz::U32::Type Ret = ::Wiz::Bit::GetLowBits<10, ::Wiz::U32::Type>(inX);
 
                     Ret = (Ret | (Ret << 16)) & 0x030000FF;
                     Ret = (Ret | (Ret <<  8)) & 0x0300F00F;
@@ -282,10 +282,10 @@ namespace Wiz
 
                 /// ---- ---- ---43210 => ---4--3--2--1--0
                 WIZ_INLINE ::Wiz::U64::Type Low21(
-                    ::Wiz::U64::In InX
+                    ::Wiz::U64::In inX
                     )
                 {
-                    ::Wiz::U64::Type Ret = ::Wiz::Bit::GetLowBits<21, ::Wiz::U64::Type>(InX);
+                    ::Wiz::U64::Type Ret = ::Wiz::Bit::GetLowBits<21, ::Wiz::U64::Type>(inX);
 
                     Ret = (Ret | (Ret << 32)) & 0x001F00000000FFFF;
                     Ret = (Ret | (Ret << 16)) & 0x001F0000FF0000FF;

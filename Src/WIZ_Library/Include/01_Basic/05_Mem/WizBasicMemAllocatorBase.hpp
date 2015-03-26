@@ -21,21 +21,21 @@ namespace Wiz
 
             public:
                 ///////////////////////////////////////////
-                /// With Debug Info
-                static ::Wiz::Void::Ptr AllocateWithDebugInfo(size_t InSZInByte, char const * InFileName, int InLine, char const * InFuncName)
+                /// With Debug info
+                static ::Wiz::Void::Ptr AllocateWithDebugInfo(size_t inSZInByte, char const * inFileName, int inLine, char const * inFuncName)
                 {
-                    ::Wiz::Void::Ptr MemPtr = tDerived::Allocate(InSZInByte);
+                    ::Wiz::Void::Ptr MemPtr = tDerived::Allocate(inSZInByte);
                     if (::Wiz::IsValidPtr(MemPtr))
                     {
-                        ::Wiz::MemRecorder::Alloc(MemPtr, InSZInByte, InFileName, InLine, InFuncName);
+                        ::Wiz::MemRecorder::Alloc(MemPtr, inSZInByte, inFileName, inLine, inFuncName);
 
                         return MemPtr;
                     }
                     return WIZ_NULL;
                 }
 
-                /// With Debug Info
-                static ::Wiz::Void::Type DeallocateWithDebugInfo(void* MemPtr, const char* InFileName = WIZ_NULL, int InLine = 0, const char* InFuncName = WIZ_NULL)
+                /// With Debug info
+                static ::Wiz::Void::Type DeallocateWithDebugInfo(void* MemPtr, const char* inFileName = WIZ_NULL, int inLine = 0, const char* inFuncName = WIZ_NULL)
                 {
                     if (::Wiz::IsValidPtr(MemPtr))
                     {

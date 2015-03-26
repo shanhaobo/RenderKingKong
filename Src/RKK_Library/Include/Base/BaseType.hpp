@@ -3,7 +3,7 @@
 
 #include "./RKKPrerequisites.hpp"
 
-#include "../../../WIZ_Library/Include/Wiz.hpp"
+#include "../../../WIZ_Library/include/Wiz.hpp"
 
 #include "./BaseAllocator.hpp"
 

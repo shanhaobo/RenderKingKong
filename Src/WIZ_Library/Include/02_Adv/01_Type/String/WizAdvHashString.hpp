@@ -45,35 +45,35 @@ namespace Wiz
                 eInvalidHashCode    = eTotalCapacity,
             };
 
-            static tIndexConst                       InvalidHashCode = tProxy::InvalidHashCode;
-            static tIndexConst                       InvalidIndex = tProxy::InvalidIndex;
+            static tIndexConst                       invalidHashCode = tProxy::invalidHashCode;
+            static tIndexConst                       invalidIndex = tProxy::invalidIndex;
 
         public:
-            Type() : m_Index(InvalidIndex)
+            Type() : m_Index(invalidIndex)
             {
             }
             explicit Type(tStringRefConst Str)
             {
                 Set(Str);
             }
-            explicit Type(tIndex InIdx)
+            explicit Type(tIndex inIdx)
             {
-                if (GetHashTab().IsValidIndex(InIdx))
+                if (GetHashTab().IsValidIndex(inIdx))
                 {
-                    m_Index = InIdx;
+                    m_Index = inIdx;
                 }
                 else
                 {
-                    m_Index = InvalidIndex;
+                    m_Index = invalidIndex;
                 }
             }
             Type(tThisIn Nm) : m_Index(Nm.m_Index)
             {
             }
         public:
-            Void::Type Set(tStringRefConst InStr, tIndexConst InReservedIndex = eReservedNum)
+            Void::Type Set(tStringRefConst inStr, tIndexConst inReservedIndex = eReservedNum)
             {
-                m_Index = GetHashTab().AddString(InStr);
+                m_Index = GetHashTab().AddString(inStr);
             }
         public:
             Bool::Type IsValid() const
@@ -84,9 +84,9 @@ namespace Wiz
             {
                 return GetHashTab().IsValidIndex(m_Index) == Bool::False;
             }
-            Void::Type Invalid()
+            Void::Type invalid()
             {
-                m_Index = InvalidIndex;
+                m_Index = invalidIndex;
             }
         public:
             friend Bool::Type operator==(tThisIn A, tThisIn B)
@@ -135,13 +135,13 @@ namespace Wiz
                 static tHashTab s_HashTab;
                 return s_HashTab;
             }
-            static WIZ_INLINE tStringPtrConst GetStringPtr(tIndex InIdx)
+            static WIZ_INLINE tStringPtrConst GetStringPtr(tIndex inIdx)
             {
-                return GetHashTab().GetStringPtr(InIdx);
+                return GetHashTab().GetStringPtr(inIdx);
             }
-            static WIZ_INLINE Bool::Type GetString(tStringRef outStr, tIndex InIdx)
+            static WIZ_INLINE Bool::Type GetString(tStringRef outStr, tIndex inIdx)
             {
-                tStringPtrConst StrPtr = GetStringPtr(InIdx);
+                tStringPtrConst StrPtr = GetStringPtr(inIdx);
                 if (IsValidPtr(StrPtr))
                 {
                     outStr = *StrPtr;

@@ -61,20 +61,20 @@ namespace Wiz
 
                 Type()
                 {}
-                Type(tElementIn InX, tElementIn InY)
+                Type(tElementIn inX, tElementIn inY)
                 {
-                    this->x = InX;
-                    this->y = InY;
+                    this->x = inX;
+                    this->y = inY;
                 }
-                Type(tElementIn InEle) 
+                Type(tElementIn inEle) 
                 {
-                    this->x = InEle;
-                    this->y = InEle;
+                    this->x = inEle;
+                    this->y = inEle;
                 }
-                Type(tThisIn InOther)
+                Type(tThisIn inOther)
                 {
-                    this->x = InOther.x;
-                    this->y = InOther.y;
+                    this->x = inOther.x;
+                    this->y = inOther.y;
                 }
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE ::Wiz::Size::TypeC GetSizeInByte() const

@@ -33,7 +33,7 @@ namespace Wiz
         public:
             Base() : tSuper()
             {}
-            Base(tSuper const & InSuper) : tSuper(InSuper)
+            Base(tSuper const & inSuper) : tSuper(inSuper)
             {}
         public:
 
@@ -85,7 +85,7 @@ namespace Wiz
         public:
             SimpleBase() : tContainerSuper()
             {}
-            SimpleBase(tSuper const & InSuper) : tContainerSuper(InSuper)
+            SimpleBase(tSuper const & inSuper) : tContainerSuper(inSuper)
             {}
         public:
 
@@ -137,7 +137,7 @@ namespace Wiz
             ///-----------------------///
         };
 
-        template<class IndexT, class ValueT, class CompT, class DerivedT, class BaseT>
+        template<class indexT, class ValueT, class CompT, class DerivedT, class BaseT>
         class MapBase : public Container::Base<DerivedT, BaseT>
         {
         public:
@@ -147,7 +147,7 @@ namespace Wiz
 
             /////////////////////////////////////////////////////////////////////////
 
-            typedef typename IndexT                                 tIndex;
+            typedef typename indexT                                 tIndex;
             typedef typename tIndex const                           tIndexConst;
             typedef typename tIndex const &                         tIndexIn;
             typedef typename tIndex &                               tIndexRef;
@@ -186,7 +186,7 @@ namespace Wiz
                 {
 
                 }
-                tIndexRefConst Index() const
+                tIndexRefConst index() const
                 {
                     return (*this)->first;
                 }
@@ -206,7 +206,7 @@ namespace Wiz
                 {
 
                 }
-                tIndexRefConst Index() const
+                tIndexRefConst index() const
                 {
                     return (*this)->first;
                 }
@@ -234,7 +234,7 @@ namespace Wiz
         public:
             MapBase() : tContainerSuper()
             {}
-            MapBase(tSuper const & InSuper) : tContainerSuper(InSuper)
+            MapBase(tSuper const & inSuper) : tContainerSuper(inSuper)
             {}
         public:
             ////////////////////////////////////////////////////////////////////////
@@ -284,14 +284,14 @@ namespace Wiz
 
             ///-----------------------///
 
-            tIterator Find(tIndexIn InIndex)
+            tIterator Find(tIndexIn inIndex)
             {
-                return tSuper::find(InIndex);
+                return tSuper::find(inIndex);
             }
 
-            tIteratorConst Find(tIndexIn InIndex) const
+            tIteratorConst Find(tIndexIn inIndex) const
             {
-                return tSuper::find(InIndex);
+                return tSuper::find(inIndex);
             }
 
             ///-----------------------///

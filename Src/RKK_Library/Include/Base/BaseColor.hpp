@@ -68,12 +68,12 @@ namespace rkk
                 Out1.Saturate();
                 return Out1;
             }
-            friend WIZ_INLINE ref operator*= (out Out1, F32::in InT)
+            friend WIZ_INLINE ref operator*= (out Out1, F32::in inT)
             {
-                Out1.r *= InT; 
-                Out1.g *= InT; 
-                Out1.b *= InT; 
-                Out1.a *= InT; 
+                Out1.r *= inT; 
+                Out1.g *= inT; 
+                Out1.b *= inT; 
+                Out1.a *= inT; 
                 Out1.Saturate();
                 return Out1;
             }
@@ -88,10 +88,10 @@ namespace rkk
                 type Temp = In1;
                 return Temp -= In2;
             }
-            friend WIZ_INLINE type operator* (in In1, F32::in InT)
+            friend WIZ_INLINE type operator* (in In1, F32::in inT)
             {
                 type Temp = In1;
-                return Temp *= InT;
+                return Temp *= inT;
             }
 
             WIZ_INLINE ref operator+()

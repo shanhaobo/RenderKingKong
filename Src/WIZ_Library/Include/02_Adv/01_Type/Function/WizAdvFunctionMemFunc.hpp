@@ -18,7 +18,7 @@ namespace Wiz
                     Type() : m_ClassInstPtr(WIZ_NULL), m_MemFuncPtr(WIZ_NULL)
                     {
                     }
-                    Type(::Wiz::Void::Ptr InstPtr, tUnknownClassMemFuncPtr MemFPtr) : m_ClassInstPtr(InstPtr), m_MemFuncPtr(MemFPtr)
+                    Type(::Wiz::Void::Ptr instPtr, tUnknownClassMemFuncPtr MemFPtr) : m_ClassInstPtr(instPtr), m_MemFuncPtr(MemFPtr)
                     {
                     }
                     ::Wiz::Void::Ptr        m_ClassInstPtr;

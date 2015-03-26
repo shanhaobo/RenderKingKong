@@ -15,9 +15,9 @@ namespace Wiz
         //////////////////////////////////////////////////////////////////////////
 
         /// 基本使用
-        WIZ_INLINE::Wiz::Void::Ptr AllocateWithDebugInfo(size_t InSZInByte, char const * InFileName, int InLine, char const * InFuncName)
+        WIZ_INLINE::Wiz::Void::Ptr AllocateWithDebugInfo(size_t inSZInByte, char const * inFileName, int inLine, char const * inFuncName)
         {
-            return Allocator::Type::AllocateWithDebugInfo(InSZInByte, InFileName, InLine, InFuncName);
+            return Allocator::Type::AllocateWithDebugInfo(inSZInByte, inFileName, inLine, inFuncName);
         }
 
         WIZ_INLINE::Wiz::Void::Type DeallocateWithDebugInfo(void* ptr)
@@ -85,40 +85,40 @@ namespace Wiz
 /// General
 //////////////////////////////////////////////////////////////////////////
 #if  (WIZ_DEBUG_MODE == WIZ_CFG_TRUE)
-#   define  WIZ_MALLOC(InSZInByte)                              ::Wiz::Allocator::AllocateWithDebugInfo(InSZInByte, WIZ_FILE, WIZ_LINE, WIZ_FUNC)
+#   define  WIZ_MALLOC(inSZInByte)                              ::Wiz::Allocator::AllocateWithDebugInfo(inSZInByte, WIZ_FILE, WIZ_LINE, WIZ_FUNC)
 #   define  WIZ_FREE(MemPtr)                                    ::Wiz::Allocator::DeallocateWithDebugInfo((void*)MemPtr)
 #else
-#   define  WIZ_MALLOC(InSZInByte)                              ::Wiz::Allocator::Allocate(InSZInByte)
+#   define  WIZ_MALLOC(inSZInByte)                              ::Wiz::Allocator::Allocate(inSZInByte)
 #   define  WIZ_FREE(MemPtr)                                    ::Wiz::Allocator::Deallocate((void*)MemPtr)
 #endif
 
-#   define  WIZ_MALLOC_T(InType)                                static_cast<InType*>(WIZ_MALLOC(sizeof(InType)))
-#   define  WIZ_MALLOC_ARRAY_T(InType, InCnt)                   static_cast<InType*>(WIZ_MALLOC(sizeof(InType) * InCnt))
+#   define  WIZ_MALLOC_T(inType)                                static_cast<inType*>(WIZ_MALLOC(sizeof(inType)))
+#   define  WIZ_MALLOC_ARRAY_T(inType, inCnt)                   static_cast<inType*>(WIZ_MALLOC(sizeof(inType) * inCnt))
 
-#   define  WIZ_NEW_T(InType)                                   new (WIZ_MALLOC(sizeof(InType))) InType
-#   define  WIZ_DEL_T(MemPtr, InType)                           if (MemPtr) {(MemPtr)->~InType(); WIZ_FREE(MemPtr);}
+#   define  WIZ_NEW_T(inType)                                   new (WIZ_MALLOC(sizeof(inType))) inType
+#   define  WIZ_DEL_T(MemPtr, inType)                           if (MemPtr) {(MemPtr)->~inType(); WIZ_FREE(MemPtr);}
 
-#   define  WIZ_NEW_ARRAY_T(InType, InCnt)                      ::Wiz::Allocator::ConstructN<InType(WIZ_MALLOC_ARRAY_T(InType, InCnt), InCnt);
-#   define  WIZ_DEL_ARRAY_T(MemPtr, InType, InCnt)              if(MemPtr) {for (size_t i = 0; i < InCnt; ++i){MemPtr[i].~InType();} WIZ_FREE(MemPtr);}
+#   define  WIZ_NEW_ARRAY_T(inType, inCnt)                      ::Wiz::Allocator::ConstructN<inType(WIZ_MALLOC_ARRAY_T(inType, inCnt), inCnt);
+#   define  WIZ_DEL_ARRAY_T(MemPtr, inType, inCnt)              if(MemPtr) {for (size_t i = 0; i < inCnt; ++i){MemPtr[i].~inType();} WIZ_FREE(MemPtr);}
 
 //////////////////////////////////////////////////////////////////////////
 /// With_Cat
 //////////////////////////////////////////////////////////////////////////
 #if  (WIZ_DEBUG_MODE == WIZ_CFG_TRUE)
-#   define  WIZ_MALLOC_CAT(InSZInByte, InCat)                   ::Wiz::Allocator::Categorized<InCat>::AllocateWithDebugInfo(InSZInByte, WIZ_FILE, WIZ_LINE, WIZ_FUNC)
-#   define  WIZ_FREE_CAT(MemPtr, InCat)                         ::Wiz::Allocator::Categorized<InCat>::DeallocateWithDebugInfo((void*)MemPtr)
+#   define  WIZ_MALLOC_CAT(inSZInByte, inCat)                   ::Wiz::Allocator::Categorized<inCat>::AllocateWithDebugInfo(inSZInByte, WIZ_FILE, WIZ_LINE, WIZ_FUNC)
+#   define  WIZ_FREE_CAT(MemPtr, inCat)                         ::Wiz::Allocator::Categorized<inCat>::DeallocateWithDebugInfo((void*)MemPtr)
 #else
-#   define  WIZ_MALLOC_CAT(InSZInByte, InCat)                   ::Wiz::Allocator::Categorized<InCat>::Allocate(InSZInByte)
-#   define  WIZ_FREE_CAT(MemPtr, InCat)                         ::Wiz::Allocator::Categorized<InCat>::Deallocate((void*)MemPtr)
+#   define  WIZ_MALLOC_CAT(inSZInByte, inCat)                   ::Wiz::Allocator::Categorized<inCat>::Allocate(inSZInByte)
+#   define  WIZ_FREE_CAT(MemPtr, inCat)                         ::Wiz::Allocator::Categorized<inCat>::Deallocate((void*)MemPtr)
 #endif
 
-#   define  WIZ_MALLOC_T_CAT(InType, InCat)                     static_cast<InType*>(WIZ_MALLOC_CAT(sizeof(InType), InCat))
-#   define  WIZ_MALLOC_ARRAY_T_CAT(InType, InCnt, InCat)        static_cast<InType*>(WIZ_MALLOC_CAT(sizeof(InType) * InCnt, InCat))
+#   define  WIZ_MALLOC_T_CAT(inType, inCat)                     static_cast<inType*>(WIZ_MALLOC_CAT(sizeof(inType), inCat))
+#   define  WIZ_MALLOC_ARRAY_T_CAT(inType, inCnt, inCat)        static_cast<inType*>(WIZ_MALLOC_CAT(sizeof(inType) * inCnt, inCat))
 
-#   define  WIZ_NEW_T_CAT(InType, InCat)                        new (WIZ_MALLOC_CAT(sizeof(InType), InCat)) InType
-#   define  WIZ_DEL_T_CAT(MemPtr, InType, InCat)                if(MemPtr) {(MemPtr)->~InType(); WIZ_FREE_CAT(MemPtr, InCat);}
+#   define  WIZ_NEW_T_CAT(inType, inCat)                        new (WIZ_MALLOC_CAT(sizeof(inType), inCat)) inType
+#   define  WIZ_DEL_T_CAT(MemPtr, inType, inCat)                if(MemPtr) {(MemPtr)->~inType(); WIZ_FREE_CAT(MemPtr, inCat);}
 
-#   define  WIZ_NEW_ARRAY_T_CAT(InType, InCnt, InCat)           ::Wiz::Allocator::ConstructN<InType>(WIZ_MALLOC_ARRAY_T_CAT(InType, InCnt, InCat), InCnt);
-#   define  WIZ_DEL_ARRAY_T_CAT(MemPtr, InType, InCnt, InCat)   if(MemPtr) {for (size_t i = 0; i < InCnt; ++i){MemPtr[i].~InType();} WIZ_FREE_CAT(MemPtr, InCat);}
+#   define  WIZ_NEW_ARRAY_T_CAT(inType, inCnt, inCat)           ::Wiz::Allocator::ConstructN<inType>(WIZ_MALLOC_ARRAY_T_CAT(inType, inCnt, inCat), inCnt);
+#   define  WIZ_DEL_ARRAY_T_CAT(MemPtr, inType, inCnt, inCat)   if(MemPtr) {for (size_t i = 0; i < inCnt; ++i){MemPtr[i].~inType();} WIZ_FREE_CAT(MemPtr, inCat);}
 
 #endif /*__WIZ_MEM_ALLOCATOR_HPP__SHANHAOBO_19800429__*/

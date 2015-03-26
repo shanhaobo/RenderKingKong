@@ -11,88 +11,42 @@ namespace Wiz
         {
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            VectorT& Type<VectorT>::Add(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Add(tVectorOut outVec, tVectorIn inVec1, tVectorIn inVec2)
             {
-                outVec.e0 = InVec1.e0 + InVec2.e0;
-                outVec.e1 = InVec1.e1 + InVec2.e1;
-                outVec.e2 = InVec1.e2 + InVec2.e2;
+                outVec.e0 = inVec1.e0 + inVec2.e0;
+                outVec.e1 = inVec1.e1 + inVec2.e1;
+                outVec.e2 = inVec1.e2 + inVec2.e2;
 
                 return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Add(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
+            VectorT& Type<VectorT>::Add(tVectorOut outVec, tVectorIn inVec, tElementIn inEle)
             {
-                outVec.e0 = InVec.e0 + InEle;
-                outVec.e1 = InVec.e1 + InEle;
-                outVec.e2 = InVec.e2 + InEle;
+                outVec.e0 = inVec.e0 + inEle;
+                outVec.e1 = inVec.e1 + inEle;
+                outVec.e2 = inVec.e2 + inEle;
 
                 return outVec;
             }
 
             template<class VectorT>
-            VectorT& Type<VectorT>::AddAssign(tVectorIO ioVec, tVectorIn InVec)
+            VectorT& Type<VectorT>::AddAssign(tVectorIO ioVec, tVectorIn inVec)
 
             {
-                ioVec.e0 += InVec.e0;
-                ioVec.e1 += InVec.e1;
-                ioVec.e2 += InVec.e2;
+                ioVec.e0 += inVec.e0;
+                ioVec.e1 += inVec.e1;
+                ioVec.e2 += inVec.e2;
 
                 return ioVec;
 
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::AddAssign(tVectorIO ioVec, tElementIn InEle)
+            VectorT& Type<VectorT>::AddAssign(tVectorIO ioVec, tElementIn inEle)
 
             {
-                ioVec.e0 += InEle;
-                ioVec.e1 += InEle;
-                ioVec.e2 += InEle;
-
-                return ioVec;
-
-            }
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            template<class VectorT>
-            VectorT& Type<VectorT>::Subtract(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
-            {
-                outVec.e0 = InVec1.e0 - InVec2.e0;
-                outVec.e1 = InVec1.e1 - InVec2.e1;
-                outVec.e2 = InVec1.e2 - InVec2.e2;
-
-                return outVec;
-            }
-            template<class VectorT>
-            VectorT& Type<VectorT>::Subtract(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
-            {
-                outVec.e0 = InVec.e0 - InEle;
-                outVec.e1 = InVec.e1 - InEle;
-                outVec.e2 = InVec.e2 - InEle;
-
-                return outVec;
-            }
-
-            template<class VectorT>
-            VectorT& Type<VectorT>::SubtractAssign(tVectorIO ioVec, tVectorIn InVec)
-
-            {
-                ioVec.e0 -= InVec.e0;
-                ioVec.e1 -= InVec.e1;
-                ioVec.e2 -= InVec.e2;
-
-
-                return ioVec;
-
-            }
-            template<class VectorT>
-            VectorT& Type<VectorT>::SubtractAssign(tVectorIO ioVec, tElementIn InEle)
-
-            {
-                ioVec.e0 -= InEle;
-                ioVec.e1 -= InEle;
-                ioVec.e2 -= InEle;
-
+                ioVec.e0 += inEle;
+                ioVec.e1 += inEle;
+                ioVec.e2 += inEle;
 
                 return ioVec;
 
@@ -101,43 +55,89 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            VectorT& Type<VectorT>::Multiply(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Subtract(tVectorOut outVec, tVectorIn inVec1, tVectorIn inVec2)
             {
-                outVec.e0 = InVec1.e0 * InVec2.e0;
-                outVec.e1 = InVec1.e1 * InVec2.e1;
-                outVec.e2 = InVec1.e2 * InVec2.e2;
+                outVec.e0 = inVec1.e0 - inVec2.e0;
+                outVec.e1 = inVec1.e1 - inVec2.e1;
+                outVec.e2 = inVec1.e2 - inVec2.e2;
 
                 return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Multiply(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
+            VectorT& Type<VectorT>::Subtract(tVectorOut outVec, tVectorIn inVec, tElementIn inEle)
             {
-                outVec.e0 = InVec.e0 * InEle;
-                outVec.e1 = InVec.e1 * InEle;
-                outVec.e2 = InVec.e2 * InEle;
+                outVec.e0 = inVec.e0 - inEle;
+                outVec.e1 = inVec.e1 - inEle;
+                outVec.e2 = inVec.e2 - inEle;
 
                 return outVec;
             }
 
             template<class VectorT>
-            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO ioVec, tVectorIn InVec)
+            VectorT& Type<VectorT>::SubtractAssign(tVectorIO ioVec, tVectorIn inVec)
 
             {
-                ioVec.e0 *= InVec.e0;
-                ioVec.e1 *= InVec.e1;
-                ioVec.e2 *= InVec.e2;
+                ioVec.e0 -= inVec.e0;
+                ioVec.e1 -= inVec.e1;
+                ioVec.e2 -= inVec.e2;
 
 
                 return ioVec;
 
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO ioVec, tElementIn InEle)
+            VectorT& Type<VectorT>::SubtractAssign(tVectorIO ioVec, tElementIn inEle)
 
             {
-                ioVec.e0 *= InEle;
-                ioVec.e1 *= InEle;
-                ioVec.e2 *= InEle;
+                ioVec.e0 -= inEle;
+                ioVec.e1 -= inEle;
+                ioVec.e2 -= inEle;
+
+
+                return ioVec;
+
+            }
+            //////////////////////////////////////////////////////////////////////////
+
+            //////////////////////////////////////////////////////////////////////////
+            template<class VectorT>
+            VectorT& Type<VectorT>::Multiply(tVectorOut outVec, tVectorIn inVec1, tVectorIn inVec2)
+            {
+                outVec.e0 = inVec1.e0 * inVec2.e0;
+                outVec.e1 = inVec1.e1 * inVec2.e1;
+                outVec.e2 = inVec1.e2 * inVec2.e2;
+
+                return outVec;
+            }
+            template<class VectorT>
+            VectorT& Type<VectorT>::Multiply(tVectorOut outVec, tVectorIn inVec, tElementIn inEle)
+            {
+                outVec.e0 = inVec.e0 * inEle;
+                outVec.e1 = inVec.e1 * inEle;
+                outVec.e2 = inVec.e2 * inEle;
+
+                return outVec;
+            }
+
+            template<class VectorT>
+            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO ioVec, tVectorIn inVec)
+
+            {
+                ioVec.e0 *= inVec.e0;
+                ioVec.e1 *= inVec.e1;
+                ioVec.e2 *= inVec.e2;
+
+
+                return ioVec;
+
+            }
+            template<class VectorT>
+            VectorT& Type<VectorT>::MultiplyAssign(tVectorIO ioVec, tElementIn inEle)
+
+            {
+                ioVec.e0 *= inEle;
+                ioVec.e1 *= inEle;
+                ioVec.e2 *= inEle;
 
 
                 return ioVec;
@@ -148,57 +148,57 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tVectorIn inVec1, tVectorIn inVec2)
             {
-                outVec.e0 = InVec1.e0 / InVec2.e0;
-                outVec.e1 = InVec1.e1 / InVec2.e1;
-                outVec.e2 = InVec1.e2 / InVec2.e2;
+                outVec.e0 = inVec1.e0 / inVec2.e0;
+                outVec.e1 = inVec1.e1 / inVec2.e1;
+                outVec.e2 = inVec1.e2 / inVec2.e2;
 
                 return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tVectorIn InVec, tElementIn InEle)
+            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tVectorIn inVec, tElementIn inEle)
             {
-                if (::Wiz::Nearly::GreaterZero(InEle))
+                if (::Wiz::Nearly::GreaterZero(inEle))
                 {
-                    tElement const lRecipEle = 1 / InEle;
+                    tElement const lRecipEle = 1 / inEle;
 
-                    outVec.e0 = InVec.e0 * lRecipEle;
-                    outVec.e1 = InVec.e1 * lRecipEle;
-                    outVec.e2 = InVec.e2 * lRecipEle;
+                    outVec.e0 = inVec.e0 * lRecipEle;
+                    outVec.e1 = inVec.e1 * lRecipEle;
+                    outVec.e2 = inVec.e2 * lRecipEle;
 
                     return outVec;
                 }
                 return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tElementIn InEle, tVectorIn InVec)
+            VectorT& Type<VectorT>::Divide(tVectorOut outVec, tElementIn inEle, tVectorIn inVec)
             {
-                outVec.e0 = InEle / InVec.e0;
-                outVec.e1 = InEle / InVec.e1;
-                outVec.e2 = InEle / InVec.e2;
+                outVec.e0 = inEle / inVec.e0;
+                outVec.e1 = inEle / inVec.e1;
+                outVec.e2 = inEle / inVec.e2;
 
                 return outVec;
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tVectorIn InVec)
+            VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tVectorIn inVec)
 
             {
-                ioVec.e0 /= InVec.e0;
-                ioVec.e1 /= InVec.e1;
-                ioVec.e2 /= InVec.e2;
+                ioVec.e0 /= inVec.e0;
+                ioVec.e1 /= inVec.e1;
+                ioVec.e2 /= inVec.e2;
 
 
                 return ioVec;
 
             }
             template<class VectorT>
-            VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tElementIn InEle)
+            VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tElementIn inEle)
 
             {
-                if (::Wiz::Nearly::GreaterZero(InEle))
+                if (::Wiz::Nearly::GreaterZero(inEle))
                 {
-                    tElement const lRecipEle = 1 / InEle;
+                    tElement const lRecipEle = 1 / inEle;
 
                     ioVec.e0 *= lRecipEle;
                     ioVec.e1 *= lRecipEle;
@@ -212,24 +212,24 @@ namespace Wiz
             //////////////////////////////////////////////////////////////////////////
 
             template<class VectorT>
-            VectorT& Type<VectorT>::Cross(tVectorOut outVec, tVectorIn InVec1, tVectorIn InVec2)
+            VectorT& Type<VectorT>::Cross(tVectorOut outVec, tVectorIn inVec1, tVectorIn inVec2)
             {
-                outVec.x = InVec1.y * InVec2.z - InVec1.z * InVec2.y;
-                outVec.y = InVec1.z * InVec2.x - InVec1.x * InVec2.z;
-                outVec.z = InVec1.x * InVec2.y - InVec1.y * InVec2.x;
+                outVec.x = inVec1.y * inVec2.z - inVec1.z * inVec2.y;
+                outVec.y = inVec1.z * inVec2.x - inVec1.x * inVec2.z;
+                outVec.z = inVec1.x * inVec2.y - inVec1.y * inVec2.x;
                 return outVec;
             }
 
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::Dot(tVectorIn InVec1, tVectorIn InVec2)
+            typename VectorT::tElement Type<VectorT>::Dot(tVectorIn inVec1, tVectorIn inVec2)
             {
-                return InVec1.e0 * InVec2.e0 + InVec1.e1 * InVec2.e1 + InVec1.e2 * InVec2.e2;
+                return inVec1.e0 * inVec2.e0 + inVec1.e1 * inVec2.e1 + inVec1.e2 * inVec2.e2;
             }
 
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::AbsDot(tVectorIn InVec1, tVectorIn InVec2)
+            typename VectorT::tElement Type<VectorT>::AbsDot(tVectorIn inVec1, tVectorIn inVec2)
             {
-                return ::Wiz::Abs(InVec1.e0 * InVec2.e0) + ::Wiz::Abs(InVec1.e1 * InVec2.e1) + ::Wiz::Abs(InVec1.e2 * InVec2.e2);
+                return ::Wiz::Abs(inVec1.e0 * inVec2.e0) + ::Wiz::Abs(inVec1.e1 * inVec2.e1) + ::Wiz::Abs(inVec1.e2 * inVec2.e2);
             }
 
             //////////////////////////////////////////////////////////////////////////
@@ -255,24 +255,24 @@ namespace Wiz
             }
 
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::Normalize(tVectorOut outVec, tVectorIn InVec)
+            typename VectorT::tElement Type<VectorT>::Normalize(tVectorOut outVec, tVectorIn inVec)
             {
-                tElement const lLen = Length(InVec);
+                tElement const lLen = Length(inVec);
 
                 // Will also work for zero-sized Vectors, but will change nothing
                 if (::Wiz::Nearly::GreaterZero(lLen))
                 {
                     tElement const lRecipLen = 1 / lLen;
 
-                    outVec.e0 = InVec.e0 * lRecipLen;
-                    outVec.e1 = InVec.e1 * lRecipLen;
-                    outVec.e2 = InVec.e2 * lRecipLen;
+                    outVec.e0 = inVec.e0 * lRecipLen;
+                    outVec.e1 = inVec.e1 * lRecipLen;
+                    outVec.e2 = inVec.e2 * lRecipLen;
                 }
                 else
                 {
-                    outVec.e0 = InVec.e0;
-                    outVec.e1 = InVec.e1;
-                    outVec.e2 = InVec.e2;
+                    outVec.e0 = inVec.e0;
+                    outVec.e1 = inVec.e1;
+                    outVec.e2 = inVec.e2;
                 }
 
                 return lLen;
@@ -280,62 +280,62 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::SqrLen(tVectorIn InVec)
+            typename VectorT::tElement Type<VectorT>::SqrLen(tVectorIn inVec)
             {
-                return InVec.e0 * InVec.e0 + InVec.e1 * InVec.e1 + InVec.e2 * InVec.e2;
+                return inVec.e0 * inVec.e0 + inVec.e1 * inVec.e1 + inVec.e2 * inVec.e2;
             }
             //////////////////////////////////////////////////////////////////////////
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::Length(tVectorIn InVec)
+            typename VectorT::tElement Type<VectorT>::Length(tVectorIn inVec)
             {
-                return ::Wiz::Sqrt(SqrLen(InVec));
+                return ::Wiz::Sqrt(SqrLen(inVec));
             }
             //////////////////////////////////////////////////////////////////////////
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::RecipLen(tVectorIn InVec)
+            typename VectorT::tElement Type<VectorT>::RecipLen(tVectorIn inVec)
             {
-                return ::Wiz::RecipSqrt(SqrLen(InVec));
+                return ::Wiz::RecipSqrt(SqrLen(inVec));
             }
             //////////////////////////////////////////////////////////////////////////
 
 
             //////////////////////////////////////////////////////////////////////////
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::Distance(tVectorIn InVec1, tVectorIn InVec2)
+            typename VectorT::tElement Type<VectorT>::Distance(tVectorIn inVec1, tVectorIn inVec2)
             {
-                return ::Wiz::Sqrt(SqrDist(InVec1, InVec2));
+                return ::Wiz::Sqrt(SqrDist(inVec1, inVec2));
             }
             template<class VectorT>
-            typename VectorT::tElement Type<VectorT>::SqrDist(tVectorIn InVec1, tVectorIn InVec2)
+            typename VectorT::tElement Type<VectorT>::SqrDist(tVectorIn inVec1, tVectorIn inVec2)
             {
                 tVector lVec;
-                Subtract(lVec, InVec1, InVec2);
+                Subtract(lVec, inVec1, inVec2);
                 return SqrLen(lVec);
             }
             ////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////
             template<class VectorT>
-            ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteEqual(tVectorIn InVec1, tVectorIn InVec2)
+            ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteEqual(tVectorIn inVec1, tVectorIn inVec2)
             {
-                return ::Wiz::Absolute::IsEqual(InVec1.e0, InVec2.e0) && ::Wiz::Absolute::IsEqual(InVec1.e1, InVec2.e1) && ::Wiz::Absolute::IsEqual(InVec1.e2, InVec2.e2);
+                return ::Wiz::Absolute::IsEqual(inVec1.e0, inVec2.e0) && ::Wiz::Absolute::IsEqual(inVec1.e1, inVec2.e1) && ::Wiz::Absolute::IsEqual(inVec1.e2, inVec2.e2);
             }
 
             template<class VectorT>
-            ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteZero(tVectorIn InVec)
+            ::Wiz::Bool::Type Type<VectorT>::IsAbsoluteZero(tVectorIn inVec)
             {
-                return ::Wiz::Absolute::IsZero(InVec.e0) && ::Wiz::Absolute::IsZero(InVec.e1) && ::Wiz::Absolute::IsZero(InVec.e2);
+                return ::Wiz::Absolute::IsZero(inVec.e0) && ::Wiz::Absolute::IsZero(inVec.e1) && ::Wiz::Absolute::IsZero(inVec.e2);
             }
 
             template<class VectorT>
-            ::Wiz::Bool::Type Type<VectorT>::IsNearlyZero(tVectorIn InVec, tElementIn InTolerance)
+            ::Wiz::Bool::Type Type<VectorT>::IsNearlyZero(tVectorIn inVec, tElementIn inTolerance)
             {
-                WIZ_ASSERT(::Wiz::Absolute::GreaterZero(InTolerance));
-                return ::Wiz::Absolute::InRange(InVec.e0, -InTolerance, InTolerance) && ::Wiz::Absolute::InRange(InVec.e1, -InTolerance, InTolerance) && ::Wiz::Absolute::InRange(InVec.e2, -InTolerance, InTolerance);
+                WIZ_ASSERT(::Wiz::Absolute::GreaterZero(inTolerance));
+                return ::Wiz::Absolute::inRange(inVec.e0, -inTolerance, inTolerance) && ::Wiz::Absolute::inRange(inVec.e1, -inTolerance, inTolerance) && ::Wiz::Absolute::inRange(inVec.e2, -inTolerance, inTolerance);
             }
             ////////////////////////////////////////////////////////////////
         } /// end of namespace Method

@@ -52,36 +52,36 @@ namespace Wiz
                 WIZ_DECLARE_IN_STDCLASS(tThis);
 
             public:
-                tIndex AddString(tStringRefConst InStr, tIndex InReservedIndex = eNonReservedIndex)
+                tIndex AddString(tStringRefConst inStr, tIndex inReservedIndex = eNonReservedIndex)
                 {
-                    tIndexConst HashCode = CalcHashCode(InStr);
+                    tIndexConst HashCode = CalcHashCode(inStr);
 
                     tIndex FndIndex;
 
-                    if (FindString(InStr, HashCode, FndIndex))
+                    if (FindString(inStr, HashCode, FndIndex))
                     {
                         return FndIndex;
                     }
 
-                    if (InReservedIndex < eReservedNum)
+                    if (inReservedIndex < eReservedNum)
                     {
-                        if (AddReserved(InStr, HashCode, InReservedIndex))
+                        if (AddReserved(inStr, HashCode, inReservedIndex))
                         {
-                            return InReservedIndex;
+                            return inReservedIndex;
                         }
 
                         /// Conflict
                         return ::std::numeric_limits<tIndex>::(max)();
                     }
 
-                    return AddNonReserved(InStr, HashCode);
+                    return AddNonReserved(inStr, HashCode);
                 }
 
-                Bool::Type FindString(tStringRefConst InStr, tIndexOut outIdx)
+                Bool::Type FindString(tStringRefConst inStr, tIndexOut outIdx)
                 {
-                    tIndexConst HashCode = CalcHashCode(InStr);
+                    tIndexConst HashCode = CalcHashCode(inStr);
 
-                    if (FindString(InStr, HashCode, outIdx))
+                    if (FindString(inStr, HashCode, outIdx))
                     {
                         return Bool::True;
                     }
@@ -90,54 +90,54 @@ namespace Wiz
                 }
 
 
-                Bool::Type TestString(tStringRefConst InStr)
+                Bool::Type TestString(tStringRefConst inStr)
                 {
                     tIndex DummyIdx;
 
-                    return TestString(InStr, DummyIdx);
+                    return TestString(inStr, DummyIdx);
                 }
 
             public:
-                tStringPtrConst GetStringPtr(tIndex InIdx) const
+                tStringPtrConst GetStringPtr(tIndex inIdx) const
                 {
-                    if (InIdx < eReservedNum)
+                    if (inIdx < eReservedNum)
                     {
-                        return &(m_ReservedStringTab[InIdx]);
+                        return &(m_ReservedStringTab[inIdx]);
                     }
-                    else if (IsValidIndex(InIdx))
+                    else if (IsValidIndex(inIdx))
                     {
-                        return &(m_StringArray[InIdx]);
+                        return &(m_StringArray[inIdx]);
                     }
 
                     return WIZ_NULL;
                 }
 
             public:
-                ::Wiz::Bool::Type IsValidIndex(tIndex InIdx) const
+                ::Wiz::Bool::Type IsValidIndex(tIndex inIdx) const
                 {
                     const tIndex StrArrayLen = m_StringArray.Size();
-                    return InIdx < (StrArrayLen + eReservedNum);
+                    return inIdx < (StrArrayLen + eReservedNum);
                 }
 
             private:
-                ::Wiz::Bool::Type IsValidHashCode(tIndex InHashCode) const
+                ::Wiz::Bool::Type IsValidHashCode(tIndex inHashCode) const
                 {
-                    return (InHashCode >= 0) && (InHashCode < eTotalCapacity);
+                    return (inHashCode >= 0) && (inHashCode < eTotalCapacity);
                 }
 
-                tIndexConst CalcHashCode(tStringRefConst InStr) const
+                tIndexConst CalcHashCode(tStringRefConst inStr) const
                 {
-                    const tIndex iHashCode = tProxy::CalcHashCode(InStr) % eTotalCapacity;
+                    const tIndex iHashCode = tProxy::CalcHashCode(inStr) % eTotalCapacity;
                     return iHashCode;
                 }
 
             private:
 
-                Bool::Type FindString(tStringRefConst InStr, tIndex InHashCode, tIndexOut outIndex)
+                Bool::Type FindString(tStringRefConst inStr, tIndex inHashCode, tIndexOut outIndex)
                 {
-                    WIZ_ASSERT(IsValidHashCode(InHashCode));
+                    WIZ_ASSERT(IsValidHashCode(inHashCode));
 
-                    tIndexArray&                    HashIndexArray = m_HashTab[InHashCode];
+                    tIndexArray&                    HashIndexArray = m_HashTab[inHashCode];
 
                     tIndexArray::tIterator          Itr = HashIndexArray.Begin();
                     tIndexArray::tIteratorConst     ItrEnd = HashIndexArray.End();
@@ -147,13 +147,13 @@ namespace Wiz
 
                         if (StrIdx < eReservedNum)
                         {
-                            if (InStr == m_ReservedStringTab[StrIdx])
+                            if (inStr == m_ReservedStringTab[StrIdx])
                             {
                                 outIndex = StrIdx;
                                 return Bool::True;
                             }
                         }
-                        else if (InStr == m_StringArray[StrIdx - eReservedNum])
+                        else if (inStr == m_StringArray[StrIdx - eReservedNum])
                         {
                             outIndex = StrIdx;
                             return Bool::True;
@@ -163,30 +163,30 @@ namespace Wiz
                     return Bool::False;
                 }
 
-                Bool::Type AddReserved(tStringRefConst InStr, tIndex InHashCode, tIndex InReservedIndex)
+                Bool::Type AddReserved(tStringRefConst inStr, tIndex inHashCode, tIndex inReservedIndex)
                 {
-                    WIZ_ASSERT((InStr.Size() > 0) && IsValidHashCode(InHashCode) && (InReservedIndex < eReservedNum));
+                    WIZ_ASSERT((inStr.Size() > 0) && IsValidHashCode(inHashCode) && (inReservedIndex < eReservedNum));
 
-                    if (m_ReservedStringTab[InReservedIndex].Size() > 0)
+                    if (m_ReservedStringTab[inReservedIndex].Size() > 0)
                     {
                         /// Conflict
                         return Bool::False;
                     }
 
-                    m_ReservedStringTab[InReservedIndex] = InStr;
+                    m_ReservedStringTab[inReservedIndex] = inStr;
 
-                    m_HashTab[InHashCode].PushBack(InReservedIndex);
+                    m_HashTab[inHashCode].PushBack(inReservedIndex);
 
                     return Bool::True;
                 }
 
-                tIndexConst AddNonReserved(tStringRefConst InStr, tIndex InHashCode)
+                tIndexConst AddNonReserved(tStringRefConst inStr, tIndex inHashCode)
                 {
-                    WIZ_ASSERT((InStr.Size() > 0) && IsValidHashCode(InHashCode));
+                    WIZ_ASSERT((inStr.Size() > 0) && IsValidHashCode(inHashCode));
 
                     tIndex const ResultIdx = m_StringArray.Size() + eReservedNum;
-                    m_StringArray.PushBack(InStr);
-                    m_HashTab[InHashCode].PushBack(ResultIdx);
+                    m_StringArray.PushBack(inStr);
+                    m_HashTab[inHashCode].PushBack(ResultIdx);
 
                     return ResultIdx;
                 }

@@ -43,7 +43,7 @@ namespace Wiz
         }
         /// [Min, Max] Close
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type InRange(const T& v, const T& Min, const T& Max)
+        WIZ_INLINE ::Wiz::Bool::Type inRange(const T& v, const T& Min, const T& Max)
         {
             return (Min <= v) && (v <= Max);
         }
@@ -88,9 +88,9 @@ namespace Wiz
     }
     /// [Min, Max] Close
     template<class T>
-    WIZ_INLINE ::Wiz::Bool::Type InRange(const T& v, const T& Min, const T& Max)
+    WIZ_INLINE ::Wiz::Bool::Type inRange(const T& v, const T& Min, const T& Max)
     {
-        return ::Wiz::Absolute::InRange<T>(v, Min, Max);
+        return ::Wiz::Absolute::inRange<T>(v, Min, Max);
     }
     template<class T>
     WIZ_INLINE ::Wiz::Bool::Type outRange(const T& v, const T& Min, const T& Max)
@@ -215,21 +215,21 @@ namespace Wiz
             return ::Wiz::Nearly::GreaterEqualZero(v1 - v2);
         }
 
-        /// InRange [Min, Max] Close
+        /// inRange [Min, Max] Close
         template<class T>
-        WIZ_INLINE ::Wiz::Bool::Type InRange(const T v, const T Min, const T Max)
+        WIZ_INLINE ::Wiz::Bool::Type inRange(const T v, const T Min, const T Max)
         {
-            return ::Wiz::Absolute::InRange<T>(v, Min, Max);
+            return ::Wiz::Absolute::inRange<T>(v, Min, Max);
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type InRange(::Wiz::R32::In v, ::Wiz::R32::In Min, ::Wiz::R32::In Max)
+        WIZ_INLINE ::Wiz::Bool::Type inRange(::Wiz::R32::In v, ::Wiz::R32::In Min, ::Wiz::R32::In Max)
         {
             return (v >= (Min - ::Wiz::R32::Epsilon)) && (v <= (Max + ::Wiz::R32::Epsilon));
         }
 
         template<>
-        WIZ_INLINE ::Wiz::Bool::Type InRange(::Wiz::R64::In v, ::Wiz::R64::In Min, ::Wiz::R64::In Max)
+        WIZ_INLINE ::Wiz::Bool::Type inRange(::Wiz::R64::In v, ::Wiz::R64::In Min, ::Wiz::R64::In Max)
         {
             return (v >= (Min - ::Wiz::R64::Epsilon)) && (v <= (Max + ::Wiz::R64::Epsilon));
         }

@@ -23,7 +23,7 @@ namespace rkk
                 }
 
             public:
-                virtual Bool::type Register(Root::ptr, Name::in InName);
+                virtual Bool::type Register(Root::ptr, Name::in inName);
                 virtual Void::type Unregister();
 
             public:
