@@ -34,11 +34,8 @@ namespace Wiz
 
             {
                 ioVec.e0 += InVec.e0;
-
                 ioVec.e1 += InVec.e1;
-
                 ioVec.e2 += InVec.e2;
-
 
                 return ioVec;
 
@@ -48,11 +45,8 @@ namespace Wiz
 
             {
                 ioVec.e0 += InEle;
-
                 ioVec.e1 += InEle;
-
                 ioVec.e2 += InEle;
-
 
                 return ioVec;
 
@@ -84,9 +78,7 @@ namespace Wiz
 
             {
                 ioVec.e0 -= InVec.e0;
-
                 ioVec.e1 -= InVec.e1;
-
                 ioVec.e2 -= InVec.e2;
 
 
@@ -98,9 +90,7 @@ namespace Wiz
 
             {
                 ioVec.e0 -= InEle;
-
                 ioVec.e1 -= InEle;
-
                 ioVec.e2 -= InEle;
 
 
@@ -134,9 +124,7 @@ namespace Wiz
 
             {
                 ioVec.e0 *= InVec.e0;
-
                 ioVec.e1 *= InVec.e1;
-
                 ioVec.e2 *= InVec.e2;
 
 
@@ -148,9 +136,7 @@ namespace Wiz
 
             {
                 ioVec.e0 *= InEle;
-
                 ioVec.e1 *= InEle;
-
                 ioVec.e2 *= InEle;
 
 
@@ -199,9 +185,7 @@ namespace Wiz
 
             {
                 ioVec.e0 /= InVec.e0;
-
                 ioVec.e1 /= InVec.e1;
-
                 ioVec.e2 /= InVec.e2;
 
 
@@ -217,9 +201,7 @@ namespace Wiz
                     tElement const lRecipEle = 1 / InEle;
 
                     ioVec.e0 *= lRecipEle;
-
                     ioVec.e1 *= lRecipEle;
-
                     ioVec.e2 *= lRecipEle;
 
                 }
@@ -265,11 +247,8 @@ namespace Wiz
                     tElement const lRecipLen = 1 / lLen;
 
                     ioVec.e0 *= lRecipLen;
-
                     ioVec.e1 *= lRecipLen;
-
                     ioVec.e2 *= lRecipLen;
-
                 }
 
                 return lLen;

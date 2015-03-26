@@ -93,20 +93,16 @@ namespace Wiz
             }
 
             WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tElementIn InEle)
-
             {
                 tMethod::AddAssign(ioVec, InEle);
 
                 return ioVec;
-
             }
             WIZ_INLINE friend tThis& operator +=(tThisIO ioVec, tThisIn InVec)
-
             {
                 tMethod::AddAssign(ioVec, InVec);
 
                 return ioVec;
-
             }
             ////////////////////////////////////////////////////////////////
 
@@ -126,20 +122,16 @@ namespace Wiz
             }
 
             WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tElementIn InEle)
-
             {
                 tMethod::SubtractAssign(ioVec, InEle);
 
                 return ioVec;
-
             }
             WIZ_INLINE friend tThis& operator -=(tThisIO ioVec, tThisIn InVec)
-
             {
                 tMethod::SubtractAssign(ioVec, InVec);
 
                 return ioVec;
-
             }
             ////////////////////////////////////////////////////////////////
 
@@ -166,20 +158,16 @@ namespace Wiz
             }
 
             WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tElementIn InEle)
-
             {
                 tMethod::MultiplyAssign(ioVec, InEle);
 
                 return ioVec;
-
             }
             WIZ_INLINE friend tThis& operator *=(tThisIO ioVec, tThisIn InVec)
-
             {
                 tMethod::MultiplyAssign(ioVec, InVec);
 
                 return ioVec;
-
             }
             ////////////////////////////////////////////////////////////////
 
@@ -206,20 +194,16 @@ namespace Wiz
             }
 
             WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tElementIn InEle)
-
             {
                 tMethod::DivideAssign(ioVec, InEle);
 
                 return ioVec;
-
             }
             WIZ_INLINE friend tThis& operator/=(tThisIO ioVec, tThisIn InVec)
-
             {
                 tMethod::DivideAssign(ioVec, InVec);
 
                 return ioVec;
-
             }
             ////////////////////////////////////////////////////////////////
 

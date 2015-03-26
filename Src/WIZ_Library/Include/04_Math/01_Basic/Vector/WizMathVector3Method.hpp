@@ -29,9 +29,7 @@ namespace Wiz
                 WIZ_INLINE static tVector& Add(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
                 WIZ_INLINE static tVector& AddAssign(tVectorIO ioVec, tVectorIn InVec);
-
                 WIZ_INLINE static tVector& AddAssign(tVectorIO ioVec, tElementIn InEle);
-
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
@@ -39,9 +37,7 @@ namespace Wiz
                 WIZ_INLINE static tVector& Subtract(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
                 WIZ_INLINE static tVector& SubtractAssign(tVectorIO ioVec, tVectorIn InVec);
-
                 WIZ_INLINE static tVector& SubtractAssign(tVectorIO ioVec, tElementIn InEle);
-
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
@@ -49,9 +45,7 @@ namespace Wiz
                 WIZ_INLINE static tVector& Multiply(tVectorOut OutVec, tVectorIn InVec, tElementIn InEle);
 
                 WIZ_INLINE static tVector& MultiplyAssign(tVectorIO ioVec, tVectorIn InVec);
-
                 WIZ_INLINE static tVector& MultiplyAssign(tVectorIO ioVec, tElementIn InEle);
-
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
@@ -60,9 +54,7 @@ namespace Wiz
                 WIZ_INLINE static tVector& Divide(tVectorOut OutVec, tElementIn InEle, tVectorIn InVec);
 
                 WIZ_INLINE static tVector& DivideAssign(tVectorIO ioVec, tVectorIn InVec);
-
                 WIZ_INLINE static tVector& DivideAssign(tVectorIO ioVec, tElementIn InEle);
-
                 //////////////////////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////////////////////
@@ -71,7 +63,6 @@ namespace Wiz
                 WIZ_INLINE static tElement AbsDot(tVectorIn InVec1, tVectorIn InVec2);
                 //////////////////////////////////////////////////////////////////////////
                 WIZ_INLINE static tElement Normalize(tVectorIO ioVec);
-
                 WIZ_INLINE static tElement Normalize(tVectorOut OutVec, tVectorIn InVec);
                 //////////////////////////////////////////////////////////////////////////
                 WIZ_INLINE static tElement SqrLen(tVectorIn InVec);
