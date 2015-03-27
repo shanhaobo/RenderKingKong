@@ -1,8 +1,7 @@
-#ifndef __WIZ_MATH_ALGEBRA_MATRIX22_COLMAJOR_METHOD_HPP__SHANHAOBO_19800429__
-#define __WIZ_MATH_ALGEBRA_MATRIX22_COLMAJOR_METHOD_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_MATH_MATRIX22_COLMAJOR_METHOD_HPP__SHANHAOBO_19800429__
+#define __WIZ_MATH_MATRIX22_COLMAJOR_METHOD_HPP__SHANHAOBO_19800429__
 
-#include "../Vector2/WizMathAlgebraVector2.hpp"
-//#include "../../Utils/WizMathUtils.hpp"
+#include "../Vector/WizMathVector2.hpp"
 
 namespace Wiz
 {
@@ -21,81 +20,81 @@ namespace Wiz
                     typedef typename tMatrix::tElement                          tElement;
                     typedef ::Wiz::Vector2::Type<tElement>                      tVector2;
                     //////////////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static tMatrix& FromElement(tMatrix& OutMat, const tElement& InEle);
+                    WIZ_INLINE static tMatrix& FromElement(tMatrixOut outMat, tElementIn inEle);
                     ////////////////////////////////////////////////////////////////
                     template<class Matrix22T>
-                    WIZ_INLINE static tMatrix& FromMatrix22(tMatrix& OutMat, const Matrix22T& InMat);
+                    WIZ_INLINE static tMatrix& FromMatrix22(tMatrixOut outMat, const Matrix22T& inMat);
                     template<class Matrix22T>
-                    WIZ_INLINE static Matrix22T& ToMatrix22(Matrix22T& OutMat, const tMatrix& InMat);
+                    WIZ_INLINE static Matrix22T& ToMatrix22(Matrix22T& outMat, tMatrixIn inMat);
 
                     template<class Matrix33T>
-                    WIZ_INLINE static tMatrix& FromMatrix33(tMatrix& OutMat, const Matrix33T& InMat);
+                    WIZ_INLINE static tMatrix& FromMatrix33(tMatrixOut outMat, const Matrix33T& inMat);
                     template<class Matrix33T>
-                    WIZ_INLINE static Matrix33T& ToMatrix33(Matrix33T& OutMat, const tMatrix& InMat);
+                    WIZ_INLINE static Matrix33T& ToMatrix33(Matrix33T& outMat, tMatrixIn inMat);
 
                     template<class Matrix44T>
-                    WIZ_INLINE static tMatrix& FromMatrix44(tMatrix& OutMat, const Matrix44T& InMat);
+                    WIZ_INLINE static tMatrix& FromMatrix44(tMatrixOut outMat, const Matrix44T& inMat);
                     template<class Matrix44T>
-                    WIZ_INLINE static Matrix44T& ToMatrix44(Matrix44T& OutMat, const tMatrix& InMat);
+                    WIZ_INLINE static Matrix44T& ToMatrix44(Matrix44T& outMat, tMatrixIn inMat);
                     ////////////////////////////////////////////////////////////////
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static tMatrix& Add(tMatrix& OutMat, const tMatrix& InMat1, const tMatrix& InMat2);
-                    WIZ_INLINE static tMatrix& AddAssign(tMatrix& InOutMat, const tMatrix& InMat)
+                    WIZ_INLINE static tMatrix& Add(tMatrixOut outMat, tMatrixIn inMat1, tMatrixIn inMat2);
+                    WIZ_INLINE static tMatrix& AddAssign(tMatrixIO ioMat, tMatrixIn inMat)
                     {
-                        return tThis::Add(InOutMat, InOutMat, InMat);
+                        return tThis::Add(ioMat, ioMat, inMat);
                     }
 
-                    WIZ_INLINE static tMatrix& Subtract(tMatrix& OutMat, const tMatrix& InMat1, const tMatrix& InMat2);
-                    WIZ_INLINE static tMatrix& SubtractAssign(tMatrix& InOutMat, const tMatrix& InMat)
+                    WIZ_INLINE static tMatrix& Subtract(tMatrixOut outMat, tMatrixIn inMat1, tMatrixIn inMat2);
+                    WIZ_INLINE static tMatrix& SubtractAssign(tMatrixIO ioMat, tMatrixIn inMat)
                     {
-                        return tThis::Subtract(InOutMat, InOutMat, InMat);
+                        return tThis::Subtract(ioMat, ioMat, inMat);
                     }
 
-                    WIZ_INLINE static tMatrix& Multiply(tMatrix& OutMat, const tMatrix& InMat1, const tElement& InEle);
-                    WIZ_INLINE static tMatrix& MultiplyAssign(tMatrix& InOutMat, const tElement& InEle)
+                    WIZ_INLINE static tMatrix& Multiply(tMatrixOut outMat, tMatrixIn inMat1, tElementIn inEle);
+                    WIZ_INLINE static tMatrix& MultiplyAssign(tMatrixIO ioMat, tElementIn inEle)
                     {
-                        return tThis::Multiply(InOutMat, InOutMat, InEle);
+                        return tThis::Multiply(ioMat, ioMat, inEle);
                     }
 
-                    WIZ_INLINE static tMatrix& Multiply(tMatrix& OutMat, const tMatrix& InMat1, const tMatrix& InMat2);
-                    WIZ_INLINE static tMatrix& MultiplyAssign(tMatrix& InOutMat, const tMatrix& InMat)
+                    WIZ_INLINE static tMatrix& Multiply(tMatrixOut outMat, tMatrixIn inMat1, tMatrixIn inMat2);
+                    WIZ_INLINE static tMatrix& MultiplyAssign(tMatrixIO ioMat, tMatrixIn inMat)
                     {
-                        return tThis::Multiply(InOutMat, InOutMat, InMat);
+                        return tThis::Multiply(ioMat, ioMat, inMat);
                     }
 
-                    WIZ_INLINE static tVector2& Multiply(tVector2& OutVec2, const tVector2& InVec2, const tMatrix& InMat);
-                    WIZ_INLINE static tVector2& MultiplyAssign(tVector2& InOutVec2, const tMatrix& InMat)
+                    WIZ_INLINE static tVector2& Multiply(tVector2& outVec2, const tVector2& inVec2, tMatrixIn inMat);
+                    WIZ_INLINE static tVector2& MultiplyAssign(tVector2& ioVec2, tMatrixIn inMat)
                     {
-                        return tThis::Multiply(InOutVec2, InOutVec2, InMat);
+                        return tThis::Multiply(ioVec2, ioVec2, inMat);
                     }
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static ::Wiz::Bool::Type IsEqual(const tMatrix& InMat1, const tMatrix& InMat2);
-                    WIZ_INLINE static ::Wiz::Bool::Type NotEqual(const tMatrix& InMat1, const tMatrix& InMat2)
+                    WIZ_INLINE static ::Wiz::Bool::Type IsEqual(tMatrixIn inMat1, tMatrixIn inMat2);
+                    WIZ_INLINE static ::Wiz::Bool::Type NotEqual(tMatrixIn inMat1, tMatrixIn inMat2)
                     {
-                        return  tMatrix::IsEqual(InMat1, InMat2) == ::Wiz::Bool::False;
+                        return  tMatrix::IsEqual(inMat1, inMat2) == ::Wiz::Bool::False;
                     }
                     ////////////////////////////////////////////////////////////////
                     WIZ_INLINE static tElement Determinant
                         (
-                        const tElement& E00, const tElement& E10,
-                        const tElement& E01, const tElement& E11
+                        tElementIn E00, tElementIn E10,
+                        tElementIn E01, tElementIn E11
                         );
-                    WIZ_INLINE static tElement Determinant(const tMatrix& InMat)
+                    WIZ_INLINE static tElement Determinant(tMatrixIn inMat)
                     {
-                        return tMatrix::Determinant(InMat.e00, InMat.e10, InMat.e01, InMat.e11);
+                        return tMatrix::Determinant(inMat.e00, inMat.e10, inMat.e01, inMat.e11);
                     }
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static ::Wiz::Bool::Type Invert(tMatrix& OutMat, const tMatrix& InMat);
+                    WIZ_INLINE static ::Wiz::Bool::Type invert(tMatrixOut outMat, tMatrixIn inMat);
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static tMatrix& Transpose(tMatrix& OutMat, const tMatrix& InMat);
-                    WIZ_INLINE static tMatrix& Transpose(tMatrix& InOutMat);
+                    WIZ_INLINE static tMatrix& Transpose(tMatrixOut outMat, tMatrixIn inMat);
+                    WIZ_INLINE static tMatrix& Transpose(tMatrixIO ioMat);
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static tMatrix& Identity(tMatrix& InOutMat);
-                    WIZ_INLINE static tMatrix& Zero(tMatrix& InOutMat);
+                    WIZ_INLINE static tMatrix& Identity(tMatrixIO ioMat);
+                    WIZ_INLINE static tMatrix& Zero(tMatrixIO ioMat);
                     ////////////////////////////////////////////////////////////////
 
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static tMatrix& Negative(tMatrix& OutMat, const tMatrix& InMat);
+                    WIZ_INLINE static tMatrix& Negative(tMatrixOut outMat, tMatrixIn inMat);
                     ////////////////////////////////////////////////////////////////
                 }; /// end of struct Type
             } /// end of namespace Method
@@ -103,6 +102,6 @@ namespace Wiz
     } /// end of namespace Matrix22
 } /// end of namespace Wiz
 
-#include "./WizMathAlgebraMatrix22ColMajorMethod.inl"
+#include "./WizMathMatrix22ColMajorMethod.inl"
 
-#endif /*__WIZ_MATH_ALGEBRA_MATRIX22_COLMAJOR_METHOD_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_MATH_MATRIX22_COLMAJOR_METHOD_HPP__SHANHAOBO_19800429__*/

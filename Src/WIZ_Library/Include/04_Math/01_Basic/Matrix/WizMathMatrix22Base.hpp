@@ -1,5 +1,5 @@
-#ifndef __WIZ_MATH_ALGEBRA_MATRIX22_BASE_HPP__SHANHAOBO_19800429__
-#define __WIZ_MATH_ALGEBRA_MATRIX22_BASE_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_MATH_MATRIX22_BASE_HPP__SHANHAOBO_19800429__
+#define __WIZ_MATH_MATRIX22_BASE_HPP__SHANHAOBO_19800429__
 
 namespace Wiz
 {
@@ -14,7 +14,16 @@ namespace Wiz
                 template<typename ElementT>
                 struct Type
                 {
-                    typedef ElementT                tElement;
+                    typedef ElementT            tElement;
+
+                    typedef tElement const &    tElementIn;
+                    typedef tElement &          tElementOut;
+                    typedef tElementOut         tElementIO;
+
+                    typedef Type<tElement>      tThis;
+                    typedef tThis const &       tThisIn;
+                    typedef tThis &             tThisOut;
+
                     ////////////////////////////////////////////////////////////////
                     enum
                     {
@@ -51,65 +60,65 @@ namespace Wiz
                     Type()
                     {}
                     Type(
-                        const tElement& E00, const tElement& E01,
-                        const tElement& E10, const tElement& E11
+                        tElementIn E00, tElementIn E01,
+                        tElementIn E10, tElementIn E11
                         )
                     {
                         this->e00 = E00; this->e01 = E01;
                         this->e10 = E10; this->e11 = E11;
                     }
-                    Type(const tElement& InEle)
+                    Type(tElementIn inEle)
                     {
-                        this->e00 = InEle; this->e01 = InEle;
-                        this->e10 = InEle; this->e11 = InEle;
+                        this->e00 = inEle; this->e01 = inEle;
+                        this->e10 = inEle; this->e11 = inEle;
                     }
-                    Type(const Type& InMat)
+                    Type(const Type& inMat)
                     {
-                        this->e00 = InMat.e00; this->e01 = InMat.e01;
-                        this->e10 = InMat.e10; this->e11 = InMat.e11;
+                        this->e00 = inMat.e00; this->e01 = inMat.e01;
+                        this->e10 = inMat.e10; this->e11 = inMat.e11;
                     }
                     ////////////////////////////////////////////////////////////////
-                    tElement& GetElement(::Wiz::Int::In Row, ::Wiz::Int::In Col)
+                    tElement& GetElement(I::In Row, I::In Col)
                     {
                         return this->e[Col][Row];
                     }
-                    template<::Wiz::Int::Type Row, ::Wiz::Int::Type Col>
+                    template<I::Type Row, I::Type Col>
                     tElement& GetElement()
                     {
                         return this->e[Col][Row];
                     }
                     ////////////////////////////////////////////////////////////////
-                    ::Wiz::Void::Type GetRow(tElement& OutX, tElement& OutY, ::Wiz::UInt::In Row)
+                    ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, U::In Row)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
-                        OutX = this->GetElement(Row, 0);
-                        OutY = this->GetElement(Row, 1);
+                        outX = this->GetElement(Row, 0);
+                        outY = this->GetElement(Row, 1);
                     }
-                    ::Wiz::Void::Type GetCol(tElement& OutX, tElement& OutY, ::Wiz::UInt::In Col)
+                    ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, U::In Col)
                     {
                         WIZ_ASSERT(Col < eColCnt);
-                        OutX = this->GetElement(0, Col);
-                        OutY = this->GetElement(1, Col);
+                        outX = this->GetElement(0, Col);
+                        outY = this->GetElement(1, Col);
                     }
 
-                    ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, const tElement& InX, const tElement& InY)
+                    ::Wiz::Void::Type SetRow(U::In Row, tElementIn inX, tElementIn inY)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
-                        this->GetElement(Row, 0) = InX;
-                        this->GetElement(Row, 1) = InY;
+                        this->GetElement(Row, 0) = inX;
+                        this->GetElement(Row, 1) = inY;
                     }
-                    ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, const tElement& InX, const tElement& InY)
+                    ::Wiz::Void::Type SetCol(U::In Col, tElementIn inX, tElementIn inY)
                     {
                         WIZ_ASSERT(Col < eColCnt);
-                        this->GetElement(0, Col) = InX;
-                        this->GetElement(1, Col) = InY;
+                        this->GetElement(0, Col) = inX;
+                        this->GetElement(1, Col) = inY;
                     }
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE ::Wiz::Size::TypeConst GetSizeInByte() const
+                    WIZ_INLINE ::Wiz::Size::TypeC GetSizeInByte() const
                     {
                         return eSize;
                     }
-                    WIZ_INLINE ::Wiz::Size::TypeConst GetElementCount() const
+                    WIZ_INLINE ::Wiz::Size::TypeC GetElementCount() const
                     {
                         return eCount;
                     }
@@ -131,7 +140,16 @@ namespace Wiz
                 template<typename ElementT>
                 struct Type
                 {
-                    typedef ElementT                tElement;
+                    typedef ElementT            tElement;
+
+                    typedef tElement const &    tElementIn;
+                    typedef tElement &          tElementOut;
+                    typedef tElementOut         tElementIO;
+
+                    typedef Type<tElement>      tThis;
+                    typedef tThis const &       tThisIn;
+                    typedef tThis &             tThisOut;
+
                     ////////////////////////////////////////////////////////////////
                     enum
                     {
@@ -168,58 +186,58 @@ namespace Wiz
                     Type()
                     {}
                     Type(
-                        const tElement& E00, const tElement& E10,
-                        const tElement& E01, const tElement& E11
+                        tElementIn E00, tElementIn E10,
+                        tElementIn E01, tElementIn E11
                         )
                     {
                         this->e00 = E00; this->e10 = E10;
                         this->e01 = E01; this->e11 = E11;
                     }
-                    Type(const tElement& InEle)
+                    Type(tElementIn inEle)
                     {
-                        this->e00 = InEle; this->e10 = InEle;
-                        this->e01 = InEle; this->e11 = InEle;
+                        this->e00 = inEle; this->e10 = inEle;
+                        this->e01 = inEle; this->e11 = inEle;
                     }
-                    Type(const Type& InMat)
+                    Type(const Type& inMat)
                     {
-                        this->e00 = InMat.e00; this->e10 = InMat.e10;
-                        this->e01 = InMat.e01; this->e11 = InMat.e11;
+                        this->e00 = inMat.e00; this->e10 = inMat.e10;
+                        this->e01 = inMat.e01; this->e11 = inMat.e11;
                     }
                     ////////////////////////////////////////////////////////////////
-                    tElement& GetElement(::Wiz::Int::In Row, ::Wiz::Int::In Col)
+                    tElement& GetElement(I::In Row, I::In Col)
                     {
                         return this->e[Row][Col];
                     }
-                    template<::Wiz::Int::Type Row, ::Wiz::Int::Type Col>
+                    template<I::Type Row, I::Type Col>
                     tElement& GetElement()
                     {
                         return this->e[Row][Col];
                     }
                     ////////////////////////////////////////////////////////////////
-                    ::Wiz::Void::Type GetRow(tElement& OutX, tElement& OutY, ::Wiz::UInt::In Row)
+                    ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, U::In Row)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
-                        OutX = this->GetElement(Row, 0);
-                        OutY = this->GetElement(Row, 1);
+                        outX = this->GetElement(Row, 0);
+                        outY = this->GetElement(Row, 1);
                     }
-                    ::Wiz::Void::Type GetCol(tElement& OutX, tElement& OutY, ::Wiz::UInt::In Col)
+                    ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, U::In Col)
                     {
                         WIZ_ASSERT(Col < eColCnt);
-                        OutX = this->GetElement(0, Col);
-                        OutY = this->GetElement(1, Col);
+                        outX = this->GetElement(0, Col);
+                        outY = this->GetElement(1, Col);
                     }
 
-                    ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, const tElement& InX, const tElement& InY)
+                    ::Wiz::Void::Type SetRow(U::In Row, tElementIn inX, tElementIn inY)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
-                        this->GetElement(Row, 0) = InX;
-                        this->GetElement(Row, 1) = InY;
+                        this->GetElement(Row, 0) = inX;
+                        this->GetElement(Row, 1) = inY;
                     }
-                    ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, const tElement& InX, const tElement& InY)
+                    ::Wiz::Void::Type SetCol(U::In Col, tElementIn inX, tElementIn inY)
                     {
                         WIZ_ASSERT(Col < eColCnt);
-                        this->GetElement(0, Col) = InX;
-                        this->GetElement(1, Col) = InY;
+                        this->GetElement(0, Col) = inX;
+                        this->GetElement(1, Col) = inY;
                     }
                     ////////////////////////////////////////////////////////////////
                     WIZ_INLINE ::Wiz::Size::TypeConst GetSizeInByte() const
@@ -242,4 +260,4 @@ namespace Wiz
     } /// end of namespace Matrix22
 } /// end of namespace Wiz
 
-#endif /*__WIZ_MATH_ALGEBRA_MATRIX22_BASE_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_MATH_MATRIX22_BASE_HPP__SHANHAOBO_19800429__*/
