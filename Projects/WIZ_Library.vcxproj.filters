@@ -447,6 +447,30 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector4Method.hpp">
       <Filter>Include\04_Math\01_Basic\Vector</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix22.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix22Base.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix22ColMajorMethod.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix22RowMajorMethod.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix33.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix33Base.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix33ColMajorMethod.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix33RowMajorMethod.hpp">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
@@ -457,6 +481,18 @@
     </None>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector4Method.inl">
       <Filter>Include\04_Math\01_Basic\Vector</Filter>
+    </None>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix22ColMajorMethod.inl">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </None>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix22RowMajorMethod.inl">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </None>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix33ColMajorMethod.inl">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
+    </None>
+    <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix33RowMajorMethod.inl">
+      <Filter>Include\04_Math\01_Basic\Matrix</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
