@@ -238,15 +238,15 @@ namespace Wiz
                 template<class MatrixT>
                 typename MatrixT::tElement Type<MatrixT>::Determinant
                     (
-                    tElementIn E00, tElementIn E01, tElementIn E02,
-                    tElementIn E10, tElementIn E11, tElementIn E12,
-                    tElementIn E20, tElementIn E21, tElementIn E22
+                    tElementIn inE00, tElementIn inE01, tElementIn inE02,
+                    tElementIn inE10, tElementIn inE11, tElementIn inE12,
+                    tElementIn inE20, tElementIn inE21, tElementIn inE22
                     )
                 {
                     return
-                        E00 * tMatrix22::Determinant(E11, E12, E21, E22) -
-                        E01 * tMatrix22::Determinant(E10, E12, E20, E22) +
-                        E02 * tMatrix22::Determinant(E10, E11, E20, E21);
+                        inE00 * tMatrix22::Determinant(inE11, inE12, inE21, inE22) -
+                        inE01 * tMatrix22::Determinant(inE10, inE12, inE20, inE22) +
+                        inE02 * tMatrix22::Determinant(inE10, inE11, inE20, inE21);
                 }
                 ////////////////////////////////////////////////////////////////
                 template<class MatrixT>

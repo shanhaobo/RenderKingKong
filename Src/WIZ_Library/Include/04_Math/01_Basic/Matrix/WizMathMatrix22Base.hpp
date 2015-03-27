@@ -60,12 +60,12 @@ namespace Wiz
                     Type()
                     {}
                     Type(
-                        tElementIn E00, tElementIn E01,
-                        tElementIn E10, tElementIn E11
+                        tElementIn inE00, tElementIn inE01,
+                        tElementIn inE10, tElementIn inE11
                         )
                     {
-                        this->e00 = E00; this->e01 = E01;
-                        this->e10 = E10; this->e11 = E11;
+                        this->e00 = inE00; this->e01 = inE01;
+                        this->e10 = inE10; this->e11 = inE11;
                     }
                     Type(tElementIn inEle)
                     {
@@ -186,12 +186,12 @@ namespace Wiz
                     Type()
                     {}
                     Type(
-                        tElementIn E00, tElementIn E10,
-                        tElementIn E01, tElementIn E11
+                        tElementIn inE00, tElementIn inE10,
+                        tElementIn inE01, tElementIn inE11
                         )
                     {
-                        this->e00 = E00; this->e10 = E10;
-                        this->e01 = E01; this->e11 = E11;
+                        this->e00 = inE00; this->e10 = inE10;
+                        this->e01 = inE01; this->e11 = inE11;
                     }
                     Type(tElementIn inEle)
                     {

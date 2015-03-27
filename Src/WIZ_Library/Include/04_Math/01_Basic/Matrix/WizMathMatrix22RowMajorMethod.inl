@@ -170,11 +170,11 @@ namespace Wiz
                 template<class MatrixT>
                 typename MatrixT::tElement Type<MatrixT>::Determinant
                     (
-                    tElementIn E00, tElementIn E01,
-                    tElementIn E10, tElementIn E11
+                    tElementIn inE00, tElementIn inE01,
+                    tElementIn inE10, tElementIn inE11
                     )
                 {
-                    return E00 * E11 - E01 * E10;
+                    return inE00 * inE11 - inE01 * inE10;
                 }
                 ////////////////////////////////////////////////////////////////
                 template<class MatrixT>

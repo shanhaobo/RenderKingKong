@@ -61,14 +61,14 @@ namespace Wiz
                     Type()
                     {}
                     Type(
-                        tElementIn E00, tElementIn E01, tElementIn E02,
-                        tElementIn E10, tElementIn E11, tElementIn E12,
-                        tElementIn E20, tElementIn E21, tElementIn E22
+                        tElementIn inE00, tElementIn inE01, tElementIn inE02,
+                        tElementIn inE10, tElementIn inE11, tElementIn inE12,
+                        tElementIn inE20, tElementIn inE21, tElementIn inE22
                         )
                     {
-                        this->e00 = E00; this->e01 = E01; this->e02 = E02; 
-                        this->e10 = E10; this->e11 = E11; this->e12 = E12;
-                        this->e20 = E20; this->e21 = E21; this->e22 = E22;
+                        this->e00 = inE00; this->e01 = inE01; this->e02 = inE02; 
+                        this->e10 = inE10; this->e11 = inE11; this->e12 = inE12;
+                        this->e20 = inE20; this->e21 = inE21; this->e22 = inE22;
                     }
                     Type(tElementIn inEle)
                     {
@@ -222,14 +222,14 @@ namespace Wiz
                     Type()
                     {}
                     Type(
-                        tElementIn E00, tElementIn E10, tElementIn E20,
-                        tElementIn E01, tElementIn E11, tElementIn E21,
-                        tElementIn E02, tElementIn E12, tElementIn E22
+                        tElementIn inE00, tElementIn inE10, tElementIn inE20,
+                        tElementIn inE01, tElementIn inE11, tElementIn inE21,
+                        tElementIn inE02, tElementIn inE12, tElementIn inE22
                         )
                     {
-                        this->e00 = E00; this->e10 = E10; this->e20 = E20;
-                        this->e01 = E01; this->e11 = E11; this->e21 = E21;
-                        this->e02 = E02; this->e12 = E12; this->e22 = E22;
+                        this->e00 = inE00; this->e10 = inE10; this->e20 = inE20;
+                        this->e01 = inE01; this->e11 = inE11; this->e21 = inE21;
+                        this->e02 = inE02; this->e12 = inE12; this->e22 = inE22;
                     }
                     Type(tElementIn inEle)
                     {

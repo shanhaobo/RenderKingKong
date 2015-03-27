@@ -91,9 +91,9 @@ namespace Wiz
                     ////////////////////////////////////////////////////////////////
                     WIZ_INLINE static tElement Determinant
                         (
-                        tElementIn E00, tElementIn E10, tElementIn E20,
-                        tElementIn E01, tElementIn E11, tElementIn E21,
-                        tElementIn E02, tElementIn E12, tElementIn E22
+                        tElementIn inE00, tElementIn inE10, tElementIn inE20,
+                        tElementIn inE01, tElementIn inE11, tElementIn inE21,
+                        tElementIn inE02, tElementIn inE12, tElementIn inE22
                         );
                     WIZ_INLINE static tElement Determinant(tMatrixIn inMat)
                     {

@@ -32,10 +32,10 @@ namespace Wiz
                 Type()
                 {}
                 Type(
-                    tElementIn E00, tElementIn E01, tElementIn E02,
-                    tElementIn E10, tElementIn E11, tElementIn E12,
-                    tElementIn E20, tElementIn E21, tElementIn E22
-                    ) : tSuper(E00, E01, E02,E10, E11, E12, E20, E21, E22)
+                    tElementIn inE00, tElementIn inE01, tElementIn inE02,
+                    tElementIn inE10, tElementIn inE11, tElementIn inE12,
+                    tElementIn inE20, tElementIn inE21, tElementIn inE22
+                    ) : tSuper(inE00, inE01, inE02,inE10, inE11, inE12, inE20, inE21, inE22)
                 {}
                 explicit Type(tElementIn inEle) : tSuper(inEle)
                 {}
@@ -234,10 +234,10 @@ namespace Wiz
                 Type()
                 {}
                 Type(
-                    tElementIn E00, tElementIn E10, tElementIn E20,
-                    tElementIn E01, tElementIn E11, tElementIn E21,
-                    tElementIn E02, tElementIn E12, tElementIn E22
-                    ) : tSuper(E00, E10, E20, E01, E11, E21, E02, E12, E22)
+                    tElementIn inE00, tElementIn inE10, tElementIn inE20,
+                    tElementIn inE01, tElementIn inE11, tElementIn inE21,
+                    tElementIn inE02, tElementIn inE12, tElementIn inE22
+                    ) : tSuper(inE00, inE10, inE20, inE01, inE11, inE21, inE02, inE12, inE22)
                 {}
                 Type(tElementIn inEle) : tSuper(inEle)
                 {}
