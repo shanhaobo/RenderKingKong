@@ -1,5 +1,5 @@
-#include "../../include/RenderFramework/Renderer.hpp"
-#include "../../include/RenderFramework/Plugin_RenderDeviceLayer.hpp"
+#include "../../include/RenderFramework/RKKRenderer.hpp"
+#include "../../include/RenderFramework/RKKPlugin_RenderDeviceLayer.hpp"
 
 namespace rkk
 {

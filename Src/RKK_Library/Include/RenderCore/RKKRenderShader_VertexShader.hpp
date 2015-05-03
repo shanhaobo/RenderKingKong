@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_RENDERSHADER_VERTEXSHADER_HPP__
 #define __RENDERKINGKONG_RENDERSHADER_VERTEXSHADER_HPP__
 
-#include "RenderShader.hpp"
+#include "RKKRenderShader.hpp"
 
 namespace rkk
 {

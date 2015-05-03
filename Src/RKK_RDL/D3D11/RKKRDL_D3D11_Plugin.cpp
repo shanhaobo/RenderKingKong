@@ -1,6 +1,7 @@
-#include "../../RKK_Library/include/RenderFramework/Plugin.hpp"
+#include "../../RKK_Library/include/RenderFramework/RKKPlugin.hpp"
+#include "../../RKK_Library/include/RenderFramework/RKKPlugin_RenderDeviceLayer.hpp"
 
-#include "./RDL_D3D11.hpp"
+#include "./RKKRDL_D3D11.hpp"
 
 namespace rkk
 {
@@ -16,30 +17,30 @@ namespace rkk
                     typedef ::rkk::Plugin::RenderDeviceLayer::type tSuper;
 
                 public:
-                    type() : tSuper(), m_D3D11RDLPtr(RKK_NULLPTR)
+                    type() : tSuper(), m_D3D11RDLPtr(WMS_NULLPTR)
                     {
 
                     }
 
                 public:
 
-                    virtual RenderDeviceLayer::ptr CreateRDL()
+                    virtual ::rkk::RenderDeviceLayer::ptr CreateRDL()
                     {
                         /// TODO Create RDL;
 
-                        m_D3D11RDLPtr = RKK_NEW RenderDeviceLayer::D3D11::type;
+                        m_D3D11RDLPtr = WMS_NEW ::rkk::RenderDeviceLayer::D3D11::type;
 
                         return m_D3D11RDLPtr;
                     }
 
-                    virtual ::wms::Void::type DestroyRDL(RenderDeviceLayer::ptr inRDLPtr)
+                    virtual ::wms::Void::type DestroyRDL(::rkk::RenderDeviceLayer::ptr inRDLPtr)
                     {
                         if (inRDLPtr == m_D3D11RDLPtr)
                         {
                             /// TODO Destroy RDL
                         }
 
-                        m_D3D11RDLPtr = RKK_NULLPTR;
+                        m_D3D11RDLPtr = WMS_NULLPTR;
                     }
 
                 protected:

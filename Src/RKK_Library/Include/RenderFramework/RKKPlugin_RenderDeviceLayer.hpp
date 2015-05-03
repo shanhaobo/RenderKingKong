@@ -1,9 +1,9 @@
 #ifndef __RENDERKINGKONG_PLUGIN_RENDERDEVICELAYER_HPP__
 #define __RENDERKINGKONG_PLUGIN_RENDERDEVICELAYER_HPP__
 
-#include "../RenderDeviceLayer/RenderDeviceLayer.hpp"
+#include "../RenderDeviceLayer/RKKRenderDeviceLayer.hpp"
 
-#include "./Plugin.hpp"
+#include "./RKKPlugin.hpp"
 
 namespace rkk
 {

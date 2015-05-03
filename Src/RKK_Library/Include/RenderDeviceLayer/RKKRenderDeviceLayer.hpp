@@ -2,7 +2,7 @@
 #define __RENDERKINGKONG_RENDERDEVICELAYER_HPP__
 
 #include "../Core/RKKCore.hpp"
-#include "../RenderCore/RenderCore.hpp"
+#include "../RenderCore/RKKRenderCore.hpp"
 
 namespace rkk
 {
@@ -20,7 +20,7 @@ namespace rkk
         public:
 #           undef RKK_RDL_METHOD
 #           define RKK_RDL_METHOD(MPRet, MPName, MPParam)     virtual MPRet MPName MPParam = 0
-#               include "RenderDeviceLayerMethod.hpp"
+#               include "RKKRenderDeviceLayerMethod.hpp"
 #           undef RKK_RDL_METHOD
         };
         WMS_DECLARE_PTR(type);

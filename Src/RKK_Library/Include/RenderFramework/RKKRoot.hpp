@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_ROOT_HPP__
 #define __RENDERKINGKONG_ROOT_HPP__
 
-#include "./Renderer.hpp"
+#include "./RKKRenderer.hpp"
 
 namespace rkk
 {

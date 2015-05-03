@@ -1,8 +1,8 @@
-#include "../../include/RenderFramework/RenderPass.hpp"
+#include "../../include/RenderCore/RKKRenderShader.hpp"
 
 namespace rkk
 {
-    namespace RenderPass
+    namespace RenderShader
     {
         type::type()
         {
@@ -11,5 +11,5 @@ namespace rkk
         type::~type()
         {
         }
-    } /// namespace RenderPass
+    } /// namespace RenderShader
 } /// namespace rkk

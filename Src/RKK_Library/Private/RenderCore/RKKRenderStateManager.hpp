@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_RENDERSTATE_MANAGER_HPP__
 #define __RENDERKINGKONG_RENDERSTATE_MANAGER_HPP__
 
-#include "../../include/RenderCore/RenderState.hpp"
+#include "../../include/RenderCore/RKKRenderState.hpp"
 
 namespace rkk
 {

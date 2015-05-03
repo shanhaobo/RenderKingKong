@@ -9,39 +9,45 @@ namespace wms
 {
     namespace EWMS_OBJ_CAT
     {
-        WIZ_ACD(eROC_General);
-        WIZ_ACD(eROC_Geometry);
-        WIZ_ACD(eROC_Animation);
-        WIZ_ACD(eROC_Resource);
-        WIZ_ACD(eROC_RDL);
+        WIZ_ACD(eWOC_General);
+        WIZ_ACD(eWOC_Geometry);
+        WIZ_ACD(eWOC_Animation);
+        WIZ_ACD(eWOC_Resource);
+        WIZ_ACD(eWOC_RDL);
+        WIZ_ACD(eWOC_Component);
     } /// end of namespace EWMS_OBJ_CAT
 
     namespace Allocator
     {
         namespace General
         {
-            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eROC_General>::Type     type;
+            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_General>::Type     type;
         } /// end of namespace General
 
         namespace Geometry
         {
-            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eROC_Geometry>::Type    type;
+            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_Geometry>::Type    type;
         } /// end of namespace Geometry
 
         namespace Animation
         {
-            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eROC_Animation>::Type   type;
+            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_Animation>::Type   type;
         } /// end of namespace Animation
 
         namespace Resource
         {
-            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eROC_Resource>::Type    type;
+            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_Resource>::Type    type;
         } /// end of namespace Texture
 
         namespace RDL
         {
-            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eROC_RDL>::Type         type;
+            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_RDL>::Type         type;
         } /// end of namespace RDL
+
+        namespace Cmpnt
+        {
+            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_Component>::Type   type;
+        } /// end of namespace Cmpnt
     } /// end of namespace Allocator
 } /// end of namespace wms
 

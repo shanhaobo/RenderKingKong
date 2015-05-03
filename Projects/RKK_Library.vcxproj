@@ -10,6 +10,48 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescClear.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescMultiSample.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescRenderTarget.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumBlend.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumComparison.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumMultiSample.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumPixelFormat.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumStencil.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderCore.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_PixelShader.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_VertexShader.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderState.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderTarget.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayer.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayerMethod.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKPlugin.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKPlugin_RenderDeviceLayer.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderer.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderFlow.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderPass.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRoot.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderStateManager.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader_PixelShader.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader_VertexShader.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderState.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderStateManager.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderTarget.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RKKRenderDeviceLayer.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKPlugin.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKPlugin_RenderDeviceLayer.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderer.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderFlow.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderPass.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRoot.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D845A969-0CF5-4225-935B-AB0E3A0AD188}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -77,48 +119,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescClear.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescMultiSample.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescRenderTarget.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumBlend.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumComparison.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumMultiSample.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumPixelFormat.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumStencil.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderCore.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_PixelShader.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_VertexShader.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderState.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderTarget.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayer.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayerMethod.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin_RenderDeviceLayer.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Renderer.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderFlow.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderPass.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRoot.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader_PixelShader.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader_VertexShader.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderState.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderTarget.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin_RenderDeviceLayer.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Renderer.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderFlow.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderPass.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRoot.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

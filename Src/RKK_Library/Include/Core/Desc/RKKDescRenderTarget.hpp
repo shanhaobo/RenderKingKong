@@ -3,8 +3,8 @@
 
 #include "../../../WMS_Base/Include/WMSBase.hpp"
 
-#include "./CoreDescRenderTarget.hpp"
-#include "./CoreDescClear.hpp"
+#include "./RKKDescRenderTarget.hpp"
+#include "./RKKDescClear.hpp"
 
 namespace rkk
 {

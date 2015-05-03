@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_RENDERFLOW_HPP__
 #define __RENDERKINGKONG_RENDERFLOW_HPP__
 
-#include "RenderPass.hpp"
+#include "RKKRenderPass.hpp"
 
 namespace rkk
 {

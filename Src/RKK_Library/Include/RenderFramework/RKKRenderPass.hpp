@@ -1,10 +1,10 @@
 #ifndef __RENDERKINGKONG_RENDERPASS_HPP__
 #define __RENDERKINGKONG_RENDERPASS_HPP__
 
-#include "../RenderCore/RenderState.hpp"
+#include "../RenderCore/RKKRenderState.hpp"
 
-#include "../RenderCore/RenderShader_PixelShader.hpp"
-#include "../RenderCore/RenderShader_VertexShader.hpp"
+#include "../RenderCore/RKKRenderShader_PixelShader.hpp"
+#include "../RenderCore/RKKRenderShader_VertexShader.hpp"
 
 namespace rkk
 {

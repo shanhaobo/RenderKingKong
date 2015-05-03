@@ -1,4 +1,4 @@
-#include "../../include/RenderFramework/Plugin.hpp"
+#include "../../include/RenderFramework/RKKPlugin.hpp"
 
 namespace rkk
 {

@@ -3,7 +3,7 @@
 
 #include "../../../WMS_Base/Include/WMSType.hpp"
 
-#include "../Enum/CoreEnumMultiSample.hpp"
+#include "../Enum/RKKEnumMultiSample.hpp"
 
 namespace rkk
 {

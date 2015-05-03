@@ -1,11 +1,11 @@
 #ifndef __RENDERKINGKONG_RENDERER_HPP__
 #define __RENDERKINGKONG_RENDERER_HPP__
 
-#include "../RenderDeviceLayer/RenderDeviceLayer.hpp"
+#include "../RenderDeviceLayer/RKKRenderDeviceLayer.hpp"
 
-#include "./Plugin_RenderDeviceLayer.hpp"
+#include "./RKKPlugin_RenderDeviceLayer.hpp"
 
-#include "./RenderFlow.hpp"
+#include "./RKKRenderFlow.hpp"
 
 namespace rkk
 {

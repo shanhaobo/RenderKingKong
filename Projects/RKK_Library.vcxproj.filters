@@ -1,124 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader.cpp">
-      <Filter>Private\RenderCore</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader_PixelShader.cpp">
-      <Filter>Private\RenderCore</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderShader_VertexShader.cpp">
-      <Filter>Private\RenderCore</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.cpp">
-      <Filter>Private\RenderCore</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderTarget.cpp">
-      <Filter>Private\RenderCore</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderFlow.cpp">
-      <Filter>Private\RenderFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderPass.cpp">
-      <Filter>Private\RenderFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Renderer.cpp">
-      <Filter>Private\RenderFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RenderDeviceLayer.cpp">
-      <Filter>Private\RenderDeviceLayer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderState.cpp">
-      <Filter>Private\RenderCore</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin_RenderDeviceLayer.cpp">
-      <Filter>Private\RenderFramework\Plugin</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin.cpp">
-      <Filter>Private\RenderFramework\Plugin</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRoot.cpp">
-      <Filter>Private\RenderFramework</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderTarget.hpp">
-      <Filter>Include\RenderCore</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_VertexShader.hpp">
-      <Filter>Include\RenderCore</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_PixelShader.hpp">
-      <Filter>Include\RenderCore</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderCore.hpp">
-      <Filter>Include\RenderCore</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader.hpp">
-      <Filter>Include\RenderCore</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Renderer.hpp">
-      <Filter>Include\RenderFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderFlow.hpp">
-      <Filter>Include\RenderFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderPass.hpp">
-      <Filter>Include\RenderFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayerMethod.hpp">
-      <Filter>Include\RenderDeviceLayer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayer.hpp">
-      <Filter>Include\RenderDeviceLayer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumPixelFormat.hpp">
-      <Filter>Include\Core\Enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescRenderTarget.hpp">
-      <Filter>Include\Core\Desc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumBlend.hpp">
-      <Filter>Include\Core\Enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumComparison.hpp">
-      <Filter>Include\Core\Enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumStencil.hpp">
-      <Filter>Include\Core\Enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderState.hpp">
-      <Filter>Include\RenderCore</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.hpp">
-      <Filter>Private\RenderCore</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescClear.hpp">
-      <Filter>Include\Core\Desc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescMultiSample.hpp">
-      <Filter>Include\Core\Desc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumMultiSample.hpp">
-      <Filter>Include\Core\Enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp">
-      <Filter>Include\RenderFramework\Plugin</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin_RenderDeviceLayer.hpp">
-      <Filter>Include\RenderFramework\Plugin</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp">
-      <Filter>Include\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp">
-      <Filter>Include\RenderFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRoot.hpp">
-      <Filter>Include\RenderFramework</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Include">
       <UniqueIdentifier>{e9952a41-3038-4149-bb90-5d2a5cf44aa8}</UniqueIdentifier>
     </Filter>
@@ -161,5 +43,123 @@
     <Filter Include="Private\RenderFramework\Plugin">
       <UniqueIdentifier>{49c6d8e0-582a-4ebe-aea6-13764a240799}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescClear.hpp">
+      <Filter>Include\Core\Desc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescMultiSample.hpp">
+      <Filter>Include\Core\Desc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescRenderTarget.hpp">
+      <Filter>Include\Core\Desc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumBlend.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumComparison.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumMultiSample.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumPixelFormat.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumStencil.hpp">
+      <Filter>Include\Core\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderCore.hpp">
+      <Filter>Include\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader.hpp">
+      <Filter>Include\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_PixelShader.hpp">
+      <Filter>Include\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_VertexShader.hpp">
+      <Filter>Include\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderState.hpp">
+      <Filter>Include\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderTarget.hpp">
+      <Filter>Include\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayer.hpp">
+      <Filter>Include\RenderDeviceLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayerMethod.hpp">
+      <Filter>Include\RenderDeviceLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp">
+      <Filter>Include\RenderFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderer.hpp">
+      <Filter>Include\RenderFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderFlow.hpp">
+      <Filter>Include\RenderFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderPass.hpp">
+      <Filter>Include\RenderFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRoot.hpp">
+      <Filter>Include\RenderFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKPlugin_RenderDeviceLayer.hpp">
+      <Filter>Include\RenderFramework\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKPlugin.hpp">
+      <Filter>Include\RenderFramework\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderStateManager.hpp">
+      <Filter>Private\RenderCore</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader.cpp">
+      <Filter>Private\RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader_PixelShader.cpp">
+      <Filter>Private\RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader_VertexShader.cpp">
+      <Filter>Private\RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderState.cpp">
+      <Filter>Private\RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderStateManager.cpp">
+      <Filter>Private\RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderTarget.cpp">
+      <Filter>Private\RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RKKRenderDeviceLayer.cpp">
+      <Filter>Private\RenderDeviceLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderer.cpp">
+      <Filter>Private\RenderFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderFlow.cpp">
+      <Filter>Private\RenderFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderPass.cpp">
+      <Filter>Private\RenderFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRoot.cpp">
+      <Filter>Private\RenderFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKPlugin.cpp">
+      <Filter>Private\RenderFramework\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKPlugin_RenderDeviceLayer.cpp">
+      <Filter>Private\RenderFramework\Plugin</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

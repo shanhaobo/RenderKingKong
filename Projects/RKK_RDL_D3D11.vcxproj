@@ -11,13 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Src\RKK_RDL\D3D11\RDL_D3D11.cpp" />
-    <ClCompile Include="..\Src\RKK_RDL\D3D11\RDL_D3D11_Device.cpp" />
+    <ClCompile Include="..\Src\RKK_RDL\D3D11\RKKRDL_D3D11.cpp" />
+    <ClCompile Include="..\Src\RKK_RDL\D3D11\RKKRDL_D3D11_Device.cpp" />
+    <ClCompile Include="..\Src\RKK_RDL\D3D11\RKKRDL_D3D11_Plugin.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\RKK_RDL\D3D11\RDL_D3D11.hpp" />
-    <ClInclude Include="..\Src\RKK_RDL\D3D11\RDL_D3D11_Device.hpp" />
-    <ClInclude Include="..\Src\RKK_RDL\D3D11\RDL_D3D11_Plugin.cpp" />
+    <ClInclude Include="..\Src\RKK_RDL\D3D11\RKKRDL_D3D11.hpp" />
+    <ClInclude Include="..\Src\RKK_RDL\D3D11\RKKRDL_D3D11_Device.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4D0061F7-577A-4788-996C-C561E563CFBD}</ProjectGuid>

@@ -65,6 +65,11 @@ namespace wms
         {
             WMS_DECLARE(::wms::Obj::type<Allocator::RDL::type>);
         } /// end of namespace RDL
+
+        namespace Cmpnt
+        {
+            WMS_DECLARE(::wms::Obj::type<Allocator::Cmpnt::type>);
+        } /// end of namespace Cmpnt
     } /// end of namespace Obj
 
     //////////////////////////////////////////////////////////////////////////
