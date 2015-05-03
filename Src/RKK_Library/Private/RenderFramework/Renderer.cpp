@@ -13,12 +13,12 @@ namespace rkk
         {
         }
 
-        Bool::type type::RegisterRDL(Name::in inName, Plugin::RenderDeviceLayer::ptr inRDLPluginPtr)
+        ::wms::Bool::type type::RegisterRDL(::wms::Name::in inName, Plugin::RenderDeviceLayer::ptr inRDLPluginPtr)
         {
             return m_mapRDLPlugin.insertUnique(inName, inRDLPluginPtr);
         }
 
-        Void::type type::UnregisterRDL(Name::in inName)
+        ::wms::Void::type type::UnregisterRDL(::wms::Name::in inName)
         {
             DeactiveRDL(inName);
 
@@ -26,21 +26,21 @@ namespace rkk
         }
 
 
-        Plugin::RenderDeviceLayer::ptr type::GetRDL(Name::in inName)
+        Plugin::RenderDeviceLayer::ptr type::GetRDL(::wms::Name::in inName)
         {
-            Plugin::RenderDeviceLayer::ptr RDLPluginPtr = RKK_NULLPTR;
+            Plugin::RenderDeviceLayer::ptr RDLPluginPtr = WMS_NULLPTR;
             m_mapRDLPlugin.TryGet(RDLPluginPtr, inName);
             return RDLPluginPtr;
         }
 
-        Bool::type type::ActiveRDL(Name::in inName)
+        ::wms::Bool::type type::ActiveRDL(::wms::Name::in inName)
         {
             Plugin::RenderDeviceLayer::ptr RDLPluginPtr = GetRDL(inName);
             
             return ActiveRDL(RDLPluginPtr);
         }
 
-        Bool::type type::ActiveRDL(Plugin::RenderDeviceLayer::ptr inRDLPluginPtr)
+        ::wms::Bool::type type::ActiveRDL(Plugin::RenderDeviceLayer::ptr inRDLPluginPtr)
         {
             if (::Wiz::IsValidPtr(inRDLPluginPtr))
             {
@@ -51,14 +51,14 @@ namespace rkk
                     m_ActivedRDLName = inRDLPluginPtr->m_PluginName;
                     m_ActivedRDLPtr = inRDLPluginPtr->m_RDLPtr;
 
-                    return Bool::True;
+                    return ::wms::Bool::True;
                 }
             }
 
-            return Bool::False;
+            return ::wms::Bool::False;
         }
 
-        Void::type type::DeactiveRDL(Name::in inName)
+        ::wms::Void::type type::DeactiveRDL(::wms::Name::in inName)
         {
             Plugin::RenderDeviceLayer::ptr RDLPluginPtr = GetRDL(inName);
             if (::Wiz::IsValidPtr(RDLPluginPtr))
@@ -67,7 +67,7 @@ namespace rkk
             }
         }
 
-        Void::type type::DeactiveRDL(Plugin::RenderDeviceLayer::ptr inRDLPluginPtr)
+        ::wms::Void::type type::DeactiveRDL(Plugin::RenderDeviceLayer::ptr inRDLPluginPtr)
         {
             if (::Wiz::NotValidPtr(m_ActivedRDLPtr) || m_ActivedRDLName.NotValid())
             {
@@ -79,7 +79,7 @@ namespace rkk
                 inRDLPluginPtr->Deactive();
 
                 m_ActivedRDLName.invalid();
-                m_ActivedRDLPtr = WIZ_NULL;
+                m_ActivedRDLPtr = WMS_NULLPTR;
             }
         }
     } /// namespace Renderer

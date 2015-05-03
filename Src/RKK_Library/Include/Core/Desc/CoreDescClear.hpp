@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_DES_CLEAR_HPP__SHANHAOBO_19800429__
 #define __RENDERKINGKONG_DES_CLEAR_HPP__SHANHAOBO_19800429__
 
-#include "../../Base/BaseColor.hpp"
+#include "../../../WMS_Base/Include/WMSColor.hpp"
 
 namespace rkk
 {
@@ -9,7 +9,7 @@ namespace rkk
     {
         namespace Clear
         {
-            RKK_STRUCT
+            WMS_STRUCT
             {
                 //////////////////////////////////////////////////////////////////////////
                 //////////////////////////////////////////////////////////////////////////
@@ -18,24 +18,24 @@ namespace rkk
                 {
                 public:
                     tColorDesc(
-                        Bool::in    Enable      = Bool::False,
-                        Color::in   Value       = Color::Black
+                        ::wms::Bool::in    Enable   = ::wms::Bool::False,
+                        ::wms::Color::in   Value    = ::wms::Color::Black
                         )
                         : m_Enable(Enable)
                         , m_Value(Value)
                     {
 
                     }
-                    Void::type Set(
-                        Bool::in    Enable      = Bool::False,
-                        Color::in   Value       = Color::Black
+                    ::wms::Void::type Set(
+                        ::wms::Bool::in    Enable   = ::wms::Bool::False,
+                        ::wms::Color::in   Value    = ::wms::Color::Black
                         )
                     {
                         m_Enable        = Enable;
                         m_Value         = Value;
                     }
 
-                    Void::type Set(
+                    ::wms::Void::type Set(
                         tColorDesc const &  inDesc
                         )
                     {
@@ -43,32 +43,32 @@ namespace rkk
                         m_Value         = inDesc.m_Value;
                     }
                 public:
-                    Bool::type      m_Enable;
-                    Color::type     m_Value;
+                    ::wms::Bool::type       m_Enable;
+                    ::wms::Color::type      m_Value;
                 };
 
                 struct tDepthDesc
                 {
                 public:
                     tDepthDesc(
-                        Bool::in    Enable      = Bool::False,
-                        F32::in    Value       = 0
+                        ::wms::Bool::in     Enable = ::wms::Bool::False,
+                        ::wms::F32::in      Value = 0
                         )
                         : m_Enable(Enable)
                         , m_Value(Value)
                     {
 
                     }
-                    Void::type Set(
-                        Bool::in    Enable      = Bool::False,
-                        F32::in    Value       = 0
+                    ::wms::Void::type Set(
+                        ::wms::Bool::in    Enable = ::wms::Bool::False,
+                        ::wms::F32::in      Value = 0
                         )
                     {
                         m_Enable        = Enable;
                         m_Value         = Value;
                     }
 
-                    Void::type Set(
+                    ::wms::Void::type Set(
                         tDepthDesc const &  inDesc
                         )
                     {
@@ -76,32 +76,32 @@ namespace rkk
                         m_Value         = inDesc.m_Value;
                     }
                 public:
-                    Bool::type      m_Enable;
-                    F32::type       m_Value;
+                    ::wms::Bool::type      m_Enable;
+                    ::wms::F32::type       m_Value;
                 };
 
                 struct tStencilDesc
                 {
                 public:
                     tStencilDesc(
-                        Bool::in    Enable  = Bool::False,
-                        U::in    Value   = 0
+                        ::wms::Bool::in     Enable  = ::wms::Bool::False,
+                        ::wms::U::in        Value   = 0
                         )
                         : m_Enable(Enable)
                         , m_Value(Value)
                     {
 
                     }
-                    Void::type Set(
-                        Bool::in    Enable  = Bool::False,
-                        U::in    Value   = 0
+                    ::wms::Void::type Set(
+                        ::wms::Bool::in     Enable  = ::wms::Bool::False,
+                        ::wms::U::in        Value   = 0
                         )
                     {
                         m_Enable        = Enable;
                         m_Value         = Value;
                     }
 
-                    Void::type Set(
+                    ::wms::Void::type Set(
                         tStencilDesc const &    inDesc
                         )
                     {
@@ -109,20 +109,20 @@ namespace rkk
                         m_Value         = inDesc.m_Value;
                     }
                 public:
-                    Bool::type      m_Enable;
-                    U::type         m_Value;
+                    ::wms::Bool::type      m_Enable;
+                    ::wms::U::type         m_Value;
                 };
 
                 //////////////////////////////////////////////////////////////////////////
                 //////////////////////////////////////////////////////////////////////////
 
                 type(
-                    Bool::in    ColorEnable      = Bool::False,
-                    Color::in   ColorValue       = Color::Black,
-                    Bool::in    DepthEnable      = Bool::False,
-                    F32::in     DepthValue       = 0,
-                    Bool::in    StencilEnable    = Bool::False,
-                    U::in       StencilValue     = 0
+                    ::wms::Bool::in    ColorEnable      = ::wms::Bool::False,
+                    ::wms::Color::in   ColorValue       = ::wms::Color::Black,
+                    ::wms::Bool::in    DepthEnable      = ::wms::Bool::False,
+                    ::wms::F32::in     DepthValue       = 0,
+                    ::wms::Bool::in    StencilEnable    = ::wms::Bool::False,
+                    ::wms::U::in       StencilValue     = 0
                     )
                     : Color(ColorEnable, ColorValue)
                     , Depth(DepthEnable, DepthValue)

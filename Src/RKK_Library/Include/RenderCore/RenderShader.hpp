@@ -7,7 +7,7 @@ namespace rkk
 {
     namespace RenderShader
     {
-        RKK_CLASS
+        WMS_CLASS
         {
         public:
             type();

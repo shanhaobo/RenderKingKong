@@ -1,13 +1,13 @@
 #ifndef __RENDERKINGKONG_PLUGIN_HPP__
 #define __RENDERKINGKONG_PLUGIN_HPP__
 
-#include "../Base/Base.hpp"
+#include "FrameworkFwdDclr.hpp"
 
 namespace rkk
 {
     namespace Plugin
     {
-        RKK_CLASS : public Obj::Plugin::type
+        WMS_CLASS : public ::wms::Obj::Plugin::type
         {
         public:
             type()
@@ -15,17 +15,17 @@ namespace rkk
             }
 
         public:
-            virtual Bool::type Register(Root::ptr, Name::in);
-            virtual Void::type Unregister() = 0;
+            virtual ::wms::Bool::type Register(Root::ptr, ::wms::Name::in);
+            virtual ::wms::Void::type Unregister() = 0;
 
         public:
-            virtual Bool::type Active() = 0;
-            virtual Void::type Deactive() = 0;
+            virtual ::wms::Bool::type Active() = 0;
+            virtual ::wms::Void::type Deactive() = 0;
 
         protected:
-            Root::ptr   m_RootPtr;
+            Root::ptr           m_RootPtr;
 
-            Name::type  m_PluginName;
+            ::wms::Name::type   m_PluginName;
         };
     } /// namespace Plugin
 } /// namespace rkk

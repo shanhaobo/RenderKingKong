@@ -251,7 +251,7 @@ namespace Wiz
                 }
                 ////////////////////////////////////////////////////////////////
                 template<class MatrixT>
-                ::Wiz::Bool::Type Type<MatrixT>::invert(tMatrixOut outMat, tMatrixIn inMat)
+                ::Wiz::Bool::Type Type<MatrixT>::Invert(tMatrixOut outMat, tMatrixIn inMat)
                 {
                     tElement t;
 

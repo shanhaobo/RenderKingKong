@@ -44,7 +44,7 @@ namespace Wiz
                 //////////////////////////////////////////////////////////
 
                 //////////////////////////////////////////////////////////
-                WIZ_INLINE tThis& Transpose(tThis& outMat) const
+                WIZ_INLINE tThis& Transpose(tThisOut outMat) const
                 {
                     return tMethod::Transpose(outMat, *this);
                 }
@@ -67,47 +67,47 @@ namespace Wiz
                     return tMethod::Determinant(*this);
                 }
                 //////////////////////////////////////////////////////////
-                ::Wiz::Bool::Type invert(tThis& outMat) const
+                ::Wiz::Bool::Type Invert(tThisOut outMat) const
                 {
-                    return tMethod::invert(outMat, *this);
+                    return tMethod::Invert(outMat, *this);
                 }
-                ::Wiz::Bool::Type invert()
+                ::Wiz::Bool::Type Invert()
                 {
-                    return tMethod::invert(*this);
+                    return tMethod::Invert(*this);
                 }
                 //////////////////////////////////////////////////////////
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector3& outVec3, ::Wiz::UInt::In Row) const
+                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector3& outVec3, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outVec3.x, outVec3.y, outVec3.z, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tVector3& outVec3, ::Wiz::UInt::In Col) const
+                WIZ_INLINE ::Wiz::Void::Type GetCol(tVector3& outVec3, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outVec3.x, outVec3.y, outVec3.z, Col);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Row) const
+                WIZ_INLINE ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outX, outY, outZ, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Col) const
+                WIZ_INLINE ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outX, outY, outZ, Col);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, const tVector3& inVec3)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In Row, const tVector3& inVec3)
                 {
                     tSuper::SetRow(Row, inVec3.x, inVec3.y, inVec3.z);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, const tVector3& inVec3)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In Col, const tVector3& inVec3)
                 {
                     tSuper::SetCol(Col, inVec3.x, inVec3.y, inVec3.z);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
                 {
                     tSuper::SetRow(Row, inX, inY, inZ);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
                 {
                     tSuper::SetCol(Col, inX, inY, inZ);
                 }
@@ -246,7 +246,7 @@ namespace Wiz
                 //////////////////////////////////////////////////////////
 
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE tThis& Transpose(tThis& outMat) const
+                WIZ_INLINE tThis& Transpose(tThisOut outMat) const
                 {
                     return tMethod::Transpose(outMat, *this);
                 }
@@ -269,47 +269,47 @@ namespace Wiz
                     return tMethod::Determinant(*this);
                 }
                 ////////////////////////////////////////////////////////////////
-                ::Wiz::Bool::Type invert(tThis& outMat) const
+                ::Wiz::Bool::Type Invert(tThisOut outMat) const
                 {
-                    return tMethod::invert(outMat, *this);
+                    return tMethod::Invert(outMat, *this);
                 }
-                ::Wiz::Bool::Type invert()
+                ::Wiz::Bool::Type Invert()
                 {
-                    return tMethod::invert(*this, *this);
+                    return tMethod::Invert(*this, *this);
                 }
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector3& outVec3, ::Wiz::UInt::In Row) const
+                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector3& outVec3, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outVec3.x, outVec3.y, outVec3.z, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tVector3& outVec3, ::Wiz::UInt::In Col) const
+                WIZ_INLINE ::Wiz::Void::Type GetCol(tVector3& outVec3, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outVec3.x, outVec3.y, outVec3.z, Col);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Row) const
+                WIZ_INLINE ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outX, outY, outZ, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Col) const
+                WIZ_INLINE ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outX, outY, outZ, Col);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, const tVector3& inVec3)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In Row, const tVector3& inVec3)
                 {
                     tSuper::SetRow(Row, inVec3.x, inVec3.y, inVec3.z);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, const tVector3& inVec3)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In Col, const tVector3& inVec3)
                 {
                     tSuper::SetCol(Col, inVec3.x, inVec3.y, inVec3.z);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
                 {
                     tSuper::SetRow(Row, inX, inY, inZ);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
                 {
                     tSuper::SetCol(Col, inX, inY, inZ);
                 }

@@ -57,7 +57,7 @@ namespace Wiz
                     {
                         return tThis::Multiply(ioMat, ioMat, inMat);
                     }
-                    WIZ_INLINE static tVector2& Multiply(tVector2& outVec2, const tVector2& inVec2, tMatrixIn inMat);
+                    WIZ_INLINE static tVector2& Multiply(tVector2Out outVec2, const tVector2& inVec2, tMatrixIn inMat);
                     WIZ_INLINE static tVector2& MultiplyAssign(tVector2& ioVec2, tMatrixIn inMat)
                     {
                         return tThis::Multiply(ioVec2, ioVec2, inMat);
@@ -79,7 +79,7 @@ namespace Wiz
                         return tMatrix::Determinant(inMat.e00, inMat.e01, inMat.e10, inMat.e11);
                     }
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static ::Wiz::Bool::Type invert(tMatrixOut outMat, tMatrixIn inMat);
+                    WIZ_INLINE static ::Wiz::Bool::Type Invert(tMatrixOut outMat, tMatrixIn inMat);
                     ////////////////////////////////////////////////////////////////
                     WIZ_INLINE static tMatrix& Transpose(tMatrixOut outMat, tMatrixIn inMat);
                     WIZ_INLINE static tMatrix& Transpose(tMatrixIO ioMat);

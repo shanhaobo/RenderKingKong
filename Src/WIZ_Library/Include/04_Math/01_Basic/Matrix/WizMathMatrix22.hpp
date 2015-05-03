@@ -16,12 +16,20 @@ namespace Wiz
             template<typename ElementT>
             struct Type : public ::Wiz::Matrix22::RowMajor::Base::Type<ElementT>
             {
-                WIZ_DECLARE_CLASS_THIS(Type);
                 ////////////////////////////////////////////////////////////////
-                typedef tThis                                               tCore;
                 typedef ::Wiz::Matrix22::RowMajor::Base::Type<tElement>     tSuper;
+                typedef tSuper const &                                      tSuperIn;
+
+                typedef Type                                                tThis;
+                typedef tThis const &                                       tThisIn;
+                typedef tThis &                                             tThisOut;
+                typedef tThisOut                                            tThisIO;
+
                 typedef ::Wiz::Matrix22::RowMajor::Method::Type<tThis>      tMethod;
+
                 typedef ::Wiz::Vector2::Type<tElement>                      tVector2;
+                typedef tVector2 const &                                    tVector2In;
+                typedef tVector2 &                                          tVector2Out;
                 ////////////////////////////////////////////////////////////////
                 Type()
                 {}
@@ -29,23 +37,23 @@ namespace Wiz
                 {}
                 Type(tElementIn inEle) : tSuper(inEle)
                 {}
-                Type(const tSuper& inMat) : tSuper(inMat)
+                Type(tSuperIn inMat) : tSuper(inMat)
                 {}
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE tThis& Transpose(tThis& outMat) const
+                WIZ_INLINE tThisOut Transpose(tThisOut outMat) const
                 {
                     return tMethod::Transpose(outMat, *this);
                 }
-                WIZ_INLINE tThis& Transpose()
+                WIZ_INLINE tThisOut Transpose()
                 {
                     return tMethod::Transpose(*this);
                 }
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE tThis& Identity()
+                WIZ_INLINE tThisOut Identity()
                 {
                     return tMethod::Identity(*this);
                 }
-                WIZ_INLINE tThis& Zero()
+                WIZ_INLINE tThisOut Zero()
                 {
                     return tMethod::Zero(*this);
                 }
@@ -55,55 +63,55 @@ namespace Wiz
                     return tMethod::Determinant(*this);
                 }
                 ////////////////////////////////////////////////////////////////
-                ::Wiz::Bool::Type invert(tThis& outMat) const
+                ::Wiz::Bool::Type Invert(tThisOut outMat) const
                 {
-                    return tMethod::invert(outMat, *this);
+                    return tMethod::Invert(outMat, *this);
                 }
-                ::Wiz::Bool::Type invert()
+                ::Wiz::Bool::Type Invert()
                 {
-                    return tMethod::invert(*this, *this);
+                    return tMethod::Invert(*this, *this);
                 }
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector2& outVec2, ::Wiz::UInt::In Row) const
+                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector2Out outVec2, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outVec2.x, outVec2.y, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tVector2& outVec2, ::Wiz::UInt::In Col) const
+                WIZ_INLINE::Wiz::Void::Type GetCol(tVector2Out outVec2, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outVec2.x, outVec2.y, Col);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, ::Wiz::UInt::In Row) const
+                WIZ_INLINE::Wiz::Void::Type GetRow(tElementOut outX, tElementOut outY, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outX, outY, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, ::Wiz::UInt::In Col) const
+                WIZ_INLINE::Wiz::Void::Type GetCol(tElementOut outX, tElementOut outY, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outX, outY, Col);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, const tVector2& inVec2)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In Row, const tVector2& inVec2)
                 {
                     tSuper::SetRow(Row, inVec2.x, inVec2.y);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, const tVector2& inVec2)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In Col, const tVector2& inVec2)
                 {
                     tSuper::SetCol(Col, inVec2.x, inVec2.y);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, tElementIn inX, tElementIn inY)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In inRow, tElementIn inX, tElementIn inY)
                 {
-                    tSuper::SetRow(Row, inX, inY);
+                    tSuper::SetRow(inRow, inX, inY);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, tElementIn inX, tElementIn inY)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In inCol, tElementIn inX, tElementIn inY)
                 {
-                    tSuper::SetCol(Col, inX, inY);
+                    tSuper::SetCol(inCol, inX, inY);
                 }
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE friend tThis operator+(tThisIn inMat1, tThisIn inMat2)
                 {
-                    tThis outMat;
-                    return tMethod::Add(outMat, inMat1, inMat2);
+                    tThis lMat;
+                    return tMethod::Add(lMat, inMat1, inMat2);
                 }
                 WIZ_INLINE friend tThis& operator+=(tThis& ioMat, tThisIn inMat)
                 {
@@ -112,8 +120,8 @@ namespace Wiz
 
                 WIZ_INLINE friend tThis operator-(tThisIn inMat1, tThisIn inMat2)
                 {
-                    tThis outMat;
-                    return tMethod::Subtract(outMat, inMat1, inMat2);
+                    tThis lMat;
+                    return tMethod::Subtract(lMat, inMat1, inMat2);
                 }
                 WIZ_INLINE friend tThis& operator-=(tThis& ioMat, tThisIn inMat)
                 {
@@ -122,18 +130,18 @@ namespace Wiz
 
                 WIZ_INLINE friend tThis operator*(tThisIn inMat1, tThisIn inMat2)
                 {
-                    tThis Mat;
-                    return tMethod::Multiply(Mat, inMat1, inMat2);
+                    tThis lMat;
+                    return tMethod::Multiply(lMat, inMat1, inMat2);
                 }
-                WIZ_INLINE friend tThis& operator*=(tThis& ioMat, tThisIn inMat)
+                WIZ_INLINE friend tThisOut operator*=(tThisIO ioMat, tThisIn inMat)
                 {
                     return tMethod::MultiplyAssign(ioMat, inMat);
                 }
 
                 WIZ_INLINE friend tThis operator*(tThisIn inMat, tElementIn inEle)
                 {
-                    tThis Mat;
-                    return tMethod::Multiply(Mat, inMat, inEle);
+                    tThis lMat;
+                    return tMethod::Multiply(lMat, inMat, inEle);
                 }
                 WIZ_INLINE friend tThis& operator*=(tThis& ioMat, tElementIn inEle)
                 {
@@ -142,8 +150,8 @@ namespace Wiz
 
                 WIZ_INLINE friend tVector2 operator*(const tVector2& inVec, tThisIn inMat)
                 {
-                    tVector2 Vec;
-                    return tMethod::Multiply(Vec, inVec, inMat);
+                    tVector2 lVec;
+                    return tMethod::Multiply(lVec, inVec, inMat);
                 }
                 WIZ_INLINE friend tVector2& operator*=(tVector2& ioVec, tThisIn inMat)
                 {
@@ -169,8 +177,8 @@ namespace Wiz
 
                 WIZ_INLINE tThis operator-() const
                 {
-                    tThis outMat;
-                    return tMethod::Negative(outMat, *this);
+                    tThis lMat;
+                    return tMethod::Negative(lMat, *this);
                 }
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE tThis& operator=(tElementIn inEle)
@@ -205,10 +213,19 @@ namespace Wiz
             {
                 WIZ_DECLARE_CLASS_THIS(Type);
                 ////////////////////////////////////////////////////////////////
-                typedef tThis                                               tCore;
                 typedef ::Wiz::Matrix22::ColMajor::Base::Type<tElement>     tSuper;
+                typedef tSuper const &                                      tSuperIn;
+
+                typedef Type                                                tThis;
+                typedef tThis const &                                       tThisIn;
+                typedef tThis &                                             tThisOut;
+                typedef tThisOut                                            tThisIO;
+
                 typedef ::Wiz::Matrix22::ColMajor::Method::Type<tThis>      tMethod;
+
                 typedef ::Wiz::Vector2::Type<tElement>                      tVector2;
+                typedef tVector2 const &                                    tVector2In;
+                typedef tVector2 &                                          tVector2Out;
                 ////////////////////////////////////////////////////////////////
                 Type()
                 {}
@@ -222,20 +239,20 @@ namespace Wiz
                 Type(const tSuper& inMat) : tSuper(inMat)
                 {}
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE tThis& Transpose(tThis& outMat) const
+                WIZ_INLINE tThisOut Transpose(tThisOut outMat) const
                 {
                     return tMethod::Transpose(outMat, *this);
                 }
-                WIZ_INLINE tThis& Transpose()
+                WIZ_INLINE tThisOut Transpose()
                 {
                     return tMethod::Transpose(*this);
                 }
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE tThis& Identity()
+                WIZ_INLINE tThisOut Identity()
                 {
                     return tMethod::Identity(*this);
                 }
-                WIZ_INLINE tThis& Zero()
+                WIZ_INLINE tThisOut Zero()
                 {
                     return tMethod::Zero(*this);
                 }
@@ -245,48 +262,48 @@ namespace Wiz
                     return tMethod::Determinant(*this);
                 }
                 ////////////////////////////////////////////////////////////////
-                ::Wiz::Bool::Type invert(tThis& outMat) const
+                ::Wiz::Bool::Type Invert(tThisOut outMat) const
                 {
-                    return tMethod::invert(outMat, *this);
+                    return tMethod::Invert(outMat, *this);
                 }
-                ::Wiz::Bool::Type invert()
+                ::Wiz::Bool::Type Invert()
                 {
-                    return tMethod::invert(*this);
+                    return tMethod::Invert(*this);
                 }
                 ////////////////////////////////////////////////////////////////
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector2& outVec, ::Wiz::UInt::In Row) const
+                WIZ_INLINE ::Wiz::Void::Type GetRow(tVector2Out outVec, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outVec.x, outVec.y, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tVector2& outVec, ::Wiz::UInt::In Col) const
+                WIZ_INLINE ::Wiz::Void::Type GetCol(tVector2Out outVec, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outVec.x, outVec.y, Col);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, ::Wiz::UInt::In Row) const
+                WIZ_INLINE ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, ::Wiz::U::In Row) const
                 {
                     tSuper::GetRow(outX, outY, Row);
                 }
-                WIZ_INLINE ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, ::Wiz::UInt::In Col) const
+                WIZ_INLINE ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, ::Wiz::U::In Col) const
                 {
                     tSuper::GetCol(outX, outY, Col);
                 }
 
                 /**/
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, const tVector2& inVec)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In Row, const tVector2& inVec)
                 {
                     tSuper::SetRow(Row, inVec.x, inVec.y);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, const tVector2& inVec)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In Col, const tVector2& inVec)
                 {
                     tSuper::SetCol(Col, inVec.x, inVec.y);
                 }
 
-                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, tElementIn inX, tElementIn inY)
+                WIZ_INLINE ::Wiz::Void::Type SetRow(::Wiz::U::In Row, tElementIn inX, tElementIn inY)
                 {
                     tSuper::SetRow(Row, inX, inY);
                 }
-                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, tElementIn inX, tElementIn inY)
+                WIZ_INLINE ::Wiz::Void::Type SetCol(::Wiz::U::In Col, tElementIn inX, tElementIn inY)
                 {
                     tSuper::SetCol(Col, inX, inY);
                 }
@@ -294,8 +311,8 @@ namespace Wiz
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE friend tThis operator+(tThisIn inMat1, tThisIn inMat2)
                 {
-                    tThis outMat;
-                    return tMethod::Add(outMat, inMat1, inMat2);
+                    tThis lMat;
+                    return tMethod::Add(lMat, inMat1, inMat2);
                 }
                 WIZ_INLINE friend tThis& operator+=(tThis& ioMat, tThisIn inMat)
                 {
@@ -304,8 +321,8 @@ namespace Wiz
 
                 WIZ_INLINE friend tThis operator-(tThisIn inMat1, tThisIn inMat2)
                 {
-                    tThis outMat;
-                    return tMethod::Subtract(outMat, inMat1, inMat2);
+                    tThis lMat;
+                    return tMethod::Subtract(lMat, inMat1, inMat2);
                 }
                 WIZ_INLINE friend tThis& operator-=(tThis& ioMat, tThisIn inMat)
                 {
@@ -314,8 +331,8 @@ namespace Wiz
 
                 WIZ_INLINE friend tThis operator*(tThisIn inMat1, tThisIn inMat2)
                 {
-                    tThis Mat;
-                    return tMethod::Multiply(Mat, inMat1, inMat2);
+                    tThis lMat;
+                    return tMethod::Multiply(lMat, inMat1, inMat2);
                 }
                 WIZ_INLINE friend tThis& operator*=(tThis& ioMat, tThisIn inMat)
                 {
@@ -324,8 +341,8 @@ namespace Wiz
 
                 WIZ_INLINE friend tThis operator*(tThisIn inMat, tElementIn inEle)
                 {
-                    tThis outMat;
-                    return tMethod::Multiply(outMat, inMat, inEle);
+                    tThis lMat;
+                    return tMethod::Multiply(lMat, inMat, inEle);
                 }
                 WIZ_INLINE friend tThis& operator*=(tThis& ioMat, tElementIn inEle)
                 {
@@ -334,8 +351,8 @@ namespace Wiz
 
                 WIZ_INLINE friend tVector2 operator*(tThisIn inMat, const tVector2& inVec)
                 {
-                    tVector2 outVec;
-                    return tMethod::Multiply(outVec, inVec, inMat);
+                    tVector2 lVec;
+                    return tMethod::Multiply(lVec, inVec, inMat);
                 }
                 WIZ_INLINE friend tVector2& operator*=(tVector2& ioVec, tThisIn inMat)
                 {
@@ -359,8 +376,8 @@ namespace Wiz
                 }
                 WIZ_INLINE tThis operator-() const
                 {
-                    tThis outMat;
-                    return tMethod::Negative(outMat, *this);
+                    tThis lMat;
+                    return tMethod::Negative(lMat, *this);
                 }
                 ////////////////////////////////////////////////////////////////
                 WIZ_INLINE tThis& operator=(tElementIn inEle)

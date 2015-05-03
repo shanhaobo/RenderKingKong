@@ -8,15 +8,15 @@ namespace rkk
         {
             namespace Factory
             {
-                Bool::type Create()
+                ::wms::Bool::type Create()
                 {
-                    IDXGIFactory* DXGIFactoryPtr = RKK_NULLPTR;
+                    IDXGIFactory* DXGIFactoryPtr = WMS_NULLPTR;
 
                     ::CreateDXGIFactory(__uuidof(IDXGIFactory), (void**)&DXGIFactoryPtr);
 
                     Factory::init(DXGIFactoryPtr);
 
-                    return Bool::True;
+                    return ::wms::Bool::True;
                 }
             } /// end of namespace Factory
 
@@ -24,8 +24,8 @@ namespace rkk
             {
                 IDXGIAdapter* EnumAdapter(DXGI_ADAPTER_DESC& outAdapterDesc)
                 {
-                    IDXGIAdapter* EnumAdapterPtr = RKK_NULLPTR;
-                    U32::type CurrentAdapter = 0;
+                    IDXGIAdapter* EnumAdapterPtr = WMS_NULLPTR;
+                    ::wms::U32::type CurrentAdapter = 0;
                     while (Factory::instance().EnumAdapters(CurrentAdapter, &EnumAdapterPtr) != DXGI_ERROR_NOT_FOUND)
                     {
                         if (::Wiz::IsValidPtr(EnumAdapterPtr))
@@ -37,16 +37,16 @@ namespace rkk
                         }
                     }
 
-                    return RKK_NULLPTR;
+                    return WMS_NULLPTR;
                 }
 
-                Bool::type Create()
+                ::wms::Bool::type Create()
                 {
-                    ID3D11Device* Direct3DDevicePtr = RKK_NULLPTR;
+                    ID3D11Device* Direct3DDevicePtr = WMS_NULLPTR;
 
                     DXGI_ADAPTER_DESC AdapterDesc = {0};
 
-                    ID3D11DeviceContext* ContextPtr = RKK_NULLPTR;
+                    ID3D11DeviceContext* ContextPtr = WMS_NULLPTR;
 
                     IDXGIAdapter* EnumAdapterPtr = EnumAdapter(AdapterDesc);
                     if (::Wiz::IsValidPtr(EnumAdapterPtr))
@@ -73,9 +73,9 @@ namespace rkk
 
                         Device::init(Direct3DDevicePtr);
 
-                        return Bool::True;
+                        return ::wms::Bool::True;
                     }
-                    return Bool::False;
+                    return ::wms::Bool::False;
                 }
             } /// end of namespace Device
 

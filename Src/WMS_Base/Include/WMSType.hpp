@@ -1,13 +1,13 @@
-#ifndef __RENDERKINGKONG_BASETYPE_HPP__
-#define __RENDERKINGKONG_BASETYPE_HPP__
+#ifndef __WHIMSY_TYPE_HPP__
+#define __WHIMSY_TYPE_HPP__
 
-#include "./RKKPrerequisites.hpp"
+#include "./WMSPrerequisites.hpp"
 
-#include "../../../WIZ_Library/include/Wiz.hpp"
+#include "../../WIZ_Library/include/Wiz.hpp"
 
-#include "./BaseAllocator.hpp"
+#include "./WMSAllocator.hpp"
 
-namespace rkk
+namespace wms
 {
     /////////////////////////////////////////////////////////////
 
@@ -172,27 +172,27 @@ namespace rkk
 
     namespace Str
     {
-        typedef ::Wiz::String::Type<::rkk::Char::type>      type;
-        RKK_DECLARE(type);
+        typedef ::Wiz::String::Type<::wms::Char::type>      type;
+        WMS_DECLARE(type);
     }
 
     namespace WStr
     {
-        typedef ::Wiz::String::Type<::rkk::WChar::type>     type;
-        RKK_DECLARE(type);
+        typedef ::Wiz::String::Type<::wms::WChar::type>     type;
+        WMS_DECLARE(type);
     }
 
     /////////////////////////////////////////////////////////////
 
     namespace Name
     {
-        typedef ::Wiz::HashString::Type< ::rkk::Str::type, ::Wiz::HashString::Proxy::Category::eSDBM, true, 64, 65536, 1024, ::std::allocator<::rkk::Char::type> >   type;
+        typedef ::Wiz::HashString::Type< ::wms::Str::type, ::Wiz::HashString::Proxy::Category::eSDBM, true, 64, 65536, 1024, ::std::allocator<::wms::Char::type> >   type;
 
-        RKK_DECLARE(type);
+        WMS_DECLARE(type);
     }
 
     /////////////////////////////////////////////////////////////
 
-} /// namespace rkk
+} /// namespace wms
 
-#endif /// __RENDERKINGKONG_BASETYPE_HPP__
+#endif /// __WHIMSY_TYPE_HPP__

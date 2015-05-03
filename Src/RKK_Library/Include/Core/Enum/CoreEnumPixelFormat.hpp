@@ -1,7 +1,7 @@
 #ifndef __CORE_ENUM_PIXELFORMAT_HPP__SHANHAOBO_19800429__
 #define __CORE_ENUM_PIXELFORMAT_HPP__SHANHAOBO_19800429__
 
-#include "../../Base/Base.hpp"
+#include "../../../WMS_Base/Include/WMSBase.hpp"
 
 namespace rkk
 {
@@ -155,8 +155,8 @@ namespace rkk
                 /// ========================== ///
                 eMax
             }; /// end of enum Type
-            typedef ::Wiz::Enum<::rkk::Enum::PixelFormat::Type, ::rkk::U8::type>::Type type;
-            RKK_DECLARE(::rkk::Enum::PixelFormat::type);
+            typedef ::Wiz::Enum<::rkk::Enum::PixelFormat::Type, ::wms::U8::type>::Type type;
+            WMS_DECLARE(::rkk::Enum::PixelFormat::type);
         } /// end of namespace PixelFormat
     } /// end of namespace Enum
 } /// end of namespace rkk

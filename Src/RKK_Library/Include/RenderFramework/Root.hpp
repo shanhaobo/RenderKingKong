@@ -7,22 +7,22 @@ namespace rkk
 {
     namespace Root
     {
-        RKK_CLASS
+        class type
         {
         public:
             type(){}
 
         public:
-            Bool::type LoadPlugin(Str::in inPluginFileName, Name::in inPluginName);
-            Void::type UnloadPlugin(Name::in inPluginName);
+            ::wms::Bool::type LoadPlugin(::wms::Str::in inPluginFileName, ::wms::Name::in inPluginName);
+            ::wms::Void::type UnloadPlugin(::wms::Name::in inPluginName);
 
         public:
-            Bool::type ActivePlugin(Name::in inRDLName);
+            ::wms::Bool::type ActivePlugin(::wms::Name::in inRDLName);
 
         protected:
-            Plugin::ptr GetPlugin(Name::in inPluginName);
+            Plugin::ptr GetPlugin(::wms::Name::in inPluginName);
 
-            typedef Map<Name::type, Plugin::ptr>::type tMapPlugin;
+            typedef ::wms::Map<::wms::Name::type, Plugin::ptr>::type tMapPlugin;
             tMapPlugin  m_mapPlugin;
 
         protected:

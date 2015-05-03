@@ -8,7 +8,7 @@ namespace rkk
     {
         namespace RenderDeviceLayer
         {
-            Bool::type type::Register(Root::ptr inRootPtr, Name::in inName)
+            ::wms::Bool::type type::Register(Root::ptr inRootPtr, ::wms::Name::in inName)
             {
                 if (tSuper::Register(inRootPtr, inName))
                 {
@@ -17,15 +17,15 @@ namespace rkk
                     {
                         if (m_RendererPtr->RegisterRDL(inName, this))
                         {
-                            return Bool::True;
+                            return ::wms::Bool::True;
                         }
                     }
                 }
 
-                return Bool::False;
+                return ::wms::Bool::False;
             }
 
-            Void::type type::Unregister()
+            ::wms::Void::type type::Unregister()
             {
                 if (::Wiz::IsValidPtr(m_RendererPtr))
                 {
@@ -42,7 +42,7 @@ namespace rkk
                 tSuper::Unregister();
             }
 
-            Bool::type type::Active()
+            ::wms::Bool::type type::Active()
             {
                 if (tSuper::Active() && ::Wiz::IsValidPtr(m_RendererPtr))
                 {
@@ -57,10 +57,10 @@ namespace rkk
                     }
                 }
 
-                return Bool::False;
+                return ::wms::Bool::False;
             }
 
-            Void::type type::Deactive()
+            ::wms::Void::type type::Deactive()
             {
                 tSuper::Deactive();
             }

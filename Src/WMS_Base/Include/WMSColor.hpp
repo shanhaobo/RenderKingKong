@@ -1,14 +1,14 @@
-#ifndef __RENDERKINGKONG_COLOR_HPP__SHANHAOBO_19800429__
-#define __RENDERKINGKONG_COLOR_HPP__SHANHAOBO_19800429__
+#ifndef __WHIMSY_COLOR_HPP__SHANHAOBO_19800429__
+#define __WHIMSY_COLOR_HPP__SHANHAOBO_19800429__
 
-#include "BaseColorU32.hpp"
+#include "WMSColorU32.hpp"
 
-namespace rkk
+namespace wms
 {
     //////////////////////////////////////////////////////////////////////////
     namespace Color
     {
-        RKK_CLASS
+        WMS_CLASS
         {
         public:
             F32::type r, g, b, a;
@@ -128,6 +128,6 @@ namespace rkk
         static const type Blue  = type(0, 0, 1);
     } /// end of namespace color
     //////////////////////////////////////////////////////////////////////////
-} /// end of namespace rkk
+} /// end of namespace wms
 
-#endif /*__RENDERKINGKONG_COLOR_HPP__SHANHAOBO_19800429__*/
+#endif /*__WHIMSY_COLOR_HPP__SHANHAOBO_19800429__*/

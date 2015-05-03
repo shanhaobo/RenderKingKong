@@ -7,7 +7,7 @@ namespace rkk
 {
     namespace RenderFlow
     {
-        RKK_CLASS
+        WMS_CLASS
         {
         public:
             type();

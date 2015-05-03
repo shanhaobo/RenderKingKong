@@ -7,7 +7,7 @@ namespace rkk
 {
     namespace RenderTarget
     {
-        RKK_CLASS
+        WMS_CLASS
         {
         public:
             type(Desc::RenderTarget::in inDesc);

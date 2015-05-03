@@ -10,7 +10,7 @@ namespace rkk
         {
             namespace D3D11
             {
-                RKK_CLASS : public ::rkk::Plugin::RenderDeviceLayer::type
+                WMS_CLASS : public ::rkk::Plugin::RenderDeviceLayer::type
                 {
                 public:
                     typedef ::rkk::Plugin::RenderDeviceLayer::type tSuper;
@@ -32,7 +32,7 @@ namespace rkk
                         return m_D3D11RDLPtr;
                     }
 
-                    virtual Void::type DestroyRDL(RenderDeviceLayer::ptr inRDLPtr)
+                    virtual ::wms::Void::type DestroyRDL(RenderDeviceLayer::ptr inRDLPtr)
                     {
                         if (inRDLPtr == m_D3D11RDLPtr)
                         {

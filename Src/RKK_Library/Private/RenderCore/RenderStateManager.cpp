@@ -14,12 +14,12 @@ namespace rkk
             {
             }
 
-            Bool::type type::Update(RenderState::in inNewState)
+            ::wms::Bool::type type::Update(RenderState::in inNewState)
             {
 
                 m_WorkingState = inNewState;
 
-                return Bool::True;
+                return ::wms::Bool::True;
             }
         } /// end of namespace Manager
     } /// namespace RenderState

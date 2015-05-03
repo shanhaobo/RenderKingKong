@@ -11,7 +11,7 @@ namespace rkk
         {
             ///////////////////////////
             ///////////////////////////
-            RKK_CLASS : public RenderDeviceLayer::type
+            WMS_CLASS : public RenderDeviceLayer::type
             {
             public:
                 type();

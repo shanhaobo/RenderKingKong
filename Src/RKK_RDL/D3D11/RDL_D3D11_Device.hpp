@@ -14,14 +14,14 @@ namespace rkk
         {
             namespace Device
             {
-                Bool::type Create();
+                ::wms::Bool::type Create();
 
                 WIZ_SINGLETONINIT_DECLARE(ID3D11Device);
             } /// end of namespace Device
 
             namespace Factory
             {
-                Bool::type Create();
+                ::wms::Bool::type Create();
 
                 WIZ_SINGLETONINIT_DECLARE(IDXGIFactory);
             } /// end of namespace Factory

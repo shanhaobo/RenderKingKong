@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_CORE_HPP__
 #define __RENDERKINGKONG_CORE_HPP__
 
-#include "../Base/Base.hpp"
+#include "../../../WMS_Base/Include/WMSBase.hpp"
 
 #include "./Enum/CoreEnumBlend.hpp"
 #include "./Enum/CoreEnumMultiSample.hpp"

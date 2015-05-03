@@ -105,7 +105,7 @@ namespace Wiz
                             );
                     }
                     ////////////////////////////////////////////////////////////////
-                    WIZ_INLINE static ::Wiz::Bool::Type invert(tMatrixOut outMat, tMatrixIn inMat);
+                    WIZ_INLINE static ::Wiz::Bool::Type Invert(tMatrixOut outMat, tMatrixIn inMat);
                     ////////////////////////////////////////////////////////////////
                     WIZ_INLINE static tMatrix& Transpose(tMatrixOut outMat, tMatrixIn inMat);
                     WIZ_INLINE static tMatrix& Transpose(tMatrixIO ioMat);

@@ -140,7 +140,7 @@ namespace Wiz
                     return outMat;
                 }
                 template<class MatrixT>
-                ::Wiz::Vector2::Type<typename MatrixT::tElement>& Type<MatrixT>::Multiply(tVector2& outVec2, const tVector2& inVec2, tMatrixIn inMat)
+                ::Wiz::Vector2::Type<typename MatrixT::tElement>& Type<MatrixT>::Multiply(tVector2Out outVec2, const tVector2& inVec2, tMatrixIn inMat)
                 {
                     /// Row vector /// D3D
                     const tElement lx = inVec2.x * inMat.e00 + inVec2.y * inMat.e10;
@@ -173,7 +173,7 @@ namespace Wiz
                 }
                 ////////////////////////////////////////////////////////////////
                 template<class MatrixT>
-                ::Wiz::Bool::Type Type<MatrixT>::invert(tMatrixOut outMat, tMatrixIn inMat)
+                ::Wiz::Bool::Type Type<MatrixT>::Invert(tMatrixOut outMat, tMatrixIn inMat)
                 {
                     tElement t = Type<tElement>::Determinant(inMat);
                     if (::Wiz::IsZero(t))

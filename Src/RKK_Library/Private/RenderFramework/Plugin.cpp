@@ -4,7 +4,7 @@ namespace rkk
 {
     namespace Plugin
     {
-        Bool::type type::Register(Root::ptr inRootPtr, Name::in inName)
+        ::wms::Bool::type type::Register(Root::ptr inRootPtr, ::wms::Name::in inName)
         {
             if (::Wiz::IsValidPtr(inRootPtr) && inName.IsValid())
             {
@@ -12,10 +12,10 @@ namespace rkk
 
                 m_PluginName = inName;
 
-                return Bool::True;
+                return ::wms::Bool::True;
             }
 
-            return Bool::False;
+            return ::wms::Bool::False;
         }
     } /// end of namespace Plugin
 } /// namespace rkk

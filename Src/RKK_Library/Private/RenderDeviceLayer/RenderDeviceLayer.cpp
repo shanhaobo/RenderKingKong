@@ -14,12 +14,12 @@ namespace rkk
 
         ptr Create()
         {
-            return RKK_NULLPTR;
+            return WMS_NULLPTR;
         }
 
-        Void::type Destroy(ptr& RDLPtr)
+        ::wms::Void::type Destroy(ptr& RDLPtr)
         {
-            RDLPtr = RKK_NULLPTR;
+            RDLPtr = WMS_NULLPTR;
         }
     } /// namespace RenderDeviceLayer
 } /// namespace rkk

@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_DESC_MULTISAMPLE_HPP__SHANHAOBO_19800429__
 #define __RENDERKINGKONG_DESC_MULTISAMPLE_HPP__SHANHAOBO_19800429__
 
-#include "../../Base/BaseType.hpp"
+#include "../../../WMS_Base/Include/WMSType.hpp"
 
 #include "../Enum/CoreEnumMultiSample.hpp"
 
@@ -12,11 +12,11 @@ namespace rkk
         /// Multi-Sampling
         namespace MultiSample
         {
-            RKK_STRUCT
+            WMS_STRUCT
             {
                 type(
                     Enum::MultiSample::in   Count   = Enum::MultiSample::eNone,
-                    U8::in                  Quality = 0
+                    ::wms::U8::in           Quality = 0
                     )
                     : m_Count(Count)
                     , m_Quality(Quality)
@@ -24,7 +24,7 @@ namespace rkk
                 }
 
                 Enum::MultiSample::type     m_Count;
-                U8::type                    m_Quality;
+                ::wms::U8::type             m_Quality;
             };
         } /// end of namespace MultiSample
     } /// end of namespace Desc

@@ -7,17 +7,17 @@ namespace rkk
 {
     namespace RenderState
     {
-        RKK_CLASS
+        WMS_CLASS
         {
         public:
-            type() : m_KeepLastSetting(Bool::True)
+            type() : m_KeepLastSetting(::wms::Bool::True)
             {
 
             }
             type(in inOther);
             ~type();
 
-            Bool::type  m_KeepLastSetting;
+            ::wms::Bool::type  m_KeepLastSetting;
         };
     } /// namespace RenderState
 } /// namespace rkk

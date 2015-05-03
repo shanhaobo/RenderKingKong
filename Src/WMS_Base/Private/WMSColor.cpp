@@ -1,9 +1,9 @@
-#include "../../include/Base/BaseColor.hpp"
+#include "../include/WMSColor.hpp"
 
-#include "../../../WIZ_Library/include/04_Math/00_Utils/WizMathUtils.hpp"
+#include "../../WIZ_Library/include/04_Math/00_Utils/WizMathUtils.hpp"
 
 
-namespace rkk
+namespace wms
 {
     //////////////////////////////////////////////////////////////////////////
     namespace Color

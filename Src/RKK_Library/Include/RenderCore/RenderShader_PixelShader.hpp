@@ -9,7 +9,7 @@ namespace rkk
     {
         namespace PixelShader
         {
-            RKK_CLASS : public RenderShader::type
+            WMS_CLASS : public RenderShader::type
             {
             public:
                 type();

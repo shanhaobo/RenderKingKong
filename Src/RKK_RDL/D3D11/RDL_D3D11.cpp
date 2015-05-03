@@ -20,7 +20,7 @@ namespace rkk
             {
 
 
-                return RKK_NULLPTR;
+                return WMS_NULLPTR;
             }
         } /// end of namespace D3D11
     } /// namespace RenderDeviceLayer

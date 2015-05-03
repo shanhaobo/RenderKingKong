@@ -9,14 +9,14 @@ namespace rkk
     {
         namespace Manager
         {
-            RKK_CLASS
+            WMS_CLASS
             {
             public:
                 type();
                 ~type();
 
             public:
-                Bool::type Update(RenderState::in inNewState);
+                ::wms::Bool::type Update(RenderState::in inNewState);
 
             protected:
                 RenderState::type           m_WorkingState;

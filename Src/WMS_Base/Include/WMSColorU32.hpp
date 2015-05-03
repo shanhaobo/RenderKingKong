@@ -1,13 +1,13 @@
-#ifndef __RENDERKINGKONG_COLOR_U32_HPP__SHANHAOBO_19800429__
-#define __RENDERKINGKONG_COLOR_U32_HPP__SHANHAOBO_19800429__
+#ifndef __WHIMSY_COLOR_U32_HPP__SHANHAOBO_19800429__
+#define __WHIMSY_COLOR_U32_HPP__SHANHAOBO_19800429__
 
-#include "./BaseType.hpp"
+#include "./WMSType.hpp"
 
-namespace rkk
+namespace wms
 {
     namespace RGBA
     {
-        RKK_STRUCT
+        WMS_STRUCT
         {
             union
             {
@@ -39,7 +39,7 @@ namespace rkk
 
     namespace ARGB
     {
-        RKK_STRUCT
+        WMS_STRUCT
         {
             union
             {
@@ -70,7 +70,7 @@ namespace rkk
 
     namespace ABGR
     {
-        RKK_STRUCT
+        WMS_STRUCT
         {
             union
             {
@@ -101,7 +101,7 @@ namespace rkk
 
     namespace BGRA
     {
-        RKK_STRUCT
+        WMS_STRUCT
         {
             union
             {
@@ -130,6 +130,6 @@ namespace rkk
     } /// end of namespace BGRA
 
     //////////////////////////////////////////////////////////////////////////
-} /// end of namespace rkk
+} /// end of namespace wms
 
-#endif /*__RENDERKINGKONG_COLOR_U32_HPP__SHANHAOBO_19800429__*/
+#endif /*__WHIMSY_COLOR_U32_HPP__SHANHAOBO_19800429__*/

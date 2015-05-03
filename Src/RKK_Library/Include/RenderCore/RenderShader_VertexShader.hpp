@@ -9,7 +9,7 @@ namespace rkk
     {
         namespace VertexShader
         {
-            RKK_CLASS : public RenderShader::type
+            WMS_CLASS : public RenderShader::type
             {
             public:
                 type();

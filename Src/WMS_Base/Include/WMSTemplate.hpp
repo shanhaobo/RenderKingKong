@@ -1,11 +1,11 @@
-#ifndef __RENDERKINGKONG_BASETEMPLATE_HPP__
-#define __RENDERKINGKONG_BASETEMPLATE_HPP__
+#ifndef __WHIMSY_BASETEMPLATE_HPP__
+#define __WHIMSY_BASETEMPLATE_HPP__
 
 #include "../../../WIZ_Library/include/01_Basic/04_TU/WizBasicTU.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 
-namespace rkk
+namespace wms
 {
     template<class T>
     inline Bool::type IsValidPtr(T const * const ptr)
@@ -13,8 +13,8 @@ namespace rkk
         return ::Wiz::IsValidPtr(ptr);
     }
 
-} /// end of namespace rkk
+} /// end of namespace wms
 
 //////////////////////////////////////////////////////////////////////////
 
-#endif /*__RENDERKINGKONG_BASETEMPLATE_HPP__*/
+#endif /*__WHIMSY_BASETEMPLATE_HPP__*/

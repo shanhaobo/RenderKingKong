@@ -1,7 +1,7 @@
 #ifndef __CORE_ENUM_STENCIL_HPP__SHANHAOBO_19800429__
 #define __CORE_ENUM_STENCIL_HPP__SHANHAOBO_19800429__
 
-#include "../../Base/Base.hpp"
+#include "../../../WMS_Base/Include/WMSBase.hpp"
 
 namespace rkk
 {
@@ -23,8 +23,8 @@ namespace rkk
                     eIncrementWrap      = 6,    /// wrapping to zero if the new value exceeds the maximum value.
                     eDecrementWrap      = 7,    /// wrapping to the maximum value if the new value is less than zero. 
                 }; /// end of enum ____
-                typedef ::Wiz::Enum<::rkk::Enum::Stencil::Op::____, ::rkk::U8::type>::Type Type;
-                RKK_DECLARE(::rkk::Enum::Stencil::Op::Type);
+                typedef ::Wiz::Enum<::rkk::Enum::Stencil::Op::____, ::wms::U8::type>::Type Type;
+                WMS_DECLARE(::rkk::Enum::Stencil::Op::Type);
             } /// end of namespace Op
 
             namespace Compare
@@ -40,8 +40,8 @@ namespace rkk
                     eGreater	        = 6,
                     eGreaterEqual       = 7,
                 }; /// end of enum ____
-                typedef ::Wiz::Enum<::rkk::Enum::Stencil::Compare::____, ::rkk::U8::type>::Type Type;
-                RKK_DECLARE(::rkk::Enum::Stencil::Compare::Type);
+                typedef ::Wiz::Enum<::rkk::Enum::Stencil::Compare::____, ::wms::U8::type>::Type Type;
+                WMS_DECLARE(::rkk::Enum::Stencil::Compare::Type);
             } /// end of namespace Compare 
         } /// end of namespace Stencil
     } /// end of namespace Enum

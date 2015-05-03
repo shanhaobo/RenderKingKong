@@ -11,31 +11,31 @@ namespace rkk
 {
     namespace Renderer
     {
-        RKK_CLASS
+        class type
         {
         public:
             type();
             ~type();
 
         public:
-            Bool::type RegisterRDL(Name::in, Plugin::RenderDeviceLayer::ptr);
-            Void::type UnregisterRDL(Name::in);
+            ::wms::Bool::type RegisterRDL(::wms::Name::in, Plugin::RenderDeviceLayer::ptr);
+            ::wms::Void::type UnregisterRDL(::wms::Name::in);
 
-            Bool::type ActiveRDL(Name::in);
-            Bool::type ActiveRDL(Plugin::RenderDeviceLayer::ptr);
+            ::wms::Bool::type ActiveRDL(::wms::Name::in);
+            ::wms::Bool::type ActiveRDL(Plugin::RenderDeviceLayer::ptr);
 
-            Void::type DeactiveRDL(Name::in);
-            Void::type DeactiveRDL(Plugin::RenderDeviceLayer::ptr);
+            ::wms::Void::type DeactiveRDL(::wms::Name::in);
+            ::wms::Void::type DeactiveRDL(Plugin::RenderDeviceLayer::ptr);
 
         protected:
-            Plugin::RenderDeviceLayer::ptr GetRDL(Name::in);
+            Plugin::RenderDeviceLayer::ptr GetRDL(::wms::Name::in);
 
             /// RDL
         protected:
-            typedef Map<Name::type, Plugin::RenderDeviceLayer::ptr>::type tMapRDLPlugin;
+            typedef ::wms::Map<::wms::Name::type, Plugin::RenderDeviceLayer::ptr>::type tMapRDLPlugin;
             tMapRDLPlugin                   m_mapRDLPlugin;
 
-            Name::type                      m_ActivedRDLName;
+            ::wms::Name::type               m_ActivedRDLName;
             RenderDeviceLayer::ptr          m_ActivedRDLPtr;
         };
     } /// namespace Renderer

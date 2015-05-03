@@ -94,14 +94,14 @@ namespace Wiz
                     }
                     ////////////////////////////////////////////////////////////////
                     ////////////////////////////////////////////////////////////////
-                    ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Row)
+                    ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Row)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
                         outX = this->GetElement(Row, 0);
                         outY = this->GetElement(Row, 1);
                         outZ = this->GetElement(Row, 2);
                     }
-                    ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Col)
+                    ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Col)
                     {
                         WIZ_ASSERT(Col < eColCnt);
                         outX = this->GetElement(0, Col);
@@ -109,14 +109,14 @@ namespace Wiz
                         outZ = this->GetElement(2, Col);
                     }
 
-                    ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
+                    ::Wiz::Void::Type SetRow(::Wiz::U::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
                         this->GetElement(Row, 0) = inX;
                         this->GetElement(Row, 1) = inY;
                         this->GetElement(Row, 2) = inZ;
                     }
-                    ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
+                    ::Wiz::Void::Type SetCol(::Wiz::U::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
                     {
                         WIZ_ASSERT(Col < eColCnt);
                         this->GetElement(0, Col) = inX;
@@ -256,14 +256,14 @@ namespace Wiz
                     ////////////////////////////////////////////////////////////////
 
                     ////////////////////////////////////////////////////////////////
-                    ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Row)
+                    ::Wiz::Void::Type GetRow(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Row)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
                         outX = this->GetElement(Row, 0);
                         outY = this->GetElement(Row, 1);
                         outZ = this->GetElement(Row, 2);
                     }
-                    ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::UInt::In Col)
+                    ::Wiz::Void::Type GetCol(tElement& outX, tElement& outY, tElement& outZ, ::Wiz::U::In Col)
                     {
                         WIZ_ASSERT(Col < eColCnt);
                         outX = this->GetElement(0, Col);
@@ -271,14 +271,14 @@ namespace Wiz
                         outZ = this->GetElement(2, Col);
                     }
 
-                    ::Wiz::Void::Type SetRow(::Wiz::UInt::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
+                    ::Wiz::Void::Type SetRow(::Wiz::U::In Row, tElementIn inX, tElementIn inY, tElementIn inZ)
                     {
                         WIZ_ASSERT(Row < eRowCnt);
                         this->GetElement(Row, 0) = inX;
                         this->GetElement(Row, 1) = inY;
                         this->GetElement(Row, 2) = inZ;
                     }
-                    ::Wiz::Void::Type SetCol(::Wiz::UInt::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
+                    ::Wiz::Void::Type SetCol(::Wiz::U::In Col, tElementIn inX, tElementIn inY, tElementIn inZ)
                     {
                         WIZ_ASSERT(Col < eColCnt);
                         this->GetElement(0, Col) = inX;

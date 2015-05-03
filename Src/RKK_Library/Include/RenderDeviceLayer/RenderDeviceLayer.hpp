@@ -1,7 +1,6 @@
 #ifndef __RENDERKINGKONG_RENDERDEVICELAYER_HPP__
 #define __RENDERKINGKONG_RENDERDEVICELAYER_HPP__
 
-#include "../Base/Base.hpp"
 #include "../Core/Core.hpp"
 #include "../RenderCore/RenderCore.hpp"
 
@@ -12,7 +11,7 @@ namespace rkk
         ///////////////////////////
         ///////////////////////////
 
-        class type : public ::rkk::Obj::RDL::type
+        class type : public ::wms::Obj::RDL::type
         {
         public:
             type();
@@ -24,7 +23,7 @@ namespace rkk
 #               include "RenderDeviceLayerMethod.hpp"
 #           undef RKK_RDL_METHOD
         };
-        RKK_DECLARE_PTR(type);
+        WMS_DECLARE_PTR(type);
 
         ///////////////////////////
         ///////////////////////////

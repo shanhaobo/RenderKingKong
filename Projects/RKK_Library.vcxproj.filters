@@ -31,9 +31,6 @@
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderState.cpp">
       <Filter>Private\RenderCore</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\Base\BaseColor.cpp">
-      <Filter>Private\Base</Filter>
-    </ClCompile>
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Root.cpp">
       <Filter>Private\RenderFramework</Filter>
     </ClCompile>
@@ -78,21 +75,6 @@
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RenderDeviceLayer.hpp">
       <Filter>Include\RenderDeviceLayer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\Base.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseMacro.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseTemplate.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseType.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\TypeDeclareUtils.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumPixelFormat.hpp">
       <Filter>Include\Core\Enum</Filter>
     </ClInclude>
@@ -114,12 +96,6 @@
     <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.hpp">
       <Filter>Private\RenderCore</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColor.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseColorU32.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescClear.hpp">
       <Filter>Include\Core\Desc</Filter>
     </ClInclude>
@@ -129,17 +105,8 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumMultiSample.hpp">
       <Filter>Include\Core\Enum</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseObject.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Root.hpp">
       <Filter>Include\RenderFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\BaseAllocator.hpp">
-      <Filter>Include\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\Base\RKKPrerequisites.hpp">
-      <Filter>Include\Base</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp">
       <Filter>Include\RenderFramework\Plugin</Filter>
@@ -176,17 +143,11 @@
     <Filter Include="Private\RenderFramework">
       <UniqueIdentifier>{aa9d3748-4a46-4f52-aea9-749084969840}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\Base">
-      <UniqueIdentifier>{e00b57bf-8ae1-4459-b6f7-858b9034307a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Include\Core\Enum">
       <UniqueIdentifier>{4b973158-4e4d-4e65-ba10-9236a6b0e7b6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Include\Core\Desc">
       <UniqueIdentifier>{43a56ce0-9858-4cc2-a1c4-0e12623a1926}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Private\Base">
-      <UniqueIdentifier>{170ecd1f-1bd5-402a-a00f-deac4c71c5e3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Private\Core">
       <UniqueIdentifier>{22ac1ffd-cce8-4669-af82-6b68ba07383e}</UniqueIdentifier>
