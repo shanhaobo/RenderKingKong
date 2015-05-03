@@ -28,16 +28,14 @@ namespace rkk
 
         Plugin::RenderDeviceLayer::ptr type::GetRDL(::wms::Name::in inName)
         {
-            Plugin::RenderDeviceLayer::ptr RDLPluginPtr = WMS_NULLPTR;
-            m_mapRDLPlugin.TryGet(RDLPluginPtr, inName);
-            return RDLPluginPtr;
+            Plugin::RenderDeviceLayer::ptr lRDLPluginPtr = WMS_NULLPTR;
+            m_mapRDLPlugin.TryGet(lRDLPluginPtr, inName);
+            return lRDLPluginPtr;
         }
 
         ::wms::Bool::type type::ActiveRDL(::wms::Name::in inName)
         {
-            Plugin::RenderDeviceLayer::ptr RDLPluginPtr = GetRDL(inName);
-            
-            return ActiveRDL(RDLPluginPtr);
+            return ActiveRDL(GetRDL(inName));
         }
 
         ::wms::Bool::type type::ActiveRDL(Plugin::RenderDeviceLayer::ptr inRDLPluginPtr)
@@ -60,10 +58,10 @@ namespace rkk
 
         ::wms::Void::type type::DeactiveRDL(::wms::Name::in inName)
         {
-            Plugin::RenderDeviceLayer::ptr RDLPluginPtr = GetRDL(inName);
-            if (::Wiz::IsValidPtr(RDLPluginPtr))
+            Plugin::RenderDeviceLayer::ptr lRDLPluginPtr = GetRDL(inName);
+            if (::Wiz::IsValidPtr(lRDLPluginPtr))
             {
-                DeactiveRDL(RDLPluginPtr);
+                DeactiveRDL(lRDLPluginPtr);
             }
         }
 

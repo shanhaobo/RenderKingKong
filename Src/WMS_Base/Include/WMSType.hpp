@@ -144,19 +144,19 @@ namespace wms
         typedef typename ::Wiz::List::Type<T, A>            type;
     };
 
-    template <typename I, typename V, class C = ::std::less<I>, typename A = ::std::allocator< ::std::pair<I, V> > >
+    template <typename T, typename V, class C = ::std::less<T>, typename A = ::std::allocator< ::std::pair<T, V> > >
     struct Map
     {
-        typedef typename ::Wiz::Map::Type<I, V, C, A>       type;
+        typedef typename ::Wiz::Map::Type<T, V, C, A>       type;
     };
 
-    template <typename I, typename V, class C = ::std::less<I>, typename A = ::std::allocator< ::std::pair<I, V> > >
+    template <typename T, typename V, class C = ::std::less<T>, typename A = ::std::allocator< ::std::pair<T, V> > >
     struct MultiMap
     {
-        typedef typename ::Wiz::MultiMap::Type<I, V, C, A>  type;
+        typedef typename ::Wiz::MultiMap::Type<T, V, C, A>  type;
     };
 
-    template <typename T, class C = ::std::less<I>, typename A = ::std::allocator<T> >
+    template <typename T, class C = ::std::less<T>, typename A = ::std::allocator<T> >
     struct Set
     {
         typedef typename ::Wiz::Set::Type<T, C, A>          type;

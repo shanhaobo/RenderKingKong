@@ -10,11 +10,11 @@ namespace rkk
             {
                 ::wms::Bool::type Create()
                 {
-                    IDXGIFactory* DXGIFactoryPtr = WMS_NULLPTR;
+                    IDXGIFactory* lDXGIFactoryPtr = WMS_NULLPTR;
 
-                    ::CreateDXGIFactory(__uuidof(IDXGIFactory), (void**)&DXGIFactoryPtr);
+                    ::CreateDXGIFactory(__uuidof(IDXGIFactory), (void**)&lDXGIFactoryPtr);
 
-                    Factory::init(DXGIFactoryPtr);
+                    Factory::init(lDXGIFactoryPtr);
 
                     return ::wms::Bool::True;
                 }
@@ -24,15 +24,15 @@ namespace rkk
             {
                 IDXGIAdapter* EnumAdapter(DXGI_ADAPTER_DESC& outAdapterDesc)
                 {
-                    IDXGIAdapter* EnumAdapterPtr = WMS_NULLPTR;
-                    ::wms::U32::type CurrentAdapter = 0;
-                    while (Factory::instance().EnumAdapters(CurrentAdapter, &EnumAdapterPtr) != DXGI_ERROR_NOT_FOUND)
+                    IDXGIAdapter* lEnumAdapterPtr = WMS_NULLPTR;
+                    ::wms::U32::type lCurrentAdapter = 0;
+                    while (Factory::instance().EnumAdapters(lCurrentAdapter, &lEnumAdapterPtr) != DXGI_ERROR_NOT_FOUND)
                     {
-                        if (::Wiz::IsValidPtr(EnumAdapterPtr))
+                        if (::Wiz::IsValidPtr(lEnumAdapterPtr))
                         {
-                            if (SUCCEEDED(EnumAdapterPtr->GetDesc(&outAdapterDesc)))
+                            if (SUCCEEDED(lEnumAdapterPtr->GetDesc(&outAdapterDesc)))
                             {
-                                return EnumAdapterPtr;
+                                return lEnumAdapterPtr;
                             }
                         }
                     }
@@ -42,14 +42,14 @@ namespace rkk
 
                 ::wms::Bool::type Create()
                 {
-                    ID3D11Device* Direct3DDevicePtr = WMS_NULLPTR;
+                    ID3D11Device* lDirect3DDevicePtr = WMS_NULLPTR;
 
-                    DXGI_ADAPTER_DESC AdapterDesc = {0};
+                    DXGI_ADAPTER_DESC lAdapterDesc = {0};
 
-                    ID3D11DeviceContext* ContextPtr = WMS_NULLPTR;
+                    ID3D11DeviceContext* lContextPtr = WMS_NULLPTR;
 
-                    IDXGIAdapter* EnumAdapterPtr = EnumAdapter(AdapterDesc);
-                    if (::Wiz::IsValidPtr(EnumAdapterPtr))
+                    IDXGIAdapter* lEnumAdapterPtr = EnumAdapter(lAdapterDesc);
+                    if (::Wiz::IsValidPtr(lEnumAdapterPtr))
                     {
                         D3D_DRIVER_TYPE DriverType = D3D_DRIVER_TYPE_UNKNOWN;
 
@@ -59,19 +59,19 @@ namespace rkk
                         D3D_FEATURE_LEVEL LevelsWanted[] = { D3D_FEATURE_LEVEL_11_0 };
 
                         ::D3D11CreateDevice(
-                            EnumAdapterPtr,
+                            lEnumAdapterPtr,
                             DriverType,
                             NULL,
                             DeviceFlags,
                             LevelsWanted,
                             1,
                             D3D11_SDK_VERSION,
-                            &Direct3DDevicePtr,
+                            &lDirect3DDevicePtr,
                             &ActualFeatureLevel,
-                            &ContextPtr
+                            &lContextPtr
                         );
 
-                        Device::init(Direct3DDevicePtr);
+                        Device::init(lDirect3DDevicePtr);
 
                         return ::wms::Bool::True;
                     }

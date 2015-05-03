@@ -12,13 +12,27 @@
     <Filter Include="Include\Core">
       <UniqueIdentifier>{a35acfcd-51a5-4b01-b977-7ab0c596fc6f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Private\Core">
+      <UniqueIdentifier>{b7c56ec7-0d63-41fc-8207-97b1e8b92378}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSComponent.hpp">
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkComponent.hpp">
       <Filter>Include\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFwdDclr.hpp">
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkFwdDclr.hpp">
       <Filter>Include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkActor.hpp">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkComponent.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkActor.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

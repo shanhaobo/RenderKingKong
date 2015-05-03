@@ -4,6 +4,16 @@
 #include "../Core/RKKCore.hpp"
 #include "../RenderCore/RKKRenderCore.hpp"
 
+///////////////////////////
+///////////////////////////
+
+#define RKK_RDL_METHOD_BASE_DECLARE(MPRet, MPName, MPParam)     virtual MPRet MPName MPParam = 0
+
+#define RKK_RDL_METHOD_DECLARE(MPRet, MPName, MPParam)          virtual MPRet MPName MPParam
+
+///////////////////////////
+///////////////////////////
+
 namespace rkk
 {
     namespace RenderDeviceLayer
@@ -19,7 +29,7 @@ namespace rkk
 
         public:
 #           undef RKK_RDL_METHOD
-#           define RKK_RDL_METHOD(MPRet, MPName, MPParam)     virtual MPRet MPName MPParam = 0
+#           define RKK_RDL_METHOD       RKK_RDL_METHOD_BASE_DECLARE
 #               include "RKKRenderDeviceLayerMethod.hpp"
 #           undef RKK_RDL_METHOD
         };

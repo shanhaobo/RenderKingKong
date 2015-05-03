@@ -16,9 +16,6 @@
     <Filter Include="Private\RenderCore">
       <UniqueIdentifier>{187dadda-b853-4bba-9b86-49b3b94f7458}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\RenderDeviceLayer">
-      <UniqueIdentifier>{f5af1c1e-97d5-40e2-aee2-3caf4c30591d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Include\RenderFramework">
       <UniqueIdentifier>{0fd4ca9a-142c-4c09-b0c7-18cde584dd2d}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,9 @@
     </Filter>
     <Filter Include="Private\RenderFramework\Plugin">
       <UniqueIdentifier>{49c6d8e0-582a-4ebe-aea6-13764a240799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\RenderDeviceLayer%28RDL%29">
+      <UniqueIdentifier>{f5af1c1e-97d5-40e2-aee2-3caf4c30591d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -91,10 +91,10 @@
       <Filter>Include\RenderCore</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayer.hpp">
-      <Filter>Include\RenderDeviceLayer</Filter>
+      <Filter>Include\RenderDeviceLayer%28RDL%29</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayerMethod.hpp">
-      <Filter>Include\RenderDeviceLayer</Filter>
+      <Filter>Include\RenderDeviceLayer%28RDL%29</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp">
       <Filter>Include\RenderFramework</Filter>

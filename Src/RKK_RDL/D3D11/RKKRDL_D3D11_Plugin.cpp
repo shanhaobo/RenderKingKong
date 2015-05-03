@@ -38,6 +38,8 @@ namespace rkk
                         if (inRDLPtr == m_D3D11RDLPtr)
                         {
                             /// TODO Destroy RDL
+
+                            WMS_DEL m_D3D11RDLPtr;
                         }
 
                         m_D3D11RDLPtr = WMS_NULLPTR;

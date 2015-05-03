@@ -11,8 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSComponent.hpp" />
-    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFwdDclr.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkActor.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkComponent.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkFwdDclr.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkActor.cpp" />
+    <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkComponent.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}</ProjectGuid>
