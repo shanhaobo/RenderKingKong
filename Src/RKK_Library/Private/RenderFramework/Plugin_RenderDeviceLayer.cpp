@@ -1,6 +1,6 @@
 #include "../../include/RenderFramework/Plugin_RenderDeviceLayer.hpp"
 
-#include "../../include/RenderFramework/Root.hpp"
+#include "../../include/RenderFramework/RKKRoot.hpp"
 
 namespace rkk
 {

@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_RENDERTARGET_HPP__
 #define __RENDERKINGKONG_RENDERTARGET_HPP__
 
-#include "../Core/Core.hpp"
+#include "../Core/RKKCore.hpp"
 
 namespace rkk
 {

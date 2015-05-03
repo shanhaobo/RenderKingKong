@@ -21,13 +21,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_Base", "0_Base", "{BE91FF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RDL", "RDL", "{F7BF4F9C-6A7D-4B46-9AD5-94586FE71780}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_RenderFramework", "3_RenderFramework", "{A989DD24-D168-4D10-BA5F-48BD0DA3DC9A}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Whimsy", "Projects\Whimsy.vcxproj", "{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_GameFramework", "3_GameFramework", "{A989DD24-D168-4D10-BA5F-48BD0DA3DC9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_RenderKingKong", "1_RenderKingKong", "{C5CD5B5E-0E81-4129-8F6D-1049E58A54C8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WMS_Base", "Projects\WMS_Base.vcxproj", "{F932BD87-F518-4119-83B7-0A04043D1652}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WMS_Framework", "Projects\WMS_Framework.vcxproj", "{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,14 +47,14 @@ Global
 		{4D0061F7-577A-4788-996C-C561E563CFBD}.Debug|Win32.Build.0 = Debug|Win32
 		{4D0061F7-577A-4788-996C-C561E563CFBD}.Release|Win32.ActiveCfg = Release|Win32
 		{4D0061F7-577A-4788-996C-C561E563CFBD}.Release|Win32.Build.0 = Release|Win32
-		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Debug|Win32.ActiveCfg = Debug|Win32
-		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Debug|Win32.Build.0 = Debug|Win32
-		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Release|Win32.ActiveCfg = Release|Win32
-		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Release|Win32.Build.0 = Release|Win32
 		{F932BD87-F518-4119-83B7-0A04043D1652}.Debug|Win32.ActiveCfg = Debug|Win32
 		{F932BD87-F518-4119-83B7-0A04043D1652}.Debug|Win32.Build.0 = Debug|Win32
 		{F932BD87-F518-4119-83B7-0A04043D1652}.Release|Win32.ActiveCfg = Release|Win32
 		{F932BD87-F518-4119-83B7-0A04043D1652}.Release|Win32.Build.0 = Release|Win32
+		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Debug|Win32.Build.0 = Debug|Win32
+		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Release|Win32.ActiveCfg = Release|Win32
+		{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

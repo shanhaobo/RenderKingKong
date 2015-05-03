@@ -78,7 +78,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Core.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescClear.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescMultiSample.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\CoreDescRenderTarget.hpp" />
@@ -87,6 +86,7 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumMultiSample.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumPixelFormat.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumStencil.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderCore.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderShader_PixelShader.hpp" />
@@ -100,7 +100,8 @@
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Renderer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderFlow.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RenderPass.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Root.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRoot.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RenderStateManager.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +117,7 @@
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Renderer.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderFlow.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RenderPass.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Root.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRoot.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

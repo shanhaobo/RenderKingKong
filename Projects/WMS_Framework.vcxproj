@@ -10,6 +10,10 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSComponent.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFwdDclr.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

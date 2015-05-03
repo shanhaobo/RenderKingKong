@@ -31,20 +31,17 @@
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RenderState.cpp">
       <Filter>Private\RenderCore</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Root.cpp">
-      <Filter>Private\RenderFramework</Filter>
-    </ClCompile>
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin_RenderDeviceLayer.cpp">
       <Filter>Private\RenderFramework\Plugin</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\Plugin.cpp">
       <Filter>Private\RenderFramework\Plugin</Filter>
     </ClCompile>
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRoot.cpp">
+      <Filter>Private\RenderFramework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Core.hpp">
-      <Filter>Include\Core</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RenderTarget.hpp">
       <Filter>Include\RenderCore</Filter>
     </ClInclude>
@@ -105,14 +102,20 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\CoreEnumMultiSample.hpp">
       <Filter>Include\Core\Enum</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Root.hpp">
-      <Filter>Include\RenderFramework</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin.hpp">
       <Filter>Include\RenderFramework\Plugin</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\Plugin_RenderDeviceLayer.hpp">
       <Filter>Include\RenderFramework\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp">
+      <Filter>Include\RenderFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRoot.hpp">
+      <Filter>Include\RenderFramework</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

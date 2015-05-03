@@ -1,7 +1,7 @@
 #ifndef __RENDERKINGKONG_PLUGIN_HPP__
 #define __RENDERKINGKONG_PLUGIN_HPP__
 
-#include "FrameworkFwdDclr.hpp"
+#include "RKKFrameworkFwdDclr.hpp"
 
 namespace rkk
 {

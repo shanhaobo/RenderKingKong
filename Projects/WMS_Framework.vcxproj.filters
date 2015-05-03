@@ -14,7 +14,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\Whimsy\Include\Core\Object.hpp">
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSComponent.hpp">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFwdDclr.hpp">
       <Filter>Include\Core</Filter>
     </ClInclude>
   </ItemGroup>
