@@ -19,10 +19,10 @@ namespace wms
             virtual Void::type Tick(F32::in inDeltaTime);
 
         public:
-            typedef Set<::wms::Cmpnt::ptr>::type tSet;
+            typedef Map<::wms::Name::type, ::wms::Cmpnt::ptr>::type tMap;
 
         public:
-            tSet        m_Children;
+            tMap        m_Children;
         };
 
     } /// end of namespace Cmpnt

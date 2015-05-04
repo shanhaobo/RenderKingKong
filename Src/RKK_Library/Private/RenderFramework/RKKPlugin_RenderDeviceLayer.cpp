@@ -8,11 +8,11 @@ namespace rkk
     {
         namespace RenderDeviceLayer
         {
-            ::wms::Bool::type type::Register(Root::ptr inRootPtr, ::wms::Name::in inName)
+            ::wms::Bool::type type::Register(::wms::PluginMgr::ptr inPluginMgrPtr, ::wms::Name::in inName)
             {
-                if (tSuper::Register(inRootPtr, inName))
+                if (tSuper::Register(inPluginMgrPtr, inName))
                 {
-                    m_RendererPtr = m_RootPtr->m_RendererPtr;
+                    m_RendererPtr = ::rkk::Root::instancePtr()->m_RendererPtr;
                     if (::Wiz::IsValidPtr(m_RendererPtr))
                     {
                         if (m_RendererPtr->RegisterRDL(inName, this))

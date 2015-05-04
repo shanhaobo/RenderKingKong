@@ -5,7 +5,7 @@
 #include "./WMSPrerequisites.hpp"
 
 /// Wiz Basic Library
-#include "../../../WIZ_Library/include/Wiz.hpp"
+#include "../../WIZ_Library/Include/Wiz.hpp"
 
 #include "./WMSMacro.hpp"
 #include "./WMSType.hpp"

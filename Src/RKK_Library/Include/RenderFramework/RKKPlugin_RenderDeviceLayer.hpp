@@ -3,7 +3,7 @@
 
 #include "../RenderDeviceLayer/RKKRenderDeviceLayer.hpp"
 
-#include "./RKKPlugin.hpp"
+#include "../RenderFramework/RKKFrameworkFwdDclr.hpp"
 
 namespace rkk
 {
@@ -11,10 +11,10 @@ namespace rkk
     {
         namespace RenderDeviceLayer
         {
-            WMS_CLASS : public Plugin::type
+            WMS_CLASS : public ::wms::Plugin::type
             {
             public:
-                typedef Plugin::type tSuper;
+                typedef ::wms::Plugin::type tSuper;
 
             public:
                 type() : tSuper()
@@ -23,7 +23,7 @@ namespace rkk
                 }
 
             public:
-                virtual ::wms::Bool::type Register(Root::ptr, ::wms::Name::in inName);
+                virtual ::wms::Bool::type Register(::wms::PluginMgr::ptr, ::wms::Name::in inName);
                 virtual ::wms::Void::type Unregister();
 
             public:

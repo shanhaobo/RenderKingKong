@@ -11,49 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescClear.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescMultiSample.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Desc\RKKDescRenderTarget.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumBlend.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumComparison.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumMultiSample.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumPixelFormat.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumStencil.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderCore.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_PixelShader.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_VertexShader.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderState.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderTarget.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayer.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayerMethod.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKPlugin_RenderDeviceLayer.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderer.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderFlow.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRenderPass.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKRoot.hpp" />
-    <ClInclude Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderStateManager.hpp" />
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCore.hpp" />
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreFwdDclr.hpp" />
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSPlugin.hpp" />
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSPluginMgr.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader_PixelShader.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderShader_VertexShader.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderState.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderStateManager.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderTarget.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RKKRenderDeviceLayer.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKPlugin_RenderDeviceLayer.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderer.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderFlow.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderPass.cpp" />
-    <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRoot.cpp" />
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSPlugin.cpp" />
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSPluginMgr.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D845A969-0CF5-4225-935B-AB0E3A0AD188}</ProjectGuid>
+    <ProjectGuid>{F782121E-B8FC-4173-8CDD-DE11E5058B9E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>RKK_Library</RootNamespace>
+    <RootNamespace>WMS_Core</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

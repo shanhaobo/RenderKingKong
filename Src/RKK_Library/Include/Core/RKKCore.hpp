@@ -2,6 +2,7 @@
 #define __RENDERKINGKONG_CORE_HPP__
 
 #include "../../../WMS_Base/Include/WMSBase.hpp"
+#include "../../../WMS_Core/Include/WMSCore.hpp"
 
 #include "./Enum/RKKEnumBlend.hpp"
 #include "./Enum/RKKEnumMultiSample.hpp"

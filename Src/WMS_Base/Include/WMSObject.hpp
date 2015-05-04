@@ -1,7 +1,7 @@
 #ifndef __WHIMSY_OBJECT_HPP__
 #define __WHIMSY_OBJECT_HPP__
 
-#include "../../../WIZ_Library/include/01_Basic/05_Mem/WizBasicMemObj.hpp"
+#include "../../WIZ_Library/include/01_Basic/05_Mem/WizBasicMemObj.hpp"
 
 #include "./WMSAllocator.hpp"
 
@@ -45,6 +45,11 @@ namespace wms
         protected:
             Name::type m_ObjName;
         };
+
+        namespace General
+        {
+            WMS_DECLARE(::wms::Obj::type<Allocator::General::type>);
+        } /// end of namespace Animation
 
         namespace Animation
         {

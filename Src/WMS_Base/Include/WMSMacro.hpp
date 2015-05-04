@@ -1,8 +1,8 @@
 #ifndef __WHIMSY_MACRO_HPP__
 #define __WHIMSY_MACRO_HPP__
 
-#include "../../../WIZ_Library/include/01_Basic/00_MPP/WizBasicMPP.hpp"
-#include "../../../WIZ_Library/include/01_Basic/02_MU/WizBasicMU.hpp"
+#include "../../WIZ_Library/include/01_Basic/00_MPP/WizBasicMPP.hpp"
+#include "../../WIZ_Library/include/01_Basic/02_MU/WizBasicMU.hpp"
 
 //////////////////////////////////////////////////////////////////////////
 

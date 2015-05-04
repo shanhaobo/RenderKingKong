@@ -1,4 +1,3 @@
-#include "../../RKK_Library/include/RenderFramework/RKKPlugin.hpp"
 #include "../../RKK_Library/include/RenderFramework/RKKPlugin_RenderDeviceLayer.hpp"
 
 #include "./RKKRDL_D3D11.hpp"
