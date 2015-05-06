@@ -14,81 +14,81 @@ namespace wms
     namespace I
     {
         WIZ_DECLARE_HELPER_I();
-    }
+    } /// end of namespace I
 
     namespace U
     {
         WIZ_DECLARE_HELPER_U();
-    }
+    } /// end of namespace U
 
     namespace I8
     {
         WIZ_DECLARE_HELPER_I8();
-    }
+    } /// end of namespace I8
 
     namespace U8
     {
         WIZ_DECLARE_HELPER_U8();
-    }
+    } /// end of namespace U8
 
     namespace I16
     {
         WIZ_DECLARE_HELPER_I16();
-    }
+    } /// end of namespace I16
 
     namespace U16
     {
         WIZ_DECLARE_HELPER_U16();
-    }
+    } /// end of namespace U16
 
     namespace I32
     {
         WIZ_DECLARE_HELPER_I32();
-    }
+    } /// end of namespace I32
 
     namespace U32
     {
         WIZ_DECLARE_HELPER_U32();
-    }
+    } /// end of namespace U32
 
     namespace I64
     {
         WIZ_DECLARE_HELPER_I64();
-    }
+    } /// end of namespace I64
 
     namespace U64
     {
         WIZ_DECLARE_HELPER_U64();
-    }
+    } /// end of namespace U64
 
     /////////////////////////////////////////////////////////////
 
     namespace Char
     {
         WIZ_DECLARE_HELPER_CHAR();
-    }
+    } /// end of namespace Char
 
     namespace WChar
     {
         WIZ_DECLARE_HELPER_WCHAR();
-    }
+    } /// end of namespace WChar
 
     namespace MBChar
     {
         WIZ_DECLARE_HELPER_MBCHAR();
-    }
+    } /// end of namespace MBChar
 
     /////////////////////////////////////////////////////////////
 
     namespace F32
     {
         WIZ_DECLARE_HELPER_R32();
-    }
+    } /// end of namespace F32
 
     namespace F64
     {
         WIZ_DECLARE_HELPER_R64();
-    }
+    } /// end of namespace F64
 
     /////////////////////////////////////////////////////////////
 
@@ -96,39 +96,39 @@ namespace wms
     {
         typedef void type;
         WIZ_DECLARE_HELPER_VOID();
-    }
+    } /// end of namespace Void
 
     namespace Bool
     {
         WIZ_DECLARE_HELPER_BOOL();
-    }
+    } /// end of namespace Bool
 
     /////////////////////////////////////////////////////////////
 
     namespace Size
     {
         WIZ_DECLARE_HELPER_SIZE();
-    }
+    } /// end of namespace Size
 
     namespace Size8
     {
         WIZ_DECLARE_HELPER_SIZE8();
-    }
+    } /// end of namespace Size8
 
     namespace Size16
     {
         WIZ_DECLARE_HELPER_SIZE16();
-    }
+    } /// end of namespace Size16
 
     namespace Size32
     {
         WIZ_DECLARE_HELPER_SIZE32();
-    }
+    } /// end of namespace Size32
 
     namespace Size64
     {
         WIZ_DECLARE_HELPER_SIZE64();
-    }
+    } /// end of namespace Size64
 
     /////////////////////////////////////////////////////////////
 
@@ -174,13 +174,13 @@ namespace wms
     {
         typedef ::Wiz::String::Type<::wms::Char::type>      type;
         WMS_DECLARE(type);
-    }
+    } /// end of namespace Str
 
     namespace WStr
     {
         typedef ::Wiz::String::Type<::wms::WChar::type>     type;
         WMS_DECLARE(type);
-    }
+    } /// end of namespace WStr
 
     /////////////////////////////////////////////////////////////
 
@@ -189,7 +189,7 @@ namespace wms
         typedef ::Wiz::HashString::Type< ::wms::Str::type, ::Wiz::HashString::Proxy::Category::eSDBM, true, 64, 65536, 1024, ::std::allocator<::wms::Char::type> >   type;
 
         WMS_DECLARE(type);
-    }
+    } /// end of namespace Name
 
     /////////////////////////////////////////////////////////////
 
@@ -198,7 +198,23 @@ namespace wms
         typedef ::Wiz::Vector2::Type<::wms::F32::type> type;
 
         WMS_DECLARE(type);
-    } ///
+    } /// end of namespace Vec2
+
+    namespace Vec3
+    {
+        typedef ::Wiz::Vector3::Type<::wms::F32::type> type;
+
+        WMS_DECLARE(type);
+    } /// end of namespace Vec3
+
+    namespace Vec4
+    {
+        typedef ::Wiz::Vector4::Type<::wms::F32::type> type;
+
+        WMS_DECLARE(type);
+    } /// end of namespace Vec4
+
+    /////////////////////////////////////////////////////////////
 
 } /// namespace wms
 
