@@ -1,7 +1,7 @@
 #ifndef __WIZ_MATH_VECTOR4_METHOD_HPP__SHANHAOBO_19800429__
 #define __WIZ_MATH_VECTOR4_METHOD_HPP__SHANHAOBO_19800429__
 
-#include "../../Utils/WizMathUtils.hpp"
+#include "../../00_Utils/WizMathUtils.hpp"
 
 namespace Wiz
 {

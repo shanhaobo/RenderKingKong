@@ -16,6 +16,9 @@
 #include "03_Utils/WizUtils.hpp"
 
 #include "04_Math/00_Utils/WizMathUtils.hpp"
+#include "04_Math/01_Basic/Vector/WizMathVector2.hpp"
+#include "04_Math/01_Basic/Vector/WizMathVector3.hpp"
+#include "04_Math/01_Basic/Vector/WizMathVector4.hpp"
 
 #include "05_DP/Visitor/WizDPVisitor.hpp"
 

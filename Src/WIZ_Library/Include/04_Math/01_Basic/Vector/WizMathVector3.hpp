@@ -20,6 +20,9 @@ namespace Wiz
 
             typedef Type<tElement>                          tThis;
             typedef tThis const &                           tThisIn;
+            typedef tThis &                                 tThisOut;
+            typedef tThis &                                 tThisIO;
+
             typedef ::Wiz::Vector3::Method::Type<tThis>     tMethod;
 
             typedef ::Wiz::Vector2::Type<tElement>          tVector2;

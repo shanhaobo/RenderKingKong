@@ -193,6 +193,13 @@ namespace wms
 
     /////////////////////////////////////////////////////////////
 
+    namespace Vec2
+    {
+        typedef ::Wiz::Vector2::Type<::wms::F32::type> type;
+
+        WMS_DECLARE(type);
+    } ///
+
 } /// namespace wms
 
 #endif /// __WHIMSY_TYPE_HPP__
