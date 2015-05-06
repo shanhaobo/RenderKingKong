@@ -40,8 +40,8 @@ namespace Wiz
                 ioVec.e3 += inVec.e3;
 
                 return ioVec;
-
             }
+
             template<class VectorT>
             VectorT& Type<VectorT>::AddAssign(tVectorIO ioVec, tElementIn inEle)
             {
@@ -51,7 +51,6 @@ namespace Wiz
                 ioVec.e3 += inEle;
 
                 return ioVec;
-
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -86,7 +85,6 @@ namespace Wiz
                 ioVec.e3 -= inVec.e3;
 
                 return ioVec;
-
             }
             template<class VectorT>
             VectorT& Type<VectorT>::SubtractAssign(tVectorIO ioVec, tElementIn inEle)
@@ -97,7 +95,6 @@ namespace Wiz
                 ioVec.e3 -= inEle;
 
                 return ioVec;
-
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -132,8 +129,8 @@ namespace Wiz
                 ioVec.e3 *= inVec.e3;
 
                 return ioVec;
-
             }
+
             template<class VectorT>
             VectorT& Type<VectorT>::MultiplyAssign(tVectorIO ioVec, tElementIn inEle)
             {
@@ -143,7 +140,6 @@ namespace Wiz
                 ioVec.e3 *= inEle;
 
                 return ioVec;
-
             }
             //////////////////////////////////////////////////////////////////////////
 
@@ -159,6 +155,7 @@ namespace Wiz
 
                 return outVec;
             }
+
             template<class VectorT>
             VectorT& Type<VectorT>::Divide(tVectorOut outVec, tVectorIn inVec, tElementIn inEle)
             {
@@ -175,6 +172,7 @@ namespace Wiz
                 }
                 return outVec;
             }
+
             template<class VectorT>
             VectorT& Type<VectorT>::Divide(tVectorOut outVec, tElementIn inEle, tVectorIn inVec)
             {
@@ -185,6 +183,7 @@ namespace Wiz
 
                 return outVec;
             }
+
             template<class VectorT>
             VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tVectorIn inVec)
             {
@@ -194,8 +193,8 @@ namespace Wiz
                 ioVec.e3 /= inVec.e3;
 
                 return ioVec;
-
             }
+
             template<class VectorT>
             VectorT& Type<VectorT>::DivideAssign(tVectorIO ioVec, tElementIn inEle)
             {
@@ -210,8 +209,8 @@ namespace Wiz
                 }
 
                 return ioVec;
-
             }
+
             //////////////////////////////////////////////////////////////////////////
 
             template<class VectorT>
@@ -233,13 +232,13 @@ namespace Wiz
             typename VectorT::tElement Type<VectorT>::Normalize(tVectorIO ioVec)
 
             {
-                tElement const Len = Length(ioVec);
+                tElement const lLen = Length(ioVec);
 
 
                 // Will also work for zero-sized Vectors, but will change nothing
-                if (::Wiz::Nearly::GreaterZero(Len))
+                if (::Wiz::Nearly::GreaterZero(lLen))
                 {
-                    tElement const lRecipLen = 1 / Len;
+                    tElement const lRecipLen = 1 / lLen;
 
                     ioVec.e0 *= lRecipLen;
                     ioVec.e1 *= lRecipLen;
@@ -247,7 +246,7 @@ namespace Wiz
                     ioVec.e3 *= lRecipLen;
                 }
 
-                return Len;
+                return lLen;
             }
 
             template<class VectorT>
@@ -310,9 +309,9 @@ namespace Wiz
             template<class VectorT>
             typename VectorT::tElement Type<VectorT>::SqrDist(tVectorIn inVec1, tVectorIn inVec2)
             {
-                tVector Vec;
-                Subtract(Vec, inVec1, inVec2);
-                return SqrLen(Vec);
+                tVector lVec;
+                Subtract(lVec, inVec1, inVec2);
+                return SqrLen(lVec);
             }
             ////////////////////////////////////////////////////////////////
 

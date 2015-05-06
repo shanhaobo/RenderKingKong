@@ -14,7 +14,7 @@ namespace Wiz
                 template<typename ElementT>
                 struct Type
                 {
-                    typedef ElementT                tElement;
+                    typedef ElementT            tElement;
 
                     typedef tElement const &    tElementIn;
                     typedef tElement &          tElementOut;
