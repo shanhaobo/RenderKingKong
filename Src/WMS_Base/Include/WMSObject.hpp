@@ -51,6 +51,7 @@ namespace wms
             WMS_DECLARE(::wms::Obj::type<Allocator::General::type>);
         } /// end of namespace Animation
 
+        /// Render King Kong
         namespace Animation
         {
             WMS_DECLARE(::wms::Obj::type<Allocator::Animation::type>);
@@ -71,10 +72,17 @@ namespace wms
             WMS_DECLARE(::wms::Obj::type<Allocator::RDL::type>);
         } /// end of namespace RDL
 
+        /// Framework
         namespace Cmpnt
         {
             WMS_DECLARE(::wms::Obj::type<Allocator::Cmpnt::type>);
         } /// end of namespace Cmpnt
+
+        /// Artificial Neural Network
+        namespace ANN
+        {
+            WMS_DECLARE(::wms::Obj::type<Allocator::ANN::type>);
+        } /// end of namespace ANN
     } /// end of namespace Obj
 
     //////////////////////////////////////////////////////////////////////////

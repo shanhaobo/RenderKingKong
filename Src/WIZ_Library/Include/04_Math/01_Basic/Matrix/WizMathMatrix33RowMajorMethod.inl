@@ -180,17 +180,17 @@ namespace Wiz
                 template<class MatrixT>
                 MatrixT& Type<MatrixT>::Multiply(tMatrixOut outMat, tMatrixIn inMat1, tMatrixIn inMat2)
                 {
-                    const tElement le00 = inMat1.e00 * inMat2.e00 + inMat1.e01 * inMat2.e10 + inMat1.e02 * inMat2.e20;
-                    const tElement le01 = inMat1.e00 * inMat2.e01 + inMat1.e01 * inMat2.e11 + inMat1.e02 * inMat2.e21;
-                    const tElement le02 = inMat1.e00 * inMat2.e02 + inMat1.e01 * inMat2.e12 + inMat1.e02 * inMat2.e22;
+                    tElement const le00 = inMat1.e00 * inMat2.e00 + inMat1.e01 * inMat2.e10 + inMat1.e02 * inMat2.e20;
+                    tElement const le01 = inMat1.e00 * inMat2.e01 + inMat1.e01 * inMat2.e11 + inMat1.e02 * inMat2.e21;
+                    tElement const le02 = inMat1.e00 * inMat2.e02 + inMat1.e01 * inMat2.e12 + inMat1.e02 * inMat2.e22;
 
-                    const tElement le10 = inMat1.e10 * inMat2.e00 + inMat1.e11 * inMat2.e10 + inMat1.e12 * inMat2.e20;
-                    const tElement le11 = inMat1.e10 * inMat2.e01 + inMat1.e11 * inMat2.e11 + inMat1.e12 * inMat2.e21;
-                    const tElement le12 = inMat1.e10 * inMat2.e02 + inMat1.e11 * inMat2.e12 + inMat1.e12 * inMat2.e22;
+                    tElement const le10 = inMat1.e10 * inMat2.e00 + inMat1.e11 * inMat2.e10 + inMat1.e12 * inMat2.e20;
+                    tElement const le11 = inMat1.e10 * inMat2.e01 + inMat1.e11 * inMat2.e11 + inMat1.e12 * inMat2.e21;
+                    tElement const le12 = inMat1.e10 * inMat2.e02 + inMat1.e11 * inMat2.e12 + inMat1.e12 * inMat2.e22;
 
-                    const tElement le20 = inMat1.e20 * inMat2.e00 + inMat1.e21 * inMat2.e10 + inMat1.e22 * inMat2.e20;
-                    const tElement le21 = inMat1.e20 * inMat2.e01 + inMat1.e21 * inMat2.e11 + inMat1.e22 * inMat2.e21;
-                    const tElement le22 = inMat1.e20 * inMat2.e02 + inMat1.e21 * inMat2.e12 + inMat1.e22 * inMat2.e22;
+                    tElement const le20 = inMat1.e20 * inMat2.e00 + inMat1.e21 * inMat2.e10 + inMat1.e22 * inMat2.e20;
+                    tElement const le21 = inMat1.e20 * inMat2.e01 + inMat1.e21 * inMat2.e11 + inMat1.e22 * inMat2.e21;
+                    tElement const le22 = inMat1.e20 * inMat2.e02 + inMat1.e21 * inMat2.e12 + inMat1.e22 * inMat2.e22;
 
                     outMat.e00 = le00;
                     outMat.e01 = le01;
@@ -209,9 +209,9 @@ namespace Wiz
                 template<class MatrixT>
                 ::Wiz::Vector3::Type<typename MatrixT::tElement>& Type<MatrixT>::Multiply(tVector3& outVec3, const tVector3& inVec3, tMatrixIn inMat)
                 {
-                    const tElement lx = inVec3.x * inMat.e00 + inVec3.y * inMat.e10 + inVec3.z * inMat.e20;
-                    const tElement ly = inVec3.x * inMat.e01 + inVec3.y * inMat.e11 + inVec3.z * inMat.e21;
-                    const tElement lz = inVec3.x * inMat.e02 + inVec3.y * inMat.e12 + inVec3.z * inMat.e22;
+                    tElement const lx = inVec3.x * inMat.e00 + inVec3.y * inMat.e10 + inVec3.z * inMat.e20;
+                    tElement const ly = inVec3.x * inMat.e01 + inVec3.y * inMat.e11 + inVec3.z * inMat.e21;
+                    tElement const lz = inVec3.x * inMat.e02 + inVec3.y * inMat.e12 + inVec3.z * inMat.e22;
 
                     outVec3.x = lx;
                     outVec3.y = ly;
@@ -284,29 +284,29 @@ namespace Wiz
                     le20 *= t;
 
                     ////////////////////////////////////////////////////////////
-                    const tElement le01 = -tMatrix22::Determinant(
+                    tElement const le01 = -tMatrix22::Determinant(
                         inMat.e01, inMat.e02,
                         inMat.e21, inMat.e22
                         ) * t;
-                    const tElement le11 =  tMatrix22::Determinant(
+                    tElement const le11 =  tMatrix22::Determinant(
                         inMat.e00, inMat.e02,
                         inMat.e20, inMat.e22
                         ) * t;
-                    const tElement le21 = -tMatrix22::Determinant(
+                    tElement const le21 = -tMatrix22::Determinant(
                         inMat.e00, inMat.e01,
                         inMat.e20, inMat.e21
                         ) * t;
 
                     ////////////////////////////////////////////////////////////
-                    const tElement le02 =  tMatrix22::Determinant(
+                    tElement const le02 =  tMatrix22::Determinant(
                         inMat.e01, inMat.e02,
                         inMat.e11, inMat.e12
                         ) * t;
-                    const tElement le12 = -tMatrix22::Determinant(
+                    tElement const le12 = -tMatrix22::Determinant(
                         inMat.e00, inMat.e02,
                         inMat.e10, inMat.e12
                         ) * t;
-                    const tElement le22 =  tMatrix22::Determinant(
+                    tElement const le22 =  tMatrix22::Determinant(
                         inMat.e00, inMat.e01,
                         inMat.e10, inMat.e11
                         ) * t;
@@ -331,17 +331,17 @@ namespace Wiz
                 template<class MatrixT>
                 MatrixT& Type<MatrixT>::Transpose(tMatrixOut outMat, tMatrixIn inMat)
                 {
-                    const tElement le00 = inMat.e00;
-                    const tElement le01 = inMat.e10;
-                    const tElement le02 = inMat.e20;
+                    tElement const le00 = inMat.e00;
+                    tElement const le01 = inMat.e10;
+                    tElement const le02 = inMat.e20;
 
-                    const tElement le10 = inMat.e01;
-                    const tElement le11 = inMat.e11;
-                    const tElement le12 = inMat.e21;
+                    tElement const le10 = inMat.e01;
+                    tElement const le11 = inMat.e11;
+                    tElement const le12 = inMat.e21;
 
-                    const tElement le20 = inMat.e02;
-                    const tElement le21 = inMat.e12;
-                    const tElement le22 = inMat.e22;
+                    tElement const le20 = inMat.e02;
+                    tElement const le21 = inMat.e12;
+                    tElement const le22 = inMat.e22;
 
                     outMat.e00 = le00;
                     outMat.e01 = le01;

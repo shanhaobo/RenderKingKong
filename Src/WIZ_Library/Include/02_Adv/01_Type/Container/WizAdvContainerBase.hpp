@@ -113,6 +113,13 @@ namespace Wiz
 
             ///-----------------------///
 
+            ::Wiz::Void::Type Resize(tSize inNewSize)
+            {
+                tSuper::resize(inNewSize);
+            }
+
+            ///-----------------------///
+
             tIterator Erase(tIterator itr)
             {
                 return tSuper::erase(itr);

@@ -127,10 +127,10 @@ namespace Wiz
                 template<class MatrixT>
                 MatrixT& Type<MatrixT>::Multiply(tMatrixOut outMat, tMatrixIn inMat1, tMatrixIn inMat2)
                 {
-                    const tElement le00 = inMat1.e00 * inMat2.e00 + inMat1.e01 * inMat2.e10;
-                    const tElement le10 = inMat1.e10 * inMat2.e00 + inMat1.e11 * inMat2.e10;
-                    const tElement le01 = inMat1.e00 * inMat2.e01 + inMat1.e01 * inMat2.e11;
-                    const tElement le11 = inMat1.e10 * inMat2.e01 + inMat1.e11 * inMat2.e11;
+                    tElement const le00 = inMat1.e00 * inMat2.e00 + inMat1.e01 * inMat2.e10;
+                    tElement const le10 = inMat1.e10 * inMat2.e00 + inMat1.e11 * inMat2.e10;
+                    tElement const le01 = inMat1.e00 * inMat2.e01 + inMat1.e01 * inMat2.e11;
+                    tElement const le11 = inMat1.e10 * inMat2.e01 + inMat1.e11 * inMat2.e11;
 
                     outMat.e00 = le00;
                     outMat.e10 = le10;
@@ -143,8 +143,8 @@ namespace Wiz
                 ::Wiz::Vector2::Type<typename MatrixT::tElement>& Type<MatrixT>::Multiply(tVector2Out outVec2, const tVector2& inVec2, tMatrixIn inMat)
                 {
                     /// Row vector /// D3D
-                    const tElement lx = inVec2.x * inMat.e00 + inVec2.y * inMat.e10;
-                    const tElement ly = inVec2.x * inMat.e01 + inVec2.y * inMat.e11;
+                    tElement const lx = inVec2.x * inMat.e00 + inVec2.y * inMat.e10;
+                    tElement const ly = inVec2.x * inMat.e01 + inVec2.y * inMat.e11;
 
                     outVec2.x = lx;
                     outVec2.y = ly;
@@ -175,18 +175,18 @@ namespace Wiz
                 template<class MatrixT>
                 ::Wiz::Bool::Type Type<MatrixT>::Invert(tMatrixOut outMat, tMatrixIn inMat)
                 {
-                    tElement t = Type<tElement>::Determinant(inMat);
-                    if (::Wiz::IsZero(t))
+                    tElement lt = Type<tElement>::Determinant(inMat);
+                    if (::Wiz::IsZero(lt))
                     {
                         return ::Wiz::Bool::False;
                     }
 
-                    t = 1 / t;
+                    lt = 1 / lt;
 
-                    const tElement le00 =  inMat.e11 * t;
-                    const tElement le10 = -inMat.e01 * t;
-                    const tElement le01 = -inMat.e10 * t;
-                    const tElement le11 =  inMat.e00 * t;
+                    tElement const le00 =  inMat.e11 * lt;
+                    tElement const le10 = -inMat.e01 * lt;
+                    tElement const le01 = -inMat.e10 * lt;
+                    tElement const le11 =  inMat.e00 * lt;
 
                     /// 
                     outMat.e00 = le00;
@@ -200,10 +200,10 @@ namespace Wiz
                 template<class MatrixT>
                 MatrixT& Type<MatrixT>::Transpose(tMatrixOut outMat, tMatrixIn inMat)
                 {
-                    const tElement le00 = inMat.e00;
-                    const tElement le10 = inMat.e01;
-                    const tElement le01 = inMat.e10;
-                    const tElement le11 = inMat.e11;
+                    tElement const le00 = inMat.e00;
+                    tElement const le10 = inMat.e01;
+                    tElement const le01 = inMat.e10;
+                    tElement const le11 = inMat.e11;
 
                     /// 
                     outMat.e00 = le00;

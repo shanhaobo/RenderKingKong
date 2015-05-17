@@ -10,20 +10,27 @@ namespace wms
     namespace EWMS_OBJ_CAT
     {
         WIZ_ACD(eWOC_General);
+
         WIZ_ACD(eWOC_Geometry);
         WIZ_ACD(eWOC_Animation);
         WIZ_ACD(eWOC_Resource);
         WIZ_ACD(eWOC_RDL);
+
         WIZ_ACD(eWOC_Component);
+
+        WIZ_ACD(eWOC_ArtificialNeuralNetwork);
     } /// end of namespace EWMS_OBJ_CAT
 
     namespace Allocator
     {
+        //////////////////////////////////////////////////////////////////////////
         namespace General
         {
             typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_General>::Type     type;
         } /// end of namespace General
 
+        //////////////////////////////////////////////////////////////////////////
+        /// RKK
         namespace Geometry
         {
             typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_Geometry>::Type    type;
@@ -44,10 +51,20 @@ namespace wms
             typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_RDL>::Type         type;
         } /// end of namespace RDL
 
+
+        //////////////////////////////////////////////////////////////////////////
+        /// Whimsy
         namespace Cmpnt
         {
             typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_Component>::Type   type;
         } /// end of namespace Cmpnt
+
+        //////////////////////////////////////////////////////////////////////////
+        /// AI
+        namespace ANN
+        {
+            typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_ArtificialNeuralNetwork>::Type   type;
+        } /// end of namespace ANN
     } /// end of namespace Allocator
 } /// end of namespace wms
 
