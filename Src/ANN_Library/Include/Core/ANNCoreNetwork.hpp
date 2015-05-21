@@ -20,6 +20,8 @@ namespace ann
 
             typedef WeightT                                 tWeight;
 
+            typedef ::std::initializer_list<::wms::I::type> tInitList;
+
             typedef ::ann::Layer::type<tIO, tWeight>        tLayer;
             typedef tLayer &                                tLayerRef;
             typedef tLayer *                                tLayerPtr;
@@ -29,14 +31,13 @@ namespace ann
 
         public:
             /// 初始化输入层的输入数量
-            type(::wms::I::in inNeuronCnt, ::wms::I::in inInputCnt) : m_InputCnt(inInputCnt)
+            type(tInitList inInitList) : m_InputCnt(-1)
             {
                 m_LayerList.Clear();
 
-                tLayerPtr lLayerPtr = AddNewLayer(inNeuronCnt);
-                if (::Wiz::IsValidPtr(lLayerPtr))
+                for (auto p = inInitList.begin(); p != inInitList.end(); ++p);
                 {
-                    m_LayerList.PushBack(lLayerPtr);
+                    AppendNewLayer(*p);
                 }
             }
 
@@ -53,7 +54,7 @@ namespace ann
             }
 
         public:
-            tLayerPtr AddNewLayer(::wms::I::in inNeuronCnt)
+            tLayerPtr AppendNewLayer(::wms::I::in inNeuronCnt)
             {
                 ::wms::Size::typec lLayerCnt = m_LayerList.Size();
                 
@@ -68,7 +69,14 @@ namespace ann
                 }
                 else if (lLayerCnt == 0)
                 {
-                    lLayerPtr = CreateLayer(inNeuronCnt, m_InputCnt);
+                    if (m_InputCnt < 0)
+                    {
+                        m_InputCnt = inNeuronCnt;
+                    }
+                    else
+                    {
+                        lLayerPtr = CreateLayer(inNeuronCnt, m_InputCnt);
+                    }
                 }
 
                 if (::Wiz::IsValidPtr(lLayerPtr))

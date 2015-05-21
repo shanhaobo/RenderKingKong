@@ -50,6 +50,9 @@ namespace Wiz
             Type(tSuper const & inSuper) : tContainerBase(inSuper)
             {}
 
+            Type(tInitList inInitList) : tContainerBase(inInitList)
+            {}
+
         public:
             ///-----------------------///
 

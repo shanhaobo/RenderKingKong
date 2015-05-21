@@ -19,7 +19,13 @@ namespace Wiz
 
             //////////////////////////////////////////////////////////////////////////
 
+            typedef typename tSuper::value_type                         tValue;
+
             typedef typename tSuper::size_type                          tSize;
+
+            //////////////////////////////////////////////////////////////////////////
+
+            typedef ::std::initializer_list<tValue>                     tInitList;
 
             //////////////////////////////////////////////////////////////////////////
 
@@ -34,6 +40,8 @@ namespace Wiz
             Base() : tSuper()
             {}
             Base(tSuper const & inSuper) : tSuper(inSuper)
+            {}
+            Base(tInitList inInitList) : tSuper(inInitList)
             {}
         public:
 
@@ -86,6 +94,8 @@ namespace Wiz
             SimpleBase() : tContainerSuper()
             {}
             SimpleBase(tSuper const & inSuper) : tContainerSuper(inSuper)
+            {}
+            SimpleBase(tInitList inInitList) : tContainerSuper(inInitList)
             {}
         public:
 
