@@ -75,6 +75,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eigen", "Eigen", "{D21252BD
 		..\..\eigen-eigen-10219c95fe65\Eigen\src\Core\Visitor.h = ..\..\eigen-eigen-10219c95fe65\Eigen\src\Core\Visitor.h
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample002_ann", "Sample002_ann\Sample002_ann.vcxproj", "{6F1D8F1B-13BD-476B-89FE-DB9143716781}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -85,6 +87,10 @@ Global
 		{6F7C57CC-0289-4365-9A00-83F59D0FA1C5}.Debug|Win32.Build.0 = Debug|Win32
 		{6F7C57CC-0289-4365-9A00-83F59D0FA1C5}.Release|Win32.ActiveCfg = Release|Win32
 		{6F7C57CC-0289-4365-9A00-83F59D0FA1C5}.Release|Win32.Build.0 = Release|Win32
+		{6F1D8F1B-13BD-476B-89FE-DB9143716781}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6F1D8F1B-13BD-476B-89FE-DB9143716781}.Debug|Win32.Build.0 = Debug|Win32
+		{6F1D8F1B-13BD-476B-89FE-DB9143716781}.Release|Win32.ActiveCfg = Release|Win32
+		{6F1D8F1B-13BD-476B-89FE-DB9143716781}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

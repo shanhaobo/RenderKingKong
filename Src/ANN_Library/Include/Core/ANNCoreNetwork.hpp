@@ -32,18 +32,25 @@ namespace ann
 
         public:
             /// 初始化输入层的输入数量
-            type(tInitList inInitList) : m_InputCnt(-1)
+            type(tInitList inInitList) : m_InputCnt(-1), m_InitList(inInitList)
             {
                 m_LayerList.Clear();
-
-                AppendLayers(inInitList);
             }
 
             virtual ~type()
             {
-                ::wms::I::typec lLayerCnt = m_LayerList.Size();
+            }
 
-                for (::wms::I::type i = 0; i < lLayerCnt; ++i)
+        public:
+            ::wms::Bool::type Initialize()
+            {
+                AppendLayers(m_InitList);
+            }
+
+            ::wms::Void::type Finalize()
+            {
+                ::wms::Size::typec lLayerCnt = m_LayerList.Size();
+                for (::wms::U::type i = 0; i < lLayerCnt; ++i)
                 {
                     DestroyLayer(m_LayerList[i]);
                 }
@@ -60,7 +67,6 @@ namespace ann
                 }
             }
 
-        public:
             tLayerPtr AppendNewLayer(::wms::U::in inNeuronCnt)
             {
                 ::wms::Size::typec lLayerCnt = m_LayerList.Size();
@@ -117,6 +123,8 @@ namespace ann
             ::wms::I::type      m_InputCnt;
 
             tLayerList          m_LayerList;
+
+            tInitList           m_InitList;
         };
     } /// end of namespace Network
 } /// end of namespace ann

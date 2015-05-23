@@ -9,4 +9,6 @@
 #include "../Src/WMS_Base/Include/WMSBase.hpp"
 #include "../Src/WMS_Core/Include/WMSCore.hpp"
 
+#include "../Src/ANN_Library/Include/Core/ANNCore.hpp"
+
 #endif // !__SampleBase_HPP__

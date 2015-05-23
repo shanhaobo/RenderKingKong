@@ -4,5 +4,7 @@
 #include "./ANNCoreFwdDclr.hpp"
 
 #include "./ANNCoreNeuron.hpp"
+#include "./ANNCoreLayer.hpp"
+#include "./ANNCoreNetwork.hpp"
 
 #endif /// __ANN_CORE_HPP__
