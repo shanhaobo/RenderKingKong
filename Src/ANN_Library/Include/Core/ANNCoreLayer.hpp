@@ -15,6 +15,7 @@ namespace ann
 
             typedef typename ::wms::Array<tIO>::type        tIOList;
             typedef tIOList &                               tIOListRef;
+            typedef tIOListRef const                        tIOListRefC;
             typedef tIOListRef const                        tIOListIn;
             typedef tIOListRef                              tIOListOut;
             typedef tIOListRef const                        tIOListOutC;
@@ -24,6 +25,7 @@ namespace ann
             typedef ::ann::Neuron::type<tIO, tWeight>       tNeuron;
             typedef tNeuron &                               tNeuronRef;
             typedef tNeuron *                               tNeuronPtr;
+            typedef tNeuronPtr const                        tNeuronPtrF;
 
             typedef typename ::wms::Array<tNeuronPtr>::type tNeuronList;
 
@@ -49,13 +51,17 @@ namespace ann
 
         public:
 
-            virtual tIOListOutC Update(tIOListIn inInputList)
+            virtual tIOListRefC Update(tIOListIn inInputList)
             {
                 ::wms::I::typec lNeuronCnt = m_NeuronList.Size();
 
                 for (::wms::I::type i = 0; i < lNeuronCnt; ++i)
                 {
-                    m_NeuronList[i].Update(m_OutputList[i], inInputList);
+                    tNeuronPtrF lNeuronPtr = m_NeuronList[i];
+                    if (::Wiz::IsValidPtr(lNeuronPtr))
+                    {
+                        lNeuronPtr->Update(m_OutputList[i], inInputList);
+                    }
                 }
 
                 return m_OutputList;

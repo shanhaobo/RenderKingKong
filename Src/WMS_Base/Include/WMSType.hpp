@@ -132,6 +132,14 @@ namespace wms
 
     /////////////////////////////////////////////////////////////
 
+    template <typename T>
+    struct InitList
+    {
+        typedef typename ::Wiz::InitializerList<T>::Type    type;
+    };
+
+    /////////////////////////////////////////////////////////////
+
     template <typename T, typename A = ::std::allocator<T> > 
     struct Array
     {
@@ -167,8 +175,6 @@ namespace wms
     {
         typedef typename ::Wiz::Deque::Type<T, A>           type;
     };
-
-    /////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////
 

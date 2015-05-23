@@ -471,6 +471,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Matrix\WizMathMatrix33RowMajorMethod.hpp">
       <Filter>Include\04_Math\01_Basic\Matrix</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvInitializerList.hpp">
+      <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">

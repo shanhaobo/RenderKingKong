@@ -20,7 +20,8 @@ namespace ann
 
             typedef WeightT                                 tWeight;
 
-            typedef ::std::initializer_list<::wms::I::type> tInitList;
+            typedef ::wms::InitList<::wms::U::type>::type   tInitList;
+            typedef typename tInitList::iterator            tInitListItr;
 
             typedef ::ann::Layer::type<tIO, tWeight>        tLayer;
             typedef tLayer &                                tLayerRef;
@@ -35,10 +36,7 @@ namespace ann
             {
                 m_LayerList.Clear();
 
-                for (auto p = inInitList.begin(); p != inInitList.end(); ++p);
-                {
-                    AppendNewLayer(*p);
-                }
+                AppendLayers(inInitList);
             }
 
             virtual ~type()
@@ -53,8 +51,17 @@ namespace ann
                 m_LayerList.Clear();
             }
 
+        protected:
+            ::wms::Void::type AppendLayers(tInitList inInitList)
+            {
+                for (tInitListItr tItr = inInitList.begin(); tItr != inInitList.end(); ++tItr)
+                {
+                    AppendNewLayer(*tItr);
+                }
+            }
+
         public:
-            tLayerPtr AppendNewLayer(::wms::I::in inNeuronCnt)
+            tLayerPtr AppendNewLayer(::wms::U::in inNeuronCnt)
             {
                 ::wms::Size::typec lLayerCnt = m_LayerList.Size();
                 
@@ -92,13 +99,13 @@ namespace ann
         public:
             virtual ::wms::Void::type Update(tIOListIn inInputDatum)
             {
-                tIOListPtrC lPrevLayerIOListPtr = &inInputDatum;
+                tIOListPtr lPrevLayerIOListPtr = &inInputDatum;
 
                 ::wms::Size::typec lLayerCnt = m_LayerList.Size();
-                for (::wms::I::type i = 0; i < lLayerCnt; ++i)
+                for (::wms::U::type i = 0; i < lLayerCnt; ++i)
                 {
-                    /// Travel all of layers, Output of last layer AS input of current layer.
-                    lPrevLayerIOListPtr = &(m_LayerList[i].Update(*lPrevLayerIOListPtr));
+                    /// Travel all of layers, The last layer's output  AS current layer's input.
+                    lPrevLayerIOListPtr = &(m_LayerList[i]->Update(*lPrevLayerIOListPtr));
                 }
             }
 

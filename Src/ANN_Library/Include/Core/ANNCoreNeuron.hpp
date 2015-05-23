@@ -13,7 +13,7 @@ namespace ann
         protected:
             typedef IOT                                     tIO;
             typedef tIO &                                   tIORef;
-            typedef tIORef                                  tIOOut;
+            typedef tIORef                                  tOut;
 
             typedef typename ::wms::Array<tIO>::type        tInputList;
             typedef tInputList &                            tInputListRef;
@@ -32,7 +32,7 @@ namespace ann
             }
 
         public:
-            virtual ::wms::Void::type Update(tIOOut outOutput, tInputListIn inInputList) = WIZ_NULL;
+            virtual ::wms::Void::type Update(tOut outOutput, tInputListIn inInputList) = WIZ_NULL;
 
         protected:
             type() : m_WeightList(0)

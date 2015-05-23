@@ -1,20 +1,26 @@
 #include "../../Include/Core/ANNCoreLayer.hpp"
 
+#include "../../Include/Core/ANNCoreNetwork.hpp"
+
 namespace ann
 {
     namespace Layer
     {
-        void ftest2(::std::initializer_list<int> t)
+        void CreateNULLANN()
         {
-            sizeof(t);
-        }
+            struct NullANN : public ::ann::Network::type<::wms::F32::type, ::wms::F64::type>
+            {
+                typedef ::ann::Network::type<::wms::F32::type, ::wms::F64::type> tBase;
 
-        void ftest()
-        {
+                NullANN(tInitList inInitList) : tBase(inInitList){}
 
-            ftest2({ 4, 5, 6 });
+                virtual tLayerPtr CreateLayer(::wms::I::in inNeuronCnt, ::wms::I::in inInputCnt) const{ return WIZ_NULL; }
+                virtual ::wms::Void::type DestroyLayer(tLayerPtr inLayerPtr) const{ }
+            };
 
-            ::std::vector<int> v = { 4, 5, 6 };
+            NullANN lNetwork({ 5, 3, 4 });
+
+            NullANN lNetwork2 = { 5, 3, 4 };
         }
     } /// end of namespace Layer
 } /// end of namespace ann
