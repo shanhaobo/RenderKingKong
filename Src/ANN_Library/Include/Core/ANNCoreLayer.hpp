@@ -11,26 +11,36 @@ namespace ann
         class type : public ::wms::Obj::ANN::type
         {
         protected:
-            typedef IOT                                     tIO;
+            typedef IOT                                         tIO;
 
-            typedef typename ::wms::Array<tIO>::type        tIOList;
-            typedef tIOList &                               tIOListRef;
-            typedef tIOListRef const                        tIOListRefC;
-            typedef tIOListRef const                        tIOListIn;
-            typedef tIOListRef                              tIOListOut;
-            typedef tIOListRef const                        tIOListOutC;
+            typedef typename ::wms::Array<tIO>::type            tIOList;
+            typedef tIOList &                                   tIOListRef;
+            typedef tIOListRef const                            tIOListRefC;
+            typedef tIOListRef const                            tIOListIn;
+            typedef tIOListRef                                  tIOListOut;
+            typedef tIOListRef const                            tIOListOutC;
 
-            typedef WeightT                                 tWeight;
+            typedef WeightT                                     tWeight;
 
-            typedef ::ann::Neuron::type<tIO, tWeight>       tNeuron;
-            typedef tNeuron &                               tNeuronRef;
-            typedef tNeuron *                               tNeuronPtr;
-            typedef tNeuronPtr const                        tNeuronPtrF;
+            typedef ::ann::Layer::Storage::type<tWeight>        tStorage;
+            typedef tStorage &                                  tStorageRef;
+            typedef tStorageRef const                           tStorageIn;
 
-            typedef typename ::wms::Array<tNeuronPtr>::type tNeuronList;
+            typedef ::ann::Neuron::Storage::type<tWeight>       tNeuronStorage;
+            typedef tNeuronStorage &                            tNeuronStorageRef;
+            typedef tNeuronStorage const                        tNeuronStorageIn;
+
+            typedef ::ann::Neuron::type<tIO, tWeight>           tNeuron;
+            typedef tNeuron &                                   tNeuronRef;
+            typedef tNeuron *                                   tNeuronPtr;
+            typedef tNeuronPtr const                            tNeuronPtrF;
+
+            typedef typename ::wms::Array<tNeuronPtrF>::type    tNeuronList;
 
         public:
-            type(::wms::U::in inNeuronCnt, ::wms::U::in inInputCnt) : m_NeuronList(inNeuronCnt), m_OutputList(inNeuronCnt), m_InputCnt(inInputCnt)
+            type(tStorageIn inStorage)
+                : m_Storage(inStorage)
+                , m_OutputList(inStorage.NeuronCnt())
             {
             }
             virtual ~type()
@@ -39,10 +49,12 @@ namespace ann
         public:
             ::wms::Bool::type Initialize()
             {
+                m_NeuronList.Clear();
+
                 ::wms::Size::type lNeuronCnt = m_NeuronList.Size();
-                for (::wms::U::type i = 0; i < lNeuronCnt; ++i)
+                for (::wms::Size::type i = 0; i < lNeuronCnt; ++i)
                 {
-                    m_NeuronList[i] = CreateNeuron(m_InputCnt);
+                    m_NeuronList.PushBack(CreateNeuron(*(m_Storage.GetNeuron(i))));
                 }
 
                 return ::wms::Bool::True;
@@ -51,21 +63,19 @@ namespace ann
             ::wms::Void::type Finalize()
             {
                 ::wms::Size::typec lNeuronCnt = m_NeuronList.Size();
-
-                for (::wms::U::type i = 0; i < lNeuronCnt; ++i)
+                for (::wms::Size::type i = 0; i < lNeuronCnt; ++i)
                 {
                     DestroyNeuron(m_NeuronList[i]);
                 }
 
                 m_NeuronList.Clear();
             }
-        public:
 
+        public:
             virtual tIOListRefC Update(tIOListIn inInputList)
             {
-                ::wms::U::typec lNeuronCnt = m_NeuronList.Size();
-
-                for (::wms::U::type i = 0; i < lNeuronCnt; ++i)
+                ::wms::Size::typec lNeuronCnt = m_NeuronList.Size();
+                for (::wms::Size::type i = 0; i < lNeuronCnt; ++i)
                 {
                     tNeuronPtrF lNeuronPtr = m_NeuronList[i];
                     if (::Wiz::IsValidPtr(lNeuronPtr))
@@ -77,25 +87,26 @@ namespace ann
                 return m_OutputList;
             }
 
-            ::wms::Size::typec NeuronCnt() const
+            WIZ_INLINE ::wms::Size::typec NeuronCnt() const
             {
                 return m_NeuronList.Size();
             }
 
+            WIZ_INLINE ::wms::Size::typec InputCnt() const
+            {
+                return m_Storage.InputCnt();
+            }
+
         public:
-            virtual tNeuronPtr CreateNeuron(::wms::I::in inInputCnt) const = WIZ_NULL;
+            virtual tNeuronPtr CreateNeuron(tNeuronStorageIn inStorage) const = WIZ_NULL;
             virtual ::wms::Void::type DestroyNeuron(tNeuronPtr inNeuronPtr) const = WIZ_NULL;
 
         protected:
-            type() : m_NeuronList(0), m_InputCnt(0)
-            {
-            }
+            tStorageRef         m_Storage;
 
             tNeuronList         m_NeuronList;
 
             tIOList             m_OutputList;
-
-            ::wms::U::type      m_InputCnt;
         };
     } /// end of namespace Layer
 } /// end of namespace ann

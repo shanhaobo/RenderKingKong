@@ -30,6 +30,9 @@
     <ClInclude Include="..\Src\ANN_Library\Include\Core\ANNCoreNetwork.hpp">
       <Filter>Include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\ANN_Library\Include\Core\ANNCoreStorage.hpp">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\ANN_Library\Private\Core\ANNCoreLayer.cpp">

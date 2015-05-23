@@ -2,6 +2,7 @@
 #define __ANN_CORE_NEURON_HPP__
 
 #include "./ANNCoreFwdDclr.hpp"
+#include "./ANNCoreStorage.hpp"
 
 namespace ann
 {
@@ -19,11 +20,16 @@ namespace ann
             typedef tInputList &                            tInputListRef;
             typedef tInputListRef const                     tInputListIn;
 
-            typedef WeightT                                 tWeight;
-            typedef typename ::wms::Array<tWeight>::type    tWeightList;
+            typedef ::ann::Neuron::Storage::type<WeightT>   tStorage;
+            typedef tStorage &                              tStorageRef;
+            typedef tStorageRef const                       tStorageIn;
+
+            typedef typename tStorage::tWeight              tWeight;
+            typedef typename tStorage::tWeightList          tWeightList;
+            typedef typename tStorage::tWeightListRef       tWeightListRef;
 
         public:
-            type(::wms::I::in inInputNum) : m_WeightList(inInputNum)
+            type(tStorageIn inStorage) : m_Storage(inStorage), m_WeightList(inStorage.GetWeightList())
             {
             }
 
@@ -35,11 +41,9 @@ namespace ann
             virtual ::wms::Void::type Update(tOut outOutput, tInputListIn inInputList) = WIZ_NULL;
 
         protected:
-            type() : m_WeightList(0)
-            {
-            }
+            tStorageRef         m_Storage;
 
-            tWeightList         m_WeightList;
+            tWeightListRef      m_WeightList;
         };
     } /// end of namespace Neuron
 } /// end of namespace ann

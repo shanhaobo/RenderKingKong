@@ -53,6 +53,8 @@ namespace Wiz
             Type(tInitList inInitList) : tContainerBase(inInitList)
             {}
 
+            Type(tSize inSize) : tContainerBase(inSize)
+            {}
         public:
             ///-----------------------///
 

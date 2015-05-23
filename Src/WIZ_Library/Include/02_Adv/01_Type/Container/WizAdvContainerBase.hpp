@@ -43,6 +43,8 @@ namespace Wiz
             {}
             Base(tInitList inInitList) : tSuper(inInitList)
             {}
+            Base(tSize inSize) : tSuper(inSize)
+            {}
         public:
 
             ///-----------------------///
@@ -96,6 +98,8 @@ namespace Wiz
             SimpleBase(tSuper const & inSuper) : tContainerSuper(inSuper)
             {}
             SimpleBase(tInitList inInitList) : tContainerSuper(inInitList)
+            {}
+            SimpleBase(tSize inSize) : tContainerSuper(inSize)
             {}
         public:
 

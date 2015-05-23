@@ -4,11 +4,11 @@ struct NullANN : public ::ann::Network::type<::wms::F32::type, ::wms::F64::type>
 {
     typedef ::ann::Network::type<::wms::F32::type, ::wms::F64::type> tBase;
 
-    NullANN(tInitList inInitList) : tBase(inInitList)
+    NullANN(tStorage inStorage) : tBase(inStorage)
     {
     }
 
-    virtual tLayerPtr CreateLayer(::wms::I::in inNeuronCnt, ::wms::I::in inInputCnt) const
+    virtual tLayerPtr CreateLayer(tLayerStorageIn inStorage) const
     {
         return WIZ_NULL;
     }
@@ -20,11 +20,13 @@ struct NullANN : public ::ann::Network::type<::wms::F32::type, ::wms::F64::type>
 
 void CreateNULLANN()
 {
-    NullANN lNetwork({ 5, 3, 4 });
+    NullANN::tStorage lStorage({ 5, 3, 4 });
+
+    NullANN lNetwork(lStorage);
     lNetwork.Initialize();
     lNetwork.Finalize();
 
-    NullANN lNetwork2 = { 5, 3, 4 };
+    NullANN lNetwork2 = lStorage;
     lNetwork2.Initialize();
     lNetwork2.Finalize();
 }

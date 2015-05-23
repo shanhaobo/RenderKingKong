@@ -16,6 +16,7 @@
     <ClInclude Include="..\Src\ANN_Library\Include\Core\ANNCoreLayer.hpp" />
     <ClInclude Include="..\Src\ANN_Library\Include\Core\ANNCoreNetwork.hpp" />
     <ClInclude Include="..\Src\ANN_Library\Include\Core\ANNCoreNeuron.hpp" />
+    <ClInclude Include="..\Src\ANN_Library\Include\Core\ANNCoreStorage.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\ANN_Library\Private\Core\ANNCoreLayer.cpp" />

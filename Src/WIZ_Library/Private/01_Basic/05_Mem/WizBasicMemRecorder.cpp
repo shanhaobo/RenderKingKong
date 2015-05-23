@@ -15,8 +15,8 @@ namespace Wiz
         WIZ_CLASS
         {
         public:
-            void Alloc(void* ptr, size_t sz, const char* file = 0, size_t ln = 0, const char* func = 0);
-            void Dealloc(void* ptr);
+            void Alloc(void* ptr, size_t sz, const char* file = 0, size_t ln = 0, const char* func = 0){};
+            void Dealloc(void* ptr){};
 
             static Ref Get()
             {

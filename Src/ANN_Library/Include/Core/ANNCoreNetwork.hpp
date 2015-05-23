@@ -10,15 +10,22 @@ namespace ann
         template <class IOT, class WeightT = ::wms::F64::type>
         class type : public ::wms::Obj::ANN::type
         {
-        protected:
+        public:
+            typedef WeightT                                 tWeight;
             typedef IOT                                     tIO;
+
             typedef typename ::wms::Array<tIO>::type        tIOList;
+
+            typedef ::ann::Network::Storage::type<tWeight>  tStorage;
+            typedef tStorage &                              tStorageRef;
+            typedef tStorageRef const                       tStorageIn;
+
+        protected:
             typedef tIOList &                               tIOListRef;
             typedef tIOListRef const                        tIOListIn;
             typedef tIOList *                               tIOListPtr;
             typedef tIOList const *                         tIOListPtrC;
 
-            typedef WeightT                                 tWeight;
 
             typedef ::wms::InitList<::wms::U::type>::type   tInitList;
             typedef typename tInitList::iterator            tInitListItr;
@@ -26,15 +33,21 @@ namespace ann
             typedef ::ann::Layer::type<tIO, tWeight>        tLayer;
             typedef tLayer &                                tLayerRef;
             typedef tLayer *                                tLayerPtr;
-            typedef tLayer const * const                    tLayerPtrFC;
+            typedef tLayerPtr const                         tLayerPtrF;
 
-            typedef typename ::wms::Array<tLayerPtr>::type  tLayerList;
+            typedef typename ::wms::Array<tLayerPtrF>::type tLayerList;
+
+
+            typedef ::ann::Layer::Storage::type<tWeight>    tLayerStorage;
+            typedef tLayerStorage &                         tLayerStorageRef;
+            typedef tLayerStorage const                     tLayerStorageIn;
 
         public:
-            /// 初始化输入层的输入数量
-            type(tInitList inInitList) : m_InputCnt(0), m_InitList(inInitList)
+            type(tStorageIn inStorage)
+                : m_Storage(inStorage)
+                , m_InputCnt(inStorage.InputCnt())
             {
-                m_LayerList.Clear();
+
             }
 
             virtual ~type()
@@ -44,7 +57,15 @@ namespace ann
         public:
             ::wms::Bool::type Initialize()
             {
-                InitLayers(m_InitList);
+                ::wms::Size::typec lLayerCnt = m_Storage.LayerCnt();
+                for (::wms::Size::type i = 0; i < lLayerCnt; ++i)
+                {
+                    tLayerPtr lLayerPtr = AppendNewLayer();
+                    if (::Wiz::IsValidPtr(lLayerPtr))
+                    {
+                        lLayerPtr->Initialize();
+                    }
+                }
 
                 return ::wms::Bool::True;
             }
@@ -66,48 +87,11 @@ namespace ann
             }
 
         protected:
-            ::wms::Void::type InitLayers(tInitList inInitList)
+            tLayerPtr AppendNewLayer()
             {
-                for (tInitListItr tItr = inInitList.begin(); tItr != inInitList.end(); ++tItr)
-                {
-                    tLayerPtr lLayerPtr = AppendNewLayer(*tItr);
-                    if (::Wiz::IsValidPtr(lLayerPtr))
-                    {
-                        lLayerPtr->Initialize();
-                    }
-                }
-            }
-
-            tLayerPtr AppendNewLayer(::wms::U::in inNeuronCnt)
-            {
-                if (inNeuronCnt == 0)
-                {
-                    return WMS_NULLPTR;
-                }
-
-                tLayerPtr lLayerPtr = WMS_NULLPTR;
-
                 ::wms::Size::typec lLayerCnt = m_LayerList.Size();
-                if (lLayerCnt > 0)
-                {
-                    tLayerPtrFC lPrevLayerPtr = m_LayerList[lLayerCnt - 1];
-                    if (::Wiz::IsValidPtr(lPrevLayerPtr))
-                    {
-                        lLayerPtr = CreateLayer(inNeuronCnt, lPrevLayerPtr->NeuronCnt());
-                    }
-                }
-                else if (lLayerCnt == 0)
-                {
-                    if (m_InputCnt == 0)
-                    {
-                        m_InputCnt = inNeuronCnt;
-                    }
-                    else
-                    {
-                        lLayerPtr = CreateLayer(inNeuronCnt, m_InputCnt);
-                    }
-                }
 
+                tLayerPtr lLayerPtr = CreateLayer(*(m_Storage.GetLayer(lLayerCnt)));
                 if (::Wiz::IsValidPtr(lLayerPtr))
                 {
                     m_LayerList.PushBack(lLayerPtr);
@@ -136,7 +120,7 @@ namespace ann
             }
 
         public:
-            virtual tLayerPtr CreateLayer(::wms::I::in inNeuronCnt, ::wms::I::in inInputCnt) const = WIZ_NULL;
+            virtual tLayerPtr CreateLayer(tLayerStorageIn inLayerStorage) const = WIZ_NULL;
             virtual ::wms::Void::type DestroyLayer(tLayerPtr inLayerPtr) const = WIZ_NULL;
 
         protected:
@@ -144,7 +128,7 @@ namespace ann
 
             tLayerList          m_LayerList;
 
-            tInitList           m_InitList;
+            tStorageRef         m_Storage;
         };
     } /// end of namespace Network
 } /// end of namespace ann
