@@ -21,8 +21,12 @@ struct NullANN : public ::ann::Network::type<::wms::F32::type, ::wms::F64::type>
 void CreateNULLANN()
 {
     NullANN lNetwork({ 5, 3, 4 });
+    lNetwork.Initialize();
+    lNetwork.Finalize();
 
     NullANN lNetwork2 = { 5, 3, 4 };
+    lNetwork2.Initialize();
+    lNetwork2.Finalize();
 }
 
 int _tmain(int argc, _TCHAR* argv[])

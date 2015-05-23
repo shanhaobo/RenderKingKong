@@ -30,32 +30,42 @@ namespace ann
             typedef typename ::wms::Array<tNeuronPtr>::type tNeuronList;
 
         public:
-            type(::wms::I::in inNeuronCnt, ::wms::I::in inInputCnt) : m_NeuronList(inNeuronCnt), m_OutputList(inNeuronCnt)
+            type(::wms::U::in inNeuronCnt, ::wms::U::in inInputCnt) : m_NeuronList(inNeuronCnt), m_OutputList(inNeuronCnt), m_InputCnt(inInputCnt)
             {
-                for (::wms::I::type i = 0; i < inNeuronCnt; ++i)
-                {
-                    m_NeuronList[i] = CreateNeuron(inInputCnt);
-                }
             }
             virtual ~type()
             {
-                ::wms::I::typec lNeuronCnt = m_NeuronList.Size();
+            }
+        public:
+            ::wms::Bool::type Initialize()
+            {
+                ::wms::Size::type lNeuronCnt = m_NeuronList.Size();
+                for (::wms::U::type i = 0; i < lNeuronCnt; ++i)
+                {
+                    m_NeuronList[i] = CreateNeuron(m_InputCnt);
+                }
 
-                for (::wms::I::type i = 0; i < lNeuronCnt; ++i)
+                return ::wms::Bool::True;
+            }
+
+            ::wms::Void::type Finalize()
+            {
+                ::wms::Size::typec lNeuronCnt = m_NeuronList.Size();
+
+                for (::wms::U::type i = 0; i < lNeuronCnt; ++i)
                 {
                     DestroyNeuron(m_NeuronList[i]);
                 }
 
                 m_NeuronList.Clear();
             }
-
         public:
 
             virtual tIOListRefC Update(tIOListIn inInputList)
             {
-                ::wms::I::typec lNeuronCnt = m_NeuronList.Size();
+                ::wms::U::typec lNeuronCnt = m_NeuronList.Size();
 
-                for (::wms::I::type i = 0; i < lNeuronCnt; ++i)
+                for (::wms::U::type i = 0; i < lNeuronCnt; ++i)
                 {
                     tNeuronPtrF lNeuronPtr = m_NeuronList[i];
                     if (::Wiz::IsValidPtr(lNeuronPtr))
@@ -77,13 +87,15 @@ namespace ann
             virtual ::wms::Void::type DestroyNeuron(tNeuronPtr inNeuronPtr) const = WIZ_NULL;
 
         protected:
-            type() : m_NeuronList(0)
+            type() : m_NeuronList(0), m_InputCnt(0)
             {
             }
 
             tNeuronList         m_NeuronList;
 
             tIOList             m_OutputList;
+
+            ::wms::U::type      m_InputCnt;
         };
     } /// end of namespace Layer
 } /// end of namespace ann

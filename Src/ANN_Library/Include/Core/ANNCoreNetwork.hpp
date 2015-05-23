@@ -32,7 +32,7 @@ namespace ann
 
         public:
             /// 初始化输入层的输入数量
-            type(tInitList inInitList) : m_InputCnt(-1), m_InitList(inInitList)
+            type(tInitList inInitList) : m_InputCnt(0), m_InitList(inInitList)
             {
                 m_LayerList.Clear();
             }
@@ -44,7 +44,9 @@ namespace ann
         public:
             ::wms::Bool::type Initialize()
             {
-                AppendLayers(m_InitList);
+                InitLayers(m_InitList);
+
+                return ::wms::Bool::True;
             }
 
             ::wms::Void::type Finalize()
@@ -52,26 +54,40 @@ namespace ann
                 ::wms::Size::typec lLayerCnt = m_LayerList.Size();
                 for (::wms::U::type i = 0; i < lLayerCnt; ++i)
                 {
-                    DestroyLayer(m_LayerList[i]);
+                    tLayerPtr lLayerPtr = m_LayerList[i];
+                    if (::Wiz::IsValidPtr(lLayerPtr))
+                    {
+                        lLayerPtr->Finalize();
+                        DestroyLayer(m_LayerList[i]);
+                    }
                 }
 
                 m_LayerList.Clear();
             }
 
         protected:
-            ::wms::Void::type AppendLayers(tInitList inInitList)
+            ::wms::Void::type InitLayers(tInitList inInitList)
             {
                 for (tInitListItr tItr = inInitList.begin(); tItr != inInitList.end(); ++tItr)
                 {
-                    AppendNewLayer(*tItr);
+                    tLayerPtr lLayerPtr = AppendNewLayer(*tItr);
+                    if (::Wiz::IsValidPtr(lLayerPtr))
+                    {
+                        lLayerPtr->Initialize();
+                    }
                 }
             }
 
             tLayerPtr AppendNewLayer(::wms::U::in inNeuronCnt)
             {
-                ::wms::Size::typec lLayerCnt = m_LayerList.Size();
-                
+                if (inNeuronCnt == 0)
+                {
+                    return WMS_NULLPTR;
+                }
+
                 tLayerPtr lLayerPtr = WMS_NULLPTR;
+
+                ::wms::Size::typec lLayerCnt = m_LayerList.Size();
                 if (lLayerCnt > 0)
                 {
                     tLayerPtrFC lPrevLayerPtr = m_LayerList[lLayerCnt - 1];
@@ -82,7 +98,7 @@ namespace ann
                 }
                 else if (lLayerCnt == 0)
                 {
-                    if (m_InputCnt < 0)
+                    if (m_InputCnt == 0)
                     {
                         m_InputCnt = inNeuronCnt;
                     }
@@ -110,8 +126,12 @@ namespace ann
                 ::wms::Size::typec lLayerCnt = m_LayerList.Size();
                 for (::wms::U::type i = 0; i < lLayerCnt; ++i)
                 {
-                    /// Travel all of layers, The last layer's output  AS current layer's input.
-                    lPrevLayerIOListPtr = &(m_LayerList[i]->Update(*lPrevLayerIOListPtr));
+                    tLayerPtr lLayerPtr = m_LayerList[i];
+                    if (::Wiz::IsValidPtr(lLayerPtr))
+                    {
+                        /// Travel all of layers, The last layer's output  AS current layer's input.
+                        lPrevLayerIOListPtr = &(lLayerPtr->Update(*lPrevLayerIOListPtr));
+                    }
                 }
             }
 
@@ -120,7 +140,7 @@ namespace ann
             virtual ::wms::Void::type DestroyLayer(tLayerPtr inLayerPtr) const = WIZ_NULL;
 
         protected:
-            ::wms::I::type      m_InputCnt;
+            ::wms::U::type      m_InputCnt;
 
             tLayerList          m_LayerList;
 
