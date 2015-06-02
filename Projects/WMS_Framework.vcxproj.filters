@@ -15,16 +15,31 @@
     <Filter Include="Private\Core">
       <UniqueIdentifier>{b7c56ec7-0d63-41fc-8207-97b1e8b92378}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\System">
+      <UniqueIdentifier>{0f9f3ddc-26db-4af3-8691-53f7dfce8f63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\System\Attribute System">
+      <UniqueIdentifier>{924cd777-7dff-45d1-9dda-3554f4019b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\System">
+      <UniqueIdentifier>{b9d8c75c-29b9-48d1-903a-32e76bd6306c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkActor.hpp">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkComponent.hpp">
       <Filter>Include\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkFwdDclr.hpp">
       <Filter>Include\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkActor.hpp">
-      <Filter>Include\Core</Filter>
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\WMSAttrSystem.hpp">
+      <Filter>Include\System\Attribute System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\WMSAttribute.hpp">
+      <Filter>Include\System\Attribute System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +48,12 @@
     </ClCompile>
     <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkActor.cpp">
       <Filter>Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSAttrSystem.cpp">
+      <Filter>Private\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSAttribute.cpp">
+      <Filter>Private\System</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

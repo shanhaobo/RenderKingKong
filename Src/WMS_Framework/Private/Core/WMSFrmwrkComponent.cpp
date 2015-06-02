@@ -11,6 +11,17 @@ namespace wms
         type::~type()
         {
         }
+    } /// end of namespace Cmpnt
+
+    namespace CmpntMap
+    {
+        type::type()
+        {
+        }
+
+        type::~type()
+        {
+        }
 
         Void::type type::Tick(F32::in inDeltaTime)
         {
@@ -24,5 +35,33 @@ namespace wms
                 }
             }
         }
-    } /// end of namespace Cmpnt
+    } /// end of namespace CmpntMap
+
+    namespace CmpntArray
+    {
+        type::type()
+        {
+        }
+
+        type::type(::wms::Size::in inSize) : m_Children(inSize)
+        {
+        }
+
+        type::~type()
+        {
+        }
+
+        Void::type type::Tick(F32::in inDeltaTime)
+        {
+            ::wms::Size::typec lChildCount = m_Children.Size();
+            for (::wms::Size::type i = 0; i < lChildCount; ++i)
+            {
+                auto lChildPtr = m_Children[i];
+                if (::Wiz::IsValidPtr(lChildPtr))
+                {
+                    lChildPtr->Tick(inDeltaTime);
+                }
+            }
+        }
+    } /// end of namespace CmpntArray
 } /// end of namespace wms

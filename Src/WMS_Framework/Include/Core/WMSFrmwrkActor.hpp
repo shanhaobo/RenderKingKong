@@ -9,10 +9,10 @@ namespace wms
 {
     namespace Actor
     {
-        WMS_CLASS : public ::wms::Cmpnt::type
+        WMS_CLASS : public ::wms::CmpntMap::type
         {
         private:
-            typedef ::wms::Cmpnt::type tSuper;
+            typedef ::wms::CmpntMap::type tSuper;
 
         public:
             type();
