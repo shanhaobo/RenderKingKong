@@ -13,13 +13,14 @@ namespace wms
         {
             WMS_STRUCT
             {
+				::wms::I32::type    AttrType;
                 ::wms::I32::type    BasePct;
                 ::wms::I32::type    AbsValue;
                 ::wms::I32::type    FinalPct;
 
                 WIZ_INLINE ::wms::Bool::type operator==(in inOther) const
                 {
-                    return (BasePct == inOther.BasePct) && (AbsValue == inOther.AbsValue) && (FinalPct == inOther.FinalPct);
+					return (AttrType == inOther.AttrType) && (BasePct == inOther.BasePct) && (AbsValue == inOther.AbsValue) && (FinalPct == inOther.FinalPct);
                 }
 
                 WIZ_INLINE ::wms::Bool::type operator!=(in inOther) const
@@ -44,6 +45,7 @@ namespace wms
 
             ::wms::Void::type AddModfier(::wms::Attr::Modifier::in inModifier);
             ::wms::Void::type RemoveModifer(::wms::Attr::Modifier::in inModifier);
+			::wms::Void::type UpdateModifer();
 
         protected:
             tModifierArray        m_ModfierList;
