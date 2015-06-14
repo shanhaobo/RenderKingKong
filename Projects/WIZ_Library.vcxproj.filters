@@ -115,6 +115,12 @@
     <Filter Include="Private\RTTI%28Run-Time Type Information%29">
       <UniqueIdentifier>{8ae91768-f51d-4347-b416-087e284be2c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\03_Utils\Random">
+      <UniqueIdentifier>{9d090f27-a184-4ccb-89db-f17effaa364c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\03_Utils\Random\Engine">
+      <UniqueIdentifier>{15388f86-441b-4aa8-83e9-2770e67788d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WIZ_Library\Include\00_Config\WizConfig.hpp">
@@ -473,6 +479,21 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\Container\WizAdvInitializerList.hpp">
       <Filter>Include\02_Adv%28Advanced%29\01_Type\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandom.hpp">
+      <Filter>Include\03_Utils\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomCore.hpp">
+      <Filter>Include\03_Utils\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomEngine.hpp">
+      <Filter>Include\03_Utils\Random\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomEngine_C.hpp">
+      <Filter>Include\03_Utils\Random\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomEngine_HC.hpp">
+      <Filter>Include\03_Utils\Random\Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -84,6 +84,11 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvType.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\01_Type\WizAdvBitsfield.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\02_MU\WizAdvMacroAssert.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandom.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomCore.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomEngine.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomEngine_C.hpp" />
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomEngine_HC.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerFrame.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimerHighRes.hpp" />
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\WizUtils.hpp" />
