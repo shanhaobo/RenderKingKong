@@ -44,5 +44,10 @@ namespace wms
                 }
             }
         }
+
+		::wms::Void::type type::UpdateModifer()
+		{
+
+		}
     } /// end of namespace Cmpnt
 } /// end of namespace wms

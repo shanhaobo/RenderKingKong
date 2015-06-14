@@ -24,6 +24,9 @@
     <Filter Include="Private\System">
       <UniqueIdentifier>{b9d8c75c-29b9-48d1-903a-32e76bd6306c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Private\System\Attribute System">
+      <UniqueIdentifier>{2b41d6db-4394-453b-bc23-d2a8006f96bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkActor.hpp">
@@ -49,11 +52,11 @@
     <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkActor.cpp">
       <Filter>Private\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSAttrSystem.cpp">
-      <Filter>Private\System</Filter>
-    </ClCompile>
     <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSAttribute.cpp">
-      <Filter>Private\System</Filter>
+      <Filter>Private\System\Attribute System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSAttrSystem.cpp">
+      <Filter>Private\System\Attribute System</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
