@@ -51,4 +51,6 @@
 
 //////////////////////////////////////////////////////////////////////////
 
+#include "./WizBasicMUAssert.hpp"
+
 #endif /*__WIZ_BASIC_MU_HPP__SHANHAOBO_19800429__*/

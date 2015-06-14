@@ -11,7 +11,6 @@
 #include "01_Basic/05_Mem/WizBasicMem.hpp"
 
 #include "02_Adv/01_Type/WizAdvType.hpp"
-#include "02_Adv/02_MU/WizAdvMacroAssert.hpp"
 
 #include "03_Utils/WizUtils.hpp"
 

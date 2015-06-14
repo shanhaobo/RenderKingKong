@@ -17,7 +17,6 @@ namespace wms
 
         }
 
-
         ::wms::Void::type type::AddModfier(::wms::Attr::Modifier::in inModifier)
         {
             m_ModfierList.PushBack(inModifier);

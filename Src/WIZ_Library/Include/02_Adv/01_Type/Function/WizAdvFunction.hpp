@@ -1,6 +1,8 @@
 #ifndef __WIZ_ADV_FUNCTION_HPP__SHANHAOBO_19800429__
 #define __WIZ_ADV_FUNCTION_HPP__SHANHAOBO_19800429__
 
+#include "../../01_Basic/02_MU/WizBasicMUAssert.hpp"
+
 namespace Wiz
 {
     namespace Function

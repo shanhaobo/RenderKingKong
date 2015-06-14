@@ -1,9 +1,11 @@
-#ifndef __WIZ_ADV_MACRO_ASSERT_HPP__SHANHAOBO_19800429__
-#define __WIZ_ADV_MACRO_ASSERT_HPP__SHANHAOBO_19800429__
+#ifndef __WIZ_BASIC_MU_ASSERT_HPP__SHANHAOBO_19800429__
+#define __WIZ_BASIC_MU_ASSERT_HPP__SHANHAOBO_19800429__
 
 #include <assert.h>
 
 #include "../../00_Config/WizConfig.hpp"
+#include "../01_Type/WizBasicTypeBool.hpp"
+#include "../01_Type/WizBasicTypeInt.hpp"
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -42,7 +44,7 @@ namespace Wiz
 
 /// Van Horn 1997   MSVC error : 负下标
 #define WIZ_COMPILE_TIME_ASSERT_1(x)                                        \
-    typedef ::Wiz::Byte::Type WIZ_MPP_COMBINE(CompileTimeAssertFailure, WIZ_COUNTER)[(((::Wiz::Bool::Type)(x)) ? 1 : -1)];
+    typedef ::Wiz::U8::Type WIZ_MPP_COMBINE(CompileTimeAssertFailure, WIZ_COUNTER)[(((::Wiz::Bool::Type)(x)) ? 1 : -1)];
 
 ///                 MSVC error : 除零  必须在函数中使用,所以不建议使用
 #define WIZ_COMPILE_TIME_ASSERT_2(x)                                \
@@ -64,4 +66,4 @@ namespace Wiz
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif /*__WIZ_ADV_MACRO_ASSERT_HPP__SHANHAOBO_19800429__*/
+#endif /*__WIZ_BASIC_MU_ASSERT_HPP__SHANHAOBO_19800429__*/
