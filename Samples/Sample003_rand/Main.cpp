@@ -17,8 +17,16 @@ int _tmain(int argc, _TCHAR* argv[])
 
     for (::Wiz::I::Type i = 0; i < 1000; ++i)
     {
-        lRadius = tRandom.Generate();
+        lRadius = sqrt(tRandom.Generate());
+        lTheta = rand();
+        x = lRadius * sin(lTheta);
+        y = lRadius * cos(lTheta);
+
+        lTxt << x << '\t' << y << '\n';
     }
+
+
+    lTxt.close();
 
     return 0;
 }

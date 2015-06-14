@@ -25,9 +25,6 @@
     <Filter Include="Include\03_Utils\TimerUtils">
       <UniqueIdentifier>{800051ff-86ba-4d87-baac-1bce8586223f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\03_Utils\MemUtils">
-      <UniqueIdentifier>{1492c496-b419-4f24-87e5-522374c70e73}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Include\01_Basic\02_MU%28MacroUtils%29">
       <UniqueIdentifier>{eb9191b3-210b-4d1e-bf7e-cfb0692bf768}</UniqueIdentifier>
     </Filter>
@@ -342,9 +339,6 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\04_TU\WizBasicTUCallProxy.hpp">
       <Filter>Include\01_Basic\04_TU%28TemplateUtils%29</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WIZ_Library\Include\02_Adv\02_MU\WizAdvMacroAssert.hpp">
-      <Filter>Include\02_Adv%28Advanced%29\02_MU</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\05_DP\Visitor\WizDPVisitor.hpp">
       <Filter>Include\05_DP%28Design Pattern%29\Visitor</Filter>
     </ClInclude>
@@ -494,6 +488,12 @@
     </ClInclude>
     <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\Random\WizRandomEngine_HC.hpp">
       <Filter>Include\03_Utils\Random\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\03_Utils\TimerUtils\WizTimer.hpp">
+      <Filter>Include\03_Utils\TimerUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMUAssert.hpp">
+      <Filter>Include\01_Basic\02_MU%28MacroUtils%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
