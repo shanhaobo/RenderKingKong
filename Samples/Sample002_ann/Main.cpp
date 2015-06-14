@@ -20,7 +20,7 @@ struct NullANN : public ::ann::Network::type<::wms::F32::type, ::wms::F64::type>
 
 void CreateNULLANN()
 {
-    NullANN::tStorage lStorage({ 5, 3, 4 });
+    NullANN::tStorage lStorage = { 5, 3, 4 };
 
     NullANN lNetwork(lStorage);
     lNetwork.Initialize();
