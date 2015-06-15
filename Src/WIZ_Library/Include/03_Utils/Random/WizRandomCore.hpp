@@ -85,7 +85,7 @@ namespace Wiz
 						m_Min = Min;
 						m_Max = Max;
 
-						m_RangeScale = ::Wiz::Cast::Static<::Wiz::R64::Type>(this->GetRange()) / ::Wiz::Cast::Static<::Wiz::R64::Type>(tEngine::GetRange());
+						m_RangeScale = this->GetRange() / ::Wiz::Cast::Static<::Wiz::R64::Type>(tEngine::GetRange());
 					}
 				};
 			} /// end of namespace Range
