@@ -48,7 +48,7 @@ namespace Wiz
 				private:
 					tNum					m_Min;
 					tNum					m_Max;
-                    ::Wiz::R64::Type        m_RangeNormalized;
+                    ::Wiz::R64::Type        m_RangeScale;
 				private:
 					WIZ_INLINE tNum GetMin() const
 					{
@@ -63,17 +63,16 @@ namespace Wiz
                         return ::Wiz::Cast::Static<::Wiz::R64::Type>(GetMax() - GetMin());
 					}
                 private:
-                    ::Wiz::R64::Type RandNormalized(tEngineIn inEng) const
+					WIZ_INLINE::Wiz::R64::Type InnerRand(tEngineIn inEng) const
                     {
                         tEngineNum const lRandVal = inEng.Rand() - inEng.GetMin();
 
-                        return lRandVal * m_RangeNormalized;
+						return lRandVal * m_RangeScale;
                     }
 				public:
 					tNum Generate(tEngineIn inEng) const
 					{
-
-                        return ::Wiz::Cast::Static<tNum>(RandNormalized(inEng) * this->GetRange()) + this->GetMin();
+						return ::Wiz::Cast::Static<tNum>(InnerRand(inEng)) + this->GetMin();
 					}
 				public:
                     /// 必须为空,初始化不能靠它,因为上面是放在Union里面的
@@ -86,7 +85,7 @@ namespace Wiz
 						m_Min = Min;
 						m_Max = Max;
 
-                        m_RangeNormalized = 1 / ::Wiz::Cast::Static<::Wiz::R64::Type>(tEngine::GetRange());
+						m_RangeScale = ::Wiz::Cast::Static<::Wiz::R64::Type>(this->GetRange()) / ::Wiz::Cast::Static<::Wiz::R64::Type>(tEngine::GetRange());
 					}
 				};
 			} /// end of namespace Range

@@ -1,5 +1,5 @@
 #include "../../../include/01_Basic/04_TU/WizBasicTU.hpp"
-#include "../../../include/02_Adv/02_MU/WizAdvMacroAssert.hpp"
+#include "../../../include/01_Basic/02_MU/WizBasicMUAssert.hpp"
 #include "../../../include/03_Utils/TimerUtils/WizTimerHighRes.hpp"
 
 #include <algorithm>
