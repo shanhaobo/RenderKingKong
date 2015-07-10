@@ -15,7 +15,9 @@ namespace ann
             public:
                 typedef WeightT                                 tWeight;
                 typedef typename ::wms::Array<tWeight>::type    tWeightList;
+                typedef tWeightList const                       tWeightListC;
                 typedef tWeightList &                           tWeightListRef;
+                typedef tWeightListC &                          tWeightListRefC;
 
             public:
                 type(::wms::Size::in inInputCnt) : m_WeightList(inInputCnt)
@@ -26,7 +28,7 @@ namespace ann
                 {
                 }
 
-                tWeightListRef GetWeightList() const
+                tWeightListRef GetWeightList()
                 {
                     return m_WeightList;
                 }
@@ -57,7 +59,8 @@ namespace ann
 
                 typedef typename tNeuron::tWeight                   tWeight;
                 typedef typename tNeuron::tWeightList               tWeightList;
-                typedef typename tNeuron::tWeightListRef            tWeightListRef;
+				typedef typename tNeuron::tWeightListRef            tWeightListRef;
+				typedef typename tNeuron::tWeightListRefC           tWeightListRefC;
 
             public:
                 type(::wms::Size::in inNeuronCnt, ::wms::Size::in inInputCnt) : m_InputCnt(inInputCnt)
@@ -80,7 +83,7 @@ namespace ann
                 }
 
             public:
-                tWeightListRef GetWeightList(::wms::I::in inIdx) const
+				tWeightListRefC GetWeightList(::wms::I::in inIdx) const
                 {
                     tNeuronPtrF lNeuronPtr = GetNeuron(inIdx);
                     WIZ_ASSERT(::Wiz::IsValidPtr(lNeuronPtr));

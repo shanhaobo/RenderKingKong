@@ -106,6 +106,7 @@ namespace ann
 
             tNeuronList         m_NeuronList;
 
+            /// 这个输出将作为最后输出,或者下一层的输入
             tIOList             m_OutputList;
         };
     } /// end of namespace Layer
