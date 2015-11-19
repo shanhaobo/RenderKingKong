@@ -22,12 +22,12 @@ namespace Wiz
 					typedef typename tEngine::tNum	tEngineNum;
 					typedef const tEngine&			tEngineIn;
                 public:
-                    /// 必须为空,初始化不能靠它,因为上面是放在Union里面的
 					tNum Generate(tEngineIn Eng) const
 					{
 						return ::Wiz::Cast::Static<tNum>(Eng.Rand());
 					}
-				public:
+                public:
+                    /// 必须为空,初始化不能靠它,因为上面是放在Union里面的
 					Type()
 					{
 					}
