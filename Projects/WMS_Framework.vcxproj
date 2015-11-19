@@ -15,13 +15,18 @@
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkComponent.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkFwdDclr.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\System\WMSAttribute.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\WMSAttrModifier.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\System\WMSAttrSystem.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\WMSBehavior.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\WMSBhvrSystem.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkActor.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkComponent.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSAttribute.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSAttrSystem.cpp" />
+    <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSBehavior.cpp" />
+    <ClCompile Include="..\Src\WMS_Framework\Private\System\WMSBhvrSystem.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}</ProjectGuid>
