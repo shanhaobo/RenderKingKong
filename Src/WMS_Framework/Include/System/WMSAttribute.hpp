@@ -22,12 +22,12 @@ namespace wms
 
             typedef Array<::wms::Attr::Modifier::ptr>::type tModifierArray;
 
-            ::wms::Void::type AddModfier(::wms::Attr::Modifier::ptr inModifier);
-            ::wms::Void::type RemoveModifer(::wms::Attr::Modifier::ptr inModifier);
-			::wms::Void::type UpdateModifer();
+            ::wms::Void::type AddModifier(::wms::Attr::Modifier::ptr inModifier);
+            ::wms::Void::type RemoveModifier(::wms::Attr::Modifier::ptr inModifier);
+			::wms::Void::type UpdateModifier();
 
         protected:
-            tModifierArray        m_ModfierList;
+            tModifierArray        m_ModifierList;
         };
     } /// end of namespace Attribute
 } /// end of namespace wms
