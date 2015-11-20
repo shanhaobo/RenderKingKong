@@ -4,7 +4,7 @@ namespace wms
 {
     namespace Attr
     {
-        type::type()
+        type::type() : m_ModifierID(0)
         {
         }
 
@@ -17,12 +17,24 @@ namespace wms
 
         }
 
-        ::wms::Void::type type::AddModifier(::wms::Attr::Modifier::ptr inModifierPtr)
+        U32::type type::CreateModifier()
         {
-            m_ModifierList.PushBack(inModifierPtr);
+            return AddModifier(WMS_NULLPTR);
         }
 
-        ::wms::Void::type type::RemoveModifier(::wms::Attr::Modifier::ptr inModifierPtr)
+        U32::type type::AddModifier(Attr::Modifier::ptr inModifierPtr)
+        {
+            if (::wms::IsValidPtr(inModifierPtr))
+            {
+                inModifierPtr->m_ID = ++m_ModifierID;
+                m_ModifierList.PushBack(inModifierPtr);
+                return inModifierPtr->m_ID;
+            }
+
+            return 0;
+        }
+
+        Void::type type::RemoveModifier(U32::in inModifierID)
         {
             ::wms::Size::typec lLastIdx = m_ModifierList.Size() - 1;
             if (lLastIdx >= 0)
@@ -30,7 +42,7 @@ namespace wms
                 ::wms::Size::type i = 0;
                 for (; i < lLastIdx; ++i)
                 {
-                    if (m_ModifierList[i] == inModifierPtr)
+                    if (m_ModifierList[i]->m_ID == inModifierID)
                     {
                         /// 如果找到了,把最后一个换到此位置
                         m_ModifierList[i] = m_ModifierList[lLastIdx];
@@ -38,14 +50,14 @@ namespace wms
                     }
                 }
 
-                if ((i < lLastIdx) || (m_ModifierList[lLastIdx] == inModifierPtr))
+                if ((i < lLastIdx) || (m_ModifierList[lLastIdx]->m_ID == inModifierID))
                 {
                     m_ModifierList.PopBack();
                 }
             }
         }
 
-		::wms::Void::type type::UpdateModifier()
+		Void::type type::UpdateModifier()
 		{
 
 		}

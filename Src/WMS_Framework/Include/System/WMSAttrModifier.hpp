@@ -12,6 +12,9 @@ namespace wms
             WMS_CLASS
             {
             public:
+                U32::type               m_ID;
+
+            public:
                 virtual ::wms::Bool::type operator==(in inOther) const = 0;
 
                 WIZ_INLINE ::wms::Bool::type operator!=(in inOther) const

@@ -13,21 +13,27 @@ namespace wms
         WMS_CLASS : public ::wms::Cmpnt::type
         {
         private:
-            typedef ::wms::Cmpnt::type tSuper;
+            typedef ::wms::Cmpnt::type                  tSuper;
+
+            typedef Array<Attr::Modifier::ptr>::type    tModifierArray;
 
         public:
             type();
             virtual ~type();
-            virtual Void::type Tick(F32::in inDeltaTime);
+            virtual Void::type  Tick(F32::in inDeltaTime);
 
-            typedef Array<::wms::Attr::Modifier::ptr>::type tModifierArray;
+            Void::type          RemoveModifier(U32::in inModifierID);
+            Void::type          UpdateModifier();
 
-            ::wms::Void::type AddModifier(::wms::Attr::Modifier::ptr inModifier);
-            ::wms::Void::type RemoveModifier(::wms::Attr::Modifier::ptr inModifier);
-			::wms::Void::type UpdateModifier();
+            virtual U32::type   CreateModifier() = 0;
 
         protected:
-            tModifierArray        m_ModifierList;
+            U32::type           AddModifier(::wms::Attr::Modifier::ptr inModifier);
+
+        protected:
+            tModifierArray      m_ModifierList;
+
+            U32::type           m_ModifierID;
         };
     } /// end of namespace Attribute
 } /// end of namespace wms
