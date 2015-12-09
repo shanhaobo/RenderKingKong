@@ -495,6 +495,9 @@
     <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\02_MU\WizBasicMUAssert.hpp">
       <Filter>Include\01_Basic\02_MU%28MacroUtils%29</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WIZ_Library\Include\01_Basic\01_Type\WizBasicTypeID.hpp">
+      <Filter>Include\01_Basic\01_Type</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Src\WIZ_Library\Include\04_Math\01_Basic\Vector\WizMathVector2Method.inl">
