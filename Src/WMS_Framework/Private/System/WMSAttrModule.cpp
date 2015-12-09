@@ -1,8 +1,8 @@
-#include "../../Include/System/WMSAttrSystem.hpp"
+#include "../../Include/Module/WMSAttrModule.hpp"
 
 namespace wms
 {
-    namespace AttrSystem
+    namespace AttrModule
     {
         type::type()
         {
@@ -17,5 +17,5 @@ namespace wms
         type::~type()
         {
         }
-    } /// end of namespace AttrSystem
+    } /// end of namespace AttrModule
 } /// end of namespace wms

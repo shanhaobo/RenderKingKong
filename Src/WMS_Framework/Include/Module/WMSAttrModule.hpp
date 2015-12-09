@@ -1,13 +1,13 @@
-#ifndef __WHIMSY_BHVRSYSTEM_HPP__ 
-#define __WHIMSY_BHVRSYSTEM_HPP__
+#ifndef __WHIMSY_ATTRMODULE_HPP__ 
+#define __WHIMSY_ATTRMODULE_HPP__
 
-#include "./WMSBehavior.hpp"
+#include "./WMSAttribute.hpp"
 
 /// CBD  Component-Based Development
 
 namespace wms
 {
-    namespace BhvrSystem
+    namespace AttrModule
     {
         WMS_CLASS: public ::wms::CmpntArray::type
         {
@@ -19,7 +19,7 @@ namespace wms
             type(::wms::Size::in);
             virtual ~type();
         };
-    } /// end of namespace BhvrSystem
+    } /// end of namespace AttrModule
 } /// end of namespace wms
 
-#endif /// __WHIMSY_BHVRSYSTEM_HPP__
+#endif /// __WHIMSY_ATTRMODULE_HPP__

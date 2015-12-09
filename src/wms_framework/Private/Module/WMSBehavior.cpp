@@ -1,4 +1,4 @@
-#include "../../Include/System/WMSBehavior.hpp"
+#include "../../Include/Module/WMSBehavior.hpp"
 
 namespace wms
 {
