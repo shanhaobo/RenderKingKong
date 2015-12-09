@@ -165,29 +165,55 @@
     WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size::Type)
 
 #define WIZ_DECLARE_HELPER_SIZE8()                                  \
-    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size8::Type)            \
-    static ::Wiz::Size8::TypeC invalid  = ::Wiz::U8::Max;           \
-    static ::Wiz::Size8::TypeC Min      = 0;                        \
-    static ::Wiz::Size8::TypeC Max      = ::Wiz::U8::Max - 1;
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::USize8::Type)            \
+    static ::Wiz::USize8::TypeC Invalid = ::Wiz::U8::Max;           \
+    static ::Wiz::USize8::TypeC Min     = 0;                        \
+    static ::Wiz::USize8::TypeC Max     = ::Wiz::U8::Max - 1;
 
 
 #define WIZ_DECLARE_HELPER_SIZE16()                                 \
-    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size16::Type)           \
-    static ::Wiz::Size16::TypeC invalid = ::Wiz::U16::Max;          \
-    static ::Wiz::Size16::TypeC Min     = 0;                        \
-    static ::Wiz::Size16::TypeC Max     = ::Wiz::U16::Max - 1;
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::USize16::Type)          \
+    static ::Wiz::USize16::TypeC Invalid    = ::Wiz::U16::Max;      \
+    static ::Wiz::USize16::TypeC Min        = 0;                    \
+    static ::Wiz::USize16::TypeC Max        = ::Wiz::U16::Max - 1;
 
 #define WIZ_DECLARE_HELPER_SIZE32()                                 \
-    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size32::Type)           \
-    static ::Wiz::Size32::TypeC invalid = ::Wiz::U32::Max;          \
-    static ::Wiz::Size32::TypeC Min     = 0;                        \
-    static ::Wiz::Size32::TypeC Max     = ::Wiz::U32::Max - 1;
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::USize32::Type)          \
+    static ::Wiz::USize32::TypeC Invalid    = ::Wiz::U32::Max;      \
+    static ::Wiz::USize32::TypeC Min        = 0;                    \
+    static ::Wiz::USize32::TypeC Max        = ::Wiz::U32::Max - 1;
 
 #define WIZ_DECLARE_HELPER_SIZE64()                                 \
-    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::Size64::Type)           \
-    static ::Wiz::Size64::TypeC invalid = ::Wiz::U64::Max;          \
-    static ::Wiz::Size64::TypeC Min     = 0;                        \
-    static ::Wiz::Size64::TypeC Max     = ::Wiz::U64::Max - 1;
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::USize64::Type)          \
+    static ::Wiz::USize64::TypeC Invalid    = ::Wiz::U64::Max;      \
+    static ::Wiz::USize64::TypeC Min        = 0;                    \
+    static ::Wiz::USize64::TypeC Max        = ::Wiz::U64::Max - 1;
+
+/////////////////////////////////////////////////////////
+
+#define WIZ_DECLARE_HELPER_ID8()                                    \
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::ID8::Type)              \
+    static ::Wiz::ID8::TypeC Invalid = ::Wiz::U8::Max;              \
+    static ::Wiz::ID8::TypeC Min = 0;                               \
+    static ::Wiz::ID8::TypeC Max = ::Wiz::U8::Max - 1;
+
+#define WIZ_DECLARE_HELPER_ID16()                                   \
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::ID16::Type)             \
+    static ::Wiz::ID16::TypeC Invalid = ::Wiz::U16::Max;            \
+    static ::Wiz::ID16::TypeC Min = 0;                              \
+    static ::Wiz::ID16::TypeC Max = ::Wiz::U16::Max - 1;
+
+#define WIZ_DECLARE_HELPER_ID32()                                   \
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::ID32::Type)             \
+    static ::Wiz::ID32::TypeC Invalid = ::Wiz::U32::Max;            \
+    static ::Wiz::ID32::TypeC Min = 0;                              \
+    static ::Wiz::ID32::TypeC Max = ::Wiz::U32::Max - 1;
+
+#define WIZ_DECLARE_HELPER_ID64()                                   \
+    WIZ_CUSTOM_DECLARE_HELPER_SIMPLE(::Wiz::ID64::Type)             \
+    static ::Wiz::ID64::TypeC Invalid = ::Wiz::U64::Max;            \
+    static ::Wiz::ID64::TypeC Min = 0;                              \
+    static ::Wiz::ID64::TypeC Max = ::Wiz::U64::Max - 1;
 
 /////////////////////////////////////////////////////////
 

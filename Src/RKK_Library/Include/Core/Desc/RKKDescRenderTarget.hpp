@@ -18,8 +18,8 @@ namespace rkk
                 //////////////////////////////////////////////////////////////////////////
 
                 type(
-                    ::wms::Size16::in               Width,
-                    ::wms::Size16::in               Height,
+                    ::wms::Size::in                 Width,
+                    ::wms::Size::in                 Height,
                     ::rkk::Enum::PixelFormat::in    ColorFormat             = ::rkk::Enum::PixelFormat::eRGBA_16F_16F_16F_16F,
                     ::rkk::Enum::PixelFormat::in    DepthFormat             = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
                     ::rkk::Enum::PixelFormat::in    StencilFormat           = ::rkk::Enum::PixelFormat::eDS_24UN_8U,
@@ -48,8 +48,8 @@ namespace rkk
                 //////////////////////////////////////////////////////////////////////////
                 //////////////////////////////////////////////////////////////////////////
 
-                ::wms::Size16::type                     m_Width;
-                ::wms::Size16::type                     m_Height;
+                ::wms::Size::type                       m_Width;
+                ::wms::Size::type                       m_Height;
 
                 ::rkk::Enum::PixelFormat::type          m_ColorPixelFormat;
                 ::rkk::Enum::PixelFormat::type          m_DepthPixelFormat;

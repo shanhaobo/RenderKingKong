@@ -5,6 +5,8 @@
 #include "./WizBasicTypeReal.hpp"
 #include "./WizBasicTypeChar.hpp"
 #include "./WizBasicTypeBool.hpp"
+
+#include "./WizBasicTypeID.hpp"
 #include "./WizBasicTypeSize.hpp"
 
 #include "./WizBasicTypeString.hpp"

@@ -17,24 +17,24 @@ namespace wms
 
         }
 
-        U32::type type::CreateModifier()
+        ID32::type type::CreateModifier()
         {
             return AddModifier(WMS_NULLPTR);
         }
 
-        U32::type type::AddModifier(Attr::Modifier::ptr inModifierPtr)
+        ID32::type type::AddModifier(Attr::Modifier::ptr inModifierPtr)
         {
             if (::wms::IsValidPtr(inModifierPtr))
             {
-                inModifierPtr->m_ID = ++m_ModifierID;
+                inModifierPtr->m_ID = m_ModifierID++;
                 m_ModifierList.PushBack(inModifierPtr);
                 return inModifierPtr->m_ID;
             }
 
-            return 0;
+            return ID32::Invalid;
         }
 
-        Void::type type::RemoveModifier(U32::in inModifierID)
+        Void::type type::RemoveModifier(ID32::in inModifierID)
         {
             ::wms::Size::typec lLastIdx = m_ModifierList.Size() - 1;
             if (lLastIdx >= 0)

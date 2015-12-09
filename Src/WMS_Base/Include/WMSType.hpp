@@ -110,25 +110,47 @@ namespace wms
         WIZ_DECLARE_HELPER_SIZE();
     } /// end of namespace Size
 
-    namespace Size8
+    namespace USize8
     {
         WIZ_DECLARE_HELPER_SIZE8();
     } /// end of namespace Size8
 
-    namespace Size16
+    namespace USize16
     {
         WIZ_DECLARE_HELPER_SIZE16();
     } /// end of namespace Size16
 
-    namespace Size32
+    namespace USize32
     {
         WIZ_DECLARE_HELPER_SIZE32();
     } /// end of namespace Size32
 
-    namespace Size64
+    namespace USize64
     {
         WIZ_DECLARE_HELPER_SIZE64();
     } /// end of namespace Size64
+
+    /////////////////////////////////////////////////////////////
+
+    namespace ID8
+    {
+        WIZ_DECLARE_HELPER_ID8();
+    } /// end of namespace ID8
+
+    namespace ID16
+    {
+        WIZ_DECLARE_HELPER_ID16();
+    } /// end of namespace ID16
+
+    namespace ID32
+    {
+        WIZ_DECLARE_HELPER_ID32();
+    } /// end of namespace ID32
+
+    namespace ID64
+    {
+        WIZ_DECLARE_HELPER_ID64();
+    } /// end of namespace ID64
 
     /////////////////////////////////////////////////////////////
 
