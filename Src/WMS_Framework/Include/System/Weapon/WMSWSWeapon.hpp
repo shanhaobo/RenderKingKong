@@ -1,7 +1,7 @@
 #ifndef __WHIMSY_WEAPON_SYSTEM_WEAPON_HPP__ 
 #define __WHIMSY_WEAPON_SYSTEM_WEAPON_HPP__
 
-#include "./WMSBehavior.hpp"
+#include "../../Core/WMSFrmwrkComponent.hpp"
 
 /// CBD  Component-Based Development
 

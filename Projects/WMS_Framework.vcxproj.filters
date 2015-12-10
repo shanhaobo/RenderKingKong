@@ -42,6 +42,12 @@
     <Filter Include="Include\System\Weapon System">
       <UniqueIdentifier>{4326063c-6fc9-489f-8375-a86efde45aa7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Private\System">
+      <UniqueIdentifier>{16249790-789e-42aa-8058-3169c1deb94f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\System\Weapon System">
+      <UniqueIdentifier>{b58d2874-a492-40fd-b9e3-102fefc0a6ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkActor.hpp">
@@ -68,6 +74,12 @@
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSBhvrModule.hpp">
       <Filter>Include\Module\Behavior Module</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\Weapon\WMSWSAttackModule.hpp">
+      <Filter>Include\System\Weapon System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\Weapon\WMSWSWeapon.hpp">
+      <Filter>Include\System\Weapon System</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkComponent.cpp">
@@ -87,6 +99,9 @@
     </ClCompile>
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSBhvrModule.cpp">
       <Filter>Private\Module\Behavior Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Framework\Private\System\Weapon\WMSWSAttackModule.cpp">
+      <Filter>Private\System\Weapon System</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

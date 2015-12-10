@@ -19,6 +19,8 @@
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModule.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSBehavior.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSBhvrModule.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\Weapon\WMSWSAttackModule.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\System\Weapon\WMSWSWeapon.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkActor.cpp" />
@@ -27,6 +29,7 @@
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrModule.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSBehavior.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSBhvrModule.cpp" />
+    <ClCompile Include="..\Src\WMS_Framework\Private\System\Weapon\WMSWSAttackModule.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9CD5B846-64BC-46BC-B9BD-0B0368F4E406}</ProjectGuid>

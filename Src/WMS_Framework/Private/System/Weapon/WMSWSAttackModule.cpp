@@ -16,7 +16,7 @@ namespace wms
 
             Void::type type::Tick(F32::in inDeltaTime)
             {
-
+                tSuper::Tick(inDeltaTime);
             }
         } /// end of namespace AttMdl
     } /// end of namespace WeapSys

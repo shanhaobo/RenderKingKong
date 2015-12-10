@@ -19,13 +19,20 @@ namespace wms
             public:
                 type();
                 virtual ~type();
+
+            protected:
+                virtual Void::type Tick(F32::in inDeltaTime);
+
             protected:
 
-
-                /// 弹道
-                /// 伤害模块
+                /// 弹道(散射)
+                /// 伤害模块(伤害,衰减,穿透)
                 /// 间隔
                 /// 流程
+                /// 贴花
+                /// 动画
+                /// Muzzle & Shell 特效
+                /// 载弹
             };
         } /// end of namespace AttMdl
     } /// end of namespace WS
