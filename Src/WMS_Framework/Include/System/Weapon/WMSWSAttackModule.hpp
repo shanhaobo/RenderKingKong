@@ -24,15 +24,10 @@ namespace wms
                 virtual Void::type Tick(F32::in inDeltaTime);
 
             protected:
-
-                /// 弹道(散射)
-                /// 伤害模块(伤害,衰减,穿透)
-                /// 间隔
-                /// 流程
-                /// 贴花
-                /// 动画
-                /// Muzzle & Shell 特效
-                /// 载弹
+                /// 弹道(Projectile, Melee, 散射, 贴花)
+                /// 伤害检测(伤害,衰减,穿透)
+                /// 流程(间隔, 载弹, 换弹)
+                /// 表现(模型, 动画, 特效(Muzzle & Shell))
             };
         } /// end of namespace AttMdl
     } /// end of namespace WS
