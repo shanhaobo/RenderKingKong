@@ -14,12 +14,12 @@ namespace rkk
 
 		}
 
-		::wms::Bool::type type::ActiveRenderTarget(::rkk::RenderTarget::ECategory inCategory)
+		::wms::Bool::type type::ActiveRenderTarget(::rkk::RenderTarget::EUsage inCategory)
 		{
 			return ::wms::Bool::False;
 		}
 
-		::wms::Void::type type::DeactiveRenderTarget(::rkk::RenderTarget::ECategory inCategory)
+		::wms::Void::type type::DeactiveRenderTarget(::rkk::RenderTarget::EUsage inCategory)
 		{
 
 		}

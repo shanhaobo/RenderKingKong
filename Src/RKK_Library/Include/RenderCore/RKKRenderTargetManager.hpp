@@ -9,7 +9,7 @@ namespace rkk
 {
 	namespace RenderTarget
 	{
-		enum ECategory
+		enum EUsage
 		{
 			eSceneColor,
 			eSceneDepth,
@@ -26,8 +26,8 @@ namespace rkk
             type();
             virtual ~type();
 
-			::wms::Bool::type ActiveRenderTarget(::rkk::RenderTarget::ECategory inCategory);
-			::wms::Void::type DeactiveRenderTarget(::rkk::RenderTarget::ECategory inCategory);
+			::wms::Bool::type ActiveRenderTarget(::rkk::RenderTarget::EUsage inCategory);
+			::wms::Void::type DeactiveRenderTarget(::rkk::RenderTarget::EUsage inCategory);
 
 		protected:
 			::Wiz::Array::Type<tElementPtr>		RenderTargetTable;
