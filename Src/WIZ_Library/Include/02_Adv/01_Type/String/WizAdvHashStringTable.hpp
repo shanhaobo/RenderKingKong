@@ -29,7 +29,9 @@ namespace Wiz
                 typedef const tIndex                                                tIndexConst;
                 typedef tIndex &                                                    tIndexOut;
 
-                typedef Array::Type<tIndexConst, AllocatorT>                        tIndexArray;
+				/// new:The C++ Standard forbids containers of const elements
+				/// tIndexConst forbidden!
+                typedef Array::Type<tIndex, AllocatorT>								tIndexArray;
 
             private:
                 typedef tString const                                               tStringConst;
