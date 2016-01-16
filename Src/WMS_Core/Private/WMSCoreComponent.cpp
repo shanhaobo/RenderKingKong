@@ -1,4 +1,4 @@
-#include "../../Include/Core/WMSFrmwrkComponent.hpp"
+#include "../Include/WMSCoreComponent.hpp"
 
 namespace wms
 {

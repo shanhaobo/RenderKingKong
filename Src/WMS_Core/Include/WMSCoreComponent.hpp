@@ -1,7 +1,7 @@
-#ifndef __WHIMSY_FRAMEWORK_COMPONENT_HPP__ 
-#define __WHIMSY_FRAMEWORK_COMPONENT_HPP__
+#ifndef __WHIMSY_CORE_COMPONENT_HPP__ 
+#define __WHIMSY_CORE_COMPONENT_HPP__
 
-#include "./WMSFrmwrkFwdDclr.hpp"
+#include "./WMSCoreFwdDclr.hpp"
 
 /// CBD  Component-Based Development
 
@@ -63,4 +63,4 @@ namespace wms
     } /// end of namespace CmpntArray
 } /// end of namespace wms
 
-#endif /// __WHIMSY_FRAMEWORK_COMPONENT_HPP__
+#endif /// __WHIMSY_CORE_COMPONENT_HPP__

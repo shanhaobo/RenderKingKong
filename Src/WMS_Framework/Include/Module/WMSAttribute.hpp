@@ -1,7 +1,7 @@
 #ifndef __WHIMSY_ATTRIBUTE_HPP__ 
 #define __WHIMSY_ATTRIBUTE_HPP__
 
-#include "../Core/WMSFrmwrkComponent.hpp"
+#include "../Core/WMSFrmwrkFwdDclr.hpp"
 #include "./WMSAttrModifier.hpp"
 
 /// CBD  Component-Based Development

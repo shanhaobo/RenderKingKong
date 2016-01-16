@@ -1,7 +1,7 @@
 #ifndef __WHIMSY_FRAMEWORK_ACTOR_HPP__ 
 #define __WHIMSY_FRAMEWORK_ACTOR_HPP__
 
-#include "./WMSFrmwrkComponent.hpp"
+#include "./WMSFrmwrkFwdDclr.hpp"
 
 /// CBD  Component-Based Development
 
