@@ -204,19 +204,23 @@ namespace wms
     {
         typedef ::Wiz::String::Type<::wms::Char::type>      type;
         WMS_DECLARE(type);
+
+		typedef type::tChar									tChar;
     } /// end of namespace Str
 
     namespace WStr
     {
         typedef ::Wiz::String::Type<::wms::WChar::type>     type;
-        WMS_DECLARE(type);
+		WMS_DECLARE(type);
+
+		typedef type::tChar									tChar;
     } /// end of namespace WStr
 
     /////////////////////////////////////////////////////////////
 
     namespace Name
     {
-        typedef ::Wiz::HashString::Type< ::wms::Str::type, ::Wiz::HashString::Proxy::Category::eSDBM, true, 64, 65536, 1024, ::std::allocator<::wms::Char::type> >   type;
+        typedef ::Wiz::HashString::Type< ::wms::Str::type, ::Wiz::HashString::Proxy::Category::eSDBM, true, 64, 65536, 1024, ::std::allocator<::wms::Str::tChar> >   type;
 
         WMS_DECLARE(type);
     } /// end of namespace Name
