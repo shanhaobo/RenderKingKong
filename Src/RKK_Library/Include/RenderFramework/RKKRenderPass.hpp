@@ -10,7 +10,7 @@ namespace rkk
 {
     namespace RenderPass
     {
-        WMS_CLASS
+		WMS_CLASS: public :: wms::Cmpnt::type
         {
         public:
             type();
