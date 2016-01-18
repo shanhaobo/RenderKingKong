@@ -21,12 +21,18 @@
     <ClInclude Include="..\Src\WMS_Core\Include\WMSCore.hpp">
       <Filter>Include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponent.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\WMS_Core\Private\WMSPlugin.cpp">
       <Filter>Private</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\WMS_Core\Private\WMSPluginMgr.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponent.cpp">
       <Filter>Private</Filter>
     </ClCompile>
   </ItemGroup>
