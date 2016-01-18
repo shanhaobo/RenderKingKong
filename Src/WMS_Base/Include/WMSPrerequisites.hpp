@@ -29,45 +29,6 @@ namespace wms
 
     ////////////////////////////////////////////
 
-    namespace RenderShader
-    {
-        WMS_FORWARD_DECLARE_CLASS;
-    } /// end of namespace RenderShader
-
-    namespace RenderState
-    {
-        WMS_FORWARD_DECLARE_CLASS;
-    } /// end of namespace RenderState
-
-    namespace RenderTarget
-    {
-        WMS_FORWARD_DECLARE_CLASS;
-    } /// end of namespace RenderTarget
-
-    ////////////////////////////////////////////
-
-    namespace RenderDeviceLayer
-    {
-        WMS_FORWARD_DECLARE_CLASS;
-    } /// end of namespace RenderDeviceLayer
-
-    ////////////////////////////////////////////
-
-    namespace Renderer
-    {
-        WMS_FORWARD_DECLARE_CLASS;
-    } /// end of namespace Renderer;
-
-    namespace RenderPass
-    {
-        WMS_FORWARD_DECLARE_CLASS;
-    } /// end of namespace RenderPass;
-
-    namespace RenderFlow
-    {
-        WMS_FORWARD_DECLARE_CLASS;
-    } /// end of namespace RenderFlow;
-
     ////////////////////////////////////////////
 
     namespace Plugin

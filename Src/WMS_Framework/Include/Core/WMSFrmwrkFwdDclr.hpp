@@ -2,6 +2,7 @@
 #define __WHIMSY_FRAMEWORK_FORWORDDECLARE_HPP__
 
 #include "../../../WMS_Base/Include/WMSBase.hpp"
+#include "../../../WMS_Core/Include/WMSCore.hpp"
 
 namespace wms
 {

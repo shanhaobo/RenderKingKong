@@ -4,6 +4,7 @@
 #include "../../WMS_Base/Include/WMSBase.hpp"
 
 #include "./WMSCoreFwdDclr.hpp"
+#include "./WMSCoreComponent.hpp"
 
 #include "./WMSPlugin.hpp"
 #include "./WMSPluginMgr.hpp"
