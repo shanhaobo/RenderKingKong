@@ -16,7 +16,8 @@ namespace wms
         WIZ_ACD(eWOC_Resource);
         WIZ_ACD(eWOC_RDL);
 
-        WIZ_ACD(eWOC_Component);
+		WIZ_ACD(eWOC_Component);
+		WIZ_ACD(eWOC_ComponentProperty);
 
         WIZ_ACD(eWOC_ArtificialNeuralNetwork);
     } /// end of namespace EWMS_OBJ_CAT
@@ -57,6 +58,11 @@ namespace wms
         namespace Cmpnt
         {
             typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_Component>::Type   type;
+
+			namespace MetaPrprty
+			{
+				typedef ::Wiz::Allocator::Categorized<EWMS_OBJ_CAT::eWOC_ComponentProperty>::Type   type;
+			}
         } /// end of namespace Cmpnt
 
         //////////////////////////////////////////////////////////////////////////

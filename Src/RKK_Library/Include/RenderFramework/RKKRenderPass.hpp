@@ -2,6 +2,7 @@
 #define __RENDERKINGKONG_RENDERPASS_HPP__
 
 #include "../RenderCore/RKKRenderState.hpp"
+#include "../RenderCore/RKKRenderTarget.hpp"
 
 #include "../RenderCore/RKKRenderShader_PixelShader.hpp"
 #include "../RenderCore/RKKRenderShader_VertexShader.hpp"
@@ -17,10 +18,12 @@ namespace rkk
             ~type();
 
         public:
-            RenderState::type                   m_RenderStage;
+            RenderState::ptr					m_RenderStagePtr;
 
-            RenderShader::VertexShader::type    m_VertexShader;
-            RenderShader::PixelShader::type     m_PixelShader;
+			RenderTarget::ptr					m_RenderTargetPtr;
+
+            RenderShader::VertexShader::ptr		m_VertexShaderPtr;
+            RenderShader::PixelShader::ptr		m_PixelShaderPtr;
         };
     } /// namespace RenderPass
 } /// namespace rkk
