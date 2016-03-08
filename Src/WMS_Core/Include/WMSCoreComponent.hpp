@@ -17,50 +17,41 @@ namespace wms
 
         public:
             virtual Void::type Tick(F32::in inDeltaTime) = WIZ_NULL;
+
+            virtual Bool::type Init() = WIZ_NULL;
+
+        protected:
+            virtual Void::type InitMetaInfo();
+
+        protected:
+            ::wms::Cmpnt::MetaMntr::ptr m_MetaMntr;
         };
+
+        template<class DerivedT>
+        class Class
+        {
+        public:
+            static ::wms::Cmpnt::ptr Construct()
+            {
+                ::wms::Cmpnt::ptr lCmpntPtr =  WIZ_NEW DerivedT();
+                if (IsValidPtr(lCmpntPtr))
+                {
+                    if (lCmpntPtr->Init())
+                    {
+                        lCmpntPtr->InitMetaInfo();
+                    }
+                    else
+                    {
+                        WIZ_DEL lCmpntPtr;
+                        lCmpntPtr = WIZ_NULLPTR;
+                    }
+                }
+                return lCmpntPtr;
+            }
+        };
+
+        ::wms::Cmpnt::ptr Construct();
     } /// end of namespace Cmpnt
-
-    namespace CmpntMap
-    {
-        class type: public ::wms::Cmpnt::type
-        {
-        public:
-            type();
-            virtual ~type();
-
-        public:
-            virtual Void::type Tick(F32::in inDeltaTime);
-
-        public:
-            typedef Map<::wms::Name::type, ::wms::Cmpnt::ptr>::type tMap;
-
-        protected:
-            tMap        m_Children;
-        };
-    } /// end of namespace CmpntMap
-
-    namespace CmpntArray
-    {
-        WMS_CLASS: public ::wms::Cmpnt::type
-        {
-        private:
-            typedef ::wms::Cmpnt::type tSuper;
-
-        public:
-            type();
-            type(::wms::Size::in);
-            virtual ~type();
-
-        public:
-            virtual Void::type Tick(F32::in inDeltaTime);
-
-        public:
-            typedef Array<::wms::Cmpnt::ptr>::type tArray;
-
-        protected:
-            tArray      m_Children;
-        };
-    } /// end of namespace CmpntArray
 } /// end of namespace wms
 
 #endif /// __WHIMSY_CORE_COMPONENT_HPP__

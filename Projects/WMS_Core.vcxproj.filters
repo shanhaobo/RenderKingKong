@@ -39,6 +39,9 @@
     <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponentMetaProperty.hpp">
       <Filter>Include\Meta</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponentContainer.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\WMS_Core\Private\WMSPlugin.cpp">
@@ -58,6 +61,9 @@
     </ClCompile>
     <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponentMetaProperty.cpp">
       <Filter>Private\Meta</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponentContainer.cpp">
+      <Filter>Private</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
