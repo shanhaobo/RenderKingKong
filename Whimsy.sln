@@ -40,6 +40,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ANN_Library", "Projects\ANN_Library.vcxproj", "{051C2532-A316-4C4B-AA78-03922A3A8067}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RKK_RDL_SW", "Projects\RKK_RDL_SW.vcxproj", "{2F70BBC6-0C26-4DC2-BFE5-7FF56B965F1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D845A969-0CF5-4225-935B-AB0E3A0AD188} = {D845A969-0CF5-4225-935B-AB0E3A0AD188}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
