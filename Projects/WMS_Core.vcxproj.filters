@@ -7,6 +7,12 @@
     <Filter Include="Private">
       <UniqueIdentifier>{397c0b22-8762-413c-bf41-6c835bf41448}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\Meta">
+      <UniqueIdentifier>{2d893cf1-49e4-4528-a266-194f63bc8de7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Meta">
+      <UniqueIdentifier>{e4570ad4-e8c9-4f2c-ac5b-1f184b6ed4a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\WMS_Core\Include\WMSPlugin.hpp">
@@ -24,6 +30,18 @@
     <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponent.hpp">
       <Filter>Include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponentMetaMonitor.hpp">
+      <Filter>Include\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponentMetaProcessor.hpp">
+      <Filter>Include\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponentMetaProperty.hpp">
+      <Filter>Include\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Core\Include\WMSCoreComponentContainer.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\WMS_Core\Private\WMSPlugin.cpp">
@@ -33,6 +51,18 @@
       <Filter>Private</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponent.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponentMetaMonitor.cpp">
+      <Filter>Private\Meta</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponentMetaProcessor.cpp">
+      <Filter>Private\Meta</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponentMetaProperty.cpp">
+      <Filter>Private\Meta</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Core\Private\WMSCoreComponentContainer.cpp">
       <Filter>Private</Filter>
     </ClCompile>
   </ItemGroup>

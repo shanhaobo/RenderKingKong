@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,11 +21,13 @@
     <ClInclude Include="..\Src\RKK_Library\Include\Core\Enum\RKKEnumStencil.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\Core\RKKCore.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderCore.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderCoreFwdDclr.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_PixelShader.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderShader_VertexShader.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderState.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderTarget.hpp" />
+    <ClInclude Include="..\Src\RKK_Library\Include\RenderCore\RKKRenderTargetManager.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayer.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderDeviceLayer\RKKRenderDeviceLayerMethod.hpp" />
     <ClInclude Include="..\Src\RKK_Library\Include\RenderFramework\RKKFrameworkFwdDclr.hpp" />
@@ -43,6 +45,7 @@
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderState.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderStateManager.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderTarget.cpp" />
+    <ClCompile Include="..\Src\RKK_Library\Private\RenderCore\RKKRenderTargetManager.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderDeviceLayer\RKKRenderDeviceLayer.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKPlugin_RenderDeviceLayer.cpp" />
     <ClCompile Include="..\Src\RKK_Library\Private\RenderFramework\RKKRenderer.cpp" />
@@ -59,13 +62,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>

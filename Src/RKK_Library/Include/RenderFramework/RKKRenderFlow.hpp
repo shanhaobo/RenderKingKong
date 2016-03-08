@@ -7,7 +7,7 @@ namespace rkk
 {
     namespace RenderFlow
     {
-        WMS_CLASS
+        WMS_CLASS: public ::wms::CmpntArray::type
         {
         public:
             type();

@@ -5,6 +5,7 @@
 
 #include "./WMSCoreFwdDclr.hpp"
 #include "./WMSCoreComponent.hpp"
+#include "./WMSCoreComponentContainer.hpp"
 
 #include "./WMSPlugin.hpp"
 #include "./WMSPluginMgr.hpp"
