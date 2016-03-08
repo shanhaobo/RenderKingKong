@@ -1,4 +1,4 @@
-#include "../../RKK_Library/Include/RenderFramework/RKKPlugin_RenderDeviceLayer.hpp"
+#include "../../RKK_Library/include/RenderFramework/RKKPlugin_RenderDeviceLayer.hpp"
 
 #include "./RKKRDL_SW.hpp"
 
