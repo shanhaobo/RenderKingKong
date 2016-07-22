@@ -2,6 +2,7 @@
 #define __WHIMSY_ATTRIBUTE_MODIFIER_HPP__
 
 #include "../Core/WMSFrmwrkFwdDclr.hpp"
+#include "./WMSAttrMdfyRqst.hpp"
 
 namespace wms
 {
@@ -11,8 +12,27 @@ namespace wms
         {
             WMS_CLASS
             {
+            protected:
+                typedef Array<Attr::MdfyRqst::ptr>::type    tRequestArray;
+                typedef tRequestArray*                      tRequestArrayPtr;
+
+                struct tRequestListItem
+                {
+                    U32::type           LayerID;
+                    tRequestArrayPtr    ArrayPtr;
+
+                    tRequestListItem(U32::in inLayerID, tRequestArrayPtr inArrayPtr) : LayerID(inLayerID), ArrayPtr(inArrayPtr)
+                    {
+
+                    }
+                };
+                typedef Array<tRequestListItem>::type       tRequestList;
+
             public:
-                U32::type               m_ID;
+                ::wms::Void::type ReceiveRequest(Attr::MdfyRqst::ptr);
+
+            protected:
+                tRequestArrayPtr FindOrCreateRequestArray(U32::in inID);
 
             public:
                 virtual ::wms::Bool::type operator==(in inOther) const = 0;
@@ -21,6 +41,11 @@ namespace wms
                 {
                     return operator==(inOther) == false;
                 }
+
+            protected:
+                tRequestList                m_RequestList;
+
+                ID32::type                  m_RequestID;
             };
         } /// end of namespace Modifier
     } /// end of namespace Attr
