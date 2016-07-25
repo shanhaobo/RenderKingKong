@@ -114,7 +114,7 @@ namespace Wiz
 
             ///-----------------------///
 
-            ::Wiz::Size::Type Capacity()
+            tSize Capacity()
             {
                 return tSuper::capacity();
             }

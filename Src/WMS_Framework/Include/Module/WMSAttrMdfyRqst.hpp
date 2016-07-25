@@ -12,8 +12,8 @@ namespace wms
             WMS_CLASS
             {
             public:
-                U32::type               m_ID;
-                U32::type               m_LayerID;
+                ID32::type      m_ID;
+                ID32::type      m_LayerID;
 
             public:
                 virtual ::wms::Bool::type Begin() = 0;

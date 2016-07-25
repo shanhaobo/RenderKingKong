@@ -13,34 +13,28 @@ namespace wms
             WMS_CLASS
             {
             protected:
-                typedef Array<Attr::MdfyRqst::ptr>::type    tRequestArray;
-                typedef tRequestArray*                      tRequestArrayPtr;
+                typedef Array<Attr::MdfyRqst::ptr>::type    tRequestLayer;
+                typedef tRequestLayer*                      tRequestLayerPtr;
 
-                struct tRequestListItem
+                struct tRequestLayerItem
                 {
-                    U32::type           LayerID;
-                    tRequestArrayPtr    ArrayPtr;
+                    ID32::type          LayerID;
+                    tRequestLayerPtr    LayerPtr;
 
-                    tRequestListItem(U32::in inLayerID, tRequestArrayPtr inArrayPtr) : LayerID(inLayerID), ArrayPtr(inArrayPtr)
+                    tRequestLayerItem(ID32::in inLayerID, tRequestLayerPtr inLayerPtr) : LayerID(inLayerID), LayerPtr(inLayerPtr)
                     {
 
                     }
                 };
-                typedef Array<tRequestListItem>::type       tRequestList;
+                typedef Array<tRequestLayerItem>::type       tRequestList;
 
             public:
-                ::wms::Void::type ReceiveRequest(Attr::MdfyRqst::ptr);
+                ID32::type ReceiveRequest(Attr::MdfyRqst::ptr);
+                Void::type RemoveRequest(ID32::in);
 
             protected:
-                tRequestArrayPtr FindOrCreateRequestArray(U32::in inID);
-
-            public:
-                virtual ::wms::Bool::type operator==(in inOther) const = 0;
-
-                WIZ_INLINE ::wms::Bool::type operator!=(in inOther) const
-                {
-                    return operator==(inOther) == false;
-                }
+                tRequestLayerPtr FindOrCreateRequestLayer(ID32::in inLayerID);
+                Void::type RemoveRequest(tRequestLayerPtr, Attr::MdfyRqst::ptr);
 
             protected:
                 tRequestList                m_RequestList;

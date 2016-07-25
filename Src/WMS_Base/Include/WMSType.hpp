@@ -166,12 +166,16 @@ namespace wms
     struct Array
     {
         typedef typename ::Wiz::Array::Type<T, A>           type;
+
+        typedef type*                                       ptr;
     };
 
     template <typename T, typename A = ::std::allocator<T> >
     struct List
     {
         typedef typename ::Wiz::List::Type<T, A>            type;
+
+        typedef type*                                       ptr;
     };
 
     template <typename T, typename V, class C = ::std::less<T>, typename A = ::std::allocator< ::std::pair<T, V> > >
