@@ -29,6 +29,9 @@ namespace wms
                 typedef Array<tRequestLayerItem>::type       tRequestList;
 
             public:
+                type();
+                virtual ~type();
+
                 ID32::type ReceiveRequest(Attr::MdfyRqst::ptr);
                 Void::type RemoveRequest(ID32::in);
 

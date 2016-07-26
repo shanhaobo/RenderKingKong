@@ -15,7 +15,6 @@ namespace wms
         private:
             typedef ::wms::Cmpnt::type                  tSuper;
 
-
         public:
             type();
             virtual ~type();

@@ -14,8 +14,11 @@
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkActor.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkFwdDclr.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttribute.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttributeT.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrMdfyRqstT.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModifier.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrMdfyRqst.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModifierT.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModule.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSBehavior.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSBhvrModule.hpp" />
