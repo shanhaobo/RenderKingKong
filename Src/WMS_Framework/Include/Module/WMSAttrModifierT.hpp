@@ -24,7 +24,7 @@ namespace wms
                 typedef tMdfyRqst*                      tMdfyRqstPtr;
 
             protected:
-                Bool::type CheckBreak(tValueIn inCurrValue) = 0;
+                virtual Bool::type CheckBreak(tValueIn inCurrValue) = 0;
 
             protected:
                 Void::type CalcCurrLayer(tValueOut ioValue, F32::in inDeltaTime, tRequestLayerPtr inLayerPtr, tValueIn inLastBaseVal)
@@ -49,20 +49,7 @@ namespace wms
                 }
 
             public:
-                tValue Calc1(F32::in inDeltaTime, tValueIn inBaseVal, tValueIn inCurrVal)
-                {
-                    tRequestList::tSize i;
-
-                    tValue              lResultVal = inCurrVal;
-
-                    for (i = 0; i < m_RequestList.Size(); ++i)
-                    {
-                        CalcCurrLayer(lResultVal, inDeltaTime, m_RequestList[i].LayerPtr, inBaseVal);
-                    }
-
-                    return lResultVal;
-                }
-                tValue Calc2(F32::in inDeltaTime, tValueIn inBaseVal, tValueIn inCurrVal)
+                tValue Calc(F32::in inDeltaTime, tValueIn inBaseVal, tValueIn inCurrVal)
                 {
                     tRequestList::tSize i;
 

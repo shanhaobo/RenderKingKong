@@ -16,7 +16,7 @@ namespace wms
                 ID32::type      m_LayerID;
 
             public:
-                virtual Void::type BreakCallBack() {};
+                virtual Void::type BreakCallBack() {}
             };
         } /// end of namespace ModfyReqst
     } /// end of namespace Attr

@@ -13,11 +13,42 @@ namespace wms
         template<class T>
         class Type : public Attr::type
         {
-            typedef Attr::Modifier::Type<T> tModifier;
-            typedef tModifier*              tModifierPtr;
+        protected:
+            typedef T                               tValue;
+            typedef tValue &                        tValueRef;
+            typedef tValueRef                       tValueOut;
+            typedef tValueRef const                 tValueIn;
+
+            typedef Attr::Modifier::Type<T>         tModifier;
+            typedef tModifier*                      tModifierPtr;
+
+            tValue                  BaseValue;
+        public:
+            virtual Void::type Calc(F32::in inDeltaTime)
+            {
+                tModifierPtr lMoidifierPtr = (tModifierPtr)(m_MoidifierPtr);
+                if (::Wiz::IsValidPtr(lMoidifierPtr))
+                {
+                    lMoidifierPtr->Calc(inDeltaTime, BaseValue, BaseValue);
+                }
+            }
+        };
+
+        template<class T>
+        class Type2 : public Attr::Type<T>
+        {
+        protected:
+            tValue                  CurrValue;
 
         public:
-            tModifierPtr                    m_MoidifierPtr;
+            virtual Void::type Calc(F32::in inDeltaTime)
+            {
+                tModifierPtr lMoidifierPtr = (tModifierPtr)(m_MoidifierPtr);
+                if (::Wiz::IsValidPtr(lMoidifierPtr))
+                {
+                    lMoidifierPtr->Calc(inDeltaTime, BaseValue, CurrValue);
+                }
+            }
         };
     } /// end of namespace Attribute
 } /// end of namespace wms
