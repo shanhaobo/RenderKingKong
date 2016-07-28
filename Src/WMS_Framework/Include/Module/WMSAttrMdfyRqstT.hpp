@@ -19,8 +19,38 @@ namespace wms
                 typedef tValueRef const                 tValueIn;
 
             public:
-                virtual Void::type Calc(tValueOut ioCurrVal, F32::in inDeltaTime, tValueIn inBaseValue) = 0;
+                virtual Void::type Calc(tValueOut ioCurrVal, tValueIn inBaseValue) = 0;
             };
+
+            namespace Percent
+            {
+                template<class T>
+                class Type : public MdfyRqst::Type<T>
+                {
+                public:
+                    F32::type  m_Percent;
+
+                    virtual Void::type Calc(tValueOut ioCurrVal, tValueIn inBaseValue)
+                    {
+                        ioCurrVal += inBaseValue * m_Percent;
+                    }
+                };
+            }
+
+            namespace Absolute
+            {
+                template<class T>
+                class Type : public MdfyRqst::Type<T>
+                {
+                public:
+                    tValue  m_Value;
+
+                    virtual Void::type Calc(tValueOut ioCurrVal, tValueIn inBaseValue)
+                    {
+                        ioCurrVal += m_Value;
+                    }
+                };
+            }
         } /// end of namespace ModfyReqst
     } /// end of namespace Attr
 } /// end of namespace wms

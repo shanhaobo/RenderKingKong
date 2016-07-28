@@ -14,40 +14,44 @@ namespace wms
         class Type : public Attr::type
         {
         protected:
-            typedef T                               tValue;
-            typedef tValue &                        tValueRef;
-            typedef tValueRef                       tValueOut;
-            typedef tValueRef const                 tValueIn;
+            typedef T                                       tValue;
+            typedef tValue &                                tValueRef;
+            typedef tValueRef                               tValueOut;
+            typedef tValueRef const                         tValueIn;
 
-            typedef Attr::Modifier::Type<T>         tModifier;
-            typedef tModifier*                      tModifierPtr;
+            typedef ::Wiz::TT::If<::Wiz::TT::Is::Same<T, F64::type>::bValue, F64::type, F32::type> tMoidifierValue;
 
-            tValue                  BaseValue;
+            typedef Attr::Modifier::Type<tMoidifierValue>   tModifier;
+            typedef tModifier*                              tModifierPtr;
+
+        protected:
+            tValue                  m_BaseValue;
+            tValue                  m_CurrValue;
+
         public:
-            virtual Void::type Calc(F32::in inDeltaTime)
+            virtual Void::type Calc(F32::in inCurrTime)
             {
-                tModifierPtr lMoidifierPtr = (tModifierPtr)(m_MoidifierPtr);
-                if (::Wiz::IsValidPtr(lMoidifierPtr))
+                if (m_LastTime < inCurrTime)
                 {
-                    lMoidifierPtr->Calc(inDeltaTime, BaseValue, BaseValue);
+                    tModifierPtr lMoidifierPtr = (tModifierPtr)(m_MoidifierPtr);
+                    if (::Wiz::IsValidPtr(lMoidifierPtr))
+                    {
+                        tMoidifierValue const lResult =
+                            lMoidifierPtr->Calc(
+                                ::Wiz::Cast::Static<tMoidifierValue>(m_BaseValue)
+                                );
+
+                        m_CurrValue = ::Wiz::Cast::Static<tValue>(lResult);
+                        m_LastTime = inCurrTime;
+                    }
                 }
             }
-        };
-
-        template<class T>
-        class Type2 : public Attr::Type<T>
-        {
-        protected:
-            tValue                  CurrValue;
 
         public:
-            virtual Void::type Calc(F32::in inDeltaTime)
+            tValue GetCurrValue()
             {
-                tModifierPtr lMoidifierPtr = (tModifierPtr)(m_MoidifierPtr);
-                if (::Wiz::IsValidPtr(lMoidifierPtr))
-                {
-                    lMoidifierPtr->Calc(inDeltaTime, BaseValue, CurrValue);
-                }
+                Calc(m_LastTime + F32::Epsilon);
+                return m_CurrValue;
             }
         };
     } /// end of namespace Attribute

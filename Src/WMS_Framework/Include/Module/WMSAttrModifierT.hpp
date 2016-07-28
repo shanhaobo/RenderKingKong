@@ -27,7 +27,7 @@ namespace wms
                 virtual Bool::type CheckBreak(tValueIn inCurrValue) = 0;
 
             protected:
-                Void::type CalcCurrLayer(tValueOut ioValue, F32::in inDeltaTime, tRequestLayerPtr inLayerPtr, tValueIn inLastBaseVal)
+                Void::type CalcCurrLayer(tValueOut ioValue, tRequestLayerPtr inLayerPtr, tValueIn inLastBaseVal)
                 {
                     if (::Wiz::IsValidPtr(inLayerPtr))
                     {
@@ -37,7 +37,7 @@ namespace wms
                             tMdfyRqstPtr lReqPtr = (tMdfyRqstPtr)((*inLayerPtr)[i]);
                             if (::Wiz::IsValidPtr(lReqPtr))
                             {
-                                lReqPtr->Calc(ioValue, inDeltaTime, inLastBaseVal);
+                                lReqPtr->Calc(ioValue, inLastBaseVal);
                                 if (CheckBreak(ioValue))
                                 {
                                     lReqPtr->BreakCallBack();
@@ -49,16 +49,16 @@ namespace wms
                 }
 
             public:
-                tValue Calc(F32::in inDeltaTime, tValueIn inBaseVal, tValueIn inCurrVal)
+                tValue Calc(tValueIn inBaseVal)
                 {
                     tRequestList::tSize i;
 
                     tValue              lBaseVal   = inBaseVal;
-                    tValue              lResultVal = inCurrVal;
+                    tValue              lResultVal = inBaseVal;
 
                     for (i = 0; i < m_RequestList.Size(); ++i)
                     {
-                        CalcCurrLayer(lResultVal, inDeltaTime, m_RequestList[i].LayerPtr, lBaseVal);
+                        CalcCurrLayer(lResultVal, m_RequestList[i].LayerPtr, lBaseVal);
 
                         lBaseVal = lResultVal;
                     }
