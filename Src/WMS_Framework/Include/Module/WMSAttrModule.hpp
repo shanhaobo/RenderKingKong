@@ -18,6 +18,9 @@ namespace wms
             type();
             type(::wms::Size::in);
             virtual ~type();
+
+        public:
+            Attr::ptr GetAttrByIdx(::wms::Size::in inIdx);
         };
     } /// end of namespace AttrModule
 } /// end of namespace wms
