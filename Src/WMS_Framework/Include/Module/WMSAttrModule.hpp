@@ -1,7 +1,7 @@
 #ifndef __WHIMSY_ATTRMODULE_HPP__ 
 #define __WHIMSY_ATTRMODULE_HPP__
 
-#include "./WMSAttribute.hpp"
+#include "./WMSAttrGroup.hpp"
 
 /// CBD  Component-Based Development
 
@@ -20,7 +20,23 @@ namespace wms
             virtual ~type();
 
         public:
-            Attr::ptr GetAttrByIdx(::wms::Size::in inIdx);
+            template<class T>
+            T GetValue(::wms::Size::in inIdx)
+            {
+                ::wms::Size::type   i;
+                T                   lResult(0), lTemp;
+                for (i = 0; i < m_Children.Size(); ++i)
+                {
+                    AttrGroup::ptr lPtr = ::Wiz::Cast::Static<AttrGroup::ptr>(m_Children[i]);
+                    if (::Wiz::IsValidPtr(lPtr) && lPtr->GetValue(lTemp, inIdx))
+                    {
+                        lResult += lTemp;
+                    }
+                }
+                return lResult;
+            }
+
+        protected:
         };
     } /// end of namespace AttrModule
 } /// end of namespace wms
