@@ -77,16 +77,22 @@
     <ClInclude Include="..\Src\WMS_Framework\Include\System\Weapon\WMSWSWeapon.hpp">
       <Filter>Include\System\Weapon System</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrMdfyRqst.hpp">
-      <Filter>Include\Module\Attribute Module</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModifierT.hpp">
       <Filter>Include\Module\Attribute Module</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttributeT.hpp">
       <Filter>Include\Module\Attribute Module</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrMdfyRqstT.hpp">
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrProvider.hpp">
+      <Filter>Include\Module\Attribute Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrRequest.hpp">
+      <Filter>Include\Module\Attribute Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrRequestT.hpp">
+      <Filter>Include\Module\Attribute Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrManager.hpp">
       <Filter>Include\Module\Attribute Module</Filter>
     </ClInclude>
   </ItemGroup>
@@ -110,6 +116,12 @@
       <Filter>Private\System\Weapon System</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrModifier.cpp">
+      <Filter>Private\Module\Attribute Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrProvider.cpp">
+      <Filter>Private\Module\Attribute Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrManager.cpp">
       <Filter>Private\Module\Attribute Module</Filter>
     </ClCompile>
   </ItemGroup>

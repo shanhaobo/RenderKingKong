@@ -15,11 +15,13 @@
     <ClInclude Include="..\Src\WMS_Framework\Include\Core\WMSFrmwrkFwdDclr.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttribute.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttributeT.hpp" />
-    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrMdfyRqstT.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrManager.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModifier.hpp" />
-    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrMdfyRqst.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModifierT.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrModule.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrProvider.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrRequest.hpp" />
+    <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSAttrRequestT.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSBehavior.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\Module\WMSBhvrModule.hpp" />
     <ClInclude Include="..\Src\WMS_Framework\Include\System\Weapon\WMSWSAttackModule.hpp" />
@@ -28,8 +30,10 @@
   <ItemGroup>
     <ClCompile Include="..\Src\WMS_Framework\Private\Core\WMSFrmwrkActor.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttribute.cpp" />
+    <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrManager.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrModifier.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrModule.cpp" />
+    <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSAttrProvider.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSBehavior.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\Module\WMSBhvrModule.cpp" />
     <ClCompile Include="..\Src\WMS_Framework\Private\System\Weapon\WMSWSAttackModule.cpp" />

@@ -38,9 +38,11 @@ namespace wms
                     {
                         tRequestLayer::tSize const tLastIdx = m_RequestList.Size() - 1;
 
-                        /// 从倒数第二个开始查找,与倒数第一个(inLayerID, tResultPtr)比较
+                        /// Sort()
+                        /// 从倒数第二个开始与倒数第一个(inLayerID, tResultPtr)比较
                         for (i = tLastIdx - 1; i >= 0; ++i)
                         {
+                            /// 大的排到后面去
                             if (m_RequestList[i].LayerID > inLayerID)
                             {
                                 m_RequestList[i + 1].LayerID  = m_RequestList[i].LayerID;
@@ -56,7 +58,7 @@ namespace wms
                 return lResultPtr;
             }
 
-            ID32::type type::ReceiveRequest(Attr::MdfyRqst::ptr inNewReqPtr)
+            ID32::type type::ReceiveRequest(Attr::Request::ptr inNewReqPtr)
             {
                 tRequestLayerPtr lArrayPtr = FindOrCreateRequestLayer(inNewReqPtr->m_LayerID);
                 if (::Wiz::IsValidPtr(lArrayPtr))
@@ -82,7 +84,7 @@ namespace wms
                     {
                         for (j = 0; j < lLayerPtr->Size(); ++j)
                         {
-                            Attr::MdfyRqst::ptr lReqPtr = (*lLayerPtr)[j];
+                            Attr::Request::ptr lReqPtr = (*lLayerPtr)[j];
                             if (::Wiz::IsValidPtr(lReqPtr) && (lReqPtr->m_ID == inReqID))
                             {
                                 tRequestLayer::tSize const tReqLastIdx = lLayerPtr->Size() - 1;
@@ -106,7 +108,7 @@ namespace wms
                 }
             }
 
-            Void::type type::RemoveRequest(tRequestLayerPtr inLayerPtr, Attr::MdfyRqst::ptr inReqPtr)
+            Void::type type::RemoveRequest(tRequestLayerPtr inLayerPtr, Attr::Request::ptr inReqPtr)
             {
                 if (inLayerPtr->Size() >= 1)
                 {
@@ -115,7 +117,7 @@ namespace wms
                     tRequestLayer::tSize i = 0;
                     for (; i < lReqLastIdx; ++i)
                     {
-                        Attr::MdfyRqst::ptr tReqPtr = (*inLayerPtr)[i];
+                        Attr::Request::ptr tReqPtr = (*inLayerPtr)[i];
                         if (inReqPtr == tReqPtr)
                         {
                             (*inLayerPtr)[i] = (*inLayerPtr)[lReqLastIdx];
