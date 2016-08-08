@@ -7,37 +7,39 @@
 
 namespace wms
 {
-    namespace AttrModule
+    namespace Attr
     {
-        WMS_CLASS: public ::wms::CmpntArray::type
+        namespace Module
         {
-        private:
-            typedef ::wms::CmpntArray::type tSuper;
-
-        public:
-            type();
-            type(::wms::Size::in);
-            virtual ~type();
-
-        public:
-            template<class T>
-            T GetValue(::wms::Size::in inIdx)
+            WMS_CLASS: public ::wms::CmpntArray::type
             {
-                ::wms::Size::type   i;
-                T                   lResult(0), lTemp;
-                for (i = 0; i < m_Children.Size(); ++i)
-                {
-                    AttrGroup::ptr lPtr = ::Wiz::Cast::Static<AttrGroup::ptr>(m_Children[i]);
-                    if (::Wiz::IsValidPtr(lPtr) && lPtr->GetValue(lTemp, inIdx))
-                    {
-                        lResult += lTemp;
-                    }
-                }
-                return lResult;
-            }
+            private:
+                typedef ::wms::CmpntArray::type tSuper;
 
-        protected:
-        };
+            public:
+                type();
+                type(::wms::Size::in);
+                virtual ~type();
+
+            public:
+                template<class T>
+                T GetValue(::wms::ID32::in inIdx)
+                {
+                    typedef Attr::Type<T>   tValidAttrType;
+                    Attr::ptr lAttrPtr = GetAttrByIdx(inIdx);
+                    if (::Wiz::IsValidPtr(lAttrPtr))
+                    {
+                        tValidAttrType* lAttrTPtr = ::Wiz::Cast::Static<tValidAttrType*>(lAttrPtr);
+                        return lAttrTPtr->GetCurrValue();
+                    }
+
+                    return T(0);
+                }
+
+            protected:
+                Attr::ptr GetAttrByIdx(::wms::ID32::in inIdx);
+            };
+        } /// end of namesapce Module
     } /// end of namespace AttrModule
 } /// end of namespace wms
 

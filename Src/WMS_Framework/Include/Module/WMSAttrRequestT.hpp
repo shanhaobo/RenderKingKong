@@ -1,5 +1,5 @@
-#ifndef __WHIMSY_ATTRIBUTE_MDFYRQST_T_HPP__ 
-#define __WHIMSY_ATTRIBUTE_MDFYRQST_T_HPP__
+#ifndef __WHIMSY_ATTRIBUTE_REQUEST_T_HPP__ 
+#define __WHIMSY_ATTRIBUTE_REQUEST_T_HPP__
 
 #include "../Core/WMSFrmwrkFwdDclr.hpp"
 
@@ -7,10 +7,10 @@ namespace wms
 {
     namespace Attr
     {
-        namespace MdfyRqst
+        namespace Request
         {
             template<class T>
-            class Type : public Attr::MdfyRqst::type
+            class Type : public Attr::Request::type
             {
             protected:
                 typedef T                               tValue;
@@ -25,7 +25,7 @@ namespace wms
             namespace Percent
             {
                 template<class T>
-                class Type : public MdfyRqst::Type<T>
+                class Type : public Request::Type<T>
                 {
                 public:
                     F32::type  m_Percent;
@@ -40,7 +40,7 @@ namespace wms
             namespace Absolute
             {
                 template<class T>
-                class Type : public MdfyRqst::Type<T>
+                class Type : public Request::Type<T>
                 {
                 public:
                     tValue  m_Value;
@@ -51,8 +51,8 @@ namespace wms
                     }
                 };
             }
-        } /// end of namespace ModfyReqst
+        } /// end of namespace Request
     } /// end of namespace Attr
 } /// end of namespace wms
 
-#endif /// __WHIMSY_ATTRIBUTE_MDFYRQST_T_HPP__
+#endif /// __WHIMSY_ATTRIBUTE_REQUEST_T_HPP__

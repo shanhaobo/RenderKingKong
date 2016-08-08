@@ -13,7 +13,7 @@ namespace wms
             WMS_CLASS
             {
             protected:
-                typedef Array<Attr::MdfyRqst::ptr>::type    tRequestLayer;
+                typedef Array<Attr::Request::ptr>::type     tRequestLayer;
                 typedef tRequestLayer*                      tRequestLayerPtr;
 
                 struct tRequestLayerItem
@@ -32,12 +32,12 @@ namespace wms
                 type();
                 virtual ~type();
 
-                ID32::type ReceiveRequest(Attr::MdfyRqst::ptr);
+                ID32::type ReceiveRequest(Attr::Request::ptr);
                 Void::type RemoveRequest(ID32::in);
 
             protected:
                 tRequestLayerPtr FindOrCreateRequestLayer(ID32::in inLayerID);
-                Void::type RemoveRequest(tRequestLayerPtr, Attr::MdfyRqst::ptr);
+                Void::type RemoveRequest(tRequestLayerPtr, Attr::Request::ptr);
 
             protected:
                 tRequestList                m_RequestList;

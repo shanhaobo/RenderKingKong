@@ -20,8 +20,8 @@ namespace wms
                 typedef tValueRef                       tValueOut;
                 typedef tValueRef const                 tValueIn;
 
-                typedef Attr::MdfyRqst::Type<tValue>    tMdfyRqst;
-                typedef tMdfyRqst*                      tMdfyRqstPtr;
+                typedef Attr::Request::Type<tValue>     tRequest;
+                typedef tRequest*                       tRequestPtr;
 
             protected:
                 virtual Bool::type CheckBreak(tValueIn inCurrValue) = 0;
@@ -34,7 +34,7 @@ namespace wms
                         tRequestLayer::tSize i;
                         for (i = 0; i < inLayerPtr->Size(); ++i)
                         {
-                            tMdfyRqstPtr lReqPtr = (tMdfyRqstPtr)((*inLayerPtr)[i]);
+                            tRequestPtr lReqPtr = (tRequestPtr)((*inLayerPtr)[i]);
                             if (::Wiz::IsValidPtr(lReqPtr))
                             {
                                 lReqPtr->Calc(ioValue, inLastBaseVal);

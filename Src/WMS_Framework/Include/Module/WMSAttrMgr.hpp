@@ -21,7 +21,7 @@ namespace wms
 
         public:
             template<class T>
-            Bool::type GetValue(T outValue, ::wms::Size::in inIdx)
+            Bool::type GetValue(T& outValue, ::wms::Size::in inIdx)
             {
                 typedef Attr::Type<T>   tValidAttrType;
 

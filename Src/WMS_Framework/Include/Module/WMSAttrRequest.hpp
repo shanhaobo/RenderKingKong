@@ -1,5 +1,5 @@
-#ifndef __WHIMSY_ATTRIBUTE_MDFYRQST_HPP__ 
-#define __WHIMSY_ATTRIBUTE_MDFYRQST_HPP__
+#ifndef __WHIMSY_ATTRIBUTE_REQUEST_HPP__ 
+#define __WHIMSY_ATTRIBUTE_REQUEST_HPP__
 
 #include "../Core/WMSFrmwrkFwdDclr.hpp"
 
@@ -7,7 +7,7 @@ namespace wms
 {
     namespace Attr
     {
-        namespace MdfyRqst
+        namespace Request
         {
             WMS_CLASS
             {
@@ -18,8 +18,8 @@ namespace wms
             public:
                 virtual Void::type BreakCallBack() {}
             };
-        } /// end of namespace ModfyReqst
+        } /// end of namespace Request
     } /// end of namespace Attr
 } /// end of namespace wms
 
-#endif /// __WHIMSY_ATTRIBUTE_MDFYRQST_HPP__
+#endif /// __WHIMSY_ATTRIBUTE_REQUEST_HPP__
