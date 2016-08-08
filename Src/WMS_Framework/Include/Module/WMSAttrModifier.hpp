@@ -2,7 +2,7 @@
 #define __WHIMSY_ATTRIBUTE_MODIFIER_HPP__
 
 #include "../Core/WMSFrmwrkFwdDclr.hpp"
-#include "./WMSAttrMdfyRqst.hpp"
+#include "./WMSAttrRequest.hpp"
 
 namespace wms
 {

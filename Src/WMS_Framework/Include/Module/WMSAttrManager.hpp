@@ -1,5 +1,5 @@
-#ifndef __WHIMSY_ATTRGROUP_HPP__ 
-#define __WHIMSY_ATTRGROUP_HPP__
+#ifndef __WHIMSY_ATTRIBUTE_MANAGER_HPP__ 
+#define __WHIMSY_ATTRIBUTE_MANAGER_HPP__
 
 #include "./WMSAttributeT.hpp"
 
@@ -7,40 +7,43 @@
 
 namespace wms
 {
-    namespace AttrGroup
+    namespace Attr
     {
-        WMS_CLASS: public ::wms::CmpntArray::type
+        namespace Manager
         {
-        private:
-            typedef ::wms::CmpntArray::type tSuper;
-
-        public:
-            type();
-            type(::wms::Size::in);
-            virtual ~type();
-
-        public:
-            template<class T>
-            Bool::type GetValue(T& outValue, ::wms::Size::in inIdx)
+            WMS_CLASS: public ::wms::CmpntArray::type
             {
-                typedef Attr::Type<T>   tValidAttrType;
+            private:
+                typedef ::wms::CmpntArray::type tSuper;
 
-                Attr::ptr       lAttrPtr    = GetAttrByIdx(inIdx);
-                tValidAttrType* lAttrTPtr   = ::Wiz::Cast::Static<tValidAttrType*>(lAttrPtr);
-                if (::Wiz::IsValidPtr(lAttrTPtr))
+            public:
+                type();
+                type(::wms::Size::in);
+                virtual ~type();
+
+            public:
+                template<class T>
+                Bool::type GetValue(T& outValue, ::wms::Size::in inIdx)
                 {
-                    outValue = lAttrTPtr->GetCurrValue();
+                    typedef Attr::Type<T>   tValidAttrType;
 
-                    return Bool::True;
+                    Attr::ptr       lAttrPtr = GetAttrByIdx(inIdx);
+                    tValidAttrType* lAttrTPtr = ::Wiz::Cast::Static<tValidAttrType*>(lAttrPtr);
+                    if (::Wiz::IsValidPtr(lAttrTPtr))
+                    {
+                        outValue = lAttrTPtr->GetCurrValue();
+
+                        return Bool::True;
+                    }
+
+                    return Bool::False;
                 }
 
-                return Bool::False;
-            }
-
-        protected:
-            Attr::ptr GetAttrByIdx(::wms::Size::in inIdx);
-        };
-    } /// end of namespace AttrGroup
+            protected:
+                Attr::ptr GetAttrByIdx(::wms::Size::in inIdx);
+            };
+        } /// end of namespace Manager
+    } /// end of namespace Attr
 } /// end of namespace wms
 
-#endif /// __WHIMSY_ATTRGROUP_HPP__
+#endif /// __WHIMSY_ATTRIBUTE_MANAGER_HPP__

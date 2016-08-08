@@ -1,7 +1,7 @@
-#ifndef __WHIMSY_ATTRMODULE_HPP__ 
-#define __WHIMSY_ATTRMODULE_HPP__
+#ifndef __WHIMSY_ATTRIBUTE_MODULE_HPP__ 
+#define __WHIMSY_ATTRIBUTE_MODULE_HPP__
 
-#include "./WMSAttrGroup.hpp"
+#include "./WMSAttrManager.hpp"
 
 /// CBD  Component-Based Development
 
@@ -39,8 +39,8 @@ namespace wms
             protected:
                 Attr::ptr GetAttrByIdx(::wms::ID32::in inIdx);
             };
-        } /// end of namesapce Module
-    } /// end of namespace AttrModule
+        } /// end of namespace Module
+    } /// end of namespace Attr
 } /// end of namespace wms
 
-#endif /// __WHIMSY_ATTRMODULE_HPP__
+#endif /// __WHIMSY_ATTRIBUTE_MODULE_HPP__

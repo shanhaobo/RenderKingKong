@@ -3,7 +3,7 @@
 
 #include "../Core/WMSFrmwrkFwdDclr.hpp"
 #include "./WMSAttrModifier.hpp"
-#include "./WMSAttrMdfyRqstT.hpp"
+#include "./WMSAttrRequestT.hpp"
 
 namespace wms
 {

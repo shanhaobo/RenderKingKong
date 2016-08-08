@@ -2,6 +2,7 @@
 #define __WHIMSY_ATTRIBUTE_T_HPP__
 
 #include "../Core/WMSFrmwrkFwdDclr.hpp"
+#include "./WMSAttribute.hpp"
 #include "./WMSAttrModifierT.hpp"
 
 /// CBD  Component-Based Development
