@@ -21,7 +21,7 @@ namespace wms
         public:
             virtual Void::type Tick(F32::in inDeltaTime);
         };
-    } /// end of namespace Cmpnt
+    } /// end of namespace Actor
 } /// end of namespace wms
 
 #endif /// __WHIMSY_FRAMEWORK_COMPONENT_HPP__

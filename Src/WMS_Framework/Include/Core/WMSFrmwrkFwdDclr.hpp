@@ -8,11 +8,23 @@ namespace wms
 {
     namespace Attr
     {
+        namespace Module
+        {
+            class type;
+            WMS_DECLARE(type);
+        } /// end of namespace Modifier
+
         namespace Modifier
         {
             class type;
             WMS_DECLARE(type);
         } /// end of namespace Modifier
+
+        namespace Provider
+        {
+            class type;
+            WMS_DECLARE(type);
+        } /// end of namespace Provider
 
         class type;
         WMS_DECLARE(type);
