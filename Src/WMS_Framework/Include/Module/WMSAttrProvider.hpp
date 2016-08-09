@@ -14,29 +14,52 @@ namespace wms
             {
             protected:
 
-                struct tRequestLayerItem
+                struct tRequestItem
                 {
-                    ID32::type          AttrID;
-                    ID32::type          RequestID;
-                    Attr::Request::ptr  RequestPtr;
+                    ID32::type                  m_AttrID;
+                    Attr::Request::ptr          m_RequestPtr;
 
-                    tRequestLayerItem(ID32::in inAttrID, Attr::Request::ptr inRequestPtr) : AttrID(inAttrID), RequestPtr(inRequestPtr), RequestID(ID32::Invalid)
+                    tRequestItem(ID32::in inAttrID, Attr::Request::ptr inRequestPtr) : m_AttrID(inAttrID), m_RequestPtr(inRequestPtr)
                     {
 
                     }
                 };
-                typedef Array<tRequestLayerItem>::type       tRequestList;
+                typedef Array<tRequestItem>::type           tRequestList;
+
+                struct tRequestInstantItem
+                {
+                    Attr::Manager::ptr          m_AttrManagerPtr;
+                    Array<ID32::type>::type     m_RequestIDList;
+
+                    WIZ_INLINE Bool::type operator==(const tRequestInstantItem& inOther) const
+                    {
+                        if (m_AttrManagerPtr != inOther.m_AttrManagerPtr)
+                        {
+                            return Bool::False;
+                        }
+
+                        return m_RequestIDList == inOther.m_RequestIDList;
+                    }
+
+                    tRequestInstantItem() : m_AttrManagerPtr(WIZ_NULLPTR)
+                    {
+
+                    }
+                };
+                typedef List<tRequestInstantItem>::type    tRequestInstantList;
 
             public:
                 type();
                 virtual ~type();
 
-                Bool::type Attach(Attr::Module::ptr);
-                Void::type Detach();
+                Bool::type IsAttached(Attr::Manager::ptr) const;
+                Bool::type Attach(Attr::Manager::ptr);
+                Void::type Detach(Attr::Manager::ptr);
+                Void::type DetachAll();
 
             protected:
                 tRequestList                m_RequestList;
-                Attr::Module::ptr           m_AttrModulePtr;
+                tRequestInstantList         m_RequestInstantList;
             };
         } /// end of namespace Provider
     } /// end of namespace Attr

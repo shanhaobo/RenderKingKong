@@ -14,6 +14,12 @@ namespace wms
             WMS_DECLARE(type);
         } /// end of namespace Modifier
 
+        namespace Manager
+        {
+            class type;
+            WMS_DECLARE(type);
+        } /// end of namespace Manager
+
         namespace Modifier
         {
             class type;

@@ -8,7 +8,7 @@ namespace Wiz
     namespace Container
     {
         template<class DerivedT, class BaseT>
-        class Base : protected BaseT
+        class Base : public BaseT
         {
         public:
             //////////////////////////////////////////////////////////////////////////

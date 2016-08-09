@@ -6,7 +6,7 @@ namespace wms
     {
         namespace Provider
         {
-            type::type() : m_AttrModulePtr(WIZ_NULLPTR)
+            type::type()
             {
             }
 
@@ -15,23 +15,49 @@ namespace wms
 
             }
 
-            Bool::type type::Attach(Attr::Module::ptr inAttrModulePtr)
+            Bool::type type::IsAttached(Attr::Manager::ptr inAttrManagerPtr) const
             {
-                if (::Wiz::IsValidPtr(inAttrModulePtr))
+                if (::Wiz::IsValidPtr(inAttrManagerPtr) && (m_RequestInstantList.Size() > 0))
                 {
-                    m_AttrModulePtr = inAttrModulePtr;
-
-                    tRequestList::tSize i;
-                    for (i = 0; i < m_RequestList.Size(); ++i)
+                    tRequestInstantList::tIteratorConst tIter;
+                    for (tIter = m_RequestInstantList.Begin(); tIter != m_RequestInstantList.End(); ++tIter)
                     {
-
+                        if (tIter->m_AttrManagerPtr == inAttrManagerPtr)
+                        {
+                            return Bool::True;
+                        }
                     }
                 }
 
-                return Bool::True;
+                return Bool::False;
             }
 
-            Void::type type::Detach()
+            Bool::type type::Attach(Attr::Manager::ptr inAttrManagerPtr)
+            {
+                if (::Wiz::IsValidPtr(inAttrManagerPtr) && (m_RequestList.Size() > 0))
+                {
+                    if (IsAttached(inAttrManagerPtr))
+                    {
+                        return Bool::True;
+                    }
+
+                    m_RequestInstantList.PushBack(tRequestInstantItem());
+
+                    tRequestInstantItem& tItem = m_RequestInstantList.Back();
+                }
+
+                return Bool::False;
+            }
+
+            Void::type type::Detach(Attr::Manager::ptr inAttrManagerPtr)
+            {
+                if (IsAttached(inAttrManagerPtr))
+                {
+
+                }
+            }
+
+            Void::type type::DetachAll()
             {
 
             }
