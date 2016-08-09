@@ -39,8 +39,8 @@ namespace wms
                     return Bool::False;
                 }
 
-            protected:
                 Attr::ptr GetAttrByIdx(::wms::Size::in inIdx);
+            protected:
             };
         } /// end of namespace Manager
     } /// end of namespace Attr

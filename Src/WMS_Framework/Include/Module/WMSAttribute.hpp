@@ -22,6 +22,10 @@ namespace wms
 
             virtual Void::type Calc(F32::in inDeltaTime) = 0;
 
+
+            ID32::type ReceiveRequest(Attr::Request::ptr);
+            Void::type RemoveRequest(ID32::in);
+
         protected:
             Attr::Modifier::ptr m_MoidifierPtr;
 

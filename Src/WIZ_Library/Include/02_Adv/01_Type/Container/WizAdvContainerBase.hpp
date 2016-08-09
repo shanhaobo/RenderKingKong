@@ -10,6 +10,8 @@ namespace Wiz
         template<class DerivedT, class BaseT>
         class Base : public BaseT
         {
+            /// 如果使用 protected BaseT  error c2243
+            /// 基类指针、引用不能指向继承方式为protected与private的派生类对象。
         public:
             //////////////////////////////////////////////////////////////////////////
 
@@ -207,7 +209,7 @@ namespace Wiz
                 {
 
                 }
-                tIndexRefConst index() const
+                tIndexRefConst Index() const
                 {
                     return (*this)->first;
                 }
@@ -227,7 +229,7 @@ namespace Wiz
                 {
 
                 }
-                tIndexRefConst index() const
+                tIndexRefConst Index() const
                 {
                     return (*this)->first;
                 }

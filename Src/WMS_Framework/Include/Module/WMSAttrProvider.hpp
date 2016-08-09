@@ -28,10 +28,34 @@ namespace wms
 
                 struct tRequestInstantItem
                 {
-                    Attr::Manager::ptr          m_AttrManagerPtr;
-                    Array<ID32::type>::type     m_RequestIDList;
+                    struct tIDPair
+                    {
+                        ID32::type              m_AttrID;
+                        ID32::type              m_ReqID;
 
-                    WIZ_INLINE Bool::type operator==(const tRequestInstantItem& inOther) const
+                        WIZ_INLINE Bool::type operator==(tIDPair const & inOther) const
+                        {
+                            if (m_AttrID != inOther.m_AttrID)
+                            {
+                                return Bool::False;
+                            }
+                            return m_ReqID == inOther.m_ReqID;
+                        }
+
+                        tIDPair() : m_AttrID(ID32::Invalid), m_ReqID(ID32::Invalid)
+                        {
+
+                        }
+                        tIDPair(ID32::in inAttrID, ID32::in inReqID) : m_AttrID(inAttrID), m_ReqID(inReqID)
+                        {
+
+                        }
+                    };
+
+                    Attr::Manager::ptr          m_AttrManagerPtr;
+                    Array<tIDPair>::type        m_RequestIDList;
+
+                    WIZ_INLINE Bool::type operator==(tRequestInstantItem const & inOther) const
                     {
                         if (m_AttrManagerPtr != inOther.m_AttrManagerPtr)
                         {
@@ -56,6 +80,7 @@ namespace wms
                 Bool::type Attach(Attr::Manager::ptr);
                 Void::type Detach(Attr::Manager::ptr);
                 Void::type DetachAll();
+                Bool::type Reattach(Attr::Manager::ptr);
 
             protected:
                 tRequestList                m_RequestList;

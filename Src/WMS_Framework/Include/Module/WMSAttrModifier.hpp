@@ -39,6 +39,8 @@ namespace wms
                 tRequestLayerPtr FindOrCreateRequestLayer(ID32::in inLayerID);
                 Void::type RemoveRequest(tRequestLayerPtr, Attr::Request::ptr);
 
+                ID32::type GenReqID();
+
             protected:
                 tRequestList                m_RequestList;
 
